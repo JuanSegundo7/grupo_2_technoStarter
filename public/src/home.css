@@ -1,0 +1,12 @@
+h1{
+text-align: center;
+font-size: 90px;
+
+}
+
+.logo{
+    height:200px;
+    width: 150px;
+    opacity: 0.5;
+    text-align: left;
+}
