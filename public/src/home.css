@@ -1,16 +1,119 @@
-h1{
-text-align: center;
-font-size: 90px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-.logo{
-    height:200px;
-    width: 150px;
-    opacity: 0.5;
-    text-align: left;
+.logo {
+    position: absolute;
+    left: 50%;
+}
+
+.logo img{
+    display: block;
+    position: relative;
+    left: -50%;
+    width: 120px;
+    height: 80px;
+    
+
+    
 }
 
 .header{
-    background-color: blue;
+    background-color: rgb(3, 25, 39);
+    width: 100%;
+    height: 80px;
+    display: block  ;
+    font-family: "Roboto";
+    font-weight: 500;
+}
+
+.in-header{
+    width: 1300px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+.left-head{
+    float: left;
+    height: 100%;   
+    display: table;
+    color: rgb(255, 153, 0);
+    padding: 30px 20px;
+    font-size: 20px;
+}
+
+.right-head{
+    float: right;
+    height: 100%;   
+    display: table;
+    color: rgb(255, 153, 0);
+    padding: 30px 20px;
+    
+}
+
+.left-head1{
+    float: left;
+    height: 100%;   
+    display: table;
+    color: rgb(255, 255, 255);
+    padding: 30px 20px;
+    font-size: 20px;
+}
+
+.right-head1{
+    float: right;
+    height: 100%;   
+    display: table;
+    color: rgb(255, 255, 255);
+    padding: 30px 20px;
+    
+}
+
+.categorias{
+    padding: 20px 0px 0px 0px;
+    width: 100%;
+    height: 80px;
+    display: block  ;
+    font-family: "Roboto";
+    font-weight: 600;
+    font-size: 20px;
+  
+    
+}
+
+.in-categorias{
+    width: 1300px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.in-categorias ul a li{
+    display: inline-block;
+    height: 100%;   
+    color: rgb(255, 153, 0);
+    padding: 40px;
+    display: inline-block;
+    
+    
+    
+}
+
+
+
+body{
+    background-color: rgb(255, 243, 221)
+}
+
+footer{
+    background-color: rgb(3, 25, 39);
+    width: 100%;
+    height: 80px;
 }
