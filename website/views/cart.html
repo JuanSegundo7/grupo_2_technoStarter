@@ -5,8 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechnoStarter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/cart.css">
 </head>
 <body>
+<header>
+    <nav class="navbar--top">
+        <ul>
+            <li><a href="/">Descubrir</a></li>
+            <li><a href="/">Nosotros</a></li>
+
+        </ul>
+        <figure>
+            <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
+        </figure>
+        <form action="/proyectos" method="get" id="search">
+        <fieldset>
+            <input type="text" name="name" id="name">
+            <button type="submit">buscar</button>
+        </fieldset>
+        
+        </form>
+        <ul>
+            <li><a href="#search"><i class="fas fa-search"></i></a></li>
+            <li><a href="#user"><i class="fas fa-user"></i></a></li>
+        </ul>
+        <ul id="user">
+            <li>
+                <a href="/ingresar">Ingresar</a>     
+            </li>
+            <li>
+                <a href="/ingresar">Unite</a>     
+            </li>
+        </ul>
+    </nav>
+    <nav class="navbar-bottom">
+
+        <ul>
+            <li>
+                <a href="/proyectos/impresion">Impresion 3D</a>
+            </li>
+            <li>
+                <a href="/proyectos/robotica">Robotica</a>
+            </li>
+            <li>
+                <a href="/proyectos/electronica">electronica</a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+    
+    
+
+    
     
 </body>
 </html>
