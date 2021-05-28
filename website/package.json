@@ -4,7 +4,7 @@
   "description": "TECHNOSTARTER\r ------------------------------------------------------------------------------------------------",
   "main": "index.js",
   "scripts": {
-    "test":"nodemon app.js -e css,html,js,mjs",
+    "test": "nodemon app.js -e css,html,js,mjs",
     "start": "node app.js"
   },
   "repository": {},
