@@ -18,8 +18,123 @@ footer * {
 
 footer{
     background-color: #031927;
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 50px;
     padding: 10px;
 
 }
+
+footer p{
+    color: white;
+    opacity: 0.5;
+    font-size: 8px;
+    order: -1;
+}
+
+.logo-footer img{
+    order: 1;
+    width: 80%;
+}
+
+footer li{
+    color: #FF9900;
+    font-weight: 500;
+    order: 2;
+}
+
+footer ul{
+    list-style-type: none;
+}
+
+/**********************************^^^MEDIAS-QUERYS^^^********************************************/
+
+
+/**************************************^^^TABLET^^^********************************************/
+
+
+    @media (min-width: 361px){
+        footer * {
+            font-family: "Roboto";
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+        footer{
+            background-color: #031927;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+        
+        }
+        
+        footer p{
+            color: white;
+            opacity: 0.5;
+            font-size: 8px;
+            order: -1;
+        }
+        
+        .logo-footer img{
+            order: 1;
+            width: 45%;
+        }
+        
+        footer li{
+            color: #FF9900;
+            font-weight: 500;
+            order: 2;
+        }
+        
+        footer ul{
+            list-style-type: none;
+        }
+        
+    }
+/**************************************^^^TABLET^^^********************************************/
+
+
+    @media (min-width: 769px){
+        footer * {
+            font-family: "Roboto";
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+        footer{
+            background-color: #031927;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+        
+        }
+        
+        footer p{
+            color: white;
+            opacity: 0.5;
+            font-size: 8px;
+            order: -1;
+        }
+        
+        .logo-footer img{
+            order: 1;
+            width: 80%;
+        }
+        
+        footer li{
+            color: #FF9900;
+            font-weight: 500;
+            order: 2;
+        }
+        
+        footer ul{
+            list-style-type: none;
+        }
+    }
