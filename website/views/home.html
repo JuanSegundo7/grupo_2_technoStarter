@@ -7,59 +7,199 @@
     <title>TechnoStarter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
 <header>
     <nav class="navbar--top">
-        <ul>
-            <li><a href="/">Descubrir</a></li>
-            <li><a href="/">Nosotros</a></li>
-
-        </ul>
-        <figure>
-            <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
-        </figure>
-        <form action="/proyectos" method="get" id="search">
-        <fieldset>
-            <input type="text" name="name" id="name">
-            <button type="submit">buscar</button>
-        </fieldset>
-        
-        </form>
-        <ul>
-            <li><a href="#search"><i class="fas fa-search"></i></a></li>
-            <li><a href="#user"><i class="fas fa-user"></i></a></li>
-        </ul>
-        <ul id="user">
-            <li>
-                <a href="/ingresar">Ingresar</a>     
-            </li>
-            <li>
-                <a href="/ingresar">Unite</a>     
-            </li>
-        </ul>
+        <article>
+            <ul>
+                <li><a href="/">Descubrir</a></li>
+            </ul>
+        </article>
+            <ul>
+                <li><a href="/">Nosotros</a></li>
+            </ul>
+        <article>
+            <figure class="logo">
+                <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
+            </figure>
+        </article>
+        <article class="barraProyectos">
+            <form action="/proyectos" method="get" id="search">
+                <fieldset>
+                    <input type="text" name="name" id="name">
+                    <button type="submit">buscar</button>
+                </fieldset>
+            </form>
+        </article>   
+        <article>
+            <ul>
+                <li><a href="#search"><i class="fas fa-search"></i></a></li>
+            </ul>
+        </article> 
+        <article>
+            <ul>
+                <li><a href="#user"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </article>
+        <article id="user">
+            <ul>
+                <li>
+                    <a href="/ingresar">Ingresar</a>     
+                </li>
+                <li>
+                    <a href="/ingresar">Unite</a>     
+                </li>
+            </ul>
+        </article>
     </nav>
     <nav class="navbar-bottom">
-
-        <ul>
-            <li>
-                <a href="/proyectos/impresion">Impresion 3D</a>
-            </li>
-            <li>
-                <a href="/proyectos/robotica">Robotica</a>
-            </li>
-            <li>
-                <a href="/proyectos/electronica">electronica</a>
-            </li>
-        </ul>
+        <article>
+            <ul class="categoriasPrincipal">
+                <li>
+                    <a href="/proyectos/impresion">Impresion 3D</a>
+                </li>
+                <li>
+                    <a href="/proyectos/robotica">Robotica</a>
+                </li>
+                <li>
+                    <a href="/proyectos/electronica">Electronica</a>
+                </li>
+            </ul>
+        </article>
     </nav>
-    </header>
-    
-    
+</header>
+<section class="campañaDestacada margin-body">
+        <article>
+            <section>
+                <h2>
+                    Campaña Destacada!      
+                </h2>
+            </section>
+            <figure>
+                <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+            </figure>
+            <section>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fuga ullam necessitatibus dolorem aliquid ea fugit incidunt dolores. Explicabo sint modi eaque ad architecto beatae dolorum adipisci ratione, nisi doloremque!
+                </p>
+            </section>    
+        </article>
+</section>
+<section class="recomendaciones margin-body">
+    <section>
+        <h2>Recomendaciones</h2>
+    </section>
+    <section class="recomendaciones-1">
+        <article>
+            <figure>
+                <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+            </figure>
+            <section>
+                <p>Dungeons & Lasers Third Edition
+                    1.268 % financiado
+                    Por Archon Studio</p>
+                </section>
+                <section>
+                    <a href=""><i class="far fa-bookmark"></i></a>
+                    <a href=""><i class="far fa-thumbs-up"></i></a>
+                    <a href=""><i class="far fa-thumbs-down"></i></a>
+                </section>
+        </article>
+    </section> 
+    <section class="recomendaciones-2">
+        <article>
+            <figure>
+                <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+            </figure>
+            <section>
+                <p>Dungeons & Lasers Third Edition
+                    1.268 % financiado
+                    Por Archon Studio</p>
+                </section>
+                <section>
+                    <a href=""><i class="far fa-bookmark"></i></a>
+                    <a href=""><i class="far fa-thumbs-up"></i></a>
+                    <a href=""><i class="far fa-thumbs-down"></i></a>
+                </section>
+        </article>
+    </section>
+    <section class="recomendaciones-3">
+        <article>
+            <figure>
+                <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+            </figure>
+            <section>
+                <p>Dungeons & Lasers Third Edition
+                    1.268 % financiado
+                    Por Archon Studio</p>
+                </section>
+                <section>
+                    <a href=""><i class="far fa-bookmark"></i></a>
+                    <a href=""><i class="far fa-thumbs-up"></i></a>
+                    <a href=""><i class="far fa-thumbs-down"></i></a>
+                </section>
+        </article>
+    </section>
+</section>
+<section class="comoFunciona margin-body">
+    <section>
+        <h2>¿Como funciona TechnoStarter?</h2>
+    </section>
+    <article>
+        <figure>
+            <img src="/img/numero1TechnoStarter.png" alt="">
+        </figure>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, laudantium tenetur? Corrupti laboriosam pariatur repellat deserunt nesciunt quibusdam placeat, aliquam ipsa culpa minima nulla porro assumenda tempore voluptatem eaque et.</p>
+        </section>    </article>
+    <article>
+        <figure>
+            <img src="/img/numero2TechnoStarter.png" alt="">
+        </figure>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, laudantium tenetur? Corrupti laboriosam pariatur repellat deserunt nesciunt quibusdam placeat, aliquam ipsa culpa minima nulla porro assumenda tempore voluptatem eaque et.</p>
+        </section>    
+    </article>
+    <article>
+        <figure>
+            <img src="/img/numero3TechnoStarter.png" alt="">
+        </figure>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, laudantium tenetur? Corrupti laboriosam pariatur repellat deserunt nesciunt quibusdam placeat, aliquam ipsa culpa minima nulla porro assumenda tempore voluptatem eaque et.</p>
+        </section>
+    </article>
+</section>
 
-    
-    
+<section class="nuestrosPatrocinios margin-body">
+    <section>
+        <h2>Nuestros Patrocinios!</h2>
+    </section>
+    <article class="flex-patrocinios">
+        <section>
+            <a href=""><i class="fab fa-kickstarter fa-3x"></i></a>
+        </section>
+        <section>
+            <a href=""><i class="fab fa-amazon fa-3x"></i></a>
+        </section>
+        <section>
+            <a href=""><i class="fab fa-reddit-square fa-3x"></i></a>
+        </section>
+        <section>
+            <a href=""><i class="fab fa-patreon fa-3x"></i></a>
+        </section>
+    </article>
+</section>
+<footer>
+    <article>
+        <figure class="logo">
+            <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
+        </figure>
+    </article>
+
+
+</footer>
 </body>
 </html>

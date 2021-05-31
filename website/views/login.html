@@ -11,52 +11,86 @@
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-<header>
-    <nav class="navbar--top">
-        <ul>
-            <li><a href="/">Descubrir</a></li>
-            <li><a href="/">Nosotros</a></li>
-
-        </ul>
-        <figure>
-            <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
-        </figure>
-        <form action="/proyectos" method="get" id="search">
-        <fieldset>
-            <input type="text" name="name" id="name">
-            <button type="submit">buscar</button>
-        </fieldset>
-        
-        </form>
-        <ul>
-            <li><a href="#search"><i class="fas fa-search"></i></a></li>
-            <li><a href="#user"><i class="fas fa-user"></i></a></li>
-        </ul>
-        <ul id="user">
-            <li>
-                <a href="/ingresar">Ingresar</a>     
-            </li>
-            <li>
-                <a href="/ingresar">Unite</a>     
-            </li>
-        </ul>
-    </nav>
-    <nav class="navbar-bottom">
-
-        <ul>
-            <li>
-                <a href="/proyectos/impresion">Impresion 3D</a>
-            </li>
-            <li>
-                <a href="/proyectos/robotica">Robotica</a>
-            </li>
-            <li>
-                <a href="/proyectos/electronica">electronica</a>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navbar--top">
+            <article>
+                <ul>
+                    <li><a href="/">Descubrir</a></li>
+                </ul>
+            </article>
+                <ul>
+                    <li><a href="/">Nosotros</a></li>
+                </ul>
+            <article>
+                <figure class="logo">
+                    <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
+                </figure>
+            </article>
+            <article class="barraProyectos">
+                <form action="/proyectos" method="get" id="search">
+                    <fieldset>
+                        <input type="text" name="name" id="name">
+                        <button type="submit">buscar</button>
+                    </fieldset>
+                </form>
+            </article>   
+            <article>
+                <ul>
+                    <li><a href="#search"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </article> 
+            <article>
+                <ul>
+                    <li><a href="#user"><i class="fas fa-user"></i></a></li>
+                </ul>
+            </article>
+            <article id="user">
+                <ul>
+                    <li>
+                        <a href="/ingresar">Ingresar</a>     
+                    </li>
+                    <li>
+                        <a href="/ingresar">Unite</a>     
+                    </li>
+                </ul>
+            </article>
+        </nav>
+        <nav class="navbar-bottom">
+            <article>
+                <ul class="categoriasPrincipal">
+                    <li>
+                        <a href="/proyectos/impresion">Impresion 3D</a>
+                    </li>
+                    <li>
+                        <a href="/proyectos/robotica">Robotica</a>
+                    </li>
+                    <li>
+                        <a href="/proyectos/electronica">Electronica</a>
+                    </li>
+                </ul>
+            </article>
+        </nav>
     </header>
-    
+<form action="/" method="POST">
+
+    <fieldset>
+        <h3>Bienvenido devuelta!</h3>
+        <label for="nombreUsuario">Direccion de correo electronico</label>
+        <input type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario">
+    </fieldset>
+    <fieldset>
+        <label for="contraseña">Contraseña</label>
+        <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña">
+    </fieldset>
+    <button>Iniciar sesión<nav></nav></button>
+    <fieldset>
+        <input type="radio" name="recordarme" id="recordarme">
+        <label for="recordarme">Recordarme</label>
+        <p>¿Te olvidaste la contraseña?</p>
+        <p>Recuperala <a href="/">aca</a></p>
+    </fieldset>
+</form>
+<footer></footer>
     
 
     
