@@ -100,6 +100,10 @@ header li{
 .categoriasPrincipal{
     width: 100%;
     display: flex;
+    border-top: 1px solid grey;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
     flex-flow: row;
     justify-content: space-around;
 }
@@ -200,11 +204,10 @@ header li{
     }
 
     .navbar--top a{
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 600;
         color: #FF9900;
         text-decoration: none;
-        font-size: 20px;
     }
 
 
@@ -216,6 +219,10 @@ header li{
     .categoriasPrincipal{
         width: 100%;
         display: flex;
+        border-top: 1px solid grey;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid grey;
         flex-flow: row;
         justify-content: space-around;
     }
@@ -314,7 +321,7 @@ header li{
     }
 
     .navbar--top a{
-        font-size: 23px;
+        font-size: 19px;
         font-weight: 600;
         color: #FF9900;
         text-decoration: none;
