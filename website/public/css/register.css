@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Colores */
+/*  Azul Oscuro: #031927
+    Dorado: #FF9900
+    Color Crema: #FFF3DD
+    Blanco: #FFFFFF 
+*/
+
+/**************************************^^^BODY^^^********************************************/
+
+.margin-body {
+    margin: 10px;
+}
+
+/**************************************^^^FORM^^^********************************************/
+form fieldset{
+    border: none;
+}
+
+form{
+    padding: 20px;
+    border: 1px;
+    max-width: 500px;
+    height: 60vh;
+    background-color: #031927;
+}
+
+
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+/**************************************^^^BODY^^^********************************************/
+
+
+body{
+    text-align: left;
+    background-color: #FFF3DD;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto";
+    font-size: 18px;
+    min-height: 100vh;
+    width: 100vw; 
+    box-sizing: border-box;
+    color: #FF9900;
+}
+
+
+.categorias-body li{
+    height: 100%;
+   width: 33vw;
+   display: flex;
+   flex-flow: row;
+   justify-content: center;
+   align-items: flex-start;
+   box-sizing: border-box;
+  
+}
+
+.aceptoLosTerminos label{
+    font-size: 11px;
+}
+
+.aceptoLosTerminos{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+}
+
+.aceptoLosTerminos input{
+    width: 50px;
+}
+
+
+
+/********************************^^^Registracion^^^********************************************/
+
+button{
+    margin-left: 200px;
+}
+
+.tener{
+    text-align: center;
+}
+
+.registrateAqui{
+    height: -300px;
+    margin-top: vh;
+    width: 100%
+}
+
+.registrateAqui h2{
+    text-align: center;
+}
+
