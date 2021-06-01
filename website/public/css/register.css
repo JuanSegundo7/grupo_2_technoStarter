@@ -95,12 +95,12 @@ button{
 }
 
 .registrateAqui{
-    height: -300px;
     margin-top: vh;
     width: 100%
 }
 
 .registrateAqui h2{
+    height: -200px;
     text-align: center;
 }
 
