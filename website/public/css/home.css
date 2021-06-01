@@ -26,8 +26,7 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: "Roboto";
-    min-height: 100vh;
-    width: 100vw; 
+    min-height: 100vh; 
     box-sizing: border-box;
 }
 
@@ -177,20 +176,6 @@ body{
 @media (min-width: 361px){
     /**************************************^^^BODY^^^********************************************/
 
-
-    body{
-        background-color: #FFF3DD;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 0px;
-        padding: 0px;
-        font-family: "Roboto";
-        min-height: 100vh;
-        width: 100vw; 
-        box-sizing: border-box;
-    }
-
     .categorias-body li{
         height: 100%;
         width: 33vw;
@@ -321,19 +306,6 @@ body{
 @media (min-width: 769px){
     /**************************************^^^BODY^^^********************************************/
 
-
-    body{
-        background-color: #FFF3DD;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 0px;
-        padding: 0px;
-        font-family: "Roboto";
-        min-height: 100vh;
-        width: 100vw; 
-        box-sizing: border-box;
-    }
 
     .categorias-body li{
         height: 100%;

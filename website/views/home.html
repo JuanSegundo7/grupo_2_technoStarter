@@ -13,70 +13,79 @@
 <body>
 <header>
     <nav class="navbar--top">
-        <article class="descubrir">
-            <ul>
-                <li><a href="/">Descubrir</a></li>
-            </ul>
-        </article>
-        <article class="nosotros">
-            <ul>
-                <li><a href="/">Nosotros</a></li>
-            </ul>
-        </article>
-        <article>
-            <figure class="logo">
-                <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
-            </figure>
-        </article>
-        <article class="barraProyectos">
-            <form action="/proyectos" method="get" id="search">
-                <fieldset>
-                    <input type="text" name="name" id="name">
-                    <button type="submit">buscar</button>
-                </fieldset>
-            </form>
-        </article>   
-        <article>
-            <ul>
-                <li><a href="#search"><i class="fas fa-search fa-lg "></i></a></li>
-            </ul>
-        </article> 
-        <article>
-            <ul>
-                <li><a href="#user"><i class="fas fa-user fa-lg"></i></a></li>
-            </ul>
-        </article>
-        <article id="user">
-            <ul>
-                <li>
-                    <a href="/ingresar">Ingresar</a>     
-                </li>
-                <li>
-                    <a href="/ingresar">Unite</a>     
-                </li>
-            </ul>
-        </article>
-        <article class="burgerMenu">
-            <i class="fas fa-bars fa-lg"></i>
-        </article>
-    </nav>
-    <nav class="navbar-bottom">
-        <article>
-            <ul class="categoriasPrincipal">
-                <li>
-                    <a href="/proyectos/impresion">Impresion 3D</a>
-                </li>
-                <li>
-                    <a href="/proyectos/robotica">Robotica</a>
-                </li>
-                <li>
-                    <a href="/proyectos/electronica">Electronica</a>
-                </li>
-            </ul>
-        </article>
-    </nav>
+        <ul class="desktop-visible">
+            <li><a href="/proyectos">Descubrir</a></li>
+            <li><a href="/">Nosotros</a></li>
+        </ul>
+        <figure class="desktop-visible">
+            <a href="#"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
+        </figure>
+        <figure class="mobile-visible">
+            <a href="#"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
+        </figure>
+        <form action="/proyectos/buscar" method="get" id="search-desktop" class="desktop-visible hover-hidden">
+			<fieldset>
+				<input type="text" name="keyword" id="keyword">
+				<button type="submit"><i class="fas fa-search"></i></button>
+			</fieldset>
+		</form>
+		<ul class="navbar-icons">
+			<li class="mobile-visible">
+				<a href="/">
+					<i class="fas fa-home"></i>
+				</a>
+			</li>
+			<li class="desktop-visible">
+				<a href="#search-desktop">
+					<i class="fas fa-search"></i>
+				</a>
+			</li>
+			<li class="mobile-visible">
+				<a href="#search">
+					<i class="fas fa-search"></i>
+				</a>
+			</li>
+			<li>
+				<a href="#user">
+					<i class="fas fa-user"></i>
+				</a>
+			</li>
+			<li class="mobile-visible">
+				<a href="#menu">
+					<i class="fas fa-bars"></i>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<form action="/proyectos/buscar" method="get" id="search" class="mobile-visible hover-hidden">
+		<fieldset>
+			<input type="text" name="keyword" id="keyword">
+			<button type="submit"><i class="fas fa-search"></i></button>
+		</fieldset>
+	</form>
+	<nav id="user" class="hover-hidden">
+		<ul>
+			<li><a href="/usuario/ingresar">ingresar</a></li>
+			<li><a href="/usuario/unite">unite</a></li>
+		</ul>
+	</nav>
+	<nav class="hover-hidden navbar-bottom" id="menu">
+		<ul>
+			<li><a href="/proyectos/impresion">impresion 3D</a></li>
+			<li><a href="/proyectos/robotica">robotica</a></li>
+			<li><a href="/proyectos/electronica">electronica</a></li>
+		</ul>
+	</nav>
+	<nav class="desktop-visible navbar-bottom">
+		<ul>
+			<li><a href="/proyectos/impresion">impresion 3D</a></li>
+			<li><a href="/proyectos/robotica">robotica</a></li>
+			<li><a href="/proyectos/electronica">electronica</a></li>
+		</ul>
+	</nav>
 </header>
-<section class="campañaDestacada margin-body">
+<main>
+    <section class="campañaDestacada margin-body">
         <section>
             <h2>
                 Campaña Destacada!      
@@ -92,27 +101,12 @@
                 </p>
             </section>    
         </article>
-</section>
-<section class="recomendaciones margin-body">
-    <section>
-        <h2>Recomendaciones</h2>
     </section>
-    <section class="recomendaciones-1">
-            <figure>
-                <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
-            </figure>
-            <section>
-                <p>Dungeons & Lasers Third Edition
-                    1.268 % financiado
-                    Por Archon Studio</p>
-            </section>
-            <section class="flex-thumbs">
-                    <a href=""><i class="far fa-bookmark"></i></a>
-                    <a href=""><i class="far fa-thumbs-up"></i></a>
-                    <a href=""><i class="far fa-thumbs-down"></i></a>
-            </section>
-    </section> 
-    <section class="recomendaciones-2">
+    <section class="recomendaciones margin-body">
+        <section>
+            <h2>Recomendaciones</h2>
+        </section>
+        <section class="recomendaciones-1">
             <figure>
                 <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
             </figure>
@@ -126,17 +120,32 @@
                     <a href=""><i class="far fa-thumbs-up"></i></a>
                     <a href=""><i class="far fa-thumbs-down"></i></a>
                 </section>
-    </section>
-    <section class="recomendaciones-3">
-            <figure>
-                <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
-            </figure>
-            <section>
-                <p>Dungeons & Lasers Third Edition
-                    1.268 % financiado
-                    Por Archon Studio</p>
+            </section> 
+            <section class="recomendaciones-2">
+                <figure>
+                    <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+                </figure>
+                <section>
+                    <p>Dungeons & Lasers Third Edition
+                        1.268 % financiado
+                        Por Archon Studio</p>
+                    </section>
+                    <section class="flex-thumbs">
+                        <a href=""><i class="far fa-bookmark"></i></a>
+                        <a href=""><i class="far fa-thumbs-up"></i></a>
+                        <a href=""><i class="far fa-thumbs-down"></i></a>
+                    </section>
                 </section>
-                <section class="flex-thumbs">
+                <section class="recomendaciones-3">
+                    <figure>
+                        <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+                    </figure>
+                    <section>
+                        <p>Dungeons & Lasers Third Edition
+                            1.268 % financiado
+                            Por Archon Studio</p>
+                        </section>
+                        <section class="flex-thumbs">
                     <a href=""><i class="far fa-bookmark"></i></a>
                     <a href=""><i class="far fa-thumbs-up"></i></a>
                     <a href=""><i class="far fa-thumbs-down"></i></a>
@@ -213,10 +222,11 @@
         <article>
             <ul><li>Condiciones</li></ul>
         </article>
-            
+        
     </section>
-
-
+</main>
 </footer>
 </body>
 </html>
+    
+    
