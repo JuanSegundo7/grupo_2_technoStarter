@@ -7,11 +7,25 @@
     Blanco: #FFFFFF 
 */
 
- /**************************************^^^BODY^^^********************************************/
+/**************************************^^^BODY^^^********************************************/
+
+.margin-body {
+    margin: 10px;
+  
+}
+
+main{
+    margin-top: 20vh;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
 
-
- body{
+body{
     text-align: left;
     background-color: #FFF3DD;
     display: flex;
@@ -35,26 +49,38 @@ form fieldset{
 
 form{
     border-radius: 25px;
-    padding: 20px;
+    padding: 20px 10px 20px 10px;
     border: 1px;
+    margin: 10px;
     max-width: 500px;
-    height: 50vh;
     background-color: #031927;
+    font-size: 14px;
 }
 
 
 input{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    border-radius: 14px;
+    padding: 8px 10px;
     box-sizing: border-box;
 }
 
-/**************************************^^^BUTTON^^^********************************************/
-
-button{
-    margin-left: 200px;
+#nombreUsuario{
+    width: 100%;
+    margin-top: 10px;
 }
+
+#contraseña{
+    width: 100%;
+    margin-top: 10px;
+}
+
+#contraseña label{
+    margin-top: 10px;
+}
+
+
+
+/**************************************^^^BUTTON^^^********************************************/
 
 
 

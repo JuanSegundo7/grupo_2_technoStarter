@@ -9,349 +9,133 @@
 /************************************^^HEADER^^^********************************************/
 
 
-header * {
-    font-family: "Roboto";
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+.mobile-visible{
+    display: inline-block;
 }
 
-header{
-    background-color: #031927;
+.desktop-visible{
+    display: none;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+
+header {
+	display: flex;
+    position: fixed;
+	flex-wrap: wrap;
     width: 100%;
-    height: 50px;
+	flex-direction: column;
+	min-height: 10vh;
+	background-color: #031927;
+	box-shadow: 0 10px 8px 0 rgba(146, 144, 144, 0.7);
+}
+
+header input{
+    border-radius: 12px;
+    background-color: #ebebeb;
+    padding: 7px 7px;
+ 
+}
+
+header fieldset{
+    border: 0px;
     padding: 10px;
-
 }
 
-#user {
-    order: 0;
+header nav {
+	display: flex;
+	height: 10vh;
+	justify-content: space-between;
+	align-items: center;
 }
 
-#search {
-    order: 0;
+.hover-hidden {
+	visibility: hidden;
+	height: 0vh;
+	overflow: hidden;
+	transition: all 0.3s ease-out;
 }
 
-.burgerMenu{
-
-    background-color: #FF9900;
-    color: white;
-    display: block;
-    padding: 8px 8px;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 14px;
-    order: 0;
+.hover-hidden:target {
+	visibility: visible;
+	height: 10vh;
 }
 
-header li{
-    list-style-type: none;
+/**********************************^^^LOGO-^^^********************************************/
+header img {
+	max-height: 100%;
+	width: 80%;
+	margin-top: 20px;
+	margin: 10px;
 }
 
 .logo{
-    order: 0;
+	width: 93px;
+}
+/**********************************^^^NAVBAR-TOP^^^********************************************/
+
+.navbar-icons {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 20px;
 }
 
-.logo img{
-    width: 80px;
-    order: 0;
-    
+.navbar-icons a{
+	color: #FF9900;
+	font-size: 20px;
+	list-style-type: none;
 }
 
-.barraProyectos{
-    display: none;
-
+.navbar-icons li{
+	list-style-type: none;
 }
 
-/**********************************^^NAVBAR-TOP^^^********************************************/
+.navbar-icons i{
+	margin: 10px;
+}
+
+/**********************************^^^NAVBAR-BOTTOM^^^********************************************/
+
+
+
+
+/**********************************^^^USER^^^********************************************/
 
 #user{
-    display: none;
+	margin-left: 10px;
 }
 
-.descubrir{
-    display: none;
-}
-
-.nosotros{
-    display: none;
-}
-
-.navbar--top{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.navbar--top a{
-    font-size: 18px;
-    font-weight: 600;
-    color: #FF9900;
-    text-decoration: none;
+#user a{
+	color: #FF9900;
+	text-decoration: none;
+	font-weight: 400;
 }
 
 
+/**********************************^^^MENU^^^********************************************/
 
 
-/**********************************^^NAVBAR-BOTTOM^^^********************************************/
-/***********************************^^CATEGORIAS^^^********************************************/
-
-.categoriasPrincipal{
-    width: 100%;
-    display: flex;
-    border-top: 1px solid grey;
-    margin-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid grey;
-    flex-flow: row;
-    justify-content: space-around;
+#menu{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	width: 100%;
 }
 
-.categoriasPrincipal li{
-    color: white;
-    font-weight: 400;
-    margin-top: 15px;
-   
-  
-}
-.categoriasPrincipal a{
-    color: #FF9900;
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 10px;
-   
+#menu li{
+	flex-direction: row;
+	list-style-type: none;
 }
 
-/**********************************^^^MEDIAS-QUERYS^^^********************************************/
-
-
-/**************************************^^^TABLET^^^********************************************/
-
-
-@media (min-width: 361px){
-    
-    /************************************^^HEADER^^^********************************************/
-
-
-    header * {
-        font-family: "Roboto";
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
-
-    header{
-        background-color: #031927;
-        width: 100%;
-        height: 50px;
-        padding: 10px;
-
-    }
-
-
-
-    header li{
-        list-style-type: none;
-    }
-
-    .logo{
-        width: 80px;
-        box-sizing:content-box ;
-    }
-
-    .logo img{
-        width: 80px;
-    
-    }
-
-    .barraProyectos{
-        display: none;
-
-    }
-
-    
-    .burgerMenu{
-        display: none;
-        background-color: #FF9900;
-        color: white;
-        padding: 8px 8px;
-        border-radius: 8px;
-        text-align: center;
-        font-size: 14px;
-            
-    }
-
-    /**********************************^^NAVBAR-TOP^^^********************************************/
-
-    #user{
-        display: none;
-    }
-
-    .descubrir{
-        display: block;
-    }
-    
-    .nosotros{
-        display: block;
-    }
-
-    .navbar--top{
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .navbar--top a{
-        font-size: 17px;
-        font-weight: 600;
-        color: #FF9900;
-        text-decoration: none;
-    }
-
-
-
-
-    /**********************************^^NAVBAR-BOTTOM^^^********************************************/
-    /***********************************^^CATEGORIAS^^^********************************************/
-
-    .categoriasPrincipal{
-        width: 100%;
-        display: flex;
-        border-top: 1px solid grey;
-        margin-top: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid grey;
-        flex-flow: row;
-        justify-content: space-around;
-    }
-
-    .categoriasPrincipal li{
-        color: white;
-        font-weight: 400;
-        margin-top: 15px;
-    }
-
-    .categoriasPrincipal a{
-        color: #FF9900;
-        text-decoration: none;
-        font-weight: 500;
-        margin-top: 10px;
-   
-    }
-
-
-}
-
-/**************************************^^^DESKTOP^^^********************************************/
-
-@media (min-width: 769px){
-
-    /************************************^^HEADER^^^********************************************/
-
-
-    header * {
-        font-family: "Roboto";
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
-
-    header{
-        background-color: #031927;
-        width: 100%;
-        height: 50px;
-        padding: 10px;
-    }
-
-
-
-    header li{
-        list-style-type: none;
-    }
-
-    .logo{
-        width: 80px;
-        box-sizing:content-box ;
-    }
-
-    .logo img{
-        width: 80px;
-    
-    }
-
-    .barraProyectos{
-        display: none;
-
-    }
-
-    .burgerMenu{
-        display: none;
-        background-color: #FF9900;
-        color: white;
-        padding: 8px 8px;
-        border-radius: 8px;
-        text-align: center;
-        font-size: 14px;
-            
-    }
-
-
-
-    /**********************************^^NAVBAR-TOP^^^********************************************/
-
-    #user{
-        display: none;
-    }
-
-    .descubrir{
-        display: block;
-    }
-    
-    .nosotros{
-        display: block;
-    }
-
-    .navbar--top{
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .navbar--top a{
-        font-size: 19px;
-        font-weight: 600;
-        color: #FF9900;
-        text-decoration: none;
-    }
-
-
-
-
-    /**********************************^^NAVBAR-BOTTOM^^^********************************************/
-    /***********************************^^CATEGORIAS^^^********************************************/
-
-    .categoriasPrincipal{
-        width: 100%;
-        display: flex;
-        flex-flow: row;
-        justify-content: space-around;
-    }
-
-    .categoriasPrincipal li{
-        color: white;
-        font-weight: 400;
-        margin-top: 15px;
-    }
-
-    .categoriasPrincipal a{
-        color: #FF9900;
-        text-decoration: none;
-        font-weight: 500;
-        margin-top: 10px;
-   
-    }
-        
+#menu a{
+	color: #FF9900;
+	font-weight: 400;
+	text-decoration: none ;
 }

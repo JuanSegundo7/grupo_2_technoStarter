@@ -26,9 +26,16 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: "Roboto";
-    min-height: 100vh;
-    width: 100vw; 
+    min-height: 100vh; 
     box-sizing: border-box;
+}
+
+main{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -47,9 +54,7 @@ body{
 /********************************^^^CAMPAÑA-DESTACADA^^^********************************************/
 
 .campañaDestacada{
-    margin-top: 20vh;
-
-    width: 100%
+    margin-top: 25vh;
 }
 
 .campañaDestacada article{
@@ -73,9 +78,6 @@ body{
 
 
 
-.recomendaciones{
-    width: 100%;
-}
 
 .recomendaciones-1{
     margin-top: 10px;
@@ -100,7 +102,7 @@ body{
 }
 
 .recomendaciones img{
-    width: 90%;
+    width: 100%;
     border-radius: 25px;
     border: 1px solid black;
     
@@ -110,6 +112,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 10px;
 }
 
 .flex-thumbs i{
@@ -135,9 +138,9 @@ body{
 }
 
 .flex-comoFunciona p{
-    margin-left: 3vw;
-    margin-right: 3vw;
+    width: 95%;
 }
+
 
 .comoFunciona h2{
     text-align: center;
@@ -176,20 +179,6 @@ body{
 
 @media (min-width: 361px){
     /**************************************^^^BODY^^^********************************************/
-
-
-    body{
-        background-color: #FFF3DD;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 0px;
-        padding: 0px;
-        font-family: "Roboto";
-        min-height: 100vh;
-        width: 100vw; 
-        box-sizing: border-box;
-    }
 
     .categorias-body li{
         height: 100%;
@@ -280,6 +269,7 @@ body{
 
     .flex-comoFunciona p{
         font-size: 15px;
+        width: 50%;
         
     }
 
@@ -321,19 +311,6 @@ body{
 @media (min-width: 769px){
     /**************************************^^^BODY^^^********************************************/
 
-
-    body{
-        background-color: #FFF3DD;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 0px;
-        padding: 0px;
-        font-family: "Roboto";
-        min-height: 100vh;
-        width: 100vw; 
-        box-sizing: border-box;
-    }
 
     .categorias-body li{
         height: 100%;
