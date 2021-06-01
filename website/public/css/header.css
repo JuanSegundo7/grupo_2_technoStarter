@@ -22,33 +22,36 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
-body {
-	min-height: 100vh;
-	font-family: "Roboto", sans-serif;
-	background: #000;
-}
+
 
 header {
 	display: flex;
+    position: fixed;
 	flex-wrap: wrap;
     width: 100%;
 	flex-direction: column;
 	min-height: 10vh;
 	background-color: #031927;
-	box-shadow: 0 10px 8px 0 rgba(220, 220, 220, 0.7);
+	box-shadow: 0 10px 8px 0 rgba(146, 144, 144, 0.7);
 }
 
+header input{
+    border-radius: 12px;
+    background-color: #ebebeb;
+    padding: 7px 7px;
+ 
+}
 
+header fieldset{
+    border: 0px;
+    padding: 10px;
+}
 
 header nav {
 	display: flex;
 	height: 10vh;
+	justify-content: space-between;
 	align-items: center;
-}
-
-header img {
-	max-height: 100%;
-    width: 50%;
 }
 
 .hover-hidden {
@@ -63,7 +66,76 @@ header img {
 	height: 10vh;
 }
 
+/**********************************^^^LOGO-^^^********************************************/
+header img {
+	max-height: 100%;
+	width: 80%;
+	margin-top: 20px;
+	margin: 10px;
+}
+
+.logo{
+	width: 93px;
+}
+/**********************************^^^NAVBAR-TOP^^^********************************************/
+
 .navbar-icons {
 	display: flex;
 	justify-content: space-between;
+	margin-right: 20px;
+}
+
+.navbar-icons a{
+	color: #FF9900;
+	font-size: 20px;
+	list-style-type: none;
+}
+
+.navbar-icons li{
+	list-style-type: none;
+}
+
+.navbar-icons i{
+	margin: 10px;
+}
+
+/**********************************^^^NAVBAR-BOTTOM^^^********************************************/
+
+
+
+
+/**********************************^^^USER^^^********************************************/
+
+#user{
+	margin-left: 10px;
+}
+
+#user a{
+	color: #FF9900;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+
+/**********************************^^^MENU^^^********************************************/
+
+
+#menu{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+#menu li{
+	flex-direction: row;
+	list-style-type: none;
+}
+
+#menu a{
+	color: #FF9900;
+	font-weight: 400;
+	text-decoration: none ;
 }
