@@ -43,16 +43,18 @@ body{
 
 /**************************************^^^FORM^^^********************************************/
 
-form fieldset{
+#form-principal fieldset{
     border: none;
 }
 
-form{
+#form-principal{
     border-radius: 25px;
     border: 1px;
     max-width: 500px;
     background-color: #031927;
     font-size: 14px;
+    margin: 15px;
+    padding: 10px;
 }
 
 
@@ -60,6 +62,7 @@ input{
     border-radius: 14px;
     padding: 8px 10px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 #nombreUsuario{
@@ -76,10 +79,42 @@ input{
     margin-top: 10px;
 }
 
-
-
 /**************************************^^^BUTTON^^^********************************************/
 
+#flex-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+
+#flex-button button{
+    color: black;
+    background-color: #FF9900;
+    padding: 5px 5px;
+    border-radius: 15px;
+    position: relative;
+    order: 2;
+    font-family: "Roboto";
+    font-weight: 400;
+}
+
+#flex-button fieldset{
+    position: relative;
+    order: 1;
+}
+
+/**************************************^^^RADIO-BUTTON^^^********************************************/
+
+
+#recordarme{
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+
+
+/**************************************^^^OLVIDAR-CONTRASEÑA^^^********************************************/
 
 
 

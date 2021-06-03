@@ -61,7 +61,7 @@ main{
     margin-top: 10px;
     padding: 10px;
     border: 1px solid grey;
-
+    border-radius: 15px;
 }
 
 .campañaDestacada h2{
@@ -69,32 +69,32 @@ main{
 }
 
 .campañaDestacada img{
-    width: 90%;
+    width: 100%;
     border-radius: 25px;
     border: 1px solid black;  
 }
 
 /********************************^^^RECOMENDACIONES^^^********************************************/
 
-
-
-
 .recomendaciones-1{
     margin-top: 10px;
     padding: 10px;
     border: 1px solid grey;
+    border-radius: 15px;
 }
 
 .recomendaciones-2{
     margin-top: 10px;
     padding: 10px;
     border: 1px solid grey;
+    border-radius: 15px;
 }
 
 .recomendaciones-3{
     margin-top: 10px;
     padding: 10px;
     border: 1px solid grey;
+    border-radius: 15px;
 }   
 
 .recomendaciones h2{
@@ -137,8 +137,13 @@ main{
     margin-top: 10vh;
 }
 
+.flex-comoFunciona figure{
+    width: 50%;
+}
+
 .flex-comoFunciona p{
-    width: 95%;
+    width: 100;
+    padding: 10px;
 }
 
 
@@ -148,11 +153,15 @@ main{
 
 
 .comoFunciona img{
-   width: 30%;
-   margin-left: 25vw;
-
+    width: 4em;
+    margin-left: 40vw;
+    margin-bottom: 10px;
 }
 /********************************^^^PATROCINADORES^^^********************************************/
+
+.nuestrosPatrocinios{
+    margin-top: 10vh;
+}
 
 .nuestrosPatrocinios h2{
     text-align: center;
@@ -195,7 +204,7 @@ main{
     
     .flex-camapañaDestacada{
         display: flex;
-        flex-direction: row;
+        flex-direction: row;    
     }
 
     .flex-camapañaDestacada figure{
@@ -213,6 +222,9 @@ main{
         box-sizing: content-box;
     }   
 
+    .campañaDestacada article{
+        border-radius: 15px;
+    }
 
     .campañaDestacada h2{
         text-align: center;
@@ -222,16 +234,27 @@ main{
         width: 100%;
     }
 
+    /********************************^^^RECOMENDACIONES-1-2-3^^^********************************************/
+
+    .recomendaciones-1{
+        border-radius: 15px;
+    }
+    
+    .recomendaciones-2{
+        border-radius: 15px;
+    }
+    
+    .recomendaciones-3{
+        border-radius: 15px;
+    }   
+    
+
     /********************************^^^RECOMENDACIONES^^^********************************************/
+
 
     .flex-recomendaciones{
         display: flex;
         flex-direction: row;
-    }
-
-    
-    .recomendaciones{
-        padding: 10px;
     }
     
     .recomendaciones h2{
@@ -291,8 +314,8 @@ main{
     }
 
     .comoFunciona img{
-        width: 38%;
-        margin-left: 5vw;
+        width: 4em;
+        margin-left: 8vw;
         margin-bottom: 10px;
     }
     /********************************^^^PATROCINADORES^^^********************************************/
@@ -362,7 +385,7 @@ main{
     .campañaDestacada article {
         border: 1px solid grey;
         border-radius: 15px;
-
+        margin: 10px;
     }
 
     .campañaDestacada h2{
@@ -408,7 +431,7 @@ main{
     }
     
     .recomendaciones-1{
-        margin-top: 10px;
+        margin: 10px;
         padding: 10px;
         border-radius: 15px;
         border: 1px solid grey;
@@ -417,10 +440,10 @@ main{
     /********************************^^^RECOMENDACIONES-2^^^********************************************/
 
     .recomendaciones-2{
-        margin-top: 10px;
         padding: 10px;
         border: 1px solid grey;
         border-radius: 15px;
+        margin: 10px;
 
     }
 
@@ -442,11 +465,10 @@ main{
     /********************************^^^RECOMENDACIONES-3^^^********************************************/
     
     .recomendaciones-3{
-        margin-top: 10px;
         padding: 10px;
         border: 1px solid grey;
         border-radius: 15px;
-
+        margin: 10px;
     } 
 
     .recomendaciones-3 img{
@@ -498,7 +520,7 @@ main{
 
 
     .comoFunciona img{
-        width: 35%;
+        width: 6em;
         margin-left: 9vw;
         margin-bottom: 15px;
 
