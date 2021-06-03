@@ -1,131 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechnoStarter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/footer.css">
 </head>
+
 <body>
-<header>
-    <nav class="navbar--top">
-        <ul class="desktop-visible">
-            <li><a href="/proyectos/Descubrir">Descubrir</a></li>
-            <li><a href="/proyectos/Nosotros">Nosotros</a></li>
-        </ul>
-        <figure class="desktop-visible">
-            <a href="#"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
-        </figure>
-        <figure class="mobile-visible logo">
-            <a href="#"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
-        </figure>
-        <form action="/proyectos/buscar" method="get" id="search-desktop" class="desktop-visible hover-hidden">
-			<fieldset>
-				<input type="text" name="keyword" id="keyword">
-				<button type="submit"><i class="fas fa-search"></i></button>
-			</fieldset>
-		</form>
-		<ul class="navbar-icons">
-			<li class="mobile-visible">
-				<a href="/">
-					<i class="fas fa-home"></i>
-				</a>
-			</li>
-			<li class="desktop-visible">
-				<a href="#search-desktop">
-					<i class="fas fa-search"></i>
-				</a>
-			</li>
-			<li class="mobile-visible">
-				<a href="#search">
-					<i class="fas fa-search"></i>
-				</a>
-			</li>
-			<li>
-				<a href="#user">
-					<i class="fas fa-user"></i>
-				</a>
-			</li>
-			<li class="mobile-visible">
-				<a href="#menu">
-					<i class="fas fa-bars"></i>
-				</a>
-			</li>
-		</ul>
-	</nav>
-	<form action="/proyectos/buscar" method="get" id="search" class="mobile-visible hover-hidden">
-		<fieldset>
-			<input type="text" name="keyword" id="keyword">
-			<button type="submit"><i class="fas fa-search"></i></button>
-		</fieldset>
-	</form>
-	<nav id="user" class="hover-hidden">
-		<ul>
-			<li><a href="/ingresar">ingresar</a></li>
-			<li><a href="/registrar">unite</a></li>
-		</ul>
-	</nav>
-	<nav class="hover-hidden navbar-bottom" id="menu">
-		<ul>
-			<li><a href="/proyectos/impresion">impresion 3D</a></li>
-			<li><a href="/proyectos/robotica">robotica</a></li>
-			<li><a href="/proyectos/electronica">electronica</a></li>
-		</ul>
-	</nav>
-	<nav class="desktop-visible navbar-bottom">
-		<ul>
-			<li><a href="/proyectos/impresion">impresion 3D</a></li>
-			<li><a href="/proyectos/robotica">robotica</a></li>
-			<li><a href="/proyectos/electronica">electronica</a></li>
-		</ul>
-	</nav>
-</header>
-<main>
-    <section class="campañaDestacada margin-body">
-        <section>
-            <h2>
-                Campaña Destacada!      
-            </h2>
-        </section>
-        <article>
-            <figure>
-                <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+    <header>
+        <nav class="navbar--top">
+            <ul class="desktop-visible">
+                <li><a href="/proyectos/Descubrir">Descubrir</a></li>
+                <li><a href="/proyectos/Nosotros">Nosotros</a></li>
+            </ul>
+            <figure class="desktop-visible logo">
+                <a href="#"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
             </figure>
-            <section>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fuga ullam necessitatibus dolorem aliquid ea fugit incidunt dolores. Explicabo sint modi eaque ad architecto beatae dolorum adipisci ratione, nisi doloremque!
-                </p>
-            </section>    
-        </article>
-    </section>
-    <section class="recomendaciones margin-body">
-        <section>
-            <h2>Recomendaciones</h2>
-        </section>
-        <section class="recomendaciones-1">
-            <figure>
-                <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+            <figure class="mobile-visible logo">
+                <a href="#"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
             </figure>
+            <form action="/proyectos/buscar" method="get" id="search-desktop" class="desktop-visible hover-hidden">
+                <fieldset>
+                    <input type="text" name="keyword" id="keyword">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </fieldset>
+            </form>
+            <ul class="navbar-icons">
+                <li class="mobile-visible">
+                    <a href="/">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li class="desktop-visible">
+                    <a href="#search-desktop">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li class="mobile-visible">
+                    <a href="#search">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#cart">
+                        <i class="fas fa-shopping-cart"></i></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#user">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+                <li class="mobile-visible">
+                    <a href="#menu">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <form action="/proyectos/buscar" method="get" id="search" class="mobile-visible hover-hidden">
+            <fieldset>
+                <input type="text" name="keyword" id="keyword">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </fieldset>
+        </form>
+        <nav id="user" class="hover-hidden">
+            <ul>
+                <li><a href="/ingresar">ingresar</a></li>
+                <li><a href="/registrar">unite</a></li>
+            </ul>
+        </nav>
+        <nav class="hover-hidden navbar-bottom" id="menu">
+            <ul>
+                <li><a href="/proyectos/impresion">impresion 3D</a></li>
+                <li><a href="/proyectos/robotica">robotica</a></li>
+                <li><a href="/proyectos/electronica">electronica</a></li>
+            </ul>
+        </nav>
+        <nav class="desktop-visible navbar-bottom">
+            <ul>
+                <li><a href="/proyectos/impresion">impresion 3D</a></li>
+                <li><a href="/proyectos/robotica">robotica</a></li>
+                <li><a href="/proyectos/electronica">electronica</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="campañaDestacada margin-body">
             <section>
-                <p>Dungeons & Lasers Third Edition
-                    1.268 % financiado
-                    Por Archon Studio</p>
+                <h2>
+                    Campaña Destacada!
+                </h2>
+            </section>
+            <article class="flex-camapañaDestacada">
+                <figure>
+                    <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+                </figure>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fuga ullam necessitatibus
+                        dolorem aliquid ea fugit incidunt dolores. Explicabo sint modi eaque ad architecto beatae
+                        dolorum adipisci ratione, nisi doloremque!
+                    </p>
+            </article>
+        </section>
+        <section class="recomendaciones margin-body">
+            <section>
+                <h2>Recomendaciones</h2>
+            </section>
+            <section class="recomendaciones-1">
+                <section class="flex-recomendaciones">
+                    <figure>
+                        <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+                    </figure>
+                    <p>Dungeons & Lasers Third Edition
+                        1.268 % financiado
+                        Por Archon Studio.</p>
                 </section>
                 <section class="flex-thumbs">
                     <a href=""><i class="far fa-bookmark"></i></a>
                     <a href=""><i class="far fa-thumbs-up"></i></a>
                     <a href=""><i class="far fa-thumbs-down"></i></a>
                 </section>
-            </section> 
+            </section>
             <section class="recomendaciones-2">
-                <figure>
-                    <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
-                </figure>
-                <section>
+                <section class="flex-recomendaciones">
+                    <figure>
+                        <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+                    </figure>
                     <p>Dungeons & Lasers Third Edition
                         1.268 % financiado
                         Por Archon Studio</p>
@@ -137,95 +146,107 @@
                     </section>
                 </section>
                 <section class="recomendaciones-3">
-                    <figure>
-                        <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
-                    </figure>
-                    <section>
+                    <section class="flex-recomendaciones">
+                        <figure>
+                            <img src="/img/zapatillaModerna.jpg" alt="imagen de prueba">
+                        </figure>
                         <p>Dungeons & Lasers Third Edition
                             1.268 % financiado
                             Por Archon Studio</p>
                         </section>
                         <section class="flex-thumbs">
-                    <a href=""><i class="far fa-bookmark"></i></a>
-                    <a href=""><i class="far fa-thumbs-up"></i></a>
-                    <a href=""><i class="far fa-thumbs-down"></i></a>
+                            <a href=""><i class="far fa-bookmark"></i></a>
+                            <a href=""><i class="far fa-thumbs-up"></i></a>
+                            <a href=""><i class="far fa-thumbs-down"></i></a>
+                        </section>
+                    </section>
                 </section>
-    </section>
-</section>
-<section class="comoFunciona margin-body">
-    <section>
-        <h2>¿Como funciona TechnoStarter?</h2>    
-    </section>
-    <section class="flex-comoFunciona">
-         <article>
-            <figure>
-                <img src="/img/numero1TechnoStarter.png" alt="">
-            </figure>
+        </section>
+        <section class="comoFunciona margin-body">
             <section>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, laudantium tenetur? Corrupti laboriosam pariatur repellat deserunt nesciunt quibusdam placeat, aliquam ipsa culpa minima nulla porro assumenda tempore voluptatem eaque et.</p>
-            </section>    
-        </article>
-        <article>
-            <figure>
-                <img src="/img/numero2TechnoStarter.png" alt="">
-            </figure>
-            <section>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, laudantium tenetur? Corrupti laboriosam pariatur repellat deserunt nesciunt quibusdam placeat, aliquam ipsa culpa minima nulla porro assumenda tempore voluptatem eaque et.</p>
-            </section>    
-        </article>
-        <article>
-            <figure>
-                <img src="/img/numero3TechnoStarter.png" alt="">
-            </figure>
-            <section>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, laudantium tenetur? Corrupti laboriosam pariatur repellat deserunt nesciunt quibusdam placeat, aliquam ipsa culpa minima nulla porro assumenda tempore voluptatem eaque et.</p>
+                <h2>¿Como funciona TechnoStarter?</h2>
             </section>
-        </article>
-    </section>
-</section>
+            <section class="flex-comoFunciona">
+                <article>
+                    <figure>
+                        <img src="/img/numero1TechnoStarter.png" alt="">
+                    </figure>
+                    <section>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, laudantium tenetur? Corrupti
+                            laboriosam pariatur repellat deserunt nesciunt quibusdam placeat, aliquam ipsa culpa minima
+                            nulla porro assumenda tempore voluptatem eaque et.</p>
+                    </section>
+                </article>
+                <article>
+                    <figure>
+                        <img src="/img/numero2TechnoStarter.png" alt="">
+                    </figure>
+                    <section>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, laudantium tenetur? Corrupti
+                            laboriosam pariatur repellat deserunt nesciunt quibusdam placeat, aliquam ipsa culpa minima
+                            nulla porro assumenda tempore voluptatem eaque et.</p>
+                    </section>
+                </article>
+                <article>
+                    <figure>
+                        <img src="/img/numero3TechnoStarter.png" alt="">
+                    </figure>
+                    <section>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, laudantium tenetur? Corrupti
+                            laboriosam pariatur repellat deserunt nesciunt quibusdam placeat, aliquam ipsa culpa minima
+                            nulla porro assumenda tempore voluptatem eaque et.</p>
+                    </section>
+                </article>
+            </section>
+        </section>
 
-<section class="nuestrosPatrocinios margin-body">
-    <section>
-        <h2>Nuestros Patrocinios!</h2>
-    </section>
-    <article class="flex-patrocinios">
-        <section>
-            <a href=""><i class="fab fa-kickstarter fa-3x"></i></a>
+        <section class="nuestrosPatrocinios margin-body">
+            <section>
+                <h2>Nuestros Patrocinios!</h2>
+            </section>
+            <article class="flex-patrocinios">
+                <section>
+                    <a href="https://www.kickstarter.com/"><i class="fab fa-kickstarter fa-3x"></i></a>
+                </section>
+                <section>
+                    <a href="https://www.amazon.com/"><i class="fab fa-amazon fa-3x"></i></a>
+                </section>
+                <section>
+                    <a href="https://www.reddit.com/"><i class="fab fa-reddit-square fa-3x"></i></a>
+                </section>
+                <section>
+                    <a href="https://www.patreon.com/"><i class="fab fa-patreon fa-3x"></i></a>
+                </section>
+            </article>
         </section>
+    </main>
+    <footer>
         <section>
-            <a href=""><i class="fab fa-amazon fa-3x"></i></a>
+            <figure class="logo-footer">
+                <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
+            </figure>
         </section>
-        <section>
-            <a href=""><i class="fab fa-reddit-square fa-3x"></i></a>
+        <section class="section-p-footer">
+            <p>Av. Carlos Sinsa 4587 Piso 2 CP 5496 Parque Patricios, CABA</p>
         </section>
-        <section>
-            <a href=""><i class="fab fa-patreon fa-3x"></i></a>
-        </section>
-    </article>
-</section>
-</main>
-<footer>
-    <section>
-        <figure class="logo-footer">
-            <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
-        </figure>
-    </section>
-    <section class="section-p-footer">
-        <p>Av. Carlos Sinsa 4587 Piso 2        CP 5496 Parque Patricios, CABA</p>
-    </section>
-    <section class="categorias-footer">
-        <article class="ayuda">
-            <ul><li>Ayuda</li></ul>
-        </article>
-        <article>
-            <ul><li>Privacidad</li></ul>
-        </article>
-        <article>
-            <ul><li>Condiciones</li></ul>
-        </article>
-    </section>
-</footer>
+        <section class="categorias-footer">
+            <article class="ayuda">
+                <ul>
+                    <li>Ayuda</li>
+                </ul>
+            </article>
+            <article>
+                <ul>
+                    <li>Privacidad</li>
+                </ul>
+            </article>
+            <article>
+                <ul>
+                    <li>Condiciones</li>
+                </ul>
+            </article>
+        </section>  
+    </footer>
 </body>
+
 </html>
-    
-    

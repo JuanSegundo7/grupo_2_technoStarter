@@ -188,21 +188,30 @@ main{
         justify-content: center;
         align-items: flex-start;
         box-sizing: border-box;
-  
+
     }
 
     /********************************^^^CAMPAÑA-DESTACADA^^^********************************************/
+    
+    .flex-camapañaDestacada{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex-camapañaDestacada figure{
+        width: 60%;
+    }
+
+    .campañaDestacada p{
+        width: 50%;
+        margin: 10px;
+    }
 
     .campañaDestacada{
-        margin-top: 22vh;
-        width: 43%;
-        height: 400px;
+        margin-top: 5vh;
+        width: 95%;
         box-sizing: content-box;
     }   
-
-    .campañaDestacada article{
-        margin: 15px;
-    }
 
 
     .campañaDestacada h2{
@@ -210,25 +219,35 @@ main{
     }
 
     .campañaDestacada img{
-        width: 90%;
+        width: 100%;
     }
 
     /********************************^^^RECOMENDACIONES^^^********************************************/
 
-
-
-    .recomendaciones{
-        width: 45%;
-        margin-top: 20vh;
-        padding: 10px;
+    .flex-recomendaciones{
+        display: flex;
+        flex-direction: row;
     }
 
+    
+    .recomendaciones{
+        padding: 10px;
+    }
+    
     .recomendaciones h2{
         text-align: center;
     }
+    
+    .recomendaciones figure{
+        width: 50%;
+    }
+
+    .recomendaciones p{
+        width: 50%;
+    }
 
     .recomendaciones img{
-        width: 90%;
+        width: 98%;
         border-radius: 25px;
         border: 1px solid black;
     }
@@ -242,8 +261,9 @@ main{
     .flex-thumbs i{
         color: #FF9900;
         background-color: #031927;
-        padding: 6px 6px;
-        border-radius: 15px;
+        padding: 10px 10px;
+        border-radius: 100%;
+        font-size: 20px;
         border: 1px solid #FF9900;
 
     }
@@ -263,21 +283,17 @@ main{
 
     .flex-comoFunciona article{
         width: 33%;
-        margin: 15px;
-        
+        margin: 15px;  
     }
 
     .flex-comoFunciona p{
-        font-size: 15px;
-        width: 50%;
-        
+        font-size: 18px;  
     }
 
     .comoFunciona img{
-        width: 65%;
-        margin-left: 20px;
-        
-
+        width: 38%;
+        margin-left: 5vw;
+        margin-bottom: 10px;
     }
     /********************************^^^PATROCINADORES^^^********************************************/
 
@@ -296,7 +312,7 @@ main{
 
     .flex-patrocinios i{
         margin-top: 10vw;
-        font-size: 80px;
+        font-size: 5.5em;
         margin-right: 25px;
         margin-left: 30px;
         margin-bottom: 10vw;
@@ -325,40 +341,127 @@ main{
 
     /********************************^^^CAMPAÑA-DESTACADA^^^********************************************/
 
+    .flex-camapañaDestacada{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .campañaDestacada p{
+        width: 50%;
+        margin: 10px;
+    }
+
     .campañaDestacada{
-        margin-top: 20vh;
+        margin-top: 10vh;
         margin-left: 0px;
         margin-right: 0px;
         width: 100%
+
     }   
 
+    .campañaDestacada article {
+        border: 1px solid grey;
+        border-radius: 15px;
+
+    }
 
     .campañaDestacada h2{
         text-align: center;
     }
 
     .campañaDestacada img{
-        width: 90%;
+        width: 100%;
     }
 
+    .campañaDestacada figure{
+        width: 50%;
+    }
+
+
     /********************************^^^RECOMENDACIONES^^^********************************************/
-
-
+    .flex-recomendaciones{
+        display: flex;
+        flex-direction: row;
+    }
 
     .recomendaciones{
         width: 100%;
-        margin-top: 20vh;
         margin-left: 0px;
         margin-right: 0px;
     }
-
-
+    
     .recomendaciones h2{
         text-align: center;
     }
-
+    
     .recomendaciones img{
-        width: 90%;
+        width: 100%;
+    }
+    
+    .recomendaciones figure{
+        width: 50%;
+    }
+
+    .recomendaciones-1 p{
+        margin: 10px;
+        width: 50%;
+    }
+    
+    .recomendaciones-1{
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1px solid grey;
+
+    }
+    /********************************^^^RECOMENDACIONES-2^^^********************************************/
+
+    .recomendaciones-2{
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid grey;
+        border-radius: 15px;
+
+    }
+
+    .recomendaciones-2 img{
+        width: 100%;
+        border-radius: 25px;
+        border: 1px solid black;
+    }
+
+    .recomendaciones-2 figure{
+        width: 50%;
+    }
+
+    .recomendaciones-2 p{
+        margin: 10px;
+        width: 50%;
+    }
+
+    /********************************^^^RECOMENDACIONES-3^^^********************************************/
+    
+    .recomendaciones-3{
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid grey;
+        border-radius: 15px;
+
+    } 
+
+    .recomendaciones-3 img{
+        width: 100%;
+        border-radius: 25px;
+        border: 1px solid black;
+    }
+
+    .recomendaciones-3 figure{
+        width: 50%;
+    }
+
+    .recomendaciones-3 p{
+        margin: 10px;
+        width: 50%;
     }
 
     .flex-thumbs{
@@ -370,9 +473,10 @@ main{
     .flex-thumbs i{
         color: #FF9900;
         background-color: #031927;
-        padding: 6px 6px;
-        border-radius: 15px;
+        padding: 10px 10px;
+        border-radius: 50%;
         border: 1px solid #FF9900;
+        font-size: 1.5em;
 
     }
     /********************************^^^COMO-FUNCIONA^^^********************************************/
@@ -380,25 +484,40 @@ main{
     .comoFunciona{
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: space-around;
         flex-wrap: wrap;
         width: 100%;
     }
 
     .comoFunciona h2{
         text-align: center;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+
     }
 
 
     .comoFunciona img{
-        width: 30%;
-        margin-left: 25vw;
+        width: 35%;
+        margin-left: 9vw;
+        margin-bottom: 15px;
 
+    }
+
+    .flex-comoFunciona p{
+        font-size: 18px;
+        width: 100%;
     }
     /********************************^^^PATROCINADORES^^^********************************************/
 
+    .nuestrosPatrocinios{
+        margin-top: 10vh;
+    }
+
     .nuestrosPatrocinios h2{
         text-align: center;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
     }
 
     .flex-patrocinios{
@@ -414,6 +533,7 @@ main{
         margin-top: 10vw;
         margin-bottom: 10vw;
         color: #031927;
+        font-size: 8em;
 
     }
 
