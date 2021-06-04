@@ -97,15 +97,45 @@ main{
     border-radius: 15px;
 }   
 
+/*******************************************ARTICLE-RECO****************************************/
+.titulo-reco{
+    text-align: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.meta{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin: 0 0 2vh 0;
+}
+
+.patrocinadores{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin: 2vh 0 2vh 0;
+
+}
+
+.ubicacion{
+    text-align: center;
+    margin: 2vh 0 2vh 0;
+}
+
+.ubicacion i{
+    margin-right: 3px;
+}
+
 .recomendaciones h2{
     text-align: center;
 }
 
 .recomendaciones img{
     width: 100%;
-    border-radius: 25px;
     border: 1px solid black;
-    
+    border-radius: 25px;
 }
 
 .flex-thumbs{
@@ -271,8 +301,6 @@ main{
 
     .recomendaciones img{
         width: 98%;
-        border-radius: 25px;
-        border: 1px solid black;
     }
 
     .flex-thumbs{
@@ -430,7 +458,7 @@ main{
         width: 50%;
     }
     
-    .recomendaciones-1{
+    .recomendaciones-1 img{
         margin: 10px;
         padding: 10px;
         border-radius: 15px;
