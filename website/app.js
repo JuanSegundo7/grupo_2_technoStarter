@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const app = express();
+const productosController = require("../controllers/productosController.js")
 
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.listen(3000, () => console.log("Server start in http://localhost:3000"));
