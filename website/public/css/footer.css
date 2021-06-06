@@ -197,7 +197,7 @@ footer ul{
         footer p{
             color: white;
             opacity: 0.5;
-            font-size: 8px;
+            font-size: 13px;
             order: -1;
         }
         
@@ -213,5 +213,9 @@ footer ul{
         
         footer ul{
             list-style-type: none;
+        }
+
+        .categorias-footer{
+            font-size: 20px;
         }
     }

@@ -152,11 +152,11 @@ header img {
 
 
 	.mobile-visible{
-		display: inline-block;
+		display: none;
 	}
 
 	.desktop-visible{
-		display: none;
+		display: block;
 	}
 
 	* {
@@ -185,6 +185,7 @@ header img {
 	}
 
 	header fieldset{
+		display: block;
 		border: 0px;
 		padding: 10px;
 	}
@@ -262,21 +263,19 @@ header img {
 	/**********************************^^^MENU^^^********************************************/
 
 
-	#menu{
+	#menu-2 {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		margin-left: 10px;
-		margin-bottom: 5px;
 		width: 100%;
 	}
 
-	#menu li{
+	#menu-2 li{
 		flex-direction: row;
 		list-style-type: none;
 	}
 
-	#menu a{
+	#menu-2 a{
 		color: #FF9900;
 		font-weight: 400;
 		text-decoration: none ;
@@ -353,7 +352,6 @@ header img {
 	header img {
 		max-height: 100%;
 		width: 100%;
-		margin-top: 20px;
 	}
 
 
