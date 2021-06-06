@@ -189,6 +189,7 @@ main{
 
 .comoFunciona h2{
     text-align: center;
+    margin-top: 5vh;
 }
 
 .comoFunciona h3{
@@ -439,11 +440,7 @@ main{
     .flex-camapañaDestacada{
         display: flex;
         flex-direction: row;
-        flex-wrap: unset;
-    }
-
-    .campañaDestacada-1{
-        width: 98%;
+        flex-wrap: wrap;
     }
 
     .campañaDestacada p{
@@ -453,7 +450,6 @@ main{
 
     .campañaDestacada{
         margin-top: 10vh;
-        width: 100%;
         padding: 0;
     }   
 
@@ -465,10 +461,6 @@ main{
         width: 100%;
         padding: 0px;
         border: 1px solid black;
-    }
-
-    .campañaDestacada figure{
-        width: 50%;
     }
 
 
@@ -615,7 +607,7 @@ main{
 
     .comoFunciona img{
         width: 6em;
-        margin-left: 11.5vw;
+        margin-left: 11vw;
         margin-bottom: 15px;
 
     }

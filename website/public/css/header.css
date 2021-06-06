@@ -162,6 +162,7 @@ header img {
 	* {
 		margin: 0px;
 		padding: 0px;
+		max-width: 100%;
 		box-sizing: border-box;
 	}
 
@@ -193,6 +194,7 @@ header img {
 	header nav {
 		display: flex;
 		height: 10vh;
+		max-width: 100%;
 		justify-content: space-between;
 		align-items: center;
 	}
@@ -386,6 +388,10 @@ header img {
 
 	.navbar-icons i{
 		margin: 10px;
+	}
+
+	#search-desktop{
+		display: block;
 	}
 
 	/**********************************^^^NAVBAR-BOTTOM^^^********************************************/
