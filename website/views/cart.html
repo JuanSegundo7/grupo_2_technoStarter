@@ -11,55 +11,115 @@
     <link rel="stylesheet" href="/css/cart.css">
 </head>
 <body>
-<header>
-    <nav class="navbar--top">
-        <ul>
-            <li><a href="/">Descubrir</a></li>
-            <li><a href="/">Nosotros</a></li>
-
-        </ul>
-        <figure>
-            <a href="/"><img src="/img/TechnoStarter1.png" alt="logo del sitio"></a>
-        </figure>
-        <form action="/proyectos" method="get" id="search">
-        <fieldset>
-            <input type="text" name="name" id="name">
-            <button type="submit">buscar</button>
-        </fieldset>
-        
+    <header>
+        <nav class="navbar--top">
+            <ul class="desktop-visible flex-ul-top">
+                <li><a href="/proyectos/descubrir">Descubrir</a></li>
+                <li><a href="/proyectos/nosotros">Nosotros</a></li>
+            </ul>
+            <figure class="desktop-visible logo">
+                <a href="#"><img src="/img/technoStarter/TechnoStarter1.png" alt="logo del sitio"></a>
+            </figure>
+            <figure class="mobile-visible logo">
+                <a href="#"><img src="/img/technoStarter/TechnoStarter1.png" alt="logo del sitio"></a>
+            </figure>
+            <form action="/proyectos/buscar" method="get" id="search-desktop" class="desktop-visible hover-hidden">
+                <fieldset>
+                    <input type="text" name="keyword" id="keyword">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </fieldset>
+            </form>
+            <ul class="navbar-icons">
+                <li class="mobile-visible">
+                    <a href="/">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li class="desktop-visible">
+                    <a href="#search-desktop">
+                        <i class="fas fa-search mobile-visible"></i>
+                    </a>
+                </li>
+                <li class="mobile-visible">
+                    <a href="#search">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/cart">
+                        <i class="fas fa-shopping-cart"></i></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#user">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+                <li class="mobile-visible">
+                    <a href="#menu">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <form action="/proyectos/buscar" method="get" id="search" class="mobile-visible hover-hidden">
+            <fieldset>
+                <input type="text" name="keyword" id="keyword">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </fieldset>
         </form>
-        <ul>
-            <li><a href="#search"><i class="fas fa-search"></i></a></li>
-            <li><a href="#user"><i class="fas fa-user"></i></a></li>
-        </ul>
-        <ul id="user">
-            <li>
-                <a href="/ingresar">Ingresar</a>     
-            </li>
-            <li>
-                <a href="/ingresar">Unite</a>     
-            </li>
-        </ul>
-    </nav>
-    <nav class="navbar-bottom">
-
-        <ul>
-            <li>
-                <a href="/proyectos/impresion">Impresion 3D</a>
-            </li>
-            <li>
-                <a href="/proyectos/robotica">Robotica</a>
-            </li>
-            <li>
-                <a href="/proyectos/electronica">electronica</a>
-            </li>
-        </ul>
-    </nav>
+        <nav id="user" class="hover-hidden">
+            <ul>
+                <li><a href="/ingresar">ingresar</a></li>
+                <li><a href="/registrar">unite</a></li>
+            </ul>
+        </nav>
+        <nav class="hover-hidden navbar-bottom" id="menu">
+            <ul>
+                <li><a href="/proyectos/impresion">impresion 3D</a></li>
+                <li><a href="/proyectos/robotica">robotica</a></li>
+                <li><a href="/proyectos/electronica">electronica</a></li>
+            </ul>
+        </nav>
+        <nav class="desktop-visible navbar-bottom" id="menu-2">
+            <ul>
+                <li><a href="/proyectos/impresion">impresion 3D</a></li>
+                <li><a href="/proyectos/robotica">robotica</a></li>
+                <li><a href="/proyectos/electronica">electronica</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    
+    <main>
 
-    
-    
+
+
+    </main>
+    <footer>
+        <section>
+            <figure class="logo-footer">
+                <a href="/"><img src="/img/technoStarter/TechnoStarter1.png" alt="logo del sitio"></a>
+            </figure>
+        </section>
+        <section class="section-p-footer">
+            <p>Av. Carlos Sinsa 4587 Piso 2 CP 5496 Parque Patricios, CABA</p>
+        </section>
+        <section class="categorias-footer">
+            <article class="ayuda">
+                <ul>
+                    <li>Ayuda</li>
+                </ul>
+            </article>
+            <article>
+                <ul>
+                    <li>Privacidad</li>
+                </ul>
+            </article>
+            <article>
+                <ul>
+                    <li>Condiciones</li>
+                </ul>
+            </article>
+        </section>  
+    </footer>
 </body>
 </html>
