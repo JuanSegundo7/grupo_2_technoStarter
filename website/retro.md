@@ -4,3 +4,4 @@ El primer sprint pesa a la perdida de un integrante se pudo resolver bien las co
 
 Saludos,
 Juan y Tomas del proyecto TechnoStarter 
+

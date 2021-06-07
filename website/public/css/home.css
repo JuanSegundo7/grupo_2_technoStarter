@@ -189,6 +189,7 @@ main{
 
 .comoFunciona h2{
     text-align: center;
+    margin-top: 5vh;
 }
 
 .comoFunciona h3{
@@ -319,7 +320,7 @@ main{
     }
     
     .recomendaciones{
-        padding: 10px;
+        padding: 7vh;
     }
 
     .recomendaciones h2{
@@ -379,12 +380,24 @@ main{
     }
 
     .flex-comoFunciona p{
-        font-size: 18px;  
+        font-size: 16px;
+        width: 100%;  
+    }
+
+    .flex-comoFunciona figure {
+        width: 37%;
+        height: 36%;
+    }
+
+    .flex-comoFunciona-n{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 
     .comoFunciona img{
         width: 4em;
-        margin-left: 11vw;
+        margin-left: 1vw;
         margin-bottom: 10px;
     }
     /********************************^^^PATROCINADORES^^^********************************************/
@@ -439,11 +452,7 @@ main{
     .flex-camapañaDestacada{
         display: flex;
         flex-direction: row;
-        flex-wrap: unset;
-    }
-
-    .campañaDestacada-1{
-        width: 98%;
+        flex-wrap: wrap;
     }
 
     .campañaDestacada p{
@@ -453,7 +462,6 @@ main{
 
     .campañaDestacada{
         margin-top: 10vh;
-        width: 100%;
         padding: 0;
     }   
 
@@ -465,10 +473,6 @@ main{
         width: 100%;
         padding: 0px;
         border: 1px solid black;
-    }
-
-    .campañaDestacada figure{
-        width: 50%;
     }
 
 
@@ -484,6 +488,7 @@ main{
     }
 
     .recomendaciones{
+        padding: 5vw;
         width: 100%;
         margin-left: 0px;
         margin-right: 0px;
@@ -494,7 +499,7 @@ main{
     }
 
     .recomendaciones p{
-        font-size: 25px;
+        font-size: 23px;
         width: 100%;
     }
     
@@ -615,7 +620,6 @@ main{
 
     .comoFunciona img{
         width: 6em;
-        margin-left: 11.5vw;
         margin-bottom: 15px;
 
     }
