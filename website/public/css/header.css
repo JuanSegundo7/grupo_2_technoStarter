@@ -7,7 +7,9 @@
     Blanco: #FFFFFF 
 */
 /************************************^^HEADER^^^********************************************/
-
+* {
+	font-family: "Roboto";
+}
 
 .mobile-visible{
     display: inline-block;
