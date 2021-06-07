@@ -71,7 +71,7 @@ header img {
 	max-height: 100%;
 	width: 80%;
 	padding-top: 2vh;
-	margin: 10px;
+	margin-left: 10px;
 }
 
 .logo{
@@ -98,6 +98,7 @@ header img {
 .navbar-icons i{
 	margin: 10px;
 }
+
 
 /**********************************^^^NAVBAR-BOTTOM^^^********************************************/
 
@@ -199,30 +200,23 @@ header img {
 		align-items: center;
 	}
 
-	.hover-hidden {
-		visibility: hidden;
-		height: 0vh;
-		overflow: hidden;
-		transition: all 0.3s ease-out;
-	}
-
-	.hover-hidden:target {
-		visibility: visible;
-		height: 10vh;
-	}
-
+	
 	/**********************************^^^LOGO-^^^********************************************/
 	header img {
 		max-height: 100%;
-		width: 80%;
-		margin-top: 20px;
-		margin: 10px;
+		width: 100%;
 	}
 
 	.logo{
 		width: 93px;
 	}
 	/**********************************^^^NAVBAR-TOP^^^********************************************/
+
+	.navbar--top a {
+		color: #FF9900;
+		font-weight: bold;
+		text-decoration: none;
+	}
 
 	.navbar-icons {
 		display: flex;
@@ -244,6 +238,26 @@ header img {
 		margin: 10px;
 	}
 
+	#search-desktop{
+	    height: 10vh;
+    	visibility: visible;
+    	transition: none;
+    	overflow: visible;
+	}
+
+	.flex-ul-top{
+		display: flex;
+		flex-direction: row;
+	}
+
+	.flex-ul-top a{
+		margin-left: 10px;
+		font-size: 20px;
+	}
+
+	.flex-ul-top li{
+		list-style-type: none;
+	}
 	/**********************************^^^NAVBAR-BOTTOM^^^********************************************/
 
 
@@ -269,6 +283,7 @@ header img {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
+		justify-content: center;
 		width: 100%;
 	}
 
@@ -334,7 +349,7 @@ header img {
 		display: flex;
 		height: 10vh;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 	}
 
@@ -391,13 +406,26 @@ header img {
 	}
 
 	#search-desktop{
-		display: block;
+	    height: 10vh;
+    	visibility: visible;
+    	transition: none;
+    	overflow: visible;
 	}
+
+	.flex-ul-top{
+		display: flex;
+		flex-direction: row;
+	}
+
+	.flex-ul-top a{
+		margin-left: 10px;
+		font-size: 22px;
+	}
+
 
 	/**********************************^^^NAVBAR-BOTTOM^^^********************************************/
 
 	.navbar-bottom{
-		background-color: #FFF3DD	;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
