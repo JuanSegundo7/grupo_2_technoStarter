@@ -380,7 +380,7 @@ main{
     }
 
     .flex-comoFunciona p{
-        font-size: 16px;
+        font-size: 18px;
         width: 100%;  
     }
 
@@ -433,7 +433,7 @@ main{
     /**************************************^^^BODY^^^********************************************/
 
     .titulo-h2{
-        font-size: 1.7em;
+        font-size: 1.3em;
     }
 
     .categorias-body li{
@@ -462,7 +462,7 @@ main{
 
     .campañaDestacada{
         margin-top: 10vh;
-        padding: 0;
+        padding: 2.5vw;
     }   
 
     .campañaDestacada h2{
