@@ -34,6 +34,8 @@ header {
 	flex-direction: column;
 	min-height: 10vh;
 	background-color: #031927;
+	border-bottom: 2px solid #FF9900;
+	border-top: 2px solid #FF9900;
 	box-shadow: 0 10px 8px 0 rgba(146, 144, 144, 0.7);
 }
 
@@ -139,8 +141,16 @@ header img {
 
 #menu a{
 	color: #FF9900;
-	font-weight: 400;
+	font-weight: 500;
 	text-decoration: none ;
+}
+
+.flex-ul-categorias-1{
+	display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-right: 3vw;
+    justify-content: space-around;
 }
 
 /**********************************^^^MEDIAS-QUERYS^^^********************************************/
@@ -253,7 +263,7 @@ header img {
 	}
 
 	.flex-ul-top a{
-		margin-left: 10px;
+		margin-left: 4vw;
 		font-size: 20px;
 	}
 
@@ -262,7 +272,16 @@ header img {
 	}
 	/**********************************^^^NAVBAR-BOTTOM^^^********************************************/
 
+	.flex-ul-categorias-2{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-around;
+	}
 
+	.flex-ul-categorias-1{
+		display: none;
+	}
 
 
 	/**********************************^^^USER^^^********************************************/
@@ -280,13 +299,12 @@ header img {
 
 	/**********************************^^^MENU^^^********************************************/
 
+	#menu{
+		display: none;
+	}
 
 	#menu-2 {
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		width: 100%;
 	}
 
 	#menu-2 li{
@@ -296,9 +314,11 @@ header img {
 
 	#menu-2 a{
 		color: #FF9900;
-		font-weight: 400;
+		font-weight: 500;
 		text-decoration: none ;
 	}
+
+	
 
 }
 
@@ -332,6 +352,7 @@ header img {
 		flex-direction: column;
 		min-height: 10vh;
 		background-color: #031927;
+		border-bottom: 2px solid #FF9900;
 		box-shadow: 0 10px 8px 0 rgba(146, 144, 144, 0.7);
 	}
 
@@ -420,32 +441,35 @@ header img {
 	}
 
 	.flex-ul-top a{
-		margin-left: 10px;
+		margin-left: 4vw;
 		font-size: 22px;
 	}
 
 
 	/**********************************^^^NAVBAR-BOTTOM^^^********************************************/
 
-	.navbar-bottom{
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
 
 	.navbar-bottom li{
 		width:101px;
 		list-style-type: none;
 	}
 
-	.navbar-bottom ul{
-		width:101px
-	}
 
 	.navbar-bottom a{
 		color: #FF9900;
 		text-decoration: none;
 		font-weight: 400;
+	}
+
+	.flex-ul-categorias-2{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-evenly;
+	}
+
+	.flex-ul-categorias-1{
+		display: none;
 	}
 
 	/**********************************^^^USER^^^********************************************/
@@ -463,24 +487,13 @@ header img {
 
 	/**********************************^^^MENU^^^********************************************/
 
-
 	#menu{
 		display: none;
-		flex-direction: row;
-		flex-wrap: wrap;
-		margin-left: 10px;
-		margin-bottom: 5px;
-		width: 100%;
 	}
 
-	#menu li{
+	#menu-2 li {
 		flex-direction: row;
 		list-style-type: none;
-	}
-
-	#menu a{
-		color: #FF9900;
-		font-weight: 400;
-		text-decoration: none ;
+		width: 116px;
 	}
 }
