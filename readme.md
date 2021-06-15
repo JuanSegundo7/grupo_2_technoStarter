@@ -39,3 +39,8 @@ Link: https://www.mercadolibre.com.ar/
                                     ¿QUIENES SOMOS?
 
 Hola, nos presentamos, somos Tomas Vila Martínez y Juan Segundo Martínez, decidimos hacer una pagina de crowfunding, porque nos parecio buena idea replicarlo en un ambiente tecnologico que dia a dia se expande en Argentina.
+
+------------------------------------------------------------------------------------------------
+                                    TRELLO
+
+https://trello.com/b/zMR7mxn2/technostarter-sprint-2

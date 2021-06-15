@@ -2,14 +2,14 @@ const path = require("path");
 const express = require("express");
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, "./public")));
+app.use(express.static(path.resolve(__dirname, "../public")));
 app.listen(3000, () => console.log("Server start in http://localhost:3000"));
 
 
 app.set("views", "./carpeta-de-vistas");
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) =>
+/*app.get("/", (req, res) =>
   res.sendFile(path.resolve(__dirname, "./views", "home.html"))
 );
 
@@ -31,4 +31,4 @@ app.get("/carrito", (req, res) =>
 
 app.get("/nosotros", (req, res) =>
   res.sendFile(path.resolve(__dirname, "./views/proyectos", "nosotros.html"))
-);
+);*/
