@@ -263,10 +263,10 @@ header img {
 	}
 
 	#search-desktop{
-	    height: 10vh;
-    	visibility: visible;
-    	transition: none;
-    	overflow: visible;
+	height: 10vh;
+    visibility: visible;
+    transition: none;
+    overflow: visible;
 	}
 
 	.flex-ul-top{
@@ -299,6 +299,7 @@ header img {
 		display: flex;
 		flex-direction: row;
 		width: 100%;
+		margin-top: 3vh;
 		justify-content: space-evenly;
 	}
 

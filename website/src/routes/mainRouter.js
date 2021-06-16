@@ -4,4 +4,6 @@ const mainController = require("../controllers/mainController")
 
 
 router.get("/", mainController.index);
-router.get("/", mainController.nosotros);
+router.get("/nosotros", mainController.nosotros);
+
+module.exports = router;

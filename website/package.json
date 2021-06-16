@@ -2,10 +2,10 @@
   "name": "proyectointegradortomi",
   "version": "1.0.0",
   "description": "TECHNOSTARTER",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "nodemon app.js -e css,html,js,mjs",
-    "start": "node app.js"
+    "start": "node src/app.js"
   },
   "repository": {},
   "keywords": [],
