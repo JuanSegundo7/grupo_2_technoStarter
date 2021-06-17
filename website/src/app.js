@@ -21,21 +21,14 @@ app.use(express.static(path.resolve(__dirname, "../public"))); // Necesario para
 app.use(express.urlencoded({ extended: false}));
 
 // ************ Template Engine ************
-app.set("views", path.join(__dirname, "views")); // Define la ubicación de la carpeta de las Vistas
+app.set("views", path.resolve(__dirname, "./views")); // Define la ubicación de la carpeta de las Vistas
 app.set("view engine", "ejs");
 
 // ************ Routes ************
-<<<<<<< HEAD
 
-app.use("/", mainRouter)
-app.use("/cart", cartRouter)
-app.use("/product", productRouter)
-app.use("/user", userRouter)
-=======
-app.use("/", mainRouter);
-app.use("/cart", cartRouter);
-app.use("/product", productRouter);
-app.use("/user", userRouter);
->>>>>>> a1e3f175185c895409dd8f57c2b7b7a3fe755af1
+app.use(mainRouter);
+app.use("/carrito", cartRouter);
+app.use("/proyecto", productRouter);
+app.use("/usuario", userRouter);
 
 

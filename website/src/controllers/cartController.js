@@ -1,6 +1,6 @@
 const cart = {
     cart: (req, res) => {
-        return res.render("cart");
+        return res.render("checkout/cart");
     },
 };
 

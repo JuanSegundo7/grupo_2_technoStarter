@@ -8,3 +8,6 @@ router.get("/impresion", proyectosController.impresion);
 
 
 module.exports = router;
+
+
+// ruta dinamica (parametrizada)
