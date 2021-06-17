@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("./partials/head",{"css":["header", "register", "footer"]})%>
+
+<body>
+    <%-include("./partials/header")%> 
+    <section class="registrateAqui">
+        <article>
+            <section>
+                <h2>
+                    ¡Registrate aqui!      
+                </h2>
+            </section>
+        </article>
+</section>
+
+<form action="/" method="POST">
+
+    <fieldset>
+        <label for="nombreCompleto">Nombre Completo</label>
+        <input type="text" placeholder="Nombre Completo" id="nombreCompleto" name="nombreCompleto">
+    </fieldset>
+    <fieldset>
+        <label for="direccionDeCorreoElectronico">Direccion de correo electronico</label>
+        <input type="text" placeholder="Direccion de correo electronico" id="direccionDeCorreoElectronico" name="direccionDeCorreoElectronico">
+    </fieldset>
+    <fieldset>
+        <label for="contraseña">Contraseña</label>
+        <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña">
+    </fieldset>
+    <fieldset>
+        <label for="confirmarContraseña">Confirmar Contraseña</label>
+        <input type="confirmPassword" placeholder="Confirmar contraseña" id="confirmarContraseña" name="confirmarContraseña">
+    </fieldset>
+    <button>Crear usuario<nav></nav></button>
+    <fieldset class="aceptoLosTerminos">
+        <input type="radio" name="recordarme" id="recordarme">
+        <label for="aceptoLosTerminos">Acepto los Términos y Condiciones y autorizo el uso de mis datos de acuerdo a la Declaración de Privacidad.</label>
+    </fieldset>
+    <fieldset class='tener'>
+        <p>¿Tienes una cuenta? <a href="/">Iniciar</a></p>
+    </fieldset>
+</form>
+<%- include("./partials/footer")  %> 
+</body>
+</html>
