@@ -224,12 +224,19 @@ box-sizing: border-box;
 .flex-patrocinios i{
     margin-top: 10vw;
     margin-bottom: 10vw;
-    font-size: 5em;
+    font-size: 3em;
     color: #031927;
 
 }
 
 /**************************************^^^DESKTOP^^^********************************************/
+@media (min-width: 361px){
+    .flex-patrocinios i{
+        font-size: 5em;
+    }
+
+}
+
 
 @media (min-width: 769px){
     /**************************************^^^BODY^^^********************************************/
@@ -264,7 +271,7 @@ box-sizing: border-box;
 
     .campañaDestacada{
         margin-top: 10vh;
-        padding: 2.5vw;
+        padding: 4.5vw;
     }   
 
     .campañaDestacada h2{
@@ -464,7 +471,7 @@ box-sizing: border-box;
         margin-top: 10vw;
         margin-bottom: 10vw;
         color: #031927;
-        font-size: 8em;
+        font-size: 7em;
 
     }
 

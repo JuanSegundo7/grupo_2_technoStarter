@@ -163,7 +163,7 @@ footer ul{
         footer li{
             color: #FF9900;
             font-weight: 500;
-            order: 2;
+            font-size: 12px;
         }
         
         footer ul{
@@ -171,6 +171,11 @@ footer ul{
         }
         
     }
+    @media (min-width: 400px){
+    footer li{
+        font-size: 17px;
+    }
+    }   
 /**************************************^^^TABLET^^^********************************************/
 
 
@@ -206,9 +211,7 @@ footer ul{
         }
         
         footer li{
-            color: #FF9900;
-            font-weight: 500;
-            order: 2;
+            font-size: 20px;
         }
         
         footer ul{

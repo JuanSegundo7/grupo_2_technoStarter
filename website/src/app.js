@@ -25,6 +25,7 @@ app.set("views", path.join(__dirname, "views")); // Define la ubicación de la c
 app.set("view engine", "ejs");
 
 // ************ Routes ************
+
 app.use("/", mainRouter)
 app.use("/cart", cartRouter)
 app.use("/product", productRouter)
