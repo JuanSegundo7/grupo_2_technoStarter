@@ -10,6 +10,7 @@ const mainRouter = require("./routes/mainRouter");
 const cartRouter = require("./routes/cartRouter");
 const productRouter = require("./routes/productRouter");
 const userRouter = require("./routes/userRouter");
+const categoriasRouter = require("./routes/categoriasRouter");
 
 // ************ Server Start Port ************
 
@@ -29,6 +30,7 @@ app.set("view engine", "ejs");
 app.use(mainRouter);
 app.use("/carrito", cartRouter);
 app.use("/proyecto", productRouter);
-app.use("/usuario", userRouter);
+app.use("/users", userRouter);
+app.use("/categorias", categoriasRouter);
 
 
