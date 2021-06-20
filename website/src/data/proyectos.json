@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre": "nombreProyecto1",
+        "contribucionActual": 200,
+        "contribucionFinal": 10000,
+        "patrocinadores": 20,
+        "autor": 1,
+        "categoria": 1,
+        "images": 
+        [
+            {
+                "main": true,
+                "url": "/img/3Dvarius/varius.jpg"
+            },
+            {
+                "main": false,
+                "url": "/img/3Dvarius/varius-2.jpg"
+            }
+        ]
+    }
+]

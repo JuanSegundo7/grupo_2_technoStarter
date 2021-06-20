@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("../partials/head",{"css":["header", "formularioCrear", "footer"]})%>
+
+<body>
+    <%-include("../partials/header")%> 
+    <main>
+        <section class="titulo">
+            <h2>Creación de Proyectos</h2>
+        </section>
+        <section class="formulario                              ">
+            <form action="/" method="POST" id="crearProductos">
+                <fieldset id="nombre-proyecto">
+                    <label for="nombreProducto">Nombre de tu proyecto: </label>
+                    <input type="text" placeholder="Nombrá tu proyecto" name="nombreProducto" id="nombreProducto" required>
+                </fieldset>
+                <fieldset id="ubicacion-proyecto">
+                    <label id="ubicacion-proyecto">Contanos de donde sos:</label>
+                    <input type="text" placeholder="Yo soy de.." name="ubicacion" id="ubicacion" required>
+                </fieldset>
+                <h3>¡Elige la categoria de tu proyecto!</h3>
+                <fieldset id="categorias-proyecto">
+                    <label for="robotica">Robotica</label>
+                    <input type= "checkbox" name="categorias" id="robotica">
+                    <label for="robotica">Impresión 3D</label>
+                    <input type= "checkbox" name="categorias" id="impresion3d">
+                    <label for="robotica">electronica</label>
+                    <input type= "checkbox" name="categorias" id="electronica">
+                </fieldset>
+                <fieldset id="descripcion-proyecto">
+                    <h3>¡Contanos de que se trata tu proyecto!</h3>
+                    <p>(Quedate tranquilo que mas adelante podes editar la información)</p>
+                    <textarea name="descripcion" rows="15" cols="30" placeholder="Escribí la historia de tu proyecto..." required></textarea>
+                </fieldset>
+                <fieldset id="fotos-proyecto">
+                    <label for="fotosProyecto">Subí una o varias fotos</label>
+                    <input type="file" name="fotosProyecto" id="fotosProyecto" required>
+                </fieldset>
+                <fieldset id="precio-proyecto">
+                    <h3>¡Establece una meta para tu proyecto!</h3>
+                    <label for="precioProyecto"></label>
+                    <input type="number" name="precioProyecto" id="precioProyecto" placeholder="EJ: 10.000" required>
+                </fieldset>
+                <fieldset class="flex-botones">
+                    <button type="submit"> Enviar</button>
+                    <button type="reset"> Reiniciar</button>
+                </fieldset>
+            </form>
+            </section>
+    </main>
+    <%-include("../partials/footer")%> 
+</body>

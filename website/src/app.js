@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 app.use(mainRouter);
 app.use("/carrito", cartRouter);
 app.use("/proyecto", productRouter);
-app.use("/users", userRouter);
-app.use("/categorias", categoriasRouter);
+app.use("/usuario", userRouter);
+app.use("/categoria", categoriasRouter);
 
 

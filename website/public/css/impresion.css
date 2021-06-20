@@ -17,6 +17,7 @@
     margin: 0.5em;
 }
 
+
 /**************************************^^^BODY^^^********************************************/
 
 
@@ -50,7 +51,7 @@ main{
     justify-content: space-around;
 }
 
-.robotica-border{
+.impresion-border{
     border: 1px solid black;
     margin: 2em;
     border-radius: 13px;

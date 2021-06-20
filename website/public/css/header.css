@@ -118,7 +118,7 @@ header img {
 #user a{
 	color: #FF9900;
 	text-decoration: none;
-	font-weight: 400;
+	font-weight: 500;
 }
 
 
@@ -149,6 +149,7 @@ header img {
 	display: flex;
     flex-direction: row;
     width: 100%;
+	list-style-type: none;
     margin-right: 3vw;
     justify-content: space-around;
 }
@@ -219,6 +220,7 @@ header img {
 
 	.hover-hidden:target {
 		visibility: visible;
+		overflow: auto;
 		height: 10vh;
 	}
 

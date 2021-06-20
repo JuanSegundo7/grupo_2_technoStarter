@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Colores */
+/*  Azul Oscuro: #031927
+    Dorado: #FF9900
+    Color Crema: #FFF3DD
+    Blanco: #FFFFFF 
+*/
+
+/**************************************^^^BODY^^^********************************************/
+
+.margin-body {
+    margin: 10px;
+}
+
+.margin-articleInterior{
+    margin: 0.5em;
+}
+
+/**************************************^^^BODY^^^********************************************/
+
+
+body{
+    background-color: #FFF3DD;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto";
+    min-height: 100vh; 
+    box-sizing: border-box;
+}
+
+main{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo{
+    margin: 15vh 4vh 4vh 4vh;
+    text-align: center;
+}
+
+/**************************************^^^FORMULARIO^^^********************************************/
+
+
+.formulario{
+    background-color: #031927;
+    color: white;
+    padding: 2.5vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4vw 4vw 4vw;
+    border-radius: 15px;
+    border: 2px solid #FF9900;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.formulario input{
+    border: none;
+}
+
+
+.formulario fieldset{
+    border: none;
+    margin: 2vw;
+}
+
+/**************************************^^^INPUTS-Y-CATEGORIAS^^^********************************************/
+
+#nombre-proyecto input{
+    margin: 2vh 0 2vh 0;
+    padding: 1vw;
+    border-radius: 12px;
+    width: 100%;
+}
+
+#ubicacion-proyecto input{
+    margin: 2vh 0 2vh 0;
+    padding: 1vw;
+    border-radius: 12px;
+    width: 100%;
+}
+
+#categorias-proyecto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 4vh;
+    justify-content: space-around;
+}
+/**************************************^^^DESCRIPCION^^^********************************************/
+
+#descripcion-proyecto{
+    display: flex;
+    flex-direction: column;
+}
+
+#descripcion-proyecto textarea{
+    margin: 1vw;
+}
+
+#descripcion-proyecto h3{
+    margin: 1vh;
+}
+
+#descripcion-proyecto p{
+    margin: 1vh;
+}
+
+/**************************************^^^FOTOS^^^********************************************/
+
+#fotos-proyecto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#fotos-proyecto input{
+    margin: 2vw 0 2vw 0;
+    padding: 0px;
+}
+
+/**************************************^^^PRECIO^^^********************************************/
+
+#precio-proyecto input{
+    margin: 2vh 0 2vh 0;
+    padding: 1vw;
+    border-radius: 12px;
+    width: 100%;
+}
+
+/**************************************^^^BOTONES^^^********************************************/
+
+.flex-botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.flex-botones button{
+    padding: 1vw;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #FF9900;
+    border: 1px solid;
+    width: 25%;
+    border-radius: 12px;
+}

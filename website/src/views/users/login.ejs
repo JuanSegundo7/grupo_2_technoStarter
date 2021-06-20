@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%-include("./partials/head",{"css":["header", "login", "footer"]})%>
+<%-include("../partials/head",{"css":["header", "login", "footer"]})%>
 
 <body>
-    <%-include("./partials/header")%> 
+    <%-include("../partials/header")%> 
     <main>
         <form action="/" method="POST" id="form-principal">
             <fieldset>
@@ -16,19 +16,24 @@
                 <label for="contraseña" class="margin-body">Contraseña</label>
                 <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña">
             </fieldset>
+            <fieldset>
+                <input type="radio" name="recordarme" id="recordarme">
+                <label for="recordarme">Recordarme</label>
+            </fieldset>
             <fieldset id="flex-button">
-                <button>Iniciar sesión<nav></nav></button>
-                <fieldset>
-                    <input type="radio" name="recordarme" id="recordarme">
-                    <label for="recordarme" >Recordarme</label>
-                </fieldset>
+                <button type="submit">Iniciar sesión</button>
+                <button type="reset">Resetear</button>
             </fieldset>
             <fieldset class="olvidarContraseña">
                 <p>¿Te olvidaste la contraseña?</p>
                 <p>Recuperala <a href="/">aca</a></p>
             </fieldset>
+            <fieldset class="olvidarContraseña">
+                <p>¿Estas registrado?</p>
+                <p>Unite<a href="/usuario/registrarse">aca</a></p>
+            </fieldset>
         </form>
     </main>
-    <%- include("./partials/footer")  %> 
+    <%- include("../partials/footer")  %> 
     </body>
     </html>
