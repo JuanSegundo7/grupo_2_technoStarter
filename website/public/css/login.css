@@ -13,7 +13,6 @@
 }
 .margin-body {
     margin: 10px;
-  
 }
 
 main{
@@ -55,9 +54,14 @@ body{
     max-width: 500px;
     background-color: #031927;
     font-size: 14px;
-    margin: 15px;
-    padding: 10px;
+    margin: 5vh 2vh 2vh 2vh;
+    padding: 20px;
     border: 1px solid #FF9900;
+}
+
+label{
+    font-weight: 500;
+    font-size: 15px;
 }
 
 
@@ -95,7 +99,7 @@ input{
 #flex-button button{
     color: black;
     background-color: #FF9900;
-    padding: 5px 5px;
+    padding: 6px 7px;
     border-radius: 15px;
     position: relative;
     order: 2;
@@ -108,8 +112,17 @@ input{
     order: 1;
 }
 
-/**************************************^^^RADIO-BUTTON^^^********************************************/
+#flex-password{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
 
+#flex-password a{
+    margin-left: 5px;
+}
 
 #recordarme{
     margin-bottom: 0;

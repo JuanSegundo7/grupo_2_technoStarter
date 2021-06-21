@@ -39,17 +39,6 @@ header {
 	box-shadow: 0 10px 8px 0 rgba(146, 144, 144, 0.7);
 }
 
-header input{
-    border-radius: 12px;
-    background-color: #ebebeb;
-    padding: 7px 7px;
- 
-}
-
-header fieldset{
-    border: 0px;
-    padding: 10px;
-}
 
 header nav {
 	display: flex;
@@ -69,6 +58,44 @@ header nav {
 	visibility: visible;
 	height: 10vh;
 }
+
+/*search-bar{
+	width: 100%;
+	position: relative;
+	display: flex;
+	border: none;
+}*/
+
+#search-fieldset{
+	width: 100%;
+	position: relative;
+	display: flex;
+	border: none;
+}
+
+#keyword{
+	display: flex;
+	align-items: center;
+	width: 80%;
+	border: 3px solid #FF9900;
+	border-right: none;
+	padding: 5px 5px 5px 15px;
+	height: 36px;
+	border-radius: 5px 0 0 5px;
+}
+
+.searchButton {
+	width: 40px;
+	height: 36px;
+	border: 1px solid #FF9900;
+	background: #FF9900;
+	text-align: center;
+	color: #fff;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	font-size: 20px;
+}
+
 
 /**********************************^^^LOGO-^^^********************************************/
 header img {
@@ -106,8 +133,13 @@ header img {
 
 /**********************************^^^NAVBAR-BOTTOM^^^********************************************/
 
+/**********************************^^^OPTION^^^********************************************/
 
-
+#option a{
+	color: #FF9900;
+	text-decoration: none;
+	font-weight: 500;
+}
 
 /**********************************^^^USER^^^********************************************/
 
@@ -191,17 +223,6 @@ header img {
 		box-shadow: 0 10px 8px 0 rgba(146, 144, 144, 0.7);
 	}
 
-	header input{
-		border-radius: 12px;
-		background-color: #ebebeb;
-		padding: 7px 7px;
-	
-	}
-
-	header fieldset{
-		border: 0px;
-		padding: 10px;
-	}
 
 	header nav {
 		display: flex;
@@ -209,19 +230,6 @@ header img {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-	}
-
-	.hover-hidden {
-		visibility: hidden;
-		height: 0vh;
-		overflow: hidden;
-		transition: all 0.3s ease-out;
-	}
-
-	.hover-hidden:target {
-		visibility: visible;
-		overflow: auto;
-		height: 10vh;
 	}
 
 	/**********************************^^^LOGO-^^^********************************************/
@@ -265,10 +273,14 @@ header img {
 	}
 
 	#search-desktop{
-	height: 10vh;
     visibility: visible;
     transition: none;
     overflow: visible;
+	height: initial;
+	}
+
+	#option{
+		visibility: visible !important;
 	}
 
 	.flex-ul-top{
@@ -284,9 +296,11 @@ header img {
 
 	/**********************************^^^NAVBAR-BOTTOM^^^********************************************/
 
+	.navbar-bottom{
+		visibility: visible;
+	}
 
 	.navbar-bottom li{
-		width:101px;
 		list-style-type: none;
 	}
 
@@ -294,7 +308,7 @@ header img {
 	.navbar-bottom a{
 		color: #FF9900;
 		text-decoration: none;
-		font-weight: 400;
+		font-weight: 500;
 	}
 
 	.flex-ul-categorias-2{
@@ -305,8 +319,13 @@ header img {
 		justify-content: space-evenly;
 	}
 
-	.flex-ul-categorias-1{
-		display: none;
+	#keyword{
+		width: 100%;
+		border: 3px solid #FF9900;
+		border-right: none;
+		padding: 5px 5px 5px 15px;
+		height: 36px;
+		border-radius: 5px 0 0 5px;
 	}
 
 	/**********************************^^^USER^^^********************************************/
@@ -331,6 +350,5 @@ header img {
 	#menu-2 li {
 		flex-direction: row;
 		list-style-type: none;
-		width: 116px;
 	}
 }

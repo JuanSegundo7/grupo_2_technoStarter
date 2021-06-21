@@ -11,13 +11,18 @@
         <figure class="mobile-visible logo">
             <a href="/"><img src="/img/technoStarter/TechnoStarter1.png" alt="logo del sitio"></a>
         </figure>
-        <form action="/proyectos/buscar" method="get" id="search-desktop" class="desktop-visible hover-hidden">
-            <fieldset>
-                <input type="text" name="keyword" id="keyword">
-                <button type="submit"><i class="fas fa-search"></i></button>
+        <form action="/proyectos/buscar" method="get" id="search-desktop" class="desktop-visible hover-hidden                                                               ">
+            <fieldset id="search-fieldset">
+                <input type="text" name="keyword" id="keyword" placeholder="¿Que estás buscando?">
+                <button type="submit" class="searchButton"><i class="fas fa-search"></i></button>
             </fieldset>
         </form>
         <ul class="navbar-icons">
+            <li>
+                <a href="#option">
+                    <i class="fas fa-hammer"></i>
+                </a>
+            </li>
             <li class="mobile-visible">
                 <a href="/">
                     <i class="fas fa-home"></i>
@@ -38,9 +43,14 @@
                     <i class="fas fa-shopping-cart"></i></i>
                 </a>
             </li>
-            <li>
+            <li class="mobile-visible">
                 <a href="#user">
                     <i class="fas fa-user"></i>
+                </a>
+            </li>
+            <li class="desktop-visible">
+                <a href="/usuario/ingresar">
+                    <i class="fas fa-sign-in-alt"></i>
                 </a>
             </li>
             <li class="mobile-visible">
@@ -51,21 +61,27 @@
         </ul>
     </nav>
     <form action="/proyectos/buscar" method="get" id="search" class="mobile-visible hover-hidden">
-        <fieldset>
+        <fieldset id="search-fieldset">
             <input type="text" name="keyword" id="keyword">
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <button type="submit" class="searchButton"><i class="fas fa-search"></i></button>
         </fieldset>
     </form>
+    <nav id="option" class="hover-hidden navbar-bottom">
+        <ul class="flex-ul-categorias-1">
+            <li><a href="/proyecto/crear-producto">CREAR PROYECTO</a></li>
+            <li><a href="/proyecto/editar-producto">EDITAR PROYECTO</a></li>
+        </ul>
+    </nav>
     <nav id="user" class="hover-hidden navbar-bottom">
         <ul class="flex-ul-categorias-1">
             <li><a href="/usuario/ingresar">INGRESAR</a></li>
-            <li><a href="/usuario/registrar">UNETE</a></li>
+            <li><a href="/usuario/registrarse">UNETE</a></li>
         </ul>
     </nav>
     <nav id="user" class="hover-hidden navbar-bottom">
         <ul class="flex-ul-categorias-2">
             <li><a href="/usuario/ingresar">INGRESAR</a></li>
-            <li><a href="/usuario/registrar">UNETE</a></li>
+            <li><a href="/usuario/registrarse">UNETE</a></li>
         </ul>
     </nav>
     <nav class="hover-hidden navbar-bottom" id="menu">
