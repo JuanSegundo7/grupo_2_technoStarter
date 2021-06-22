@@ -68,14 +68,14 @@ header nav {
 
 #search-fieldset{
 	width: 100%;
-	position: relative;
-	display: flex;
-	border: none;
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    border: none;
+    justify-content: center;
 }
 
 #keyword{
-	display: flex;
-	align-items: center;
 	width: 80%;
 	border: 3px solid #FF9900;
 	border-right: none;
@@ -276,7 +276,7 @@ header img {
     visibility: visible;
     transition: none;
     overflow: visible;
-	height: initial;
+	height: -webkit-fill-available;
 	}
 
 	#option{
