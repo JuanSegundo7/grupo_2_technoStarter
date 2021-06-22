@@ -2,21 +2,25 @@
 {
     "id": 1,
     "mail": "prueba@gmail.com",
-    "password": "abcd1234"
+    "password": "abcd1234",
+    "admin": true
 },
 {
     "id": 2,
     "mail": "prueba2@gmail.com",
-    "password": "abcd1234"
+    "password": "abcd1234",
+    "admin": true
 },
 {
     "id": 3,
     "mail": "prueba3@gmail.com",
-    "password": "abcd1234"
+    "password": "abcd1234",
+    "admin": true
 },
 {
     "id": 4,
     "mail": "prueba4@gmail.com",
-    "password": "abcd1234"
+    "password": "abcd1234",
+    "admin": true
 }
 ]

@@ -22,23 +22,16 @@ body{
     color: #FF9900;
 }
 
-h1, h2, h3, p {
-    display: inline-block;
-    color: #000;
-    align-self: center;
-}
-
-h4 {
+.lorem{
     margin: 10px;
 }
 
 p {
-    font-size: larger;
-    margin: 80px 200px;
+    font-size: 20px;
 }
 
 #contenedor1 {
-    width: 100vw;
+    width: 100%;
     color: #000;
     text-align: center;
     padding: 80px;
@@ -47,27 +40,36 @@ p {
 
 #contenedor2 {
     display: flex;
-    height: 500px;
-    width: 800px;
+    flex-wrap: wrap;
     border: 1px solid #C4C4C4;
     border-top: none;
     align-items: center;
 }
 
+#contenedor2 article {
+    text-align: center;
+}
+
+.flex-ubic{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 #imgPrincipal {
-    width: 600px;
+    width: 50%;
     height: 400px;
     margin: 30px;
     border: 2px solid #031927;
     border-radius: 50px;
 }
-.fa-map-marker-alt{
-    size: 200%;
-}
 
-.fa-map-marker-alt, #SA {
+#SA {
     color: #031927;
     padding: 5px;
+    font-size: 22px;
+    width: 60%;
+    text-align: center;
 }
 
 
@@ -79,6 +81,10 @@ p {
     font-size: 60px;
     line-height: 67px;
     color: #000000;
+}
+
+#precio p{
+color: #FF9900;
 }
 
 button {
@@ -140,3 +146,8 @@ button {
     border-radius: 50px;
     margin: 60px 20px;
 }
+
+.campaña{
+    text-align: center;
+}
+
