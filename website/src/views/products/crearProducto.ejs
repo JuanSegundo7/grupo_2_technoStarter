@@ -9,7 +9,7 @@
         <section class="titulo">
             <h2>Creación de Proyectos</h2>
         </section>
-        <section class="formulario                              ">
+        <section class="formulario">
             <form action="/" method="POST" id="crearProductos">
                 <fieldset id="nombre-proyecto">
                     <label for="nombreProducto">Nombre de tu proyecto: </label>
@@ -26,7 +26,7 @@
                     <label for="robotica">Impresión 3D</label>
                     <input type= "radio" name="categorias" id="impresion3d">
                     <label for="robotica">electronica</label>
-                    <input type= "radio" name="categorias" id="electronica">
+                    <input type= "radio" name="categorias" id="electronica" value="electronica">
                 </fieldset>
                 <fieldset id="descripcion-proyecto">
                     <h3>¡Contanos de que se trata tu proyecto!</h3>
@@ -35,7 +35,7 @@
                 </fieldset>
                 <fieldset id="fotos-proyecto">
                     <label for="fotosProyecto">Subí una o varias fotos</label>
-                    <input type="file" name="fotosProyecto" id="fotosProyecto" required>
+                    <input type="file" name="fotosProyecto" id="fotosProyecto" required multiple>
                 </fieldset>
                 <fieldset id="precio-proyecto">
                     <h3>¡Establece una meta para tu proyecto!</h3>
