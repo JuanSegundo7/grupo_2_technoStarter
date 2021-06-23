@@ -15,7 +15,7 @@ const categoriasRouter = require("./routes/categoriasRouter");
 
 // ************ Servidor ************
 app.set("port", process.env.PORT || 3000);
-app.listen(app.get("port"), () => console.log("Server start in http://localhost"+app.get("port")));
+app.listen(app.get("port"), () => console.log("Server start in http://localhost:"+app.get("port")));
 // ************ Acceso Publico ************
 
 app.use(express.static(path.resolve(__dirname, "../public"))); // Necesario para los archivos estáticos en el folder /public
@@ -36,5 +36,12 @@ app.use("/carrito", cartRouter);
 app.use("/proyecto", productRouter);
 app.use("/usuario", userRouter);
 app.use("/categoria", categoriasRouter);
+
+// ************ Error 404 ************
+
+app.use((req, res, next) => {
+    res.status(404).send('<strong>Error 404, página no encontrada :(</strong>');
+    next();
+}); 
 
 
