@@ -15,12 +15,12 @@
     "id": 3,
     "mail": "prueba3@gmail.com",
     "password": "abcd1234",
-    "admin": true
+    "admin": false
 },
 {
     "id": 4,
     "mail": "prueba4@gmail.com",
     "password": "abcd1234",
-    "admin": true
+    "admin": false
 }
 ]
