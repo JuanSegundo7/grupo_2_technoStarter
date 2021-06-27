@@ -40,7 +40,7 @@ app.use("/categoria", categoriasRouter);
 // ************ Error 404 ************
 
 app.use((req, res, next) => {
-    res.status(404).send('<strong>Error 404, página no encontrada :(</strong>');
+    res.status(404).render('error/not-found');
     next();
 }); 
 
