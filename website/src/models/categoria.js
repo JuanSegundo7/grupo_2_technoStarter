@@ -10,6 +10,8 @@ const model = {
     oneCategoria: function (id){
         const productos = this.allCategoria();
         let resultado = productos.find(element => element.id == id);
-        return resultado
+        return resultado;
     } 
 }
+
+module.exports = model;
