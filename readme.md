@@ -38,7 +38,7 @@ Link: https://www.mercadolibre.com.ar/
 ------------------------------------------------------------------------------------------------
                                     ¿QUIENES SOMOS?
 
-Hola, nos presentamos, somos Tomas Vila Martínez y Juan Segundo Martínez, decidimos hacer una pagina de crowfunding, porque nos parecio buena idea replicarlo en un ambiente tecnologico que dia a dia se expande en Argentina.
+Hola, nos presentamos, somos Tomas Vila Martínez, Juan Segundo Martínez y Guido Padin, decidimos hacer una pagina de crowfunding, porque nos parecio buena idea replicarlo en un ambiente tecnologico que dia a dia se expande en Argentina.
 
 ------------------------------------------------------------------------------------------------
                                     TRELLO

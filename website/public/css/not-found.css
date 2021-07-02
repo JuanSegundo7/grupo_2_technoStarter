@@ -9,10 +9,21 @@ body {
 #contenedor {
     width: 100vw;
     height: 66vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #error {
+    display: inline;
     color: #FF9900;
     font-size: 100px;
     font-weight: bold;
+}
+
+p {
+    display: inline;
+    color: #FF9900;
+    font-weight: bold;
+    font-size: 20px;
 }
