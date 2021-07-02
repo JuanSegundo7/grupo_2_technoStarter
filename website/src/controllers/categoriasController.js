@@ -1,16 +1,10 @@
+/***Const Models */
+
+const categoria = require("../models/categoria");
+
 const categorias = {
-    robotica: (req,res) => {
-        res.render("categorias/robotica")
-    },
-
-    impresion: (req,res) => {
-        res.render("categorias/impresion")
-    },
-
-    electronica: (req,res) => {
-        res.render("categorias/electronica")
-    },
-
+    show: (req,res) => res.render("categorias/robotica",{categoria:categoria.oneCategoria(req.params.id)})
+    /**agregar switch*/
 };
 
 module.exports = categorias;

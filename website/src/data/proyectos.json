@@ -2,9 +2,11 @@
     {
         "id": 1,
         "nombre": "nombreProyecto1",
-        "contribucionActual": 200,
+        "contribucionActual": 0,
         "contribucionFinal": 10000,
+        "fecha": "25/09/2021", 
         "patrocinadores": 20,
+        "ubicacion": "Santa Fe",
         "autor": 1,
         "categoria": 1,
         "images": 

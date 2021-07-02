@@ -2,14 +2,7 @@ const express = require("express");
 const categoriasController = require("../controllers/categoriasController");
 const router = express.Router();
 
-router.get("/categorias/:id", (req,res) => {
-let idCategoria = req.params.id;
-if(idCategoria == categoriasController.id){
-    res.send(categoriasController.id);
-}else{
-    res.send("No se encuentra la categoria solicitada")
-}
-})
+router.get("/:category", categoriasController.show)
 
 module.exports = router;
 
