@@ -5,9 +5,9 @@ const usuarios = require("../models/usuario");
 
 const product = {
     index: (req,res) => {return res.render("products/product");},
-    create: (req,res) => {return res.render("products/crearProducto");}, 
+    create: (req,res) => {return res.render("products/crearProducto", {categorias:categorias.allCategoria()});}, 
     save: (req,res) => {
-        let result = proyecto.newProyect(req.body,req.file)
+        let result = proyecto.newProyect(req.body,req.files)
         return result == true ? res.redirect("/") : res.send("Error al cargar la informacion"); 
     },
     edit: (req,res) => {res.render("products/editarProducto", {product:proyecto.oneProyect(req.params.id)})},

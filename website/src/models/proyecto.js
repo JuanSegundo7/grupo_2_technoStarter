@@ -17,15 +17,15 @@ const model = {
         let productos = this.allProyect();
         let nuevo = {
             id: productos.length > 0 ? productos[productos.length-1].id + 1 : 1,
-            nombre: data.nombre,
+            nombre: data.nombreProducto,
             contribucionActual: 0,
             contribucionFinal: 10000,
             fecha: data.fecha,
             patrocinadores: 20,
             ubicacion: data.ubicacion,
             autor: 1,
-            categorias: parseInt(data.categorias),
-            images: file.filename != undefined ? file.filename : "defaultImagen.jpg",
+            categoria: parseInt(data.categoria),
+            images: file.map( image =>  String(data.nombreProducto).trim().replace(/\s+/g, '') + "/" + image.filename),
         }
         productos.push(nuevo);
         fs.writeFileSync(directory, JSON.stringify(productos,null,2));
