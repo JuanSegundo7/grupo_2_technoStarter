@@ -42,9 +42,9 @@ app.use("/categoria", categoriasRouter);
 
 // ************ Error 404 ************
 
-app.use((req, res, next) => {
-    res.status(404).render('error/not-found');
-    next();
-}); 
+// app.use((req, res, next) => {
+//     res.status(404).render('error/not-found');
+//     next();
+// }); 
 
 

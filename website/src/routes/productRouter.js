@@ -1,12 +1,18 @@
 const express = require('express');
+const path = require("path");
+const fs = require("fs");
 const router = express.Router();
 const productController = require("../controllers/productController");
 const multer = require('multer');
-let dest = multer.diskStorage({
+const dest = multer.diskStorage({
     destination: function (req, file, cb) {
         let extension = path.extname(file.originalname);
+        let dir = path.resolve(__dirname,"../../public/uploads","products", String(req.body.nombreProducto).trim().replace(/\s+/g, ''))
+        if (!fs.existsSync(dir)){
+            fs.mkdirSync(dir);
+        }
         if(extension.indexOf("jpg") > 0){
-            cb(null, path.resolve(__dirname,"../../public/uploads","products"))
+            cb(null, dir)
         }
     },
     filename: function (req, file, cb) {
@@ -16,8 +22,18 @@ let dest = multer.diskStorage({
 const upload = multer({storage:dest});
 
 router.get("/producto", productController.index);
+
 router.get("/crear-producto", productController.create);
-router.get("/editar-producto", productController.edit);
+
+router.get("/editar-producto/:id", productController.edit);
+
+router.post("/guardar",[upload.any("fotosProyecto")], productController.save);
+
+router.put("/actualizar/:id",[upload.any("fotosProyecto")], productController.update);
+
+router.delete("/delete/:id",productController.delete);
+
+
 // router.get("/:id",productController)
 
 module.exports = router;
