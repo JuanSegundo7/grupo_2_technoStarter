@@ -22,61 +22,15 @@
   },
   {
     "id": 2,
+    "nombre": "PajaroRobotico",
     "contribucionActual": 0,
     "contribucionFinal": 10000,
     "patrocinadores": 20,
-    "ubicacion": "asdasd",
+    "ubicacion": "Cancun Argentino de Rosario",
     "autor": 1,
-    "categorias": null,
-    "images": "fotosProyecto-1625269861158.jpg"
-  },
-  {
-    "id": 3,
-    "contribucionActual": 0,
-    "contribucionFinal": 10000,
-    "patrocinadores": 20,
-    "ubicacion": "nordelta",
-    "autor": 1,
-    "categorias": null,
-    "images": "fotosProyecto-1625270376018.jpg"
-  },
-  {
-    "id": 4,
-    "nombre": "Gato Robotico",
-    "contribucionActual": 0,
-    "contribucionFinal": 10000,
-    "patrocinadores": 20,
-    "ubicacion": "nordelta",
-    "autor": 1,
-    "categorias": null,
-    "images": "GatoRobotico/fotosProyecto-1625271284458.jpg"
-  },
-  {
-    "id": 5,
-    "nombre": "Elefante Robotico",
-    "contribucionActual": 0,
-    "contribucionFinal": 10000,
-    "patrocinadores": 20,
-    "ubicacion": "nordelta",
-    "autor": 1,
-    "categorias": null,
+    "categoria": 2,
     "images": [
-      "ElefanteRobotico/fotosProyecto-1625271744140.jpg",
-      "ElefanteRobotico/fotosProyecto-1625271744391.jpg",
-      "ElefanteRobotico/fotosProyecto-1625271744539.jpg"
-    ]
-  },
-  {
-    "id": 6,
-    "nombre": "Raton Robotica",
-    "contribucionActual": 0,
-    "contribucionFinal": 10000,
-    "patrocinadores": 20,
-    "ubicacion": "nordelta",
-    "autor": 1,
-    "categorias": null,
-    "images": [
-      "RatonRobotica/fotosProyecto-1625272360720.jpg"
+      "PajaroRobotico/fotosProyecto-1625441523642.jpg"
     ]
   }
 ]

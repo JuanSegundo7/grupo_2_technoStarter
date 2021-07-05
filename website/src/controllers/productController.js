@@ -10,13 +10,13 @@ const product = {
         let result = proyecto.newProyect(req.body,req.files)
         return result == true ? res.redirect("/") : res.send("Error al cargar la informacion"); 
     },
-    edit: (req,res) => {res.render("products/editarProducto", {product:proyecto.oneProyect(req.params.id)})},
+    edit: (req,res) => {res.render("proyecto/editar-producto/:id", {product:proyecto.oneProyect(req.params.id)})},
     update: (req,res) => {
         let result = proyecto.edit(req.body,req.file,req.params.id);
         return result == true ? res.redirect("/") : res.send("Error al cargar la informacion");
     },
     delete: (req,res) => {
-        let result = product.delete(req.params.id);
+        let result = proyecto.delete(req.params.id);
         return result == true ? res.redirect("/") : res.send("Error al cargar la informacion");
     }
 };

@@ -11,7 +11,7 @@ const dest = multer.diskStorage({
         if (!fs.existsSync(dir)){
             fs.mkdirSync(dir);
         }
-        if(extension.indexOf("jpg") > 0){
+        if(extension.indexOf("jpg", "gif", "png") > 0){
             cb(null, dir)
         }
     },
@@ -31,9 +31,7 @@ router.post("/guardar",[upload.any("fotosProyecto")], productController.save);
 
 router.put("/actualizar/:id",[upload.any("fotosProyecto")], productController.update);
 
-router.delete("/delete/:id",productController.delete);
+router.delete("/borrar/:id",productController.delete);
 
-
-// router.get("/:id",productController)
 
 module.exports = router;

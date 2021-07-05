@@ -13,12 +13,16 @@
         </section>
         <form action="/" method="POST" id="formPrincipal">
             <fieldset>
-                <label for="nombreCompleto">Nombre Completo</label>
-                <input type="text" placeholder="Nombre Completo" id="nombreCompleto" name="nombreCompleto">
+                <label for="nombreCompleto">Nombre</label>
+                <input type="text" placeholder="Nombre" id="nombreUsuario" name="nombre">
+            </fieldset>
+            <fieldset>
+                <label for="nombreCompleto">Apellido</label>
+                <input type="text" placeholder="Apellido" id="apellidoUsuario" name="apellido">
             </fieldset>
             <fieldset>
                 <label for="direccionDeCorreoElectronico">Direccion de correo electronico</label>
-                <input type="text" placeholder="Direccion de correo electronico" id="direccionDeCorreoElectronico" name="direccionDeCorreoElectronico">
+                <input type="text" placeholder="Direccion de correo electronico" id="direccionCorreoElectronico" name="direccionDeCorreoElectronico">
             </fieldset>
             <fieldset>
                 <label for="contraseña">Contraseña</label>
@@ -27,6 +31,11 @@
             <fieldset>
                 <label for="confirmarContraseña">Confirmar Contraseña</label>
                 <input type="confirmPassword" placeholder="Confirmar contraseña" id="confirmarContraseña" name="confirmarContraseña">
+            </fieldset>
+            <fieldset id="foto-avatar">
+                <h3>Agrega tu Avatar!</h3>
+                <label for="fotoAvatar">Subí tu foto</label>
+                <input type="file" name="fotoAvatar" id="fotoAvatar" required>
             </fieldset>
             <fieldset id="flex-button">
                 <button type="submit">Iniciar sesión</button>

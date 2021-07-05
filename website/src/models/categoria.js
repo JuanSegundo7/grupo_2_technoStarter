@@ -12,11 +12,11 @@ const model = {
         let resultado = productos.find(element => element.id == id);
         return resultado;
     },
-    categoryByName: function (nombre){
-        const productos = this.allCategoria();
-        let resultado = productos.find(nombre => nombre.id == id);
+    proyectsByCategory: function(idCategory){
+        const proyectos = this.allProyect();
+        let resultado = proyectos.filter(element => element.category == idCategory);
         return resultado;
-    }
+    },
     
 }
 

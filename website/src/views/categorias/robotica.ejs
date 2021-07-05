@@ -7,13 +7,17 @@
     <%-include("../partials/header")%> 
     <main>
         <section class="titulo">
-            <% switch (category.id) { 
-                case 1 category.id:
-                    <%= category.nombre %>
-                    break; 
-                default:
-                    break;
-                } %></h2> 
+            <% switch (category.id) {  %>
+                <% case 1 category.id: %>
+                    <%= category.nombre; %>
+                <% break; %>
+                <% case 2 category.id: %>
+                    <%= category.nombre; %>
+                <% break; %>
+                <% case 3 category.id: %>
+                    <%= category.nombre; %>
+                <% break; %> 
+            <% } %></h2> 
         </section> 
         <section class="robotica"> 
             <section class="robotica-border">

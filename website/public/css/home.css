@@ -271,7 +271,7 @@ box-sizing: border-box;
 
     .campañaDestacada{
         margin-top: 10vh;
-        padding: 4.5vw;
+        padding: 10vw;
     }   
 
     .campañaDestacada h2{
@@ -297,7 +297,7 @@ box-sizing: border-box;
     }
 
     .recomendaciones{
-        padding: 5vw;
+        padding: 10vw;
         width: 100%;
         margin-left: 0px;
         margin-right: 0px;

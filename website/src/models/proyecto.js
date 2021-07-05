@@ -20,7 +20,8 @@ const model = {
             nombre: data.nombreProducto,
             contribucionActual: 0,
             contribucionFinal: 10000,
-            fecha: data.fecha,
+            texto: data.textoProyecto,
+            fecha: data.fechaProyecto,
             patrocinadores: 20,
             ubicacion: data.ubicacion,
             autor: 1,
@@ -30,11 +31,6 @@ const model = {
         productos.push(nuevo);
         fs.writeFileSync(directory, JSON.stringify(productos,null,2));
         return true
-    },
-    proyectsByCategory: function(idCategory){
-        const proyectos = this.allProyect();
-        let resultado = proyectos.filter(element => element.category == idCategory);
-        return resultado;
     },
     editProyect: function(data,file,id){
         const directory = path.resolve(__dirname,"../data","proyectos.json")
