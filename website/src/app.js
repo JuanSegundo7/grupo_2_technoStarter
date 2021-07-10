@@ -4,6 +4,7 @@ const express = require("express");
 const path = require("path");
 const method = require("method-override");
 const app = express();
+const session = require("express-session");
 
 // ************ Require's Routes ************
 
@@ -26,6 +27,7 @@ app.use(express.static(path.resolve(__dirname, "../public"))); // Necesario para
 
 app.use(express.urlencoded({ extended: false}));
 app.use(method("_method"));
+app.use(session({secret:"Argentina campeón"}));
 
 // ************ Template Engine ************
 
@@ -42,9 +44,9 @@ app.use("/categoria", categoriasRouter);
 
 // ************ Error 404 ************
 
-// app.use((req, res, next) => {
-//     res.status(404).render('error/not-found');
-//     next();
-// }); 
+app.use((req, res, next) => {
+    res.status(404).render('error/not-found');
+    next();
+}); 
 
 

@@ -242,7 +242,7 @@ box-sizing: border-box;
     /**************************************^^^BODY^^^********************************************/
 
     .titulo-h2{
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 
     .categorias-body li{
@@ -262,6 +262,11 @@ box-sizing: border-box;
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    .flex-camapañaDestacada figure{
+        width: 80%;
+        margin-top: 1em;
     }
 
     .campañaDestacada p{
@@ -294,6 +299,10 @@ box-sizing: border-box;
 
     .flex-recomendaciones article{
         text-align: center;
+    }
+
+    .flex-recomendaciones figure{
+        margin-top: 0.5em;
     }
 
     .recomendaciones{

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("../partials/head",{"css":["header", "formularioCrear", "footer"]})%>
+
+<body>
+    <%-include("../partials/header")%> 
+    <main>
+        <section class="titulo">
+            <h2>Borrar Proyectos</h2>
+        </section>
+        <form action="/product/update/<%= proyecto.id %>?_method=PUT" method="POST" id="borrarProyectos">
+            <fieldset id="nombre-proyecto">
+                <% proyectos.forEach(proyecto => { %>
+                    <label for="<%= proyecto.id %>"><%= proyecto.nombre%></label>
+                    <input type="text" name="nombreProductoBorrar" id="<%= proyecto.id %>" value="<%= proyecto.id %>">
+                <% }) %>
+            </fieldset>
+            <fieldset id="categorias-proyecto">
+                <% proyectos.forEach(proyecto => { %>
+                    <label for="<%= proyecto.id %>"><%= proyecto.nombre%></label>
+                    <input type= "radio" name="categoria" id="<%= proyecto.id %>" value="<%= proyecto.id %>">
+                <% }) %>
+            </fieldset>
+            <fieldset id="categorias-proyecto">
+                <% proyectos.forEach(proyecto => { %>
+                    <label for="<%= proyecto.id %>"><%= proyecto.nombre%></label>
+                    <input type= "text" name="nombreBorrar" id="<%= proyecto.id %>" value="<%= proyecto.id %>">
+                <% }) %>
+            </fieldset>
+            <fieldset id="contanosPorque">
+                <h3>¿Porqué te gustaría borrar tu proyecto?</h3>
+                    <p>Explicanos el motivo por el cual lo estas borrando para tenerlo de referncia y poder seguir mejorando</p>
+                    <textarea name="descripcionBorrar" rows="15" cols="30" placeholder="¿Porque lo borras?" id="textoProyecto" required></textarea>
+            </fieldset>
+        </form>
+    </main>
+    <%-include("../partials/footer")%> 
+</body>
+</html>

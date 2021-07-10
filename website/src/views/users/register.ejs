@@ -13,12 +13,18 @@
         </section>
         <form action="/" method="POST" id="formPrincipal">
             <fieldset>
+                <% if (locals.errors) {
+                    errors.forEach(error => { %>
+                        <p class="mensaje-error"><%= error.msg %></p>
+                <%   });
+                } 
+                %> 
                 <label for="nombreCompleto">Nombre</label>
-                <input type="text" placeholder="Nombre" id="nombreUsuario" name="nombre">
+                <input type="text" placeholder="Nombre" id="nombreUsuario" name="nombreUsuario">
             </fieldset>
             <fieldset>
                 <label for="nombreCompleto">Apellido</label>
-                <input type="text" placeholder="Apellido" id="apellidoUsuario" name="apellido">
+                <input type="text" placeholder="Apellido" id="apellidoUsuario" name="apellidoUsuario">
             </fieldset>
             <fieldset>
                 <label for="direccionDeCorreoElectronico">Direccion de correo electronico</label>
@@ -26,7 +32,7 @@
             </fieldset>
             <fieldset>
                 <label for="contraseña">Contraseña</label>
-                <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña">
+                <input type="password" placeholder="Contraseña" id="clave" name="clave">
             </fieldset>
             <fieldset>
                 <label for="confirmarContraseña">Confirmar Contraseña</label>

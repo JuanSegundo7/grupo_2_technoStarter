@@ -62,7 +62,12 @@ const model = {
         proyectos = proyectos.filter(proyectos => proyectos.id != deleted.id )
         fs.writeFileSync(directory,JSON.stringify(proyectos,null,2));
         return true;
-    }
+    },
+    proyectsByCategory: function(idCategory){
+        const proyectos = this.allProyect();
+        let resultado = proyectos.filter(element => element.category == idCategory);
+        return resultado;
+    },
 }
 
 module.exports = model;

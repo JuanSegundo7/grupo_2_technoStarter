@@ -4,7 +4,7 @@
         "nombre": "Carlos",
         "apellido": "Guernica",
         "mail": "prueba@gmail.com",
-        "password": "abcd1234",
+        "clave": "abcd1234",
         "admin": true,
         "imagen": ["usuarioPredeterminado.png"]
     }
