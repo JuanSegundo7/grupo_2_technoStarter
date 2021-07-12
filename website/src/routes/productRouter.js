@@ -6,7 +6,6 @@ const fs = require("fs");
 const router = express.Router();
 const productController = require("../controllers/productController");
 const { body } = require("express-validator");
-const { validationResult } = require("express-validator");
 const multer = require('multer');
 
 // ************ Multer ************
@@ -29,15 +28,6 @@ const dest = multer.diskStorage({
 
 const upload = multer({storage:dest});
 
-// ************ Express-Validator ************
-
-const validacion = [
-    body("nombreUsuario").notEmpty().withMessage("Tenes que completar el campo Nombre"),
-    body("apellidoUsuario").notEmpty().withMessage("Tenes que completar el campo Nombre"),
-    body("apellidoUsuario").notEmpty().withMessage("Tenes que completar el campo Nombre")
-
-
-]
 
 // ************ Rutas ************
 

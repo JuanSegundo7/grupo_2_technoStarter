@@ -1,7 +1,9 @@
 /***Const Models */
+
 const proyecto = require("../models/proyecto");
+
 const categorias = require("../models/categoria");
-const usuarios = require("../models/usuario");
+
 
 const product = {
     index: (req,res) => {return res.render("products/product");},
@@ -22,4 +24,5 @@ const product = {
     },
     borrar: (req,res) => {res.render("products/borrarProyectos", {proyecto:proyecto.oneProyect(req.params.id)});}
 };
+
 module.exports = product;

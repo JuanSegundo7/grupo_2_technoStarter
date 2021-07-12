@@ -8,9 +8,15 @@
     <main>
         <form action="/" method="POST" id="form-principal">
             <fieldset>
+                <% if (locals.errors) {
+                    errors.forEach(error => { %>
+                        <p class="mensaje-error"><%= error[i].msg %></p>
+                <%   });
+                } 
+                %> 
                 <h3 class="margin-body">Bienvenido devuelta!</h3>
                 <label for="nombreUsuario" class="margin-body">Direccion de correo electronico</label>
-                <input type="text" placeholder="Nombre de usuario" id="nombreUsuario" name="nombreUsuario">
+                <input type="text" placeholder="E-mail" id="email" name="email">
             </fieldset>
             <fieldset>
                 <label for="contraseña" class="margin-body">Contraseña</label>

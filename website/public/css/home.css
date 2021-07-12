@@ -37,8 +37,6 @@ main{
     flex-direction: column;
 }
 
-
-
 .categorias-body li{
     height: 100%;
 width: 33vw;
@@ -49,6 +47,11 @@ align-items: flex-start;
 box-sizing: border-box;
 }
 
+.titulo-h2{
+    font-size: 1.5em;
+    margin: 1em 0 1em 0;
+}
+
 /********************************^^^CAMPAÑA-DESTACADA^^^********************************************/
 
 .flex-camapañaDestacada{
@@ -56,14 +59,16 @@ box-sizing: border-box;
 }
 
 .campañaDestacada{
-    margin-top: 25vh;
+    margin-top: 18vh;
 }
 
 .campañaDestacada-1{
     margin-top: 10px;
-    border: 1px solid grey;
+    color: #FF9900;
     border-radius: 25px;
     padding: 10px;
+    background-color: #031927;
+    border: solid 2px #FF9900;
 }
 
 .campañaDestacada article{
@@ -78,7 +83,7 @@ box-sizing: border-box;
 .campañaDestacada img{
     width: 100%;
     border-radius: 25px;
-    border: 1px solid black;  
+    border: 1px solid #FF9900;  
 }
 
 /********************************^^^RECOMENDACIONES^^^********************************************/
@@ -86,22 +91,28 @@ box-sizing: border-box;
 .recomendaciones-1{
     margin-top: 10px;
     padding: 10px;
-    border: 1px solid grey;
+    border: 2px solid #FF9900;
     border-radius: 25px;
+    background-color: #031927;
+    color: #FF9900;
 }
 
 .recomendaciones-2{
     margin-top: 10px;
     padding: 10px;
-    border: 1px solid grey;
+    border: 2px solid #FF9900;
+    color: #FF9900;
     border-radius: 25px;
+    background-color: #031927;
 }
 
 .recomendaciones-3{
     margin-top: 10px;
     padding: 10px;
-    border: 1px solid grey;
+    border: 2px solid #FF9900;
     border-radius: 25px;
+    background-color: #031927;
+    color: #FF9900;
 }   
 
 /*******************************************ARTICLE-RECO****************************************/
@@ -141,7 +152,7 @@ box-sizing: border-box;
 
 .recomendaciones img{
     width: 100%;
-    border: 1px solid black;
+    border: 2px solid #FF9900;
     border-radius: 25px;
 }
 
@@ -154,10 +165,10 @@ box-sizing: border-box;
 
 .flex-thumbs i{
     color: #FF9900;
-    background-color: #031927;
+    background-color: #FFF3DD;
     padding: 8px 8px;
     border-radius: 100%;
-    border: 1px solid #FF9900;
+    border: 2px solid #FF9900;
 
 }
 /********************************^^^COMO-FUNCIONA^^^********************************************/
@@ -235,6 +246,18 @@ box-sizing: border-box;
         font-size: 5em;
     }
 
+    .campañaDestacada figure{
+        padding: 1.5em 1.5em 0 1.5em;
+    }
+
+    .recomendaciones figure{
+        padding: 1.5em 1.5em 0 1.5em;
+    }
+
+    .flex-thumbs{
+        font-size: 1.5em;
+    }
+
 }
 
 
@@ -275,18 +298,18 @@ box-sizing: border-box;
     }
 
     .campañaDestacada{
-        margin-top: 10vh;
-        padding: 10vw;
+        margin-top: 5vh;
+        padding: 2vw 10vw 2vw 10vw;
     }   
 
     .campañaDestacada h2{
         text-align: center;
+        margin: 2vh 0 4vh 0;
     }
 
     .campañaDestacada img{
         width: 100%;
         padding: 0px;
-        border: 1px solid black;
     }
 
 
@@ -306,7 +329,7 @@ box-sizing: border-box;
     }
 
     .recomendaciones{
-        padding: 10vw;
+        padding: 0 10vw 0 10vw;
         width: 100%;
         margin-left: 0px;
         margin-right: 0px;
@@ -362,7 +385,7 @@ box-sizing: border-box;
     
     .recomendaciones-3{
         padding: 10px;
-        border: 1px solid grey;
+        border: 2px solid #FF9900;
         border-radius: 15px;
     } 
 
@@ -376,21 +399,9 @@ box-sizing: border-box;
         width: 50%;
     }
 
-    .flex-thumbs{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-
-    }
-
     .flex-thumbs i{
-        color: #FF9900;
-        background-color: #031927;
         padding: 10px 10px;
         border-radius: 50%;
-        border: 1px solid #FF9900;
-        font-size: 1.5em;
-
     }
 
     /*******************************************ARTICLE-RECO****************************************/
@@ -481,7 +492,6 @@ box-sizing: border-box;
         margin-bottom: 10vw;
         color: #031927;
         font-size: 7em;
-
     }
 
 

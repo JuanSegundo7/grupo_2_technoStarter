@@ -15,12 +15,12 @@
             <fieldset>
                 <% if (locals.errors) {
                     errors.forEach(error => { %>
-                        <p class="mensaje-error"><%= error.msg %></p>
+                        <p class="mensaje-error"><%= error[i].msg %></p>
                 <%   });
                 } 
                 %> 
                 <label for="nombreCompleto">Nombre</label>
-                <input type="text" placeholder="Nombre" id="nombreUsuario" name="nombreUsuario">
+                <input type="text" placeholder="Nombre" id="nombreUsuario" name="nombreUsuario" value="<%= locals.old && old.nombreUsuario ? old.nombreUsuario : " " %>">
             </fieldset>
             <fieldset>
                 <label for="nombreCompleto">Apellido</label>
@@ -44,7 +44,7 @@
                 <input type="file" name="fotoAvatar" id="fotoAvatar" required>
             </fieldset>
             <fieldset id="flex-button">
-                <button type="submit">Iniciar sesión</button>
+                <button type="submit">Crear usuario</button>
                 <button type="reset">Resetear</button>
             </fieldset>
             <fieldset class="aceptoLosTerminos">
@@ -52,7 +52,7 @@
                 <label for="aceptoLosTerminos">Acepto los Términos y Condiciones y autorizo el uso de mis datos de acuerdo a la Declaración de Privacidad.</label>
             </fieldset>
             <fieldset class='tener'>
-                <p>¿Tenes una cuenta? <a href="/">Iniciar</a></p>
+                <p>¿Tenes una cuenta? <a href="/usuario/ingresar">Iniciar</a></p>
             </fieldset>
         </form>
     </main>

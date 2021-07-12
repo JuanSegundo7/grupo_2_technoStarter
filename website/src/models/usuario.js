@@ -50,7 +50,7 @@ const model = {
         usuarios.push(nuevo);
         fs.writeFileSync(directory, JSON.stringify(usuarios,null,2));
         return true
-    },
+    }
 }
 
 module.exports = model;

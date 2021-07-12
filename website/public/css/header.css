@@ -102,7 +102,7 @@ header img {
 	max-height: 100%;
 	width: 80%;
 	padding-top: 2vh;
-	margin-left: 10px;
+	margin-left: 0.6em;
 }
 
 .logo{
@@ -254,13 +254,12 @@ header img {
 
 	.navbar-icons {
 		display: flex;
-		justify-content: space-between;
-		margin-right: 20px;
 	}
 
 	.navbar-icons a{
 		color: #FF9900;
-		font-size: 20px;
+		font-size: 25px;
+		margin: 8px 8px;
 		list-style-type: none;
 	}
 
@@ -289,7 +288,7 @@ header img {
 	}
 
 	.flex-ul-top a{
-		margin-left: 4vw;
+		margin: 2vw;
 		font-size: 22px;
 	}
 
@@ -351,4 +350,6 @@ header img {
 		flex-direction: row;
 		list-style-type: none;
 	}
+
 }
+
