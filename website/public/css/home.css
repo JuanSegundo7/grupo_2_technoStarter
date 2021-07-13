@@ -351,34 +351,34 @@ box-sizing: border-box;
     .recomendaciones img{
         width: 100%;
         padding: 0px;
+        border: 2px solid #FF9900;
     }
     
     .recomendaciones figure{
-        width: 50%;
+        width: 65%;
     }
 
     .recomendaciones-1 img{
         border-radius: 25px;
-        border: 1px solid black;
+        border: 2px solid #FF9900;
 
     }
     /********************************^^^RECOMENDACIONES-2^^^********************************************/
 
     .recomendaciones-2{
         padding: 10px;
-        border-radius: 15px;
+        
     }
 
     .recomendaciones-2 img{
         width: 100%;
         border-radius: 25px;
-        border: 1px solid black;
+        
     }
 
     .recomendaciones-2 figure{
-        width: 50%;
+        width: 65%;
     }
-
 
 
     /********************************^^^RECOMENDACIONES-3^^^********************************************/
@@ -392,11 +392,10 @@ box-sizing: border-box;
     .recomendaciones-3 img{
         width: 100%;
         border-radius: 25px;
-        border: 1px solid black;
     }
 
     .recomendaciones-3 figure{
-        width: 50%;
+        width: 65%;
     }
 
     .flex-thumbs i{
