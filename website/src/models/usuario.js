@@ -34,15 +34,19 @@ const model = {
     editUser: function(data,file,id){
         const directory = path.resolve(__dirname, "../data", "usuarios.json");
         let usuarios = this.allUser();
-        let nuevo = {
-            nombre: data.nombreUsuario,
-            apellido: data.apellidoUsuario,
-            correo: data.direccionDeCorreoElectronico,
-            clave: bcrypt.hashSync(data.clave, 7), 
-            ubicacion: data.ubicacionUser,
-            admin: false,
-            avatar: file.filename
-        }
+        usuarios.map(usuario => {
+            if(usuario.id == id ){
+                usuario.nombre = data.nombreUsuario,
+                usuario.apellido = data.apellidoUsuario,
+                usuario.correo = data.direccionDeCorreoElectronico,
+                usuario.clave = bcrypt.hashSync(data.clave, 7), 
+                usuario.ubicacion = data.ubicacionUser,
+                usuario.admin = false,
+                usuario.avatar = file.filename
+                return usuario
+            }
+            return usuario
+        })
         usuarios.push(nuevo);
         fs.writeFileSync(directory, JSON.stringify(usuarios,null,2));
         return true
