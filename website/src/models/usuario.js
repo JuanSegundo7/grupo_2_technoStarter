@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const bcrypt = require("bcryptjs");
 
 const model = {
     allUser: function () {
@@ -20,13 +21,11 @@ const model = {
             id: usuarios.length > 0 ? usuarios[usuarios.length-1].id + 1 : 1,
             nombre: data.nombreUsuario,
             apellido: data.apellidoUsuario,
-            correo: data.direccionCorreoElectronico,
-            contraseña: data.contraseña, 
-            fecha: data.fechaProyecto,
-            ubicacion: data.ubicacion,
-            admin: Boolean,
-            categoria: parseInt(data.categoria),
-            avatar: file.map( fotoAvatar =>  String(data.fotoAvatar).trim().replace(/\s+/g, '') + "/" + fotoAvatar.filename),
+            correo: data.direccionDeCorreoElectronico,
+            clave: bcrypt.hashSync(data.clave, 7), 
+            ubicacion: data.ubicacionUser,
+            admin: false,
+            avatar: file.filename
         }
         usuarios.push(nuevo);
         fs.writeFileSync(directory, JSON.stringify(usuarios,null,2));
@@ -36,16 +35,13 @@ const model = {
         const directory = path.resolve(__dirname, "../data", "usuarios.json");
         let usuarios = this.allUser();
         let nuevo = {
-            id: usuarios.length > 0 ? usuarios[usuarios.length-1].id + 1 : 1,
             nombre: data.nombreUsuario,
             apellido: data.apellidoUsuario,
-            correo: data.direccionCorreoElectronico,
-            contraseña: data.contraseña, 
-            fecha: data.fechaProyecto,
-            ubicacion: data.ubicacion,
-            admin: Boolean,
-            categoria: parseInt(data.categoria),
-            avatar: file.map( fotoAvatar =>  String(data.fotoAvatar).trim().replace(/\s+/g, '') + "/" + fotoAvatar.filename),
+            correo: data.direccionDeCorreoElectronico,
+            clave: bcrypt.hashSync(data.clave, 7), 
+            ubicacion: data.ubicacionUser,
+            admin: false,
+            avatar: file.filename
         }
         usuarios.push(nuevo);
         fs.writeFileSync(directory, JSON.stringify(usuarios,null,2));

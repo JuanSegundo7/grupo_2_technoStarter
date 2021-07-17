@@ -10,16 +10,9 @@ const multer = require('multer');
 
 // ************ Multer ************
 
-const dest = multer.diskStorage({
+let dest = multer.diskStorage({
     destination: function (req, file, cb) {
-        let extension = path.extname(file.originalname);
-        let dir = path.resolve(__dirname,"../../public/uploads","avatars", String(req.body.nombreUsuario).trim().replace(/\s+/g, ''))
-        if (!fs.existsSync(dir)){
-            fs.mkdirSync(dir);
-        }
-        if(extension.indexOf("jpg") > 0){
-            cb(null, dir)
-        }
+        cb(null, path.resolve(__dirname,"../../public/uploads","avatars"))
     },
     filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now()+ path.extname(file.originalname))
@@ -50,9 +43,9 @@ router.get("/registrarse", userController.register);
 
 router.get("/editarUsuario/:id", userController.edit);
 
-router.post("/guardarUsuario",[upload.any("fotoUsuario"), validacionRegister], userController.save);
+router.post("/guardarUsuario",[upload.single("fotoAvatar")], userController.save);
 
-router.put("/actualizarUsuario/:id",[upload.any("fotoUsuario")], userController.update);
+router.put("/actualizarUsuario/:id",[upload.single("fotoAvatar")], userController.update);
 
 router.post("/ingresar", validacionLogin ,userController.processLogin);
 

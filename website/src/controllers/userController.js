@@ -11,7 +11,8 @@ const user = {
         return res.render("users/register", {usuarios:usuariosModel.allUser()});
     },
     save: (req,res) => {
-        let result = usuariosModel.newUser(req.body,req.files)
+        // return res.send({data:req.body,errors:null,file:req.file})
+        let result = usuariosModel.newUser(req.body,req.file)
         return result == true ? res.redirect("/") : res.send("Error al cargar la informacion"); 
     },
     update: (req,res) => {
