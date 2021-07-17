@@ -11,7 +11,7 @@
             ¡Registrate aca!      
         </h2>
         </section>
-        <form action="/usuario/guardarUsuario" method="POST" id="formPrincipal" enctype="multipart/form-data">
+        <form action="/product/update/<%= usuarios.id %>?_method=PUT" method="POST" id="editarUsuarios" enctype="multipart/form-data">
             <fieldset>
                 <% if (locals.errors) {
                     errors.forEach(error => { %>

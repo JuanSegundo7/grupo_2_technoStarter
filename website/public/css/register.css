@@ -21,7 +21,7 @@
 #formPrincipal{
     border-radius: 25px;
     padding: 20px;
-    border: 1px solid #FF9900;
+    border: 2px solid #FF9900;
     background-color: #031927;
     margin: 0 5vh 5vh 5vh;
 }
@@ -116,22 +116,34 @@ body{
     color: black;
     background-color: #FF9900;
     padding: 6px 7px;
+    width: 20%;
     border-radius: 15px;
     position: relative;
-    order: 2;
     font-family: "Roboto";
     font-weight: 400;
 }
 
-#flex-button fieldset{
-    position: relative;
-    order: 1;
-}
 
 
 /********************************^^^Registracion^^^********************************************/
 
 
+
+#foto-avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vh 0 1vh 0;
+}
+
+#foto-avatar input{
+    width: 50%;
+    margin: 0;
+}
+
+#foto-avatar h3{
+    margin: 1vh 0 1vh 0;
+}
 
 .tener{
     text-align: center;

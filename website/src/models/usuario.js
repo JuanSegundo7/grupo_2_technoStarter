@@ -5,7 +5,7 @@ const model = {
     allUser: function () {
         const directory = path.resolve(__dirname, "../data", "usuarios.json");
         const file = fs.readFileSync(directory, "utf-8");
-        const convert = JSON.parce(file);
+        const convert = JSON.parse(file);
         return convert;
     },
     oneUser: function (id) {
@@ -50,7 +50,18 @@ const model = {
         usuarios.push(nuevo);
         fs.writeFileSync(directory, JSON.stringify(usuarios,null,2));
         return true
-    }
+    },
+    deleteUser: function (id) {
+        const directory = path.resolve(__dirname,"../data","usuarios.json")
+        let usuarios = this.allUser();
+        let deleted = this.oneUser(id);
+        // eliminamos la imagen de la carpeta upload
+        fs.unlinkSync(path.resolve(__dirname, "../../public/uploads/avatars", deleted.image))
+        // filtarmos el producto que deaseamos eliminar
+        usuarios = usuarios.filter(usuarios => usuarios.id != deleted.id )
+        fs.writeFileSync(directory,JSON.stringify(usuarios,null,2));
+        return true;
+    },
 }
 
 module.exports = model;

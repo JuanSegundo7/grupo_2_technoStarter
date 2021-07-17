@@ -275,7 +275,7 @@ header img {
     visibility: visible;
     transition: none;
     overflow: visible;
-	height: -webkit-fill-available;
+	height: inherit;
 	}
 
 	#option{

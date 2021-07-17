@@ -15,14 +15,16 @@
                 } 
                 %> 
                 <h3 class="margin-body">Bienvenido devuelta!</h3>
-                <label for="nombreUsuario" class="margin-body">Direccion de correo electronico</label>
+            </fieldset>
+            <fieldset class="margin-body" id="input" >
+                <label for="email">Direccion de correo electronico</label>
                 <input type="text" placeholder="E-mail" id="email" name="email">
             </fieldset>
-            <fieldset>
-                <label for="contraseña" class="margin-body">Contraseña</label>
+            <fieldset class="margin-body" id="input">
+                <label for="contraseña">Contraseña</label>
                 <input type="password" placeholder="Contraseña" id="clave" name="clave">
             </fieldset>
-            <fieldset>
+            <fieldset id="flex-recordarme">
                 <input type="radio" name="recordarme" id="recordarme">
                 <label for="recordarme">Recordarme</label>
             </fieldset>
@@ -31,11 +33,11 @@
                 <button type="reset">Resetear</button>
             </fieldset>
             <fieldset class="olvidarContraseña" id="flex-password">
-                <p>¿Te olvidaste la contraseña?</p>
+                <p class="margin-body">¿Te olvidaste la contraseña?</p>
                 <p>Recuperala<a href="/">aca</a></p>
             </fieldset>
             <fieldset class="olvidarContraseña" id="flex-password">
-                <p>¿No estas registrado?</p>
+                <p class="margin-body">¿No estas registrado?</p>
                 <p>Unite<a href="/usuario/registrarse">aca</a></p>
             </fieldset>
         </form>
