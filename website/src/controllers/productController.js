@@ -6,7 +6,7 @@ const categorias = require("../models/categoria");
 
 
 const product = {
-    index: (req,res) => {return res.render("products/product");},
+    index: (req,res) => {return res.render("products/detalleProyectos");},
     create: (req,res) => {return res.render("products/crearProyectos", {categorias:categorias.allCategoria()});}, 
     save: (req,res) => {
         let result = proyecto.newProyect(req.body,req.files)
