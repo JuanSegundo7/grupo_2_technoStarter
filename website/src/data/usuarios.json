@@ -1,11 +1,12 @@
 [
-    {
-        "id": 1,
-        "nombre": "Carlos",
-        "apellido": "Guernica",
-        "mail": "prueba@gmail.com",
-        "clave": "abcd1234",
-        "admin": true,
-        "imagen": ["usuarioPredeterminado.png"]
-    }
+  {
+    "id": 1,
+    "nombre": "Juanse",
+    "apellido": "Martinez",
+    "correo": "juansepincha@gmail.com",
+    "clave": "$2a$07$rvF0rIMorhzTZU/qk7T.5uoTaLim7tDN9sTjnnnnGorDdXD59WiXS",
+    "ubicacion": "La Plata",
+    "admin": false,
+    "avatar": "fotoAvatar-1626550899332.png"
+  }
 ]

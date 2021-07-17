@@ -20,7 +20,7 @@
 
 #formPrincipal{
     border-radius: 25px;
-    padding: 20px;
+    padding: 30px;
     border: 2px solid #FF9900;
     background-color: #031927;
     margin: 0 5vh 5vh 5vh;
@@ -98,7 +98,7 @@ body{
 
 
 #recordarme {
-    width: 50px !important;
+    width: 30px !important;
 }
 
 /**************************************^^^BUTTON^^^********************************************/
@@ -145,12 +145,15 @@ body{
     margin: 1vh 0 1vh 0;
 }
 
+#file-upload-button{
+    color: #FF9900;
+}
+
 .tener{
     text-align: center;
 }
 
 .registrateAqui{
-    margin-top: vh;
     width: 100%
 }
 
@@ -158,6 +161,8 @@ body{
     .registrateAqui h2{ 
         margin: 3em 1em 1em 1em;
         text-align: center;
+        color: black;
+        font-size: 2em;
     }
     
 }
@@ -166,6 +171,8 @@ body{
 .registrateAqui h2{ 
     margin: 1em 1em 1em 1em;
     text-align: center;
+    color: black;
+
 }
 
 }
