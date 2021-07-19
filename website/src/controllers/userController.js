@@ -10,6 +10,9 @@ const user = {
     register: (req,res) => {
         return res.render("users/register", {usuarios:usuariosModel.allUser()});
     },
+    show: (req,res) => {
+        return res.render("users/userList", {usuarios:usuariosModel.oneUser(req.params.id)});
+    },
     save: (req,res) => {
         // return res.send({data:req.body,errors:null,file:req.file})
         let result = usuariosModel.newUser(req.body,req.file)
@@ -51,7 +54,7 @@ const user = {
             }
             req.session.usuarioLogueado = usuarioALoguearse;
         }else{
-            res.render("login", {errors: errors.errors});
+            res.render("users/login", {errors: errors.errors});
         }
     },
 }

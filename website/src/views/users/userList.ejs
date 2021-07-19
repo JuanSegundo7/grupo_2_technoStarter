@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("../partials/head",{"css":["header", "userList", "footer"]})%>
+
+<body>
+    <%-include("../partials/header")  %> 
+    <main>
+        <section>
+            <h1>Usuarios</h1>
+        </section>
+        <section class="card">
+            <article class="card-left">
+                <figure>
+                    <img src="/uploads/avatars/<%= usuarios.avatar ? usuarios.avatar : 'usuarioPredeterminado.png' %>" alt="">
+                </figure>
+                <h3>#<%= usuarios.id %></h3>
+                <% if (usuarios.admin) { %>
+                    <p>Admin: <%= usuarios.admin %></p>
+                <%} %>
+            </article>
+            <article class="card-content">
+                <h3><%= usuarios.nombre %> <%= usuarios.apellido %></h3>
+                <p>Email: <a href="<%= usuarios.correo %>" target="_blank"><%= usuarios.correo %></a></p>
+                <article>
+                    <a class="button" href="/usuario/<%= usuarios.id %>">Ver detalle</a>
+                </article>
+            </article>   
+        </section>
+    </main>
+    <%- include("../partials/footer")  %> 
+    </body>
+</html>

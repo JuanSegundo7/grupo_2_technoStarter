@@ -41,13 +41,15 @@ router.get("/ingresar", userController.login);
 
 router.get("/registrarse", userController.register);
 
+router.get("/usuarios/:id", userController.show);
+
 router.get("/editarUsuario/:id", userController.edit);
 
 router.post("/guardarUsuario",[upload.single("fotoAvatar")], userController.save);
 
 router.put("/actualizarUsuario/:id",[upload.single("fotoAvatar")], userController.update);
 
-router.post("/ingresar", validacionLogin ,userController.processLogin);
+router.post("/ingresarUsuario", validacionLogin ,userController.processLogin);
 
 router.delete("/borrar",userController.delete);
 

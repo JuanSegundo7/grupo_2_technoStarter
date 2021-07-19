@@ -6,7 +6,7 @@
 <body>
     <%-include("../partials/header")%> 
     <main>
-        <form action="/" method="POST" id="form-principal">
+        <form action="/usuario/ingresarUsuario" method="POST" id="form-principal">
             <fieldset>
                 <% if (locals.errors) {
                     errors.forEach(error => { %>
@@ -44,4 +44,4 @@
     </main>
     <%- include("../partials/footer")  %> 
     </body>
-    </html>
+</html>
