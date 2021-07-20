@@ -17,7 +17,7 @@ const dest = multer.diskStorage({
         if (!fs.existsSync(dir)){
             fs.mkdirSync(dir);
         }
-        if(extension.indexOf("jpg", "gif", "png") > 0){
+        if(extension.indexOf("jpg", "png") > 0){
             cb(null, dir)
         }
     },

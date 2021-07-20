@@ -10,8 +10,8 @@ const user = {
     register: (req,res) => {
         return res.render("users/register", {usuarios:usuariosModel.allUser()});
     },
-    show: (req,res) => {
-        return res.render("users/userList", {usuarios:usuariosModel.oneUser(req.params.id)});
+    index: (req,res) => {
+        return res.render("users/userList", {usuarios:usuariosModel.allUser()});
     },
     save: (req,res) => {
         // return res.send({data:req.body,errors:null,file:req.file})
@@ -28,34 +28,6 @@ const user = {
         let result = usuariosModel.deleteUser(req.params.id);
         return result == true ? res.render("/") : res.send("Error al cargar la informacion");
         ;
-    },
-    processLogin: (req,res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()){
-            let usersJSON = fs.readFileSync("usuarios.json");
-            let users;
-            if (usersJSON == ""){
-                users = []
-            }else{
-                users = JSON.parse(usersJSON)
-            }
-            for (let i = 0; i < users.length; i++){
-                if(users[i].email == req.body.email){
-                    if(bcrypt.compareSync(req.body.clave, users[i].clave)){
-                        let usuarioALoguearse = users[i];
-                        break; 
-                    }
-                }
-            }
-            if(usuarioALoguearse == undefined){
-                res.render("login", {errors: [
-                    {msg: "Credenciales invalidas"}
-                ]});
-            }
-            req.session.usuarioLogueado = usuarioALoguearse;
-        }else{
-            res.render("users/login", {errors: errors.errors});
-        }
     },
 }
 

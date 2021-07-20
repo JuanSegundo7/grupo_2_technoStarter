@@ -21,27 +21,13 @@ let dest = multer.diskStorage({
 
 const upload = multer({storage:dest});
 
-// ************ Express-Validator ************
-
-const validacionRegister = [
-    body("nombreUsuario").notEmpty().withMessage("Tenes que completar el campo de Nombre"),
-    body("apellidoUsuario").notEmpty().withMessage("Tenes que completar el campo de Apellido"),
-    body("direccionDeCorreoElectronico").isEmail().withMessage("Tenes que ingresar un e-mail válido")
-]
-
-const validacionLogin = [
-    body("direccionDeCorreoElectronico").isEmail().withMessage("Tenes que ingresar un e-mail válido"),
-    body("email").isLength({min: 8}).withMessage("La contraseña debe tener minimo 8 caracteres"),
-]
-
-
 // ************ Rutas ************
 
 router.get("/ingresar", userController.login);
 
 router.get("/registrarse", userController.register);
 
-router.get("/usuarios/:id", userController.show);
+router.get("/usuarios", userController.index);
 
 router.get("/editarUsuario/:id", userController.edit);
 
@@ -49,7 +35,7 @@ router.post("/guardarUsuario",[upload.single("fotoAvatar")], userController.save
 
 router.put("/actualizarUsuario/:id",[upload.single("fotoAvatar")], userController.update);
 
-router.post("/ingresarUsuario", validacionLogin ,userController.processLogin);
+router.post("/ingresarUsuario", userController.login);
 
 router.delete("/borrar",userController.delete);
 

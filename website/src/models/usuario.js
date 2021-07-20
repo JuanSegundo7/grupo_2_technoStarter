@@ -62,6 +62,9 @@ const model = {
         fs.writeFileSync(directory,JSON.stringify(usuarios,null,2));
         return true;
     },
+    findByEmail: function (email){
+        return this.all().find(user => user.email == email)
+    },
 }
 
 module.exports = model;

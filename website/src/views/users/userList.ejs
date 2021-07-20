@@ -9,25 +9,28 @@
         <section>
             <h1>Usuarios</h1>
         </section>
-        <section class="card">
-            <article class="card-left">
-                <figure>
-                    <img src="/uploads/avatars/<%= usuarios.avatar ? usuarios.avatar : 'usuarioPredeterminado.png' %>" alt="">
-                </figure>
-                <h3>#<%= usuarios.id %></h3>
-                <% if (usuarios.admin) { %>
-                    <p>Admin: <%= usuarios.admin %></p>
-                <%} %>
-            </article>
-            <article class="card-content">
-                <h3><%= usuarios.nombre %> <%= usuarios.apellido %></h3>
-                <p>Email: <a href="<%= usuarios.correo %>" target="_blank"><%= usuarios.correo %></a></p>
-                <article>
-                    <a class="button" href="/usuario/<%= usuarios.id %>">Ver detalle</a>
-                </article>
-            </article>   
-        </section>
-    </main>
-    <%- include("../partials/footer")  %> 
+        <% usuarios.forEach(usuario => { %>
+         
+            <section class="card">
+                <article class="card-left">
+                    <figure>
+                        <img src="/uploads/avatars/<%= usuario.avatar ? usuario.avatar : 'usuarioPredeterminado.png' %>" alt="">
+                    </figure>
+                    <% if (usuario.admin) { %>
+                        <h3>#<%= usuario.id %></h3>
+                        <p>Admin: <%= usuario.admin %></p>
+                        <%} %>
+                    </article>
+                    <article class="card-content">
+                        <h3><%= usuario.nombre %> <%= usuario.apellido %></h3>
+                        <p>Email: <a href="<%= usuario.correo %>" target="_blank"><%= usuario.correo %></a></p>
+                        <article>
+                            <a class="button" href="/usuario/<%= usuario.id %>">Ver detalle</a>
+                        </article>
+                    </article>   
+                </section>
+        <% }) %>
+            </main>
+            <%- include("../partials/footer")  %> 
     </body>
 </html>

@@ -6,118 +6,23 @@
 <body>
     <%-include("../partials/header")%> 
     <main>
-        <section class="titulo">
-            <% switch (category.id) {  %>
-                <% case 1 : %>
-                    <%= category.nombre %>
-                <% break %>
-                <% case 2 : %>
-                    <%= category.nombre %>
-                <% break %>
-                <% case 3 : %>
-                    <%= category.nombre %>
-                <% break %> 
-            <% } %></h2> 
-        </section> 
-        <section class="robotica"> 
-            <section class="robotica-border">
-                <section class="flex-recomendaciones">
-                    <figure>
-                        <img src="/img/tiBeast/tiBeast.png" alt="tiBeast">
-                    </figure>
-                    <article>
-                        <% proyectos.forEach(proyecto => { %>
-                        <h2 class="titulo-reco margin-articleInterior"><%= proyecto.nombre %></h2><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <h2 class="precio margin-articleInterior">$<%= proyecto.contribucionActual %></h2><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="meta margin-articleInterior">contribuido de meta $<%= proyecto.contribucionFinal %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="patrocinadores margin-articleInterior"><%= proyecto.patrocinadores %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="patrocinadores margin-articleInterior"><%= proyecto.fecha %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="ubicacion margin-articleInterior"><i class="fas fa-map-marker-alt"></i><%= proyecto.ubicacion %></p><% } %>
-                    </article>
-                </section>
-                    <section class="flex-thumbs">
-                        <a href=""><i class="far fa-bookmark"></i></a>
-                        <a href=""><i class="far fa-thumbs-up"></i></a>
-                        <a href=""><i class="far fa-thumbs-down"></i></a>
+        <section class="border">
+            <section class="robotica"> 
+                <% proyectos.forEach(proyecto => { %>
+                    <section class="flex-recomendaciones">
+                        <figure>
+                            <img src="/uploads/products/<%= proyecto.images[0] %> " alt="tiBeast">
+                        </figure>
+                        <article>
+                            <h2 class="titulo-reco margin-articleInterior"><%= proyecto.nombre %></h2>
+                            <h2 class="precio margin-articleInterior">$<%= proyecto.contribucionActual %></h2>
+                            <p class="meta margin-articleInterior">contribuido de meta $<%= proyecto.contribucionFinal %></p>
+                            <p class="patrocinadores margin-articleInterior"><%= proyecto.patrocinadores %></p>
+                            <p class="patrocinadores margin-articleInterior"><%= proyecto.fecha %></p>
+                            <p class="ubicacion margin-articleInterior"><i class="fas fa-map-marker-alt"></i><%= proyecto.ubicacion %></p>
+                        </article>
                     </section>
-            </section>
-            <section class="robotica-border">
-                <section class="flex-recomendaciones">
-                    <figure>
-                        <img src="/img/tiBeast/tiBeast.png" alt="tiBeast">
-                    </figure>
-                    <article>
-                        <% proyectos.forEach(proyecto => { %>
-                        <h2 class="titulo-reco margin-articleInterior"><%= proyecto.nombre %></h2><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <h2 class="precio margin-articleInterior">$<%= proyecto.contribucionActual %></h2><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="meta margin-articleInterior">contribuido de meta $<%= proyecto.contribucionFinal %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="patrocinadores margin-articleInterior"><%= proyecto.patrocinadores %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="patrocinadores margin-articleInterior"><%= proyecto.fecha %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="ubicacion margin-articleInterior"><i class="fas fa-map-marker-alt"></i><%= proyecto.ubicacion %></p><% } %>
-                    </article>
-                </section>
-                    <section class="flex-thumbs">
-                        <a href=""><i class="far fa-bookmark"></i></a>
-                        <a href=""><i class="far fa-thumbs-up"></i></a>
-                        <a href=""><i class="far fa-thumbs-down"></i></a>
-                    </section>
-            </section>
-            <section class="robotica-border">
-                <section class="flex-recomendaciones">
-                    <figure>
-                        <img src="/img/tiBeast/tiBeast.png" alt="tiBeast">
-                    </figure>
-                    <article>
-                        <% proyectos.forEach(proyecto => { %>
-                        <h2 class="titulo-reco margin-articleInterior"><%= proyecto.nombre %></h2><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <h2 class="precio margin-articleInterior">$<%= proyecto.contribucionActual %></h2><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="meta margin-articleInterior">contribuido de meta $<%= proyecto.contribucionFinal %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="patrocinadores margin-articleInterior"><%= proyecto.patrocinadores %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="patrocinadores margin-articleInterior"><%= proyecto.fecha %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="ubicacion margin-articleInterior"><i class="fas fa-map-marker-alt"></i><%= proyecto.ubicacion %></p><% } %>
-                    </article>
-                </section>
-                    <section class="flex-thumbs">
-                        <a href=""><i class="far fa-bookmark"></i></a>
-                        <a href=""><i class="far fa-thumbs-up"></i></a>
-                        <a href=""><i class="far fa-thumbs-down"></i></a>
-                    </section>
-            </section>
-            <section class="robotica-border">
-                <section class="flex-recomendaciones">
-                    <figure>
-                        <img src="/img/tiBeast/tiBeast.png" alt="tiBeast">
-                    </figure>
-                    <article>
-                        <% proyectos.forEach(proyecto => { %>
-                        <h2 class="titulo-reco margin-articleInterior"><%= proyecto.nombre %></h2><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <h2 class="precio margin-articleInterior">$<%= proyecto.contribucionActual %></h2><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="meta margin-articleInterior">contribuido de meta $<%= proyecto.contribucionFinal %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="patrocinadores margin-articleInterior"><%= proyecto.patrocinadores %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="patrocinadores margin-articleInterior"><%= proyecto.fecha %></p><% } %>
-                        <% proyectos.forEach(proyecto => { %>
-                        <p class="ubicacion margin-articleInterior"><i class="fas fa-map-marker-alt"></i><%= proyecto.ubicacion %></p><% } %>
-                    </article>
-                </section class="robotica-border">
+                    <% }) %> 
                     <section class="flex-thumbs">
                         <a href=""><i class="far fa-bookmark"></i></a>
                         <a href=""><i class="far fa-thumbs-up"></i></a>

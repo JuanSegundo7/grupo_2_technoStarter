@@ -38,7 +38,7 @@ main{
 }
 
 .categorias-body li{
-    height: 100%;
+height: 100%;
 width: 33vw;
 display: flex;
 flex-flow: row;
