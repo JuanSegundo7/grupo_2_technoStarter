@@ -7,29 +7,30 @@
     <%-include("../partials/header")%> 
     <main>
         <form action="/usuario/ingresarUsuario" method="POST" id="form-principal">
-            <fieldset>
-                <% if (locals.errors) {
-                    errors.forEach(error => { %>
-                        <p class="mensaje-error"><%= error.msg %></p>
-                <%   });
-                } 
-                %> 
-                <h3 class="margin-body">Bienvenido devuelta!</h3>
-            </fieldset>
-            <fieldset class="margin-body" id="input" >
-                <label for="email">Direccion de correo electronico</label>
-                <input type="text" placeholder="E-mail" id="email" name="email">
-            </fieldset>
             <fieldset class="margin-body" id="input">
+                <label for="email">Direccion de correo electronico</label>
+                <input type="text" placeholder="E-mail" id="email" name="email" value="<%= locals.errors && !errors.email ? old.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <p class="feedback">
+                    <%= errors.email.msg %> 
+                    </p>
+                    <% } %>
+            </fieldset>
+            <fieldset class="margin-body" id="input" value="">
                 <label for="contraseña">Contraseña</label>
                 <input type="password" placeholder="Contraseña" id="clave" name="clave">
+                <% if (locals.errors && errors.password) { %>
+                    <p class="feedback">
+                    <%= errors.password.msg %> 
+                    </p>
+                <% } %>
             </fieldset>
             <fieldset id="flex-recordarme">
                 <input type="radio" name="recordarme" id="recordarme">
                 <label for="recordarme">Recordarme</label>
             </fieldset>
             <fieldset id="flex-button">
-                <button type="submit">Iniciar sesión</button>
+                <button type="submit">Iniciar sesión <i class="fas fa-paper-plane"></i></button>
                 <button type="reset">Resetear</button>
             </fieldset>
             <fieldset class="olvidarContraseña" id="flex-password">
@@ -38,7 +39,7 @@
             </fieldset>
             <fieldset class="olvidarContraseña" id="flex-password">
                 <p class="margin-body">¿No estas registrado?</p>
-                <p>Unite<a href="/usuario/registrarse">aca</a></p>
+                <p>Unite<a href="/usuario/registrarse">aca</i></a></p>
             </fieldset>
         </form>
     </main>

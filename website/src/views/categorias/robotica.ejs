@@ -7,8 +7,13 @@
     <%-include("../partials/header")%> 
     <main>
         <section class="border">
+            <% categorias.forEach(categoria => { %>
+                <section>
+                    <h1><%= categoria.nombre %></h1>
+                </section>
+            <% }) %> 
+            <% proyectos.forEach(proyecto => { %>
             <section class="robotica"> 
-                <% proyectos.forEach(proyecto => { %>
                     <section class="flex-recomendaciones">
                         <figure>
                             <img src="/uploads/products/<%= proyecto.images[0] %> " alt="tiBeast">
@@ -17,9 +22,9 @@
                             <h2 class="titulo-reco margin-articleInterior"><%= proyecto.nombre %></h2>
                             <h2 class="precio margin-articleInterior">$<%= proyecto.contribucionActual %></h2>
                             <p class="meta margin-articleInterior">contribuido de meta $<%= proyecto.contribucionFinal %></p>
-                            <p class="patrocinadores margin-articleInterior"><%= proyecto.patrocinadores %></p>
+                            <p class="patrocinadores margin-articleInterior"><%= proyecto.patrocinadores %> patrocinadores</p>
                             <p class="patrocinadores margin-articleInterior"><%= proyecto.fecha %></p>
-                            <p class="ubicacion margin-articleInterior"><i class="fas fa-map-marker-alt"></i><%= proyecto.ubicacion %></p>
+                            <p class="ubicacion margin-articleInterior"><i class="fas fa-map-marker-alt"></i> <%= proyecto.ubicacion %></p>
                         </article>
                     </section>
                     <% }) %> 

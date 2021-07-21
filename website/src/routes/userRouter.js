@@ -4,9 +4,10 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
 const path = require("path");
-const fs = require("fs");
-const { body } = require("express-validator");
 const multer = require('multer');
+const isLogged = require("../middlewares/logged");
+const validLogin = require("../middlewares/validLogin");
+const validRegister = require("../middlewares/validRegister");
 
 // ************ Multer ************
 
@@ -29,15 +30,17 @@ router.get("/registrarse", userController.register);
 
 router.get("/usuarios", userController.index);
 
+router.get("/cerrarSesion", [validRegister], userController.logout);
+
 router.get("/editarUsuario/:id", userController.edit);
 
 router.post("/guardarUsuario",[upload.single("fotoAvatar")], userController.save);
 
-router.put("/actualizarUsuario/:id",[upload.single("fotoAvatar")], userController.update);
+router.post("/ingresarUsuario",[validLogin], userController.Acceso);
 
-router.post("/ingresarUsuario", userController.login);
+router.put("/actualizarUsuario/:id",[upload.single("fotoAvatar")], userController.Acceso);
 
-router.delete("/borrar",userController.delete);
+router.delete("/borrar", userController.delete);
 
 
 
