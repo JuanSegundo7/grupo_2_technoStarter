@@ -8,11 +8,27 @@
     "patrocinadores": 20,
     "ubicacion": "Ciudad de Santa Fe, Santa Fe",
     "autor": 1,
-    "categoria": 2,
+    "categoria": 1,
     "images": [
       "Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035845.jpg",
       "Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035849.jpg",
       "Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035851.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "ACASIS USB4.0",
+    "contribucionActual": 0,
+    "contribucionFinal": 10000,
+    "fecha": "2025-08-10",
+    "patrocinadores": 20,
+    "ubicacion": "Rawson, Chubut",
+    "autor": 1,
+    "categoria": 3,
+    "images": [
+      "ACASISUSB4.0/fotosProyecto-1626915281682.jpg",
+      "ACASISUSB4.0/fotosProyecto-1626915281687.jpg",
+      "ACASISUSB4.0/fotosProyecto-1626915281688.jpg"
     ]
   }
 ]

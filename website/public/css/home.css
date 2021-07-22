@@ -160,7 +160,7 @@ box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 10px;
+    margin: 2vh 0 2vh 0;
 }
 
 .flex-thumbs i{

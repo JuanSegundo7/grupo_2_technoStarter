@@ -17,19 +17,21 @@ module.exports = {
     oneUser: function (id) {
         return this.allUser().find(user => user.id == id);
     },
-    newUser: function(data){
+    newUser: function(data,file){
         let usuarios = this.allUser();
         let lastUser = usuarios[usuarios.length -1];
         let newUser = {
             id: usuarios.length > 0 ? lastUser.id +1 : 1,
-            name: data.name ? data.name : String(data.email).trim()
+            nombre: data.nombreUsuario ? data.nombreUsuario : String(data.direccionDeCorreoElectronico).trim()
             .replace(/\s/g, "")
             .split("@")[0]
             .toLowerCase(),
-            email: String(data.email),
-            admin: String(data.email).includes("juansegundomartinez7@gmail.com") ? true : false,
-            password: bcrypt.hashSync(data.password,10),
-            avatar: null
+            apellido: String(data.apellidoUsuario),
+            correo: String(data.direccionDeCorreoElectronico),
+            ubicacion: String(data.ubicacionUser),
+            admin: String(data.direccionDeCorreoElectronico).includes("juansegundomartinez7@gmail.com") ? true : false,
+            clave: bcrypt.hashSync(data.clave,10),
+            avatar: file.filename,
         };
         usuarios.push(newUser);
         this.write(usuarios)
@@ -44,7 +46,7 @@ module.exports = {
 	            .toLowerCase();
                 usuario.email = String(data.email);
                 usuario.admin = String(data.email).includes("juansegundomartinez7@gmail.com") ? true : false;
-                usuario.password = bcrypt.hashSync(data.password,10);
+                usuario.clave = bcrypt.hashSync(data.clave,10);
                 usuario.avatar = file ? file.filename : null;
                 return usuario
             }

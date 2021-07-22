@@ -4,9 +4,19 @@
     "nombre": "Juanse",
     "apellido": "Martinez",
     "correo": "juansepincha@gmail.com",
-    "clave": "$2a$07$rvF0rIMorhzTZU/qk7T.5uoTaLim7tDN9sTjnnnnGorDdXD59WiXS",
     "ubicacion": "La Plata",
     "admin": false,
+    "clave": "$2a$07$rvF0rIMorhzTZU/qk7T.5uoTaLim7tDN9sTjnnnnGorDdXD59WiXS",
     "avatar": "fotoAvatar-1626550899332.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Juanse Admin",
+    "apellido": "Martinez",
+    "correo": "juansegundomartinez7@gmail.com",
+    "ubicacion": "La Plata",
+    "admin": true,
+    "clave": "$2a$10$xCf5cMXdE1XIqKBhw01IkucfW2zEGxuhW7Wzu.PPXtpN/9X9F6zs.",
+    "avatar": "fotoAvatar-1626912572185.png"
   }
 ]

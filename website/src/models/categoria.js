@@ -12,8 +12,11 @@ const model = {
         let resultado = productos.find(element => element.id == id);
         return resultado;
     },
-    
-    
+    oneCategoriaPorAlias: function (alias){
+        const productos = this.allCategoria();
+        let resultado = productos.find(element => element.alias == alias);
+        return resultado;
+    },
 }
 
 module.exports = model;

@@ -19,10 +19,10 @@ module.exports = {
         // return res.send({data:req.body,errors:null,file:req.file})
         const errors = validationResult(req);
         if(!errors.isEmpty()){
-            return res.render("users/register",{errors: errors.mapped(),title:"Ingresar",old:req.body }); 
+            return res.render("users/register",{errors: errors.mapped(),title:"Ingresar",old:req.body}); 
         }else{
-            usuariosModel.newUser(req.body);
-            return res.redirect("/users/login");
+            usuariosModel.newUser(req.body,req.file);
+            return res.redirect("/usuario/ingresar");
         }
     },
     Acceso: (req,res) => {

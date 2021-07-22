@@ -10,15 +10,13 @@
             <h1>Usuarios</h1>
         </section>
         <% usuarios.forEach(usuario => { %>
-         
             <section class="card">
                 <article class="card-left">
                     <figure>
                         <img src="/uploads/avatars/<%= usuario.avatar ? usuario.avatar : 'usuarioPredeterminado.png' %>" alt="">
                     </figure>
                     <% if (usuario.admin) { %>
-                        <h3>#<%= usuario.id %></h3>
-                        <p>Admin: <%= usuario.admin %></p>
+                        <p>Admin%></p>
                         <%} %>
                     </article>
                     <article class="card-content">
