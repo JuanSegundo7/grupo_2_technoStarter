@@ -1,5 +1,7 @@
 const path = require("path");
 const fs = require("fs");
+const categorias = require("./categoria");
+
 const model = {
     allProyect: function() {
         const directory = path.resolve(__dirname,"../data","proyectos.json");
@@ -63,10 +65,18 @@ const model = {
         fs.writeFileSync(directory,JSON.stringify(proyectos,null,2));
         return true;
     },
-    proyectsByCategory: function(idCategory){
-        const proyectos = this.allProyect();
-        let resultado = proyectos.filter(element => element.category == idCategory);
+    proyectsByCategory: function(alias){
+        const proyectos = this.allWithExtra();
+        let resultado = proyectos.filter(proyecto => proyecto.categoria.alias == alias);
         return resultado;
+    },
+    allWithExtra: function () {
+        let proyectos = this.allProyect();
+        proyectos.map(proyecto => {
+            proyecto.categoria = categorias.oneCategoria(proyecto.categoria)
+            return proyecto
+        });
+        return proyectos;
     },
 }
 

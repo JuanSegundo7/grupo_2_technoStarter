@@ -61,11 +61,6 @@ main{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-.formulario input{
-    border: none;
-}
-
-
 .formulario fieldset{
     border: none;
     margin: 2vw;
@@ -95,6 +90,11 @@ main{
     margin-bottom: 4vh;
     justify-content: space-around;
 }
+
+#fechaProyecto input{
+    border-radius: 5px;
+}
+
 /**************************************^^^DESCRIPCION^^^********************************************/
 
 #descripcion-proyecto{
@@ -104,6 +104,8 @@ main{
 
 #descripcion-proyecto textarea{
     margin: 1vw;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 #descripcion-proyecto h3{

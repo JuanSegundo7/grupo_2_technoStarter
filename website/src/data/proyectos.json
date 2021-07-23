@@ -1,29 +1,34 @@
 [
   {
     "id": 1,
-    "nombre": "nombreProyecto1",
+    "nombre": "Violín 3D-Varius - Primer violín Argentino impreso en 3D",
     "contribucionActual": 0,
     "contribucionFinal": 10000,
-    "fecha": "25/09/2021",
+    "fecha": "2023-11-21",
     "patrocinadores": 20,
-    "ubicacion": "Santa Fe",
+    "ubicacion": "Ciudad de Santa Fe, Santa Fe",
     "autor": 1,
     "categoria": 1,
     "images": [
-      "PajaroRobotico/fotosProyecto-1625441523642.jpg"
+      "Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035845.jpg",
+      "Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035849.jpg",
+      "Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035851.jpg"
     ]
   },
   {
     "id": 2,
-    "nombre": "PajaroRobotico",
+    "nombre": "ACASIS USB4.0",
     "contribucionActual": 0,
     "contribucionFinal": 10000,
+    "fecha": "2025-08-10",
     "patrocinadores": 20,
-    "ubicacion": "Cancun Argentino de Rosario",
+    "ubicacion": "Rawson, Chubut",
     "autor": 1,
-    "categoria": 2,
+    "categoria": 3,
     "images": [
-      "PajaroRobotico/fotosProyecto-1625441523642.jpg"
+      "ACASISUSB4.0/fotosProyecto-1626915281682.jpg",
+      "ACASISUSB4.0/fotosProyecto-1626915281687.jpg",
+      "ACASISUSB4.0/fotosProyecto-1626915281688.jpg"
     ]
   }
 ]

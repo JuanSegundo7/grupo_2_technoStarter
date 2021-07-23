@@ -1,67 +1,75 @@
+// ************ Middleware ************
+
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
 
-const model = {
+// ************ Controller ************
+
+module.exports = {
+    dir: path.resolve(__dirname, "../data", "usuarios.json"),
+    write: function(data){
+        return fs.writeFileSync(this.dir,JSON.stringify(data,null,2))
+    },
     allUser: function () {
-        const directory = path.resolve(__dirname, "../data", "usuarios.json");
-        const file = fs.readFileSync(directory, "utf-8");
-        const convert = JSON.parse(file);
-        return convert;
+        return JSON.parse(fs.readFileSync(this.dir));
     },
     oneUser: function (id) {
-        const usuarios = this.allUser();
-        let resultado = usuarios.find(element => element.id == id);
-        return resultado;
+        return this.allUser().find(user => user.id == id);
     },
     newUser: function(data,file){
-        const directory = path.resolve(__dirname, "../data", "usuarios.json");
         let usuarios = this.allUser();
-        let nuevo = {
-            id: usuarios.length > 0 ? usuarios[usuarios.length-1].id + 1 : 1,
-            nombre: data.nombreUsuario,
-            apellido: data.apellidoUsuario,
-            correo: data.direccionDeCorreoElectronico,
-            clave: bcrypt.hashSync(data.clave, 7), 
-            ubicacion: data.ubicacionUser,
-            admin: false,
-            avatar: file.filename
-        }
-        usuarios.push(nuevo);
-        fs.writeFileSync(directory, JSON.stringify(usuarios,null,2));
-        return true
+        let lastUser = usuarios[usuarios.length -1];
+        let newUser = {
+            id: usuarios.length > 0 ? lastUser.id +1 : 1,
+            nombre: data.nombreUsuario ? data.nombreUsuario : String(data.direccionDeCorreoElectronico).trim()
+            .replace(/\s/g, "")
+            .split("@")[0]
+            .toLowerCase(),
+            apellido: String(data.apellidoUsuario),
+            correo: String(data.direccionDeCorreoElectronico),
+            ubicacion: String(data.ubicacionUser),
+            admin: String(data.direccionDeCorreoElectronico).includes("juansegundomartinez7@gmail.com") ? true : false,
+            clave: bcrypt.hashSync(data.clave,10),
+            avatar: file.filename,
+        };
+        usuarios.push(newUser);
+        this.write(usuarios)
     },
     editUser: function(data,file,id){
-        const directory = path.resolve(__dirname, "../data", "usuarios.json");
         let usuarios = this.allUser();
         usuarios.map(usuario => {
             if(usuario.id == id ){
-                usuario.nombre = data.nombreUsuario,
-                usuario.apellido = data.apellidoUsuario,
-                usuario.correo = data.direccionDeCorreoElectronico,
-                usuario.clave = bcrypt.hashSync(data.clave, 7), 
-                usuario.ubicacion = data.ubicacionUser,
-                usuario.admin = false,
-                usuario.avatar = file.filename
+                usuario.name = data.name ? data.name : String(data.email).trim()
+	            .replace(/\s/g, "")
+	            .split("@")[0]
+	            .toLowerCase();
+                usuario.email = String(data.email);
+                usuario.admin = String(data.email).includes("juansegundomartinez7@gmail.com") ? true : false;
+                usuario.clave = bcrypt.hashSync(data.clave,10);
+                usuario.avatar = file ? file.filename : null;
                 return usuario
             }
             return usuario
-        })
-        usuarios.push(nuevo);
-        fs.writeFileSync(directory, JSON.stringify(usuarios,null,2));
-        return true
+        });
+        this.write(usuarios)
     },
     deleteUser: function (id) {
-        const directory = path.resolve(__dirname,"../data","usuarios.json")
         let usuarios = this.allUser();
         let deleted = this.oneUser(id);
         // eliminamos la imagen de la carpeta upload
         fs.unlinkSync(path.resolve(__dirname, "../../public/uploads/avatars", deleted.image))
         // filtarmos el producto que deaseamos eliminar
         usuarios = usuarios.filter(usuarios => usuarios.id != deleted.id )
-        fs.writeFileSync(directory,JSON.stringify(usuarios,null,2));
-        return true;
+        return JSON.parse(fs.readFileSync(this.dir));;
     },
+    findByEmail: function (email){
+        return this.allUser().find(user => user.email == email)
+    },
+    logout: (req,res) => {
+        res.cookie("email",req.session.user.email,{maxAge:0})
+        delete req.session.user;
+        return res.redirect("/")
+    }
 }
 
-module.exports = model;

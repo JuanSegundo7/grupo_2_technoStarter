@@ -1,14 +1,18 @@
 [
 {
     "id": 1,
-    "nombre": "Robotica"
+    "nombre": "Impresion 3D",
+    "alias": "impresion"
 },
 {
     "id": 2,
-    "nombre": "Impresion 3D"
+    "nombre": "Robotica",
+    "alias": "robotica"
 },
 {
     "id": 3,
-    "nombre": "Electronica"
+    "nombre": "Electronica",
+    "alias": "electronica"
 }
 ]
+
