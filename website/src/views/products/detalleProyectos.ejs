@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
     
-<%-include("../partials/head",{"css":["header", "productDetail", "footer"]})%>
+    <%-include("../partials/head",{"css":["header", "productDetail", "footer"]})%>
 
 <body>
+
     <%-include("../partials/header")%> 
     
 <main>
-    <section id= "contenedor1">
-        <article>
+    <section id= "contenedor">
             <h1>Zapatilla Internauta 3000</h1>
-            <h4 class="lorem">Lorem ipsum lorem ipsum lorem ipsum</h4>
-        </article>
+            <h4>Lorem ipsum lorem ipsum lorem ipsum</h4>
     </section>
-    <section id= "contenedor2">
-        <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" id= "imgPrincipal">
-        <article>
-                <h2 id= "precio">60.0000US$</h1>
-                <h2 id= "netgraph">NETGRAph</h1>
-                <p id= "numero-dias">10</h1>
-                <p id= "dias">Dias más</h2>
+    <section id= "contPrincipal">
+        <article id="contPrincipal1">
+            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla">
+            <p><i class="fas fa-map-marker-alt"></i>SA Miguel, TUC</p>
+        </article>
+        <article id="contPrincipal2">
+                <h1>60.0000US$</h1>
+                <h1>NETGRAph</h1>
+                <p>10 Dias más</p>
                 <button>Patrocina esta campaña</button>
         </article>
-        <article class="flex-ubic">
-            <p id="SA"><i class="fas fa-map-marker-alt"></i>SA Miguel, TUC</p>
-        </article>
     </section>
-    <section class="campaña">
+    <section id="campaña">
             <h3>Campaña</h3>
             <h3>Patrocina esta campaña</h3>
             <h3><i class="far fa-bookmark"></i>Recuerdame</h3>
     </section>
-        <section id= "contenedor3">
+    <section id="descripcion">
         <h1>HISTORIA</h1>
-        <h1 id= "netgraph">
+        <h2>
             <i class="fas fa-stroopwafel"></i>NETGRAph
-        </h1>
-        <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. 
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-        Lorem Ipsum is simply.
-    </p>
-    <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" id= "imgSecundaria">
-    </div>
-    <div id= "contenedor4">
+        </h2>
+        <p> 
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. 
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            Lorem Ipsum is simply.
+        </p>
+    <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla">
+    </section>
+    <section id="imgsProyecto">
         <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgChica">
         <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgChica">
         <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgChica">
         <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgChica">
-    </div>
-    <div id= "contenedor5">
-        <div class="contenedorInterno">
-            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgRecomendacion">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
-        </div>
-        <div class="contenedorInterno">
-            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgRecomendacion">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
-        </div>
-        <div class="contenedorInterno">
-            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgRecomendacion">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
-        </div>
-        <div class="contenedorInterno">
-            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgRecomendacion">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
-        </div>
-    </div>
+    </section>
+    <section id="cajaRecomendaciones">
+        <h1>También recomendamos</h1>
+        <article class="recomendacion">
+            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de recomendacion">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        </article>
+        <article class="recomendacion">
+            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de recomendacion">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        </article>
+        <article class="recomendacion">
+            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de recomendacion">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        </article>
+        <article class="recomendacion">
+            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de recomendacion">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        </article>          
+    </section>
 </main>
+    
     <%- include("../partials/footer")%> 
 
 </body>

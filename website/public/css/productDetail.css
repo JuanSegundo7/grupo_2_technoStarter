@@ -18,3 +18,165 @@ body{
     min-height: 100vh; 
     box-sizing: border-box;
 }
+
+h1, h2, h4, p{
+    font-weight: bold;
+    margin: 5px;
+}
+
+#contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 250px;
+    border-bottom: solid 1px #C4C4C4;
+    padding-top: 60px;
+}
+
+#contenedor h1{
+    margin: 20px;
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+}
+
+#contenedor h4{
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+}
+
+#contPrincipal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+#contPrincipal1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45vw;
+    padding: 10px;
+}
+
+#contPrincipal1 img{
+    width: 200px;
+    align-self: center;
+    margin: 10px;
+    border-radius: 30px;
+    border: solid 1px;
+}
+
+#contPrincipal1 p{
+    font-weight: bold;
+    text-align: center;
+}
+
+#contPrincipal2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45vw;
+}
+
+#contPrincipal2 h1{
+    width: 200px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#contPrincipal2 button{
+    background-color: #031927;
+    color: #FF9900;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#campaña{
+    display: flex;
+    border-top: solid 1px #C4C4C4;
+    border-bottom: solid 1px #C4C4C4;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 10px;
+}
+
+#descripcion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#descripcion h1{
+    font-size: 35px;
+}
+
+#descripcion h2{
+    font-size: 40px;
+}
+
+#descripcion p{
+    width: 350px;
+    text-align: center;
+}
+
+#descripcion img{
+    width: 400px;
+    border: solid 1px;
+    border-radius: 40px;
+    margin: 20px;
+}
+
+#imgsProyecto{
+    display: flex;
+    justify-content: space-around;
+    border-top: solid 1px #C4C4C4;
+    border-bottom: solid 1px #C4C4C4;
+    padding: 20px;
+}
+
+.imgChica{
+    border-radius: 20px;
+    width: 100px;
+    border: solid 1px;
+}
+
+#cajaRecomendaciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.recomendacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.recomendacion img{
+    width: 300px;
+    margin: 20px;
+    border: solid 1px;
+    border-radius: 40px;
+    align-self: center;
+}
+
+.recomendacion p{
+    width: 300px;
+    text-align: center;
+}
