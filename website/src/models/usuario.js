@@ -9,7 +9,7 @@ const bcrypt = require("bcryptjs");
 module.exports = {
     dir: path.resolve(__dirname, "../data", "usuarios.json"),
     write: function(data){
-        return fs.writeFileSync(this.dir,JSON.stringify(data,null,2))
+        return fs.writeFileSync(this.dir,JSON.stringify(data,null,2));
     },
     allUser: function () {
         return JSON.parse(fs.readFileSync(this.dir));
@@ -40,12 +40,12 @@ module.exports = {
         let usuarios = this.allUser();
         usuarios.map(usuario => {
             if(usuario.id == id ){
-                usuario.name = data.name ? data.name : String(data.email).trim()
+                usuario.nombre = data.nombreUsuario ? data.nombreUsuario : String(data.direccionDeCorreoElectronico).trim()
 	            .replace(/\s/g, "")
 	            .split("@")[0]
 	            .toLowerCase();
-                usuario.email = String(data.email);
-                usuario.admin = String(data.email).includes("juansegundomartinez7@gmail.com") ? true : false;
+                usuario.email = String(data.direccionDeCorreoElectronico);
+                usuario.admin = String(data.direccionDeCorreoElectronico).includes("juansegundomartinez7@gmail.com") ? true : false;
                 usuario.clave = bcrypt.hashSync(data.clave,10);
                 usuario.avatar = file ? file.filename : null;
                 return usuario
@@ -63,8 +63,8 @@ module.exports = {
         usuarios = usuarios.filter(usuarios => usuarios.id != deleted.id )
         return JSON.parse(fs.readFileSync(this.dir));;
     },
-    findByEmail: function (email){
-        return this.allUser().find(user => user.email == email)
+    findByEmail: function (correo){
+        return this.allUser().find(user => user.correo == correo)
     },
     logout: (req,res) => {
         res.cookie("email",req.session.user.email,{maxAge:0})

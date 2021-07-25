@@ -18,5 +18,15 @@
     "admin": true,
     "clave": "$2a$10$xCf5cMXdE1XIqKBhw01IkucfW2zEGxuhW7Wzu.PPXtpN/9X9F6zs.",
     "avatar": "fotoAvatar-1626912572185.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Edu",
+    "apellido": "Virgilio",
+    "correo": "eduvirgilio@gmail.com",
+    "ubicacion": "Capital",
+    "admin": false,
+    "clave": "$2a$10$XhVhfe/Fq.r49o8.55BmJ.Box.OsDTGU6dHXDWHXTd3WuBcvUloZi",
+    "avatar": "fotoAvatar-1627140080092.jpg"
   }
 ]

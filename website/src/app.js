@@ -34,6 +34,11 @@ app.use(session({secret:"Argentina campeón"}));
 app.set("views", path.resolve(__dirname, "./views")); // Define la ubicación de la carpeta de las Vistas
 app.set("view engine", "ejs");
 
+// ************ Middleware Customs ************
+
+app.use(require("./middlewares/user"))
+
+
 // ************ Routes ************
 
 app.use(mainRouter);

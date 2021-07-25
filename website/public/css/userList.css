@@ -41,7 +41,7 @@ h1{
     display: flex;
     margin-bottom: 1rem;
     border-radius: var(--default-radius);
-
+    border: 2px solid #FF9900;
     box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.15);
 }
 .card-left {
@@ -54,25 +54,40 @@ h1{
     background-color: #031927;
     color: white;
     text-align: center;
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.15);
+    border-right: 1px solid #ff9900;
     border-radius: var(--default-radius) 0 0 var(--default-radius);
 }
 
 .card-left figure {
+    display: flex;
+    align-items: center;
     height: 120px;
     width: 120px;
     margin: 0;
     overflow: hidden;
     border-radius: 50%;
+    border: 2px solid #FF9900;
     background-color: white;
 }
 
 .card-left figure img {
     width: 100%;
+    object-fit: cover;
 }
 
 .card-content {
     width: 70%;
     padding: 1rem;
+    border-left: 1px solid #ff9900;
     background-color: #E6E6E6;
     border-radius: 0 var(--default-radius) var(--default-radius) 0;
+}
+
+p{
+    margin: 2vh 0 2vh 0;
+}
+
+a{
+    margin: 2vh 0 2vh 0;
 }
