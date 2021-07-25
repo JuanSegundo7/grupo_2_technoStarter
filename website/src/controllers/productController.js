@@ -1,16 +1,16 @@
-/***Const Models */
+// ************ Require's ************
 
 const proyecto = require("../models/proyecto");
-
 const categorias = require("../models/categoria");
 
+// ************ Controller ************
 
 const product = {
     index: (req,res) => {return res.render("products/detalleProyectos");},
     create: (req,res) => {return res.render("products/crearProyectos", {categorias:categorias.allCategoria()});}, 
     save: (req,res) => {
         let result = proyecto.newProyect(req.body,req.files)
-        return result == true ? res.redirect("/") : res.send("Error al cargar la informacion"); 
+        return result ? res.redirect("/") : res.send("Error al cargar la informacion"); 
     },
     edit: (req,res) => {res.render("products/editarProyectos", {proyecto:proyecto.oneProyect(req.params.id)});},
     update: (req,res) => {

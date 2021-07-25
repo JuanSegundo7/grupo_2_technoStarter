@@ -1,38 +1,47 @@
+// ************ Require's ************
+
 const path = require("path");
 const fs = require("fs");
 const categorias = require("./categoria");
 
-const model = {
+// ************ Controller ************
+
+module.exports = {
+    dir: path.resolve(__dirname, "../data", "proyectos.json"),
+    write: function(data){
+        return fs.writeFileSync(this.dir,JSON.stringify(data,null,2));
+    },
     allProyect: function() {
-        const directory = path.resolve(__dirname,"../data","proyectos.json");
-        const file = fs.readFileSync(directory,"utf-8");
-        const convert = JSON.parse(file);
-        return convert;
+        return JSON.parse(fs.readFileSync(this.dir));
     },
     oneProyect: function (id) {
-        const proyectos = this.allProyect();
-        let resultado = proyectos.find(element => element.id == id);
-        return resultado;
+        return this.allProyect().find(user => user.id == id);
     },
     newProyect: function(data,file){
-        const directory = path.resolve(__dirname, "../data", "proyectos.json");
-        let productos = this.allProyect();
+        let proyectos = this.allProyect();
+        let ultimosProyecto = proyectos[proyectos.length -1];
         let nuevo = {
-            id: productos.length > 0 ? productos[productos.length-1].id + 1 : 1,
-            nombre: data.nombreProducto,
+            id: proyectos.length > 0 ? ultimosProyecto.id +1 : 1,
+            nombre: String(data.nombreProducto),
             contribucionActual: 0,
-            contribucionFinal: 10000,
-            texto: data.textoProyecto,
-            fecha: data.fechaProyecto,
+            contribucionFinal: data.precioProyecto,
+            texto: String(data.textoProyecto),
+            fecha: String(data.fechaProyecto),
             patrocinadores: 20,
-            ubicacion: data.ubicacion,
-            autor: 1,
+            ubicacion: String(data.ubicacion),
+            autor: data.id,
             categoria: parseInt(data.categoria),
             images: file.map( image =>  String(data.nombreProducto).trim().replace(/\s+/g, '') + "/" + image.filename),
         }
-        productos.push(nuevo);
-        fs.writeFileSync(directory, JSON.stringify(productos,null,2));
-        return true
+        proyectos.push(nuevo);
+        this.write(proyectos);
+        return nuevo
+    },
+    random: function () {
+        const proyectos = this.allProyect();
+        let idRandom = Math.floor(Math.random() * proyectos.length + 1 )
+        let resultado = proyectos.find(proyecto => proyecto.id == idRandom);
+        return resultado;
     },
     editProyect: function(data,file,id){
         const directory = path.resolve(__dirname,"../data","proyectos.json")
@@ -40,11 +49,11 @@ const model = {
         proyectos.map(proyecto => {
             if(proyecto.id == id){
                 proyecto.nombre = data.nombre,
-                proyecto.contribucionFinal = 10000,
+                proyecto.contribucionFinal = data.precioProyecto,
                 proyecto.fecha = data.fecha,
                 proyecto.patrocinadores = 20,
                 proyecto.ubicacion = data.ubicacion,
-                proyecto.autor = 1,
+                proyecto.autor = data.id,
                 proyecto.categoria = parseInt(data.categorias),
                 proyecto.images = file.filename
                 return proyecto
@@ -79,5 +88,3 @@ const model = {
         return proyectos;
     },
 }
-
-module.exports = model;

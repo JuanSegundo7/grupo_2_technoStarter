@@ -1,0 +1,60 @@
+<html lang="en">
+    <%-include("../partials/head",{"css":["header", "login", "footer"]})%>
+    <body>
+        <%-include("../partials/header")%> 
+        <main>
+            <section class="formulario">
+                <form action="/usuario/guardarUsuario?method=PUT" method="post">
+                    <fieldset>
+                        <label for="name">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" value="<%= user.nombre%>">
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email</label>
+                        <input type="email" name="direccionCorreoElectronico" id="direccionCorreoElectronico" value="<%= user.correo%>">
+                    </fieldset>
+                    <fieldset>
+                        <label for="ultimaclave">Ultima contraseña</label>
+                        <input type="password" name="ultimaclave" id="ultimaclave" value="">
+                    </fieldset>
+                    <fieldset>
+                        <label for="clave">Contraseña nueva</label>
+                        <input type="password" name="clave" id="clave" value="">
+                    </fieldset>
+                    <fieldset>
+                        <button type="submit"><i class="fas fa-sync"></i></button>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="formulario">
+                <% if(user && user.admin) {%>
+                <form action="/user/avatar?method=PUT" method="post" enctype="multipart/form-data">
+                    <% if(user.avatar) {%>
+                        <figure id="avatarPreview">
+                            <img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>"><%= user.nombre%>
+                        </figure>
+                        <fieldset>
+                            <label for="avatar"></label>
+                            <input type="file" name="avatar" id="avatar">
+                        </fieldset>
+                        <% } else {%>
+                            <fieldset>
+                                <label for="avatar"><i class="fas fa-user"></i></label>
+                                <input type="file" name="avatar" id="avatar">
+                            </fieldset>
+                            <% }%>
+                            <fieldset>
+                                <button type="submit"><i class="fas fa-sync"></i></button>
+                            </fieldset>  
+                </form>
+                <% }%>
+                        <nav>
+                            <a href="/">Volver <i class="fas fa-home"></i></a>
+                            <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
+                        </nav>
+                    </form>
+            </section>
+        </main>
+        <%- include("../partials/footer")  %> 
+    </body>
+</html>

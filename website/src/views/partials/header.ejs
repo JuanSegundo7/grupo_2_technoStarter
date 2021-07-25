@@ -1,11 +1,14 @@
 <!--views/partials/header.ejs-->
 <header>
+    <!-- <section id="background-image">
+        <figure><img src="/img/technoStarter/background-image.jpg" alt=""></figure>
+    </section> -->
     <nav class="navbar--top">
         <figure class="mobile-visible logo">
-            <a href="/"><img src="/img/technoStarter/TechnoStarter1.png" alt="logo del sitio"></a>
+            <a href="/"><img src="/img/technoStarter/TechnoStarter1.png" alt="logo del sitio" id="mobile-techno"></a>
         </figure>
         <figure class="desktop-visible logo">
-            <a href="/"><img src="/img/technoStarter/TechnoStarter1.png" alt="logo del sitio"></a>
+            <a href="/"><img src="/img/technoStarter/TechnoStarter1.png" alt="logo del sitio" id="desktop-techno"></a>
         </figure>
         <form action="/proyectos/buscar" method="get" id="search-desktop" class="desktop-visible hover-hidden                                                               ">
             <fieldset id="search-fieldset">
@@ -47,6 +50,11 @@
             <li class="mobile-visible">
                 <a href="#menu">
                     <i class="fas fa-bars"></i>
+                </a>
+            </li>
+            <li class="desktop-visible">
+                <a href="/usuario/perfil">
+                    <i class="fas fa-user"></i>
                 </a>
             </li>
         </ul>

@@ -30,5 +30,23 @@
       "ACASISUSB4.0/fotosProyecto-1626915281687.jpg",
       "ACASISUSB4.0/fotosProyecto-1626915281688.jpg"
     ]
+  },
+  {
+    "id": 3,
+    "nombre": "Sancho - El Robot Asistente",
+    "contribucionActual": 0,
+    "contribucionFinal": "2500000",
+    "texto": "undefined",
+    "fecha": "2024-05-15",
+    "patrocinadores": 20,
+    "ubicacion": "Cordoba, Cordoba",
+    "categoria": 2,
+    "images": [
+      "Sancho-ElRobotAsistente/fotosProyecto-1627172891517.png",
+      "Sancho-ElRobotAsistente/fotosProyecto-1627172891749.gif",
+      "Sancho-ElRobotAsistente/fotosProyecto-1627172892211.gif",
+      "Sancho-ElRobotAsistente/fotosProyecto-1627172893401.gif",
+      "Sancho-ElRobotAsistente/fotosProyecto-1627172894852.jpg"
+    ]
   }
 ]

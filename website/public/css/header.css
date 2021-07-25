@@ -101,7 +101,7 @@ header nav {
 header img {
 	max-height: 100%;
 	width: 80%;
-	padding-top: 2vh;
+	padding-top: 3.5vh;
 	margin-left: 0.6em;
 }
 
@@ -215,10 +215,13 @@ header img {
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
 		width: 100%;
 		flex-direction: column;
-		min-height: 10vh;
-		background-color: #031927;
+		min-height: 15vh;
+		background:url("../img/technoStarter/background-image.jpg");
+		background-size: cover;
+		background-blend-mode: darken;
 		border-bottom: 2px solid #FF9900;
 		box-shadow: 0 10px 8px 0 rgba(146, 144, 144, 0.7);
 	}
@@ -232,8 +235,14 @@ header img {
 		align-items: center;
 	}
 
+	#background-image{
+		background-size: cover;
+		opacity: 0.3;
+		min-height: 30vh;
+	}
+
 	/**********************************^^^LOGO-^^^********************************************/
-	header img {
+	#desktop-techno{
 		max-height: 100%;
 		width: 100%;
 	}
@@ -284,10 +293,11 @@ header img {
 	.flex-ul-top{
 		display: flex;
 		flex-direction: row;
+		margin: 2em;
 	}
 
 	.flex-ul-top a{
-		margin: 1.4vw;
+		margin: 1vw;
     	font-size: 18px;
 	}
 

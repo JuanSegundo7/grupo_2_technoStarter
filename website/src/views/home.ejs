@@ -12,19 +12,19 @@
                     Campaña Destacada! 
                 </h2>
             </section>
-            <section class="campañaDestacada-1">
+            <section class="campañaDestacada-1">           
                 <section class="flex-camapañaDestacada">
                     <figure>
-                        <img src="/uploads/products/3Dvarius/varius-principal.jpg" alt="imagen de prueba">
+                        <img src="/uploads/products/<%= proyectos.images[0] %> " alt="tiBeast">
                     </figure>
                     <article>
-                        <h2 class="titulo-reco">
-                            3Dvarius - High-end 3D printed electric Violin</h2>
-                            <h2 class="precio">53.231€</h2>
-                            <p class="meta">contribuido de 50.000€</p>
-                            <p class="patrocinadores">144 Patrocinadores</p>
-                            <p class="ubicacion"><i class="fas fa-map-marker-alt"></i>Paris, France</p>
-                        </article>
+                        <h2 class="titulo-reco"><%= proyectos.nombre %></h2>
+                        <h2 class="precio">$<%= proyectos.contribucionActual %></h2>
+                        <p class="meta">contribuido de meta $<%= proyectos.contribucionFinal %></p>
+                        <p class="patrocinadores"><%= proyectos.patrocinadores %> patrocinadores</p>
+                        <p class="patrocinadores"><%= proyectos.fecha %></p>
+                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= proyectos.ubicacion %></p>
+                    </article>
                 </section>
                 <section class="flex-thumbs">
                     <a href=""><i class="far fa-bookmark"></i></a>
