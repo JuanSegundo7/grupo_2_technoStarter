@@ -17,7 +17,8 @@ footer * {
 }
 
 footer{
-    background-color: #031927;
+    background-image:linear-gradient(rgba(3, 25, 39, 1), rgba(4, 28, 42, 0.420)),url("../img/technoStarter/background-image.jpg");
+	background-size: cover;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -102,7 +103,8 @@ footer ul{
         }
         
         footer{
-            background-color: #031927;
+            background-image:linear-gradient(rgba(3, 25, 39, 1), rgba(4, 28, 42, 0.420)),url("../img/technoStarter/background-image.jpg");
+		    background-size: cover;
             display: flex;
             flex-direction: row;
             align-items: flex-start;
@@ -188,7 +190,8 @@ footer ul{
         }
         
         footer{
-            background-color: #031927;
+            background-image:linear-gradient(rgba(3, 25, 39, 1), rgba(4, 28, 42, 0.420)),url("../img/technoStarter/background-image.jpg");
+		    background-size: cover;
             display: flex;
             flex-direction: row;
             align-items: flex-start;

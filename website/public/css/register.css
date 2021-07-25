@@ -172,11 +172,14 @@ body{
 }
 
 @media (min-width: 769px){
-.registrateAqui h2{ 
+    .registrateAqui h2{ 
     margin: 1em 1em 1em 1em;
     text-align: center;
     color: black;
 
-}
+    }
 
+    #flex-button button {
+        width: 20%;
+    }
 }
