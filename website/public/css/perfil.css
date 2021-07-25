@@ -38,6 +38,17 @@ main{
     flex-direction: column;
 }
 
+/**************************************^^^TITULO^^^********************************************/
+
+h2{
+    text-align: center;
+    font-size: 1.5em;
+    margin: 13vh 0 2vh 0;
+}
+
+
+/**************************************^^^FORMULARIO^^^********************************************/
+
 .formulario{
     background-color: #031927;
     color: white;
@@ -49,4 +60,105 @@ main{
     border-radius: 15px;
     border: 2px solid #FF9900;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.formulario fieldset{
+    border: none;
+    margin: 2vw;
+}
+
+.formulario input{
+    margin: 2vh 0 2vh 0;
+    padding: 1vw;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 14px;
+}
+
+label{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#flex-avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#flex-avatar article{
+    margin-top: 1em;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#avatarPreview{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 120px;
+    width: 120px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #FF9900;
+    background-color: white;
+}
+
+#avatarPreview img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.fotoAvatar{
+    margin: 0;
+}
+
+#avatar{
+    width: 70%;
+    align-items: center;
+}
+
+#navbarflexBotones{
+    display: flex;
+    justify-content: space-around;
+}
+
+#submit-button{
+    margin: 0;
+}
+
+nav a{
+    color: #FF9900;
+}
+
+/**************************************^^^MEDIA-QUERYS^^^********************************************/
+
+@media (min-width: 480px){
+    h2{
+        font-size: 2em;
+        margin: 14vh 0 2vh 0;
+        padding: 0vw 3vw;
+    }
+    
+    .formulario{
+        margin-top: 5vh;
+    }
+    
+    .formulario input{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 769px){
+    .formulario{
+        margin-top: 5vh;
+    }
+    .formulario input{
+        font-size: 18px;
+    }
+    h2{
+        font-size: 2.2em;
+        margin: 4vh 0 2vh 0;
+    }
 }
