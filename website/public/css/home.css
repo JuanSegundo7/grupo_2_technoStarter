@@ -60,7 +60,7 @@ box-sizing: border-box;
 }
 
 .campañaDestacada{
-    margin-top: 18vh;
+    margin-top: 12vh;
 }
 
 .campañaDestacada-1{
@@ -261,13 +261,14 @@ box-sizing: border-box;
 
 }
 
+@media (min-width: 480px){
+    .titulo-h2 {
+    font-size: 2.5em;
+    }
+}
 
 @media (min-width: 769px){
     /**************************************^^^BODY^^^********************************************/
-
-    .titulo-h2{
-        font-size: 1.5em;
-    }
 
     .categorias-body li{
         height: 100%;
@@ -299,13 +300,12 @@ box-sizing: border-box;
     }
 
     .campañaDestacada{
-        margin-top: 5vh;
+        margin-top: 16vh;
         padding: 2vw 10vw 2vw 10vw;
     }   
 
-    .campañaDestacada h2{
-        text-align: center;
-        margin: 2vh 0 4vh 0;
+    .titulo-h2{
+        font-size: 2.5em;
     }
 
     .campañaDestacada img{
@@ -493,7 +493,5 @@ box-sizing: border-box;
         color: #031927;
         font-size: 7em;
     }
-
-
 
 }

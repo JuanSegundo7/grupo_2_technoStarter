@@ -164,6 +164,10 @@ body{
         color: black;
         font-size: 2em;
     }
+
+    #flex-button button {
+        width: 40%;
+    }
     
 }
 
