@@ -21,17 +21,19 @@
                 </fieldset>
                 <h3>¡Elige la categoria de tu proyecto!</h3>
                 <fieldset id="categorias-proyecto">
-                    <label for="robotica">Robotica</label>
-                    <input type= "radio" name="categorias" id="robotica">
-                    <label for="robotica">Impresión 3D</label>
-                    <input type= "radio" name="categorias" id="impresion3d">
-                    <label for="robotica">electronica</label>
-                    <input type= "radio" name="categorias" id="electronica">
+                    <% categorias.forEach(categoria => { %>
+                        <label for="<%= categoria.id %>"><%= categoria.nombre%></label>
+                        <input type= "radio" name="categoria" id="<%= categoria.id %>" value="<%= categoria.id %>">
+                    <% }) %>
                 </fieldset>
                 <fieldset id="descripcion-proyecto">
                     <h3>¡Contanos de que se trata tu proyecto!</h3>
                     <p>(Quedate tranquilo que mas adelante podes editar la información)</p>
-                    <textarea name="descripcion" rows="15" cols="30" placeholder="Escribí la historia de tu proyecto..." required></textarea>
+                    <textarea name="textoProyecto" rows="15" cols="30" placeholder="Escribí la historia de tu proyecto..." required></textarea>
+                </fieldset>
+                <fieldset id="fecha-proyecto">
+                    <label for="fecha">Establece la fecha limite de tu proyecto</label>
+                    <input type="date" id="fechaProyecto" min="2021-01-01" max="2099-12-31" name="fechaProyecto">
                 </fieldset>
                 <fieldset id="fotos-proyecto">
                     <label for="fotosProyecto">Subí una o varias fotos</label>

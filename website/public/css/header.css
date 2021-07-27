@@ -33,8 +33,9 @@ header {
     width: 100%;
 	flex-direction: column;
 	min-height: 10vh;
-	background-image:linear-gradient(rgba(3, 25, 39, 1), rgba(4, 28, 42, 0.420)),url("../img/technoStarter/background-image.jpg");
+	background-image:linear-gradient(rgba(3, 25, 39, 1), rgba(62, 121, 155, 0.420)),url("../img/technoStarter/background-image.jpg");
 	background-size: cover;
+	background-blend-mode: multiply;
 	border-bottom: 2px solid #FF9900;
 	border-top: 2px solid #FF9900;
 	box-shadow: 0 10px 8px 0 rgba(146, 144, 144, 0.7);
@@ -220,8 +221,9 @@ header img {
 		width: 100%;
 		flex-direction: column;
 		min-height: 15vh;
-		background-image:linear-gradient(rgba(3, 25, 39, 1), rgba(4, 28, 42, 0.420)),url("../img/technoStarter/background-image.jpg");
+		background-image:linear-gradient(rgba(3, 25, 39, 1), rgba(62, 121, 155, 0.420)),url("../img/technoStarter/background-image.jpg");
 		background-size: cover;
+		background-blend-mode: multiply;
 	}
 
 	header img {

@@ -43,6 +43,10 @@ module.exports = {
         let resultado = proyectos.find(proyecto => proyecto.id == idRandom);
         return resultado;
     },
+    recomendados: function (){
+        let recomendados = [this.random(),this.random(),this.random()]
+        return recomendados
+    },
     editProyect: function(data,file,id){
         const directory = path.resolve(__dirname,"../data","proyectos.json")
         let proyectos = this.allProyect();

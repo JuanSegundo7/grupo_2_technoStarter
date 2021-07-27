@@ -6,7 +6,7 @@ const proyecto = require("../models/proyecto");
 
 const main = {
     index: (req,res) => {
-        return res.render("home", {proyectos:proyecto.random(req.params.id)});
+        return res.render("home", {destacado:proyecto.random(), recomendados:proyecto.recomendados()});
     },
     nosotros: (req,res) => {
         return res.render("technoStarter/nosotros");

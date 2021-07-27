@@ -9,47 +9,43 @@
     
 <main>
     <section id= "contenedor">
-            <h1>Zapatilla Internauta 3000</h1>
+            <h1><%= proyectos.nombre %></h1>
             <h4>Lorem ipsum lorem ipsum lorem ipsum</h4>
     </section>
     <section id= "contPrincipal">
         <article id="contPrincipal1">
-            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla">
-            <p><i class="fas fa-map-marker-alt"></i>SA Miguel, TUC</p>
+            <img src="/uploads/products/<%= proyectos.images[0] %>" alt="imagen">
+            <p><i class="fas fa-map-marker-alt"></i> SA Miguel, TUC</p>
         </article>
         <article id="contPrincipal2">
-                <h1>60.0000US$</h1>
-                <h1>NETGRAph</h1>
-                <p>10 Dias más</p>
-                <button>Patrocina esta campaña</button>
+                <h1><%= proyectos.nombre %></h1>
+                <h2>$<%= proyectos.contribucionActual %></h2>
+                <h1>contribuido de meta $<%= proyectos.contribucionFinal %></h1>
+                <p>Hasta el <%= proyectos.fecha %></p>
+                <button><a href="">Patrocina esta campaña</a></button>
+                <button><a href="">Editar campaña</a></button>
         </article>
     </section>
     <section id="campaña">
             <h3>Campaña</h3>
             <h3>Patrocina esta campaña</h3>
-            <h3><i class="far fa-bookmark"></i>Recuerdame</h3>
+            <h3><i class="far fa-bookmark"></i> Recuerdame</h3>
     </section>
     <section id="descripcion">
         <h1>HISTORIA</h1>
         <h2>
-            <i class="fas fa-stroopwafel"></i>NETGRAph
+            <%= proyectos.nombre %>
         </h2>
         <p> 
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. 
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            Lorem Ipsum is simply.
+            <%= proyectos.texto %> 
         </p>
-    <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla">
+    <img src="/uploads/products/<%= proyectos.images[0] %> " alt="imagen">
     </section>
     <section id="imgsProyecto">
-        <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgChica">
-        <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgChica">
-        <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgChica">
-        <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de Zapatilla" class= "imgChica">
+        <img src="/uploads/products/<%= proyectos.images[0] %> " alt="imagen" class= "imgChica">
+        <img src="/uploads/products/<%= proyectos.images[1] %> " alt="imagen" class= "imgChica">
+        <img src="/uploads/products/<%= proyectos.images[2] %> " alt="imagen" class= "imgChica">
+        <img src="/uploads/products/<%= proyectos.images[3] %> " alt="imagen" class= "imgChica">
     </section>
     <section id="cajaRecomendaciones">
         <h1>También recomendamos</h1>

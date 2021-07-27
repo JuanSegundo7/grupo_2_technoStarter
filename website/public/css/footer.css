@@ -17,8 +17,9 @@ footer * {
 }
 
 footer{
-    background-image:linear-gradient(rgba(3, 25, 39, 1), rgba(4, 28, 42, 0.420)),url("../img/technoStarter/background-image.jpg");
+    background-image:linear-gradient(rgba(3, 25, 39, 1), rgba(62, 121, 155, 0.420)),url("../img/technoStarter/background-image.jpg");
 	background-size: cover;
+	background-blend-mode: multiply;
     display: flex;
     flex-direction: row;
     align-items: center;

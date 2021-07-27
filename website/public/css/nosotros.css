@@ -51,3 +51,20 @@ p{
     font-size: 1.3em;
     margin: 2vh 0 2vh 0;
 }
+
+@media (min-width: 320px){
+    #margin-top{
+        margin: 14vh 0 0 0;
+    }
+}
+@media (min-width: 480px){
+    #margin-top{
+        margin: 12vh 0 0 0;
+    }
+}
+
+@media (min-width: 720px){
+    #margin-top{
+        margin: 2vh 0 0 0;
+    }
+}

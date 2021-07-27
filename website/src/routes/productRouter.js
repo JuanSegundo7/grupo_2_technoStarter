@@ -28,7 +28,7 @@ const upload = multer({storage:dest});
 
 // ************ Rutas ************
 
-router.get("/producto", productController.index);
+router.get("/producto/:id", productController.index);
 
 router.get("/crear",[upload.any("fotosProyecto")], productController.create);
 

@@ -6,7 +6,7 @@ const categorias = require("../models/categoria");
 // ************ Controller ************
 
 const product = {
-    index: (req,res) => {return res.render("products/detalleProyectos");},
+    index: (req,res) => {return res.render("products/detalleProyectos", {proyectos:proyecto.random(req.params.id)});},
     create: (req,res) => {return res.render("products/crearProyectos", {categorias:categorias.allCategoria()});}, 
     save: (req,res) => {
         let result = proyecto.newProyect(req.body,req.files)

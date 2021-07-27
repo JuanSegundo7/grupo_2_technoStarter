@@ -15,15 +15,15 @@
             <section class="campañaDestacada-1">           
                 <section class="flex-camapañaDestacada">
                     <figure>
-                        <img src="/uploads/products/<%= proyectos.images[0] %> " alt="tiBeast">
+                        <a href="/proyecto/producto/<%= destacado.id %>"><img src="/uploads/products/<%= destacado.images[0] %> " alt="tiBeast"></a>
                     </figure>
                     <article>
-                        <h2 class="titulo-reco"><%= proyectos.nombre %></h2>
-                        <h2 class="precio">$<%= proyectos.contribucionActual %></h2>
-                        <p class="meta">contribuido de meta $<%= proyectos.contribucionFinal %></p>
-                        <p class="patrocinadores"><%= proyectos.patrocinadores %> patrocinadores</p>
-                        <p class="patrocinadores"><%= proyectos.fecha %></p>
-                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= proyectos.ubicacion %></p>
+                        <h2 class="titulo-reco"><%= destacado.nombre %></h2>
+                        <h2 class="precio">$<%= destacado.contribucionActual %></h2>
+                        <p class="meta">contribuido de meta $<%= destacado.contribucionFinal %></p>
+                        <p class="patrocinadores"><%= destacado.patrocinadores %> patrocinadores</p>
+                        <p class="patrocinadores"><%= destacado.fecha %></p>
+                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= destacado.ubicacion %></p>
                     </article>
                 </section>
                 <section class="flex-thumbs">
@@ -37,63 +37,28 @@
                 <section>
                     <h2 class="titulo-h2">Recomendaciones</h2>
                 </section>
-            <section class="recomendaciones-1">
-                <section class="flex-recomendaciones">
-                    <figure>
-                        <img src="/uploads/products/rayshot/rayshot-1.jpg" alt="imagen de prueba">
-                    </figure>
-                    <article>
-                        <h2 class="titulo-reco">RayShot</h2>
-                        <h2 class="precio">109.860$</h2>
-                        <p class="meta">contribuido de meta 10.311 $</p>
-                        <p class="patrocinadores">458 Patrocinadores</p>
-                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i>Hong Kong, Hong Kong</p>
-                    </article>
-                </section>
-                <section class="flex-thumbs">
-                    <a href=""><i class="far fa-bookmark"></i></a>
-                    <a href=""><i class="far fa-thumbs-up"></i></a>
-                    <a href=""><i class="far fa-thumbs-down"></i></a>
-                </section>
-            </section>
-            <section class="recomendaciones-2">
-                <section class="flex-recomendaciones">
-                    <figure>
-                        <img src="/uploads/products/tiBeast/tiBeast.png" alt="tiBeast">
-                    </figure>
-                    <article>
-                        <h2 class="titulo-reco">TiBeast</h2>
-                        <h2 class="precio">32.936US$</h2>
-                        <p class="meta">contribuido de meta 20.000 US$</p>
-                        <p class="patrocinadores">71 Patrocinadores</p>
-                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i>Albany, NY</p>
-                    </article>
-                </section>
-                <section class="flex-thumbs">
-                    <a href=""><i class="far fa-bookmark"></i></a>
-                    <a href=""><i class="far fa-thumbs-up"></i></a>
-                    <a href=""><i class="far fa-thumbs-down"></i></a>
-                </section>
-            </section>
-            <section class="recomendaciones-3">
-                <section class="flex-recomendaciones">
-                    <figure>
-                        <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de prueba">
-                    </figure>
-                    <article>
-                        <h2 class="titulo-reco">ACASIS: SSD Storage 10 in 1</h2>
-                        <h2 class="precio">513.569US$</h2>
-                        <p class="meta">contribuido de meta 5.000 US$</p>
-                        <p class="patrocinadores">3.073 Patrocinadores</p>
-                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i>Munich, DEU</p>
-                    </article>
-                </section>
-                <section class="flex-thumbs">
-                    <a href=""><i class="far fa-bookmark"></i></a>
-                    <a href=""><i class="far fa-thumbs-up"></i></a>
-                    <a href=""><i class="far fa-thumbs-down"></i></a>
-                </section>
-            </section>
+                <% recomendados.forEach(recomendado => { %>
+                    <section class="recomendaciones-1">
+                        <section class="flex-recomendaciones">
+                            <figure>
+                                <a href="/proyecto/producto/<%= recomendado.id %>"><img src="/uploads/products/<%= recomendado.images[0] %> " alt="imagen"></a>
+                            </figure>
+                            <article>
+                                <h2 class="titulo-reco"><%= recomendado.nombre %></h2>
+                                <h2 class="precio">$<%= recomendado.contribucionActual %></h2>
+                                <p class="meta">contribuido de meta $<%= recomendado.contribucionFinal %></p>
+                                <p class="patrocinadores"><%= recomendado.patrocinadores %> patrocinadores</p>
+                                <p class="patrocinadores"><%= recomendado.fecha %></p>
+                                <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= recomendado.ubicacion %></p>
+                            </article>
+                        </section>
+                        <section class="flex-thumbs">
+                            <a href=""><i class="far fa-bookmark"></i></a>
+                            <a href=""><i class="far fa-thumbs-up"></i></a>
+                            <a href=""><i class="far fa-thumbs-down"></i></a>
+                        </section>
+                    </section>
+                    <% }) %>
         </section>
         <section class="comoFunciona">
             <section>
@@ -155,7 +120,7 @@
             </article>
         </section>
     </main>
-    <%- include("./partials/footer")  %> 
+    <%- include("./partials/footer")%> 
 </body>
 
 </html>
