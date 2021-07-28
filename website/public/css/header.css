@@ -41,7 +41,6 @@ header {
 	box-shadow: 0 10px 8px 0 rgba(146, 144, 144, 0.7);
 }
 
-
 header nav {
 	display: flex;
 	height: 10vh;
@@ -100,22 +99,50 @@ header nav {
 
 
 /**********************************^^^LOGO-^^^********************************************/
-header img {
-	max-height: 100%;
-	width: 90%;
-    padding-top: 2vh;
+
+.logo img{
+	width: 5em;
+	padding-top: 2vh;
     margin-left: 0.3em;
+	max-height: 100%;
 }
 
-.logo{
-	width: 93px;
-}
 /**********************************^^^NAVBAR-TOP^^^********************************************/
+
+#usuario-foto{
+	list-style-type: none;
+    margin-right: 1.5em;
+}
+
+#foto-usuarioHeader{
+	display: flex;
+	justify-content: flex-end;
+	width: 6vw;
+	padding-left: 2em;
+}
+
+#foto-usuarioHeader i{
+	width: 50%;
+}
+
+#foto-usuarioHeader img{
+	width: 2em;
+	border-radius: 50%;
+	border: 2px solid #FF9900;
+}
+
+#foto-usuarioHeader p{
+	font-size: 12px;
+	width: 20%;
+	margin-left: 5px;
+	list-style-type: none;
+}
 
 .navbar-icons {
 	display: flex;
 	justify-content: space-between;
 	margin-right: 20px;
+    align-items: center;
 }
 
 .navbar-icons a{
@@ -226,12 +253,6 @@ header img {
 		background-blend-mode: multiply;
 	}
 
-	header img {
-		max-height: 100%;
-		width: 80%;
-		padding-top: 3.5vh;
-		margin-left: 0.6em;
-	}
 
 
 	header nav {
@@ -249,13 +270,37 @@ header img {
 	}
 
 	/**********************************^^^LOGO-^^^********************************************/
-	#desktop-techno{
+	
+	.logo img{	
+		width: 5em;
+		margin-left: 0.3em;
 		max-height: 100%;
-		width: 100%;
 	}
 
-
 	/**********************************^^^NAVBAR-TOP^^^********************************************/
+	#foto-usuarioHeader{
+		display: flex;
+		justify-content: flex-end;
+		width: 6vw;
+    	padding-left: 2em;
+	}
+	
+	#foto-usuarioHeader i{
+		width: 50%;
+	}
+
+	#foto-usuarioHeader img{
+		width: 2em;
+		border-radius: 50%;
+		border: 2px solid #FF9900;
+	}
+
+	#foto-usuarioHeader p{
+		font-size: 12px;
+    	width: 20%;
+    	margin-left: 10px;
+	}
+	
 
 	.navbar--top a{
 		color: #FF9900;
@@ -270,8 +315,9 @@ header img {
 
 	.navbar-icons {
 		display: flex;
-		padding-left: 1vw;
+		padding: 1vw;
 		margin-right: 0;
+    	align-items: center;
 	}
 
 	.navbar-icons a{
@@ -303,6 +349,7 @@ header img {
 	.flex-ul-top{
 		display: flex;
 		flex-direction: row;
+		padding-left: 1em;
 		margin: 0vw 1.3vw;
 	}
 

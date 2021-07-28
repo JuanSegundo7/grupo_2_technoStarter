@@ -6,7 +6,7 @@ const proyecto = require("../models/proyecto");
 // ************ Controller ************
 
 const categorias = {
-    show: (req,res) => res.render("categorias/robotica",{proyectos:proyecto.proyectsByCategory(req.params.category), categorias:categoria.oneCategoriaPorAlias(req.params.category)})
+    show: (req,res) => res.render("categorias/robotica",{destacado:proyecto.random(), proyectos:proyecto.proyectsByCategory(req.params.category), categorias:categoria.oneCategoriaPorAlias(req.params.category)})
 };
 
 module.exports = categorias;
