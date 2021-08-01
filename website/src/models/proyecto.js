@@ -17,7 +17,7 @@ module.exports = {
     oneProyect: function (id) {
         return this.allProyect().find(user => user.id == id);
     },
-    newProyect: function(data,file){
+    newProyect: function(data,file,user){
         let proyectos = this.allProyect();
         let ultimosProyecto = proyectos[proyectos.length -1];
         let nuevo = {
@@ -29,13 +29,26 @@ module.exports = {
             fecha: String(data.fechaProyecto),
             patrocinadores: 20,
             ubicacion: String(data.ubicacion),
-            autor: data.id,
+            autor: user != undefined ? user.id : null,
             categoria: parseInt(data.categoria),
             images: file.map( image =>  String(data.nombreProducto).trim().replace(/\s+/g, '') + "/" + image.filename),
         }
         proyectos.push(nuevo);
         this.write(proyectos);
         return nuevo
+    },
+    contribuir: function(contribucion, proyectoId){
+        const proyectos = this.allProyect();
+        proyectos = proyectos.map(proyecto => {
+            if(proyecto.id == proyectoId){
+            proyecto.contribucionActual = proyecto.contribucionActual + contribucion;
+            return proyecto
+            }
+            return proyecto
+        })
+        this.write(proyectos);
+        // fs.writeFileSync(this.dir, JSON.stringify(proyectos,null,2));
+        return true;
     },
     random: function () {
         const proyectos = this.allProyect();

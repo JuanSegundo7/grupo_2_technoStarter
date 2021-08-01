@@ -5,6 +5,7 @@ const path = require("path");
 const fs = require("fs");
 const router = express.Router();
 const productController = require("../controllers/productController");
+const isLogged = require("../middlewares/logged");
 const { body } = require("express-validator");
 const multer = require('multer');
 
@@ -30,17 +31,18 @@ const upload = multer({storage:dest});
 
 router.get("/producto/:id", productController.index);
 
-router.get("/crear",[upload.any("fotosProyecto")], productController.create);
+router.get("/crear", [isLogged], productController.create);
 
-router.get("/editar/:id", productController.edit);
+router.get("/editar/:id",[isLogged], productController.edit);
 
-router.post("/guardar",[upload.any("fotosProyecto")], productController.save);
+router.post("/guardar",[upload.any()], productController.save);
 
-router.put("/actualizar/:id",[upload.any("fotosProyecto")], productController.update);
+router.post("/contribuir/:id", [isLogged], productController.contribucion);
+
+router.put("/actualizar/:id",[upload.any()], productController.update);
 
 router.delete("/borrar",productController.delete);
 
-router.get("/borrar2", productController.borrar);
 
 
 module.exports = router;

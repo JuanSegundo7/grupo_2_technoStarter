@@ -7,7 +7,6 @@
                 <h2>Perfil - Acá podes actualizar tus datos</h2>
             </section>
             <section class="formulario">
-                <% if(user && user.admin) {%>
                 <form action="/user/avatar?method=PUT" method="post" enctype="multipart/form-data">
                     <% if(user.avatar) {%>
                         <section id="flex-avatar">
@@ -29,11 +28,10 @@
                             </fieldset>
                             <% }%>
                         </form>
-                        <% }%>
+                        <fieldset>
+                            <button type="submit">Acutalizar<i class="fas fa-sync"></i></button>
+                        </fieldset>
                     </form>
-                    <fieldset>
-                        <button type="submit">Acutalizar<i class="fas fa-sync"></i></button>
-                    </fieldset>
             </section>
             <section class="formulario">
                 <form action="/usuario/guardarUsuario?method=PUT" method="post">
@@ -53,14 +51,20 @@
                         <label for="clave">Contraseña nueva</label>
                         <input type="password" name="clave" id="clave" value="">
                     </fieldset>
+                    <nav id="navbarflexBotones">
+                        <a href="/">Volver <i class="fas fa-home"></i></a>
+                        <fieldset id="submit-button">
+                            <button type="submit">Actualizar<i class="fas fa-sync"></i></button>
+                        </fieldset>  
+                        <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
+                    </nav>
                 </form>
-                <nav id="navbarflexBotones">
-                    <a href="/">Volver <i class="fas fa-home"></i></a>
-                    <fieldset id="submit-button">
-                        <button type="submit">Actualizar<i class="fas fa-sync"></i></button>
-                    </fieldset>  
-                    <a href="/usuario/cerrarSesion">Salir<i class="fas fa-power-off"></i></a>
-                </nav>
+            </section>
+            <section>
+                <h2>Proyectos Guardados</h2>
+                <section id="proyectosGuardados">
+                    
+                </section>
             </section>
         </main>
         <%- include("../partials/footer")  %> 

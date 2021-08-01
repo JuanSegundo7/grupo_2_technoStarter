@@ -16,33 +16,39 @@
         <h2>Categorias</h2>
 
         <div id= "contenedorOp">
-            <label class= "opcionesContr"><input type="radio" name= "medio" value= "Bronce">
-                <b class= "titulosContr">Contribución Bronce</b>
-                <p class="textoContr">In volutpat at tortor vitae turpis faucibus.</p>
-                <ul class="textoContr">
-                    <li>Malesuada integer lectus et orci justo in.</li>
-                    <li>Ornare velit quis.</li>
-                </ul>
-                <button class= "continuar">Continuar</button>
-            </label>
-            <label class= "opcionesContr"><input type="radio" name= "medio" value= "Plata">
-                <b class= "titulosContr">Contribución Plata</b>
-                <p class="textoContr">In volutpat at tortor vitae turpis faucibus.</p>
-                <ul class="textoContr">
-                    <li>Malesuada integer lectus et orci justo in.</li>
-                    <li>Ornare velit quis.</li>
-                </ul>
-                <button class= "continuar">Continuar</button>
-            </label>
-            <label class= "opcionesContr"><input type="radio" name= "medio" value= "Oro">
-                <b class= "titulosContr">Contribución Oro</b>
-                <p class="textoContr">In volutpat at tortor vitae turpis faucibus.</p>
-                <ul class="textoContr">
-                    <li>Malesuada integer lectus et orci justo in.</li>
-                    <li>Ornare velit quis.</li>
-                </ul>
-                <button class= "continuar">Continuar</button>
-            </label>
+            <form action="/contribuir" method="post">
+                <label class= "opcionesContr"><input type="radio" name= "medio" value= "Bronce"><input type="hidden" name="proyecto" value="<%= proyecto.id %>">
+                    <b class= "titulosContr">Contribución Bronce</b>
+                    <p class="textoContr">In volutpat at tortor vitae turpis faucibus.</p>
+                    <ul class="textoContr">
+                        <li>Malesuada integer lectus et orci justo in.</li>
+                        <li>Ornare velit quis.</li>
+                    </ul>
+                    <button class= "continuar" type="submit">Continuar</button>
+                </label>
+            </form>
+            <form action="/contribuir" method="post">
+                <label class= "opcionesContr"><input type="radio" name= "medio" value= "Bronce"><input type="hidden" name="proyecto" value="<%= proyecto.id %>">
+                    <b class= "titulosContr">Contribución Bronce</b>
+                    <p class="textoContr">In volutpat at tortor vitae turpis faucibus.</p>
+                    <ul class="textoContr">
+                        <li>Malesuada integer lectus et orci justo in.</li>
+                        <li>Ornare velit quis.</li>
+                    </ul>
+                    <button class= "continuar" type="submit">Continuar</button>
+                </label>
+            </form>
+            <form action="/contribuir" method="post">
+                <label class= "opcionesContr"><input type="radio" name= "medio" value= "Bronce"><input type="hidden" name="proyecto" value="<%= proyecto.id %>">
+                    <b class= "titulosContr">Contribución Bronce</b>
+                    <p class="textoContr">In volutpat at tortor vitae turpis faucibus.</p>
+                    <ul class="textoContr">
+                        <li>Malesuada integer lectus et orci justo in.</li>
+                        <li>Ornare velit quis.</li>
+                    </ul>
+                    <button class= "continuar" type="submit">Continuar</button>
+                </label>
+            </form>
         </div>
 
         <p id= "textoPatrocinar">Patrocinar no es comprar. <br>
@@ -61,6 +67,11 @@
                 <li>Si se financia este proyecto, ¿cómo obtengo mi recompensa?</li>
             </ul>
         </p>
+        <section>
+            <form action="">
+
+            </form>
+        </section>
     </main>
     <%- include("../partials/footer")  %> 
 </body>

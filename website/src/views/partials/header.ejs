@@ -23,17 +23,19 @@
                 </a>
             </li>
             <% if(user && user.admin) {%>
-                <li>
-                    <a href="/proyecto/crear">
-                        <i class="fas fa-hammer"></i>
-                    </a>
-                </li>
                 <li class="desktop-visible">
                     <a href="/usuario/usuarios">
                         <i class="fas fa-users"></i>
                     </a>
                 </li>
-                <li class="desktop-visible">
+                <%}%>      
+                <% if(user) {%>
+                    <li>
+                        <a href="/proyecto/crear">
+                            <i class="fas fa-hammer"></i>
+                        </a>
+                    </li>
+                    <li class="desktop-visible">
                     <a href="/usuario/cerrarSesion">
                         <i class="fas fa-sign-out-alt"></i>
                     </a>
@@ -43,7 +45,7 @@
                         <i class="fas fa-sign-out-alt"></i>
                     </a>
                 </li>
-                <li class="desktop-visible">
+                <li class="desktop-visible" id="usuario-foto">
                     <a href="/usuario/perfil">
                         <i id="foto-usuarioHeader"><img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>"><p>Hola! <%= user.nombre%></p></i>
                     </a>
@@ -57,11 +59,6 @@
                     <li class="desktop-visible">
                         <a href="/usuario/ingresar">
                             <i class="fas fa-sign-in-alt"></i>
-                        </a>
-                    </li>
-                    <li class="desktop-visible">
-                        <a href="/usuario/usuarios">
-                            <i class="fas fa-users"></i>
                         </a>
                     </li>
                     <li class="mobile-visible">
