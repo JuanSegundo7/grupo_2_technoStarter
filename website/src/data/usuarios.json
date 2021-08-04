@@ -38,5 +38,15 @@
     "admin": false,
     "clave": "$2a$10$qoiMCk4.9FnpXV6kmcL2Z.EmvjO3LkUFocLXjtdcsKUulBZl4.7w.",
     "avatar": "fotoAvatar-1627247489398.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Tomas",
+    "apellido": "Martinez",
+    "correo": "tomas.martinezvila@gmail.com",
+    "ubicacion": "C.A.B.A",
+    "admin": false,
+    "clave": "$2a$10$eAxNpSZVnBHBVq9EDClQZ.0NCiDTq89jvwE3JAma09DY.CVfAIVSe",
+    "avatar": "fotoAvatar-1627254630906.jpeg"
   }
 ]
