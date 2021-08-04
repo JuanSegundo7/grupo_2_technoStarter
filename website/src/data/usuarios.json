@@ -48,5 +48,15 @@
     "admin": false,
     "clave": "$2a$10$eAxNpSZVnBHBVq9EDClQZ.0NCiDTq89jvwE3JAma09DY.CVfAIVSe",
     "avatar": "fotoAvatar-1627254630906.jpeg"
+  },
+  {
+    "id": 6,
+    "nombre": "Tomas Admin",
+    "apellido": "Martinez",
+    "correo": "tomas.martinezvila1@gmail.com",
+    "ubicacion": "Caba",
+    "admin": true,
+    "clave": "$2a$10$yYUUSg6ehYGW6dAC9kWOXuTsjuLKYmvkLcYCZzU.XHLgvAxNpbtH.",
+    "avatar": "fotoAvatar-1628117661185.jpg"
   }
 ]

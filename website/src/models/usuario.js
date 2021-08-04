@@ -20,6 +20,7 @@ module.exports = {
     newUser: function(data,file){
         let usuarios = this.allUser();
         let lastUser = usuarios[usuarios.length -1];
+        let admines = ["juansegundomartinez7@gmail.com", "guidopadin18@gmail.com","tomas.martinezvila1@gmail.com"]
         let newUser = {
             id: usuarios.length > 0 ? lastUser.id +1 : 1,
             nombre: data.nombreUsuario ? data.nombreUsuario : String(data.direccionDeCorreoElectronico).trim()
@@ -29,7 +30,7 @@ module.exports = {
             apellido: String(data.apellidoUsuario),
             correo: String(data.direccionDeCorreoElectronico),
             ubicacion: String(data.ubicacionUser),
-            admin: String(data.direccionDeCorreoElectronico).includes("juansegundomartinez7@gmail.com", "guidopadin18@gmail.com", "tomas.martinezvila1@gmail.com") ? true : false,
+            admin: String(data.direccionDeCorreoElectronico).includes(admines) ? true : false,
             clave: bcrypt.hashSync(data.clave,10),
             avatar: file.filename,
         };
