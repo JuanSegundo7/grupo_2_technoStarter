@@ -29,7 +29,7 @@ module.exports = {
             apellido: String(data.apellidoUsuario),
             correo: String(data.direccionDeCorreoElectronico),
             ubicacion: String(data.ubicacionUser),
-            admin: String(data.direccionDeCorreoElectronico).includes("juansegundomartinez7@gmail.com", "guidopadin18@gmail.com", "tomas.martinezvila@gmail.com") ? true : false,
+            admin: String(data.direccionDeCorreoElectronico).includes("juansegundomartinez7@gmail.com", "guidopadin18@gmail.com", "tomas.martinezvila1@gmail.com") ? true : false,
             clave: bcrypt.hashSync(data.clave,10),
             avatar: file.filename,
         };
