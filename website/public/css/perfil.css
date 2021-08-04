@@ -130,6 +130,22 @@ label{
 
 nav a{
     color: #FF9900;
+    text-decoration: none;
+}
+/**************************************^^^PROYECTOS^^^********************************************/
+
+
+#proyectosGuardados{
+    background-color: #031927;
+    color: white;
+    padding: 2.5vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4vw 4vw 4vw;
+    border-radius: 15px;
+    border: 2px solid #FF9900;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 /**************************************^^^MEDIA-QUERYS^^^********************************************/
@@ -160,5 +176,8 @@ nav a{
     h2{
         font-size: 2.2em;
         margin: 4vh 0 2vh 0;
+    }
+    button i{
+        margin-left: 0.5vw;
     }
 }

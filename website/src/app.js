@@ -36,7 +36,7 @@ app.set("view engine", "ejs");
 
 // ************ Middleware Customs ************
 
-app.use(require("./middlewares/user"))
+app.use(require("./middlewares/user"));
 
 
 // ************ Routes ************

@@ -17,53 +17,68 @@
             </fieldset>
         </form>
         <ul class="navbar-icons">
-            <li>
-                <a href="/proyecto/crear">
-                    <i class="fas fa-hammer"></i>
-                </a>
-            </li>
             <li class="mobile-visible">
                 <a href="#search">
                     <i class="fas fa-search"></i>
                 </a>
             </li>
-            <li>
-                <a href="/carrito">
-                    <i class="fas fa-shopping-cart"></i></i>
-                </a>
-            </li>
-            <li class="mobile-visible">
-                <a href="#user">
-                    <i class="fas fa-user"></i>
-                </a>
-            </li>
-            <li class="desktop-visible">
-                <a href="/usuario/ingresar">
-                    <i class="fas fa-sign-in-alt"></i>
-                </a>
-            </li>
-            <li class="desktop-visible">
-                <a href="/usuario/usuarios">
-                    <i class="fas fa-users"></i>
-                </a>
-            </li>
-            <li class="mobile-visible">
-                <a href="#menu">
-                    <i class="fas fa-bars"></i>
-                </a>
-            </li>
-            <li class="desktop-visible">
-                <a href="/usuario/perfil">
-                    <i class="fas fa-user"></i>
-                </a>
-            </li>
-        </ul>
-        <ul class="desktop-visible flex-ul-top">
-            <li><a href="/descubrir">Descubrir</a></li>
-            <li><a href="/nosotros">Nosotros</a></li>
-        </ul>
-    </nav>
-    <form action="/proyectos/buscar" method="get" id="search" class="mobile-visible hover-hidden">
+            <% if(user && user.admin) {%>
+                <li class="desktop-visible">
+                    <a href="/usuario/usuarios">
+                        <i class="fas fa-users"></i>
+                    </a>
+                </li>
+                <%}%>      
+                <% if(user) {%>
+                    <li>
+                        <a href="/proyecto/crear">
+                            <i class="fas fa-hammer"></i>
+                        </a>
+                    </li>
+                    <li class="desktop-visible">
+                    <a href="/usuario/cerrarSesion">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </li>
+                <li class="mobile-visible">
+                    <a href="/usuario/cerrarSesion">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </li>
+                <li class="desktop-visible" id="usuario-foto">
+                    <a href="/usuario/perfil">
+                        <i id="foto-usuarioHeader"><img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>"><p>Hola! <%= user.nombre%></p></i>
+                    </a>
+                </li>
+                <li class="mobile-visible" id="usuario-foto">
+                    <a href="/usuario/perfil">
+                        <i id="foto-usuarioHeader"><img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>"><p>Hola! <%= user.nombre%></p></i>
+                    </a>
+                </li>
+                <%}else{%> 
+                    <li class="desktop-visible">
+                        <a href="/usuario/ingresar">
+                            <i class="fas fa-sign-in-alt"></i>
+                        </a>
+                    </li>
+                    <li class="mobile-visible">
+                        <a href="#user">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </li>
+                    <%}%>    
+                    <li class="mobile-visible">
+                        <a href="#menu">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="desktop-visible flex-ul-top">
+                    <li><a href="/descubrir">Descubrir</a></li>
+                    <li><a href="/nosotros">Nosotros</a></li>
+                </ul>
+            </nav>
+            <form action="/proyectos/buscar" method="get" id="search" class="mobile-visible hover-hidden">
         <fieldset id="search-fieldset">
             <input type="text" name="keyword" id="keyword">
             <button type="submit" class="searchButton"><i class="fas fa-search"></i></button>

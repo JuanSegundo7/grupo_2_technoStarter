@@ -49,7 +49,9 @@ h1, h2, h4, p{
 
 #contPrincipal{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-around;
     width: 100vw;
     border-top: solid 2px #FF9900;
@@ -60,23 +62,25 @@ h1, h2, h4, p{
 #contPrincipal1{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     width: 45vw;
     padding: 10px;
 }
 
 #contPrincipal1 img{
-    height: 100%;
-    width: 100%;
+    height: 45vh;
+    width: 18em;
     align-self: center;
-    margin: 10px;
-    min-height: 2vh;
+    margin-left: 0.5em;
     border-radius: 25px;
     border: solid 2px;
 }
 
+
+
 #contPrincipal1 p{
     font-weight: 300;
+    font-size: 0.8em;
     text-align: center;
 }
 
@@ -85,22 +89,25 @@ h1, h2, h4, p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 45vw;
 }
 
 #contPrincipal2 h1{
-    width: 200px;
-    font-size: 30px;
+    font-size: 1.2em;
     text-align: center;
 }
 
 #contPrincipal2 button{
     background-color: #FF9900;
     color: #031927;
-    width: 200px;
+    width: 12em;
     height: 6vh;
     border-radius: 10px;
     margin: 10px;
+}
+
+#contPrincipal2 button a{
+    color: #031927;
+    text-decoration: none;
 }
 
 #campaña{
@@ -130,7 +137,8 @@ h1, h2, h4, p{
 }
 
 #descripcion h2{
-    font-size: 40px;
+    text-align: center;
+    font-size: 2em;
 }
 
 #descripcion p{
@@ -157,6 +165,8 @@ h1, h2, h4, p{
 
 .imgChica{
     width: 22vw;
+    height: 22vh;
+    border-radius: 2em;
     border: solid 2px #FF9900;
 }
 
@@ -204,7 +214,7 @@ h1, h2, h4, p{
     }
     #contenedor{
         width: 100%;
-        margin-top: 15vh;
+        margin-top: 23vh;
     }
     #campaña{
         width: 100%;
@@ -234,12 +244,30 @@ h1, h2, h4, p{
 }
 
 @media (min-width: 480px){
-    #contenedor{
-        margin: 16vh 0 4vh 0;
+
+    #contPrincipal {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-top: solid 2px #FF9900;
+        background-color: #031927;
+        color: #FF9900;
+        flex-direction: row;
     }
-    #contPrincipal1 img {
+
+    #contPrincipal1 img{
+        height: 45vh;
         width: 120%;
+        align-self: center;
+        margin-left: 1em;
+        border-radius: 25px;
+        border: solid 2px;
         margin: 0 0 0 7vw;
+    }
+
+    #contenedor{
+        margin: 26vh 0 4vh 0;
     }
 
     #campaña h3 {
@@ -248,6 +276,31 @@ h1, h2, h4, p{
 }
 
 @media (min-width: 769px){
+
+    #contPrincipal {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-top: solid 2px #FF9900;
+        background-color: #031927;
+        color: #FF9900;
+        flex-direction: row;
+    }
+
+    #contPrincipal1 img{
+        height: 45vh;
+        width: 45vw;
+        align-self: center;
+        margin-left: 1em;
+        border-radius: 25px;
+        border: solid 2px;
+    }
+
+    #contenedor {
+        margin: 15vh 0 4vh 0;
+    }
+
     #contenedor h1{
         font-size: 40px;
     }
@@ -315,9 +368,10 @@ h1, h2, h4, p{
         width: 250px;
     }
 
-    #campaña h3{
+    #campaña h3 a{
         font-weight: 400;
         color: #FF9900;
         font-size: 1.17em;
+        text-decoration: none;
     }
 }

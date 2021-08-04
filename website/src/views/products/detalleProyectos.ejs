@@ -9,43 +9,44 @@
     
 <main>
     <section id= "contenedor">
-            <h1><%= proyectos.nombre %></h1>
+            <h1><%= proyecto.nombre %></h1>
             <h4>Lorem ipsum lorem ipsum lorem ipsum</h4>
     </section>
     <section id= "contPrincipal">
         <article id="contPrincipal1">
-            <img src="/uploads/products/<%= proyectos.images[0] %>" alt="imagen">
+            <img src="/uploads/products/<%= proyecto.images[0] %>" alt="imagen">
             <p><i class="fas fa-map-marker-alt"></i> SA Miguel, TUC</p>
         </article>
         <article id="contPrincipal2">
-                <h1><%= proyectos.nombre %></h1>
-                <h2>$<%= proyectos.contribucionActual %></h2>
-                <h1>contribuido de meta $<%= proyectos.contribucionFinal %></h1>
-                <p>Hasta el <%= proyectos.fecha %></p>
-                <button><a href="">Patrocina esta campaña</a></button>
+                <h1><%= proyecto.nombre %></h1>
+                <h2>$<%= proyecto.contribucionActual %></h2>
+                <h1>contribuido de meta $<%= proyecto.contribucionFinal %></h1>
+                <p>Hasta el <%= proyecto.fecha %></p>
+                <button><a href="/carrito">Patrocina esta campaña</a></button>
+                <% if(user && user.admin) {%>
                 <button><a href="">Editar campaña</a></button>
+                <%}%>
         </article>
     </section>
     <section id="campaña">
             <h3>Campaña</h3>
-            <h3>Patrocina esta campaña</h3>
-            <h3><i class="far fa-bookmark"></i> Recuerdame</h3>
+            <h3><a href="/carrito">Patrocina esta campaña</a></h3>
+            <h3><a href=""><i class="far fa-bookmark"></i> Recuerdame</a></h3>
     </section>
     <section id="descripcion">
         <h1>HISTORIA</h1>
         <h2>
-            <%= proyectos.nombre %>
+            <%= proyecto.nombre %>
         </h2>
         <p> 
-            <%= proyectos.texto %> 
+            <%= proyecto.texto %> 
         </p>
-    <img src="/uploads/products/<%= proyectos.images[0] %> " alt="imagen">
+    <img src="/uploads/products/<%= proyecto.images[0] %> " alt="imagen">
     </section>
     <section id="imgsProyecto">
-        <img src="/uploads/products/<%= proyectos.images[0] %> " alt="imagen" class= "imgChica">
-        <img src="/uploads/products/<%= proyectos.images[1] %> " alt="imagen" class= "imgChica">
-        <img src="/uploads/products/<%= proyectos.images[2] %> " alt="imagen" class= "imgChica">
-        <img src="/uploads/products/<%= proyectos.images[3] %> " alt="imagen" class= "imgChica">
+        <% proyectos.images.forEach(images => { %>
+            <img src="/uploads/products/<%= images%> " alt="imagen" class= "imgChica">
+        <% }) %>
     </section>
     <section id="cajaRecomendaciones">
         <h1>También recomendamos</h1>
