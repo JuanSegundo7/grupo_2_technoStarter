@@ -29,9 +29,9 @@ h2 {
     }
     
     .opcionesContr {
-        display: block;
+        display: flex;
+        flex-direction: row;
         text-align: left;
-        width: 500px;
         padding: 30px;
         margin: 30px;
         border: 1px solid;
@@ -79,5 +79,10 @@ h2 {
         text-align: justify;
         text-align: center;
         padding: 50px 120px 250px;
+    }
+
+    .opcionesContr{
+        display: flex;
+        flex-direction: column;
     }
 }

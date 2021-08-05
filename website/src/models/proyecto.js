@@ -30,6 +30,9 @@ module.exports = {
             patrocinadores: 20,
             ubicacion: String(data.ubicacion),
             autor: user != undefined ? user.id : null,
+            contribucionBronce: String(data.bronce),
+            contribucionPlata: String(data.plata),
+            contribucionOro: String(data.oro),
             categoria: parseInt(data.categoria),
             images: file.map( image =>  String(data.nombreProducto).trim().replace(/\s+/g, '') + "/" + image.filename),
         }

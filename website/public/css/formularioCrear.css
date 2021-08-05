@@ -71,6 +71,10 @@ h2{
 
 /**************************************^^^INPUTS-Y-CATEGORIAS^^^********************************************/
 
+label{
+    font-size: 1.3em;
+}
+
 #nombre-proyecto input{
     margin: 2vh 0 2vh 0;
     padding: 1vw;
@@ -116,6 +120,18 @@ h2{
 
 #fechaProyecto{
     border-radius: 5px;
+    margin: 1em;
+    font-size: 0.9em;
+}
+
+#fecha-proyecto{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+#fecha-proyecto input{
+    text-align: center;
 }
 
 /**************************************^^^FOTOS^^^********************************************/
@@ -145,6 +161,50 @@ h2{
 #flex-contribuciones{
     display: flex;
     flex-direction: column
+}
+
+#flex-contribuciones h3{
+    font-size: 1.8em;
+}
+
+#flex-contribuciones p{
+    margin: 0.5em 0.5em 1.2em 0.5em;
+}
+
+#flex-contribuciones label{
+    margin: 0.5em;
+    font-size: 1.5em;
+}
+
+#flex-contribuciones textarea{
+    margin: 0.5em;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+#bronce{
+    box-shadow: 6px 6px 8px rgb(169 113 66 / 80%);
+}
+
+#bronce-label{
+    text-decoration: underline rgb(169 113 66 / 80%);
+}
+
+#plata{
+    box-shadow: 6px 6px 8px rgb(192 202 206 / 80%);
+}
+
+#plata-label{
+    text-decoration: underline rgb(192 202 206 / 80%);
+}
+
+#oro{
+    box-shadow: 6px 6px 8px rgb(212 175 55 / 80%);
+}
+
+#oro-label{
+    text-decoration: underline rgb(212 175 55 / 80%);
 }
 
 /**************************************^^^BOTONES^^^********************************************/

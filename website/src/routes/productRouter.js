@@ -31,7 +31,7 @@ const upload = multer({storage:dest});
 
 router.get("/producto/:id", productController.index);
 
-router.get("/crear", [isLogged], productController.create);
+router.get("/crear", productController.create);
 
 router.get("/editar/:id",[isLogged], productController.edit);
 
