@@ -103,7 +103,7 @@ header nav {
 .logo img{
 	width: 5em;
 	padding-top: 2vh;
-    margin-left: 0.3em;
+    margin-left: 0.5em;
 	max-height: 100%;
 }
 
@@ -117,6 +117,7 @@ header nav {
 #foto-usuarioHeader{
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
 	width: 6vw;
 	padding-left: 2em;
 }
@@ -127,6 +128,7 @@ header nav {
 
 #foto-usuarioHeader img{
 	width: 2.3em;
+	height: 1.8em;
 	border-radius: 50%;
 	border: 2px solid #FF9900;
 }
@@ -272,8 +274,7 @@ header nav {
 	/**********************************^^^LOGO-^^^********************************************/
 	
 	.logo img{	
-		width: 5em;
-		margin-left: 0.3em;
+		margin-left: 1em;
 		max-height: 100%;
 	}
 
@@ -281,6 +282,7 @@ header nav {
 	#foto-usuarioHeader{
 		display: flex;
 		justify-content: flex-end;
+		align-items: center;
 		width: 6vw;
     	padding-left: 2em;
 	}
@@ -291,6 +293,7 @@ header nav {
 
 	#foto-usuarioHeader img{
 		width: 2em;
+		height: 1.8em;
 		border-radius: 50%;
 		border: 2px solid #FF9900;
 	}
@@ -420,7 +423,54 @@ header nav {
 }
 
 
-@media (min-width: 1200px){
+@media (min-width: 1000px){
+
+	.logo img{	
+		padding-top: 3vh;
+		margin-left: 1em;
+	}
+
+	#keyword {
+		width: 100%;
+		font-size: 1.0em;
+	}
+
+	#search-desktop {
+		width: 15em;
+	}
+
+	#search-desktop {
+		height: initial;
+	}
+
+	.searchButton {
+		height: 1.8em;
+		width: 2em;
+	}
+
+	.navbar-bottom a {
+		font-size: 1em;
+	}
+
+	.navbar-icons a {
+		font-size: 1.7em;
+		height: initial;
+	}
+
+	.flex-ul-top a {
+		font-size: 1.2em;
+		margin: 0 1vw 0 0.5vw;
+	}
+
+	#foto-usuarioHeader img {
+		width: 1.7em;
+		height: 1.5em;
+		border-radius: 50%;
+		border: 2px solid #FF9900;
+	}
+}
+
+@media (min-width: 1300px){
 
 	.logo img{	
 		width: 7em;

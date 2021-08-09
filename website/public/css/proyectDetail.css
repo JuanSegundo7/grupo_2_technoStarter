@@ -18,8 +18,17 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: "Roboto";
+    min-width: 100vw;
     min-height: 100vh; 
     box-sizing: border-box;
+}
+
+main{
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h4, p{
@@ -63,7 +72,6 @@ h1, h2, h4, p{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 45vw;
     padding: 10px;
 }
 
@@ -75,7 +83,6 @@ h1, h2, h4, p{
     border-radius: 25px;
     border: solid 2px;
 }
-
 
 
 #contPrincipal1 p{
@@ -121,8 +128,6 @@ h1, h2, h4, p{
     height: 40px;
     padding: 10px;
 }
-
-
 
 #descripcion{
     display: flex;
@@ -181,6 +186,7 @@ h1, h2, h4, p{
 
 #cajaRecomendaciones h1{
     width: 100vw;
+    font-size: 2.2em;
     text-align: center;
 }
 
@@ -205,19 +211,63 @@ h1, h2, h4, p{
     text-align: center;
 }
 
+.titulo-contribuciones{
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 5vh;
+}
+
+.contribuciones{
+    margin: 2rem 0 2rem 0;
+}
+
+/**************************************^^^FLEX-COMOFUNCIONA^^^********************************************/
+
+.flex-comoFunciona{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    padding: 1.5rem;
+}
+
+.flex-comoFunciona-n{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flex-comoFunciona img{
+    width: 5em;
+}
+
+.flex-comoFunciona h2{
+    text-align: center;
+    font-size: 2em;
+    width: 30vw;
+}
+
+.flex-comoFunciona article{
+    padding: 0.3rem;
+}
+
+.flex-comoFunciona p{
+    text-align: center;
+}
+
 /**************************************^^^MEDIA-QUERYS^^^********************************************/
 
 
 @media (min-width: 320px){
     #contPrincipal {
-        width: 100%;
+        width: 100vw;
     }
     #contenedor{
         width: 100%;
         margin-top: 23vh;
     }
     #campaña{
-        width: 100%;
+        width: 100vw;
     }
     #campaña h3{
         font-size: 12px;
@@ -225,10 +275,10 @@ h1, h2, h4, p{
         color: #FF9900;
     }
     #imgsProyecto{
-        width: 100%;
+        width: 100vw;
     }
     #cajaRecomendaciones{
-        width: 100%;
+        width: 100vw;
     }
     #descripcion{
         padding: 0;
@@ -361,7 +411,8 @@ h1, h2, h4, p{
     }
 
     .recomendacion img{
-        width: 250px;
+        width: 26vw;
+        border: 2px solid #ff9900;
     }
 
     .recomendacion p{

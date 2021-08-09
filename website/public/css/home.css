@@ -495,3 +495,23 @@ box-sizing: border-box;
     }
 
 }
+
+@media (min-width: 1000px){
+
+    .flex-patrocinios{
+        font-size: 1em;
+    }
+    
+    
+}
+
+@media (min-width: 1300px){
+
+.flex-patrocinios{
+    font-size: 1.5em;
+}
+
+.titulo-h2 {
+    font-size: 3em;
+}
+}

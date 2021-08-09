@@ -11,7 +11,7 @@
                     <h1><%= categorias.nombre %></h1>
                 </section>
             <% proyectos.forEach(proyecto => { %>
-            <section class="robotica"> 
+                <section class="robotica"> 
                     <section class="flex-recomendaciones">
                         <figure>
                             <a href="/proyecto/producto/<%= proyecto.id %>"><img src="/uploads/products/<%= proyecto.images[0] %> " alt="tiBeast"></a>
@@ -25,13 +25,13 @@
                             <p class="ubicacion margin-articleInterior"><i class="fas fa-map-marker-alt"></i> <%= proyecto.ubicacion %></p>
                         </article>
                     </section>
-                    <% }) %> 
                     <section class="flex-thumbs">
                         <a href=""><i class="far fa-bookmark"></i></a>
                         <a href=""><i class="far fa-thumbs-up"></i></a>
                         <a href=""><i class="far fa-thumbs-down"></i></a>
                     </section>
-            </section>
+                </section>
+            <% }) %> 
         </section>
     </main>
     <%-include("../partials/footer")%> 

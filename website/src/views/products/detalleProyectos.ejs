@@ -22,7 +22,7 @@
                 <h2>$<%= proyecto.contribucionActual %></h2>
                 <h1>contribuido de meta $<%= proyecto.contribucionFinal %></h1>
                 <p>Hasta el <%= proyecto.fecha %></p>
-                <button><a href="/carrito">Patrocina esta campaña</a></button>
+                <button><a href="/carrito/<%= proyecto.id %>">Patrocina esta campaña</a></button>
                 <% if(user && user.admin) {%>
                 <button><a href="">Editar campaña</a></button>
                 <%}%>
@@ -30,7 +30,7 @@
     </section>
     <section id="campaña">
             <h3>Campaña</h3>
-            <h3><a href="/carrito">Patrocina esta campaña</a></h3>
+            <h3><a href="/carrito/<%= proyecto.id %>">Patrocina esta campaña</a></h3>
             <h3><a href=""><i class="far fa-bookmark"></i> Recuerdame</a></h3>
     </section>
     <section id="descripcion">
@@ -44,33 +44,60 @@
     <img src="/uploads/products/<%= proyecto.images[0] %> " alt="imagen">
     </section>
     <section id="imgsProyecto">
-        <% proyectos.images.forEach(images => { %>
-            <img src="/uploads/products/<%= images%> " alt="imagen" class= "imgChica">
+        <% proyecto.images.forEach(images => { %>
+            <img src="/uploads/products/<%= images%>" alt="imagen" class= "imgChica">
         <% }) %>
     </section>
-    <section id="cajaRecomendaciones">
-        <h1>También recomendamos</h1>
-        <article class="recomendacion">
-            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de recomendacion">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-        </article>
-        <article class="recomendacion">
-            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de recomendacion">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-        </article>
-        <article class="recomendacion">
-            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de recomendacion">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-        </article>
-        <article class="recomendacion">
-            <img src="/uploads/products/acasis/acasis-2.jpg" alt="imagen de recomendacion">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
-        </article>          
+    <section class="contribuciones">
+        <section class="titulo-contribuciones">
+            <article><h2>Como funciona las contribuciones</h2></article>
+        </section>
+        <section class="flex-comoFunciona">
+            <article>
+                <section class="flex-comoFunciona-n">
+                    <figure>
+                        <img src="/img/technoStarter/numero1TechnoStarter.png" alt="">
+                    </figure>
+                </section>
+                <section>
+                    <h2>Iniciar una campaña</h2>
+                    <p>Crea tu proyecto en TechnoStarter en pocos minutos a través de un procedimiento fácil y rápido.</p>
+                </section>
+            </article>
+            <article>
+                <section class="flex-comoFunciona-n">
+                    <figure>
+                        <img src="/img/technoStarter/numero2TechnoStarter.png" alt="">
+                    </figure>
+                </section>
+                <section>
+                    <h2>Comparte tu historia</h2>
+                    <p>Comparte tu proyecto para obtener apoyo. Cuanta mas gente se interese en tu proyecto mas rapido llegaras a tu objetivo de donaciones.</p>
+                </section>
+            </article>
+            <article>
+                <section class="flex-comoFunciona-n">
+                    <figure>
+                        <img src="/img/technoStarter/numero3TechnoStarter.png" alt="">
+                    </figure>
+                </section>
+                <section>
+                    <h2>Gestiona tu campaña</h2>
+                    <p>Recibe notificaciones sobre los nuevos donativos, mantén informados a tus donantes, envía agradecimientos, gestiona tus retiros de fondos y finaliza tu tan soñado proyecto!.</p>
+                </section>
+            </article>
+        </section>
     </section>
+        <section id="cajaRecomendaciones">
+        <h1>También recomendamos</h1>
+        <% recomendados.forEach(recomendado => { %>
+        <article class="recomendacion">
+            <a href="/proyecto/producto/<%= recomendado.id %>"><img src="/uploads/products/<%= recomendado.images[0] %>" alt="imagen de recomendacion"></a>
+            <p><%= recomendado.nombre %></p>
+            <p><i class="fas fa-map-marker-alt"></i> <%= recomendado.ubicacion %></p>
+        </article>
+        <% }) %>
+    </section>  
 </main>
     
     <%- include("../partials/footer")%> 
