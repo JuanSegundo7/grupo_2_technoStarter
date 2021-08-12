@@ -10,7 +10,6 @@
 <main>
     <section id= "contenedor">
             <h1><%= proyecto.nombre %></h1>
-            <h4>Lorem ipsum lorem ipsum lorem ipsum</h4>
     </section>
     <section id= "contPrincipal">
         <article id="contPrincipal1">
@@ -24,7 +23,7 @@
                 <p>Hasta el <%= proyecto.fecha %></p>
                 <button><a href="/carrito/<%= proyecto.id %>">Patrocina esta campaña</a></button>
                 <% if(user && user.admin) {%>
-                <button><a href="">Editar campaña</a></button>
+                <button><a href="/proyecto/editarProyecto/:id">Editar campaña</a></button>
                 <%}%>
         </article>
     </section>
@@ -42,11 +41,6 @@
             <%= proyecto.texto %> 
         </p>
     <img src="/uploads/products/<%= proyecto.images[0] %> " alt="imagen">
-    </section>
-    <section id="imgsProyecto">
-        <% proyecto.images.forEach(images => { %>
-            <img src="/uploads/products/<%= images%>" alt="imagen" class= "imgChica">
-        <% }) %>
     </section>
     <section class="contribuciones">
         <section class="titulo-contribuciones">

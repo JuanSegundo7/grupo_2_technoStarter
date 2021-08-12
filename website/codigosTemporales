@@ -1,0 +1,5 @@
+<section id="imgsProyecto">
+        <% proyecto.images.for(let i = 0; i <= 4; i++){ %>
+            <img src="/uploads/products/<%= images[i]%>" alt="imagen" class= "imgChica">
+        <% } %>
+</section>

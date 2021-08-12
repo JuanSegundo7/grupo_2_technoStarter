@@ -31,8 +31,11 @@ module.exports = {
             ubicacion: String(data.ubicacion),
             autor: user != undefined ? user.id : null,
             contribucionBronce: String(data.bronce),
+            precioBronce: data.precioBronce,
             contribucionPlata: String(data.plata),
+            precioPlata: data.precioPlata,
             contribucionOro: String(data.oro),
+            precioOro: data.precioOro,
             categoria: parseInt(data.categoria),
             images: file.map( image =>  String(data.nombreProducto).trim().replace(/\s+/g, '') + "/" + image.filename),
         }
@@ -61,6 +64,10 @@ module.exports = {
     },
     recomendados: function (){
         let recomendados = [this.random(),this.random(),this.random()]
+        return recomendados
+    },
+    recomendados2: function (){
+        let recomendados = [this.random(),this.random(),this.random(),this.random()]
         return recomendados
     },
     editProyect: function(data,file,id){

@@ -422,6 +422,8 @@ header nav {
 
 }
 
+/**********************************^^^MEDIA-QUERYS^^^********************************************/
+
 
 @media (min-width: 1000px){
 
@@ -449,7 +451,7 @@ header nav {
 	}
 
 	.navbar-bottom a {
-		font-size: 1em;
+		font-size: 1.2em;
 	}
 
 	.navbar-icons a {
@@ -468,6 +470,24 @@ header nav {
 		border-radius: 50%;
 		border: 2px solid #FF9900;
 	}
+}
+
+@media (min-width: 1200px){
+
+	.navbar-bottom a {
+		font-size: 1.2em;
+	}
+
+	.navbar-icons a {
+		font-size: 1.9em;
+		height: initial;
+	}
+
+	.flex-ul-top a {
+		font-size: 1.4em;
+		margin: 0 1vw 0 0.5vw;
+	}
+
 }
 
 @media (min-width: 1300px){

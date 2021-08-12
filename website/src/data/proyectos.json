@@ -63,5 +63,51 @@
     "images": [
       "Prueba/fotosProyecto-1627521532728.png"
     ]
+  },
+  {
+    "id": 5,
+    "nombre": "Zetox - Mochila Inteligente",
+    "contribucionActual": 0,
+    "contribucionFinal": "400000",
+    "texto": "Zetox es una mochila inteligente que viene a revolucionar el mundo!\r\n\r\nEntre sus características se encuentran:\r\n\r\nCapacidad de 34,5 a 55 litros\r\nHidrófugo\r\nCremalleras de la más alta calidad del mercado\r\nSoporte para botella de agua integrado\r\nSoporte para teléfono móvil de fácil acceso\r\n3 compartimentos secretos (caben en un iPad / portátil)\r\nBolsillo H2O",
+    "fecha": "2024-06-04",
+    "patrocinadores": 20,
+    "ubicacion": "Santa Rosa - La Pampa",
+    "autor": 2,
+    "contribucionBronce": "Zetox Flash Sale Bronce :\r\n\r\nZetox de 50L Modular\r\n\r\nRapido y eficaz!",
+    "precioBronce": "3500",
+    "contribucionPlata": "Zetox Pack Silver\r\n\r\nIncluye:\r\n● Mochila modular de 50 litros\r\n● Dos correas cortas\r\n● Dos correas grandes\r\n● Una botella de agua de aluminio\r\n\r\nLa modularidad y versatilidad de la mochila 50L es el resultado de más de dos años de investigación y diseño que permitirán a cada tipo de aventurero descubrir el mundo a su manera.",
+    "precioPlata": "6500",
+    "contribucionOro": "Zetox Super Pack Gold\r\n\r\nIncluye:\r\n● Mochila modular de 50 litros\r\n● Dos correas cortas\r\n● Dos correas grandes\r\n● Dos bolsas adicionales\r\n● The Cooler\r\n● Tienda-Hamaca\r\n● Botella de agua de aluminio\r\n\r\nSi no eres del tipo que se limita a ti mismo y quieres estar sabiamente equipado para cualquier tipo de aventura, este es el paquete perfecto hecho para ti.",
+    "precioOro": "10000",
+    "categoria": 3,
+    "images": [
+      "Zetox-MochilaInteligente/fotosProyecto-1628640749425.jpg",
+      "Zetox-MochilaInteligente/fotosProyecto-1628640749455.gif",
+      "Zetox-MochilaInteligente/fotosProyecto-1628640750247.gif",
+      "Zetox-MochilaInteligente/fotosProyecto-1628640750862.gif",
+      "Zetox-MochilaInteligente/fotosProyecto-1628640751010.gif"
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Nicolete",
+    "contribucionActual": 0,
+    "contribucionFinal": "1000",
+    "texto": "Nicolete es un robot",
+    "fecha": "2025-06-10",
+    "patrocinadores": 20,
+    "ubicacion": "La Plata",
+    "autor": 2,
+    "contribucionBronce": "Nicolete bronce",
+    "precioBronce": "100",
+    "contribucionPlata": "Nicolete Plata",
+    "precioPlata": "200",
+    "contribucionOro": "Nicolete",
+    "precioOro": "300",
+    "categoria": 2,
+    "images": [
+      "Nicolete/fotosProyecto-1628739351973.jpg"
+    ]
   }
 ]

@@ -76,7 +76,7 @@ h1, h2, h4, p{
 }
 
 #contPrincipal1 img{
-    height: 45vh;
+    height: 25vh;
     width: 18em;
     align-self: center;
     margin-left: 0.5em;
@@ -243,7 +243,7 @@ h1, h2, h4, p{
 
 .flex-comoFunciona h2{
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     width: 30vw;
 }
 
@@ -297,18 +297,14 @@ h1, h2, h4, p{
 
     #contPrincipal {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-around;
-        border-top: solid 2px #FF9900;
-        background-color: #031927;
-        color: #FF9900;
-        flex-direction: row;
     }
 
     #contPrincipal1 img{
         height: 45vh;
-        width: 120%;
+        width: 100%;
         align-self: center;
         margin-left: 1em;
         border-radius: 25px;
@@ -330,12 +326,9 @@ h1, h2, h4, p{
     #contPrincipal {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        height: 65vh;
         justify-content: space-around;
-        border-top: solid 2px #FF9900;
-        background-color: #031927;
-        color: #FF9900;
-        flex-direction: row;
     }
 
     #contPrincipal1 img{
@@ -360,7 +353,7 @@ h1, h2, h4, p{
     }
 
     #contPrincipal1 img {
-        width: 110%;
+        width: 100%;
         margin-left: 2vw;
     }
 

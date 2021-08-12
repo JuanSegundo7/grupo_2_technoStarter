@@ -168,7 +168,7 @@ label{
 }
 
 #flex-contribuciones p{
-    margin: 0.5em 0.5em 1.2em 0.5em;
+    margin: 1em 0.5em 0em 0.5em;
 }
 
 #flex-contribuciones label{
@@ -180,7 +180,7 @@ label{
     margin: 0.5em;
     border-radius: 10px;
     padding: 10px;
-    
+    width: 100%;
 }
 
 #bronce{
@@ -191,6 +191,13 @@ label{
     text-decoration: underline rgb(169 113 66 / 80%);
 }
 
+#precioBronce{
+    margin: 2vh 0 2vh 0;
+    padding: 1vw;
+    border-radius: 12px;
+    width: 100%;
+}
+
 #plata{
     box-shadow: 6px 6px 8px rgb(192 202 206 / 80%);
 }
@@ -199,12 +206,26 @@ label{
     text-decoration: underline rgb(192 202 206 / 80%);
 }
 
+#precioPlata{
+    margin: 2vh 0 2vh 0;
+    padding: 1vw;
+    border-radius: 12px;
+    width: 100%;
+}
+
 #oro{
     box-shadow: 6px 6px 8px rgb(212 175 55 / 80%);
 }
 
 #oro-label{
     text-decoration: underline rgb(212 175 55 / 80%);
+}
+
+#precioOro{
+    margin: 2vh 0 2vh 0;
+    padding: 1vw;
+    border-radius: 12px;
+    width: 100%;
 }
 
 /**************************************^^^BOTONES^^^********************************************/
