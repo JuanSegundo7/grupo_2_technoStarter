@@ -26,6 +26,7 @@ module.exports = {
             contribucionActual: 0,
             contribucionFinal: data.precioProyecto,
             texto: String(data.textoProyecto),
+            fecha_actual: String(Date.now()),
             fecha: String(data.fechaProyecto),
             patrocinadores: 20,
             ubicacion: String(data.ubicacion),
