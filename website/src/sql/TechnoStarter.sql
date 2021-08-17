@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS TechnoStarter;
 
-CREATE DATABASE TechnoStarter;
+CREATE DATABASE technostarter;
 USE TechnoStarter;
 
 CREATE TABLE categorias(
