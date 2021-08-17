@@ -173,3 +173,26 @@ label{
         margin: 2vh 2vh 2vh 2vh;
     }
 }
+
+@media (min-width: 1000px){
+    #form-principal {
+    font-size: 1.2em;
+    }
+
+    #form-principal label{
+    font-size: 1.2em;
+    }
+
+    #flex-button button {
+    font-size: 1em;
+    width: 40%;
+    }
+
+    #clave{
+        font-size: 1em;
+    }
+
+    #correo{
+        font-size: 1em;
+    }
+}
