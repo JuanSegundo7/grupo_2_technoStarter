@@ -96,6 +96,7 @@ h1, h2, h4, p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 45%;
 }
 
 #contPrincipal2 h1{
@@ -143,7 +144,8 @@ h1, h2, h4, p{
 
 #descripcion h2{
     text-align: center;
-    font-size: 2em;
+    font-size: 1.3em;
+    width: 60%;
 }
 
 #descripcion p{
@@ -185,7 +187,6 @@ h1, h2, h4, p{
 }
 
 #cajaRecomendaciones h1{
-    width: 100vw;
     font-size: 2.2em;
     text-align: center;
 }
@@ -199,10 +200,12 @@ h1, h2, h4, p{
 }
 
 .recomendacion img{
-    width: 300px;
+    width: 70vw;
+    height: 40vh;
+    object-fit: cover;
     margin: 20px;
-    border: solid 1px;
-    border-radius: 40px;
+    border: solid 2px #ff9900;
+    border-radius: 30px;
     align-self: center;
 }
 
@@ -238,12 +241,12 @@ h1, h2, h4, p{
 }
 
 .flex-comoFunciona img{
-    width: 5em;
+    width: 3em;
 }
 
 .flex-comoFunciona h2{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     width: 30vw;
 }
 
@@ -253,6 +256,7 @@ h1, h2, h4, p{
 
 .flex-comoFunciona p{
     text-align: center;
+    font-size: 0.8em;
 }
 
 /**************************************^^^MEDIA-QUERYS^^^********************************************/
@@ -260,19 +264,23 @@ h1, h2, h4, p{
 
 @media (min-width: 320px){
     #contPrincipal {
-        width: 100vw;
+        width: auto;
     }
     #contenedor{
         width: 100%;
         margin-top: 23vh;
     }
     #campaña{
-        width: 100vw;
+        width: auto;
     }
     #campaña h3{
         font-size: 12px;
         font-weight: 400;
         color: #FF9900;
+    }
+    #campaña h3 a{
+        color: #FF9900;
+        text-decoration: none;
     }
     #imgsProyecto{
         width: 100vw;
@@ -299,6 +307,7 @@ h1, h2, h4, p{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        width: auto;
         justify-content: space-around;
     }
 
@@ -328,6 +337,7 @@ h1, h2, h4, p{
         flex-direction: row;
         flex-wrap: nowrap;
         height: 65vh;
+        width: auto;
         justify-content: space-around;
     }
 
@@ -365,6 +375,7 @@ h1, h2, h4, p{
     #contPrincipal2 p{
         font-size: 25px;
     }
+    
 
     #contPrincipal2 button{
         width: 250px;
@@ -377,7 +388,7 @@ h1, h2, h4, p{
     }
     
     #descripcion h2{
-        font-size: 50px;
+        font-size: 2em;
         text-align: center;
     }
 
@@ -399,12 +410,18 @@ h1, h2, h4, p{
         flex-wrap: wrap;
     }
 
+    #cajaRecomendaciones h1 {
+        width: 100%;
+    }
+
     .recomendacion{
         padding: 10px;
     }
 
     .recomendacion img{
-        width: 26vw;
+        width: 40vw;
+        height: 40vh;
+        object-fit: cover;
         border: 2px solid #ff9900;
     }
 
@@ -417,5 +434,20 @@ h1, h2, h4, p{
         color: #FF9900;
         font-size: 1.17em;
         text-decoration: none;
+    }
+
+    .flex-comoFunciona img{
+        width: 5em;
+    }
+    
+    .flex-comoFunciona h2{
+        text-align: center;
+        font-size: 1.5em;
+        width: 30vw;
+    }
+    
+    .flex-comoFunciona p{
+        text-align: center;
+        font-size: 1em;
     }
 }
