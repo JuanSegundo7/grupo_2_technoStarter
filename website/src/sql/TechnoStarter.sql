@@ -25,7 +25,7 @@ CREATE TABLE tipo_contribucion (
   nombre VARCHAR(6) NOT NULL,
   monto FLOAT unsigned NOT NULL,
   PRIMARY KEY(id)
-  );
+);
 
 CREATE TABLE proyectos (
   id INT NOT NULL AUTO_INCREMENT,
@@ -41,9 +41,9 @@ CREATE TABLE proyectos (
   PRIMARY KEY(id),
   FOREIGN KEY (categoria_id) REFERENCES categorias (id),
   FOREIGN KEY (usuario_id) REFERENCES usuarios (id)
-  );
-  
-  CREATE TABLE contribucion_usuarios (
+);
+
+CREATE TABLE contribucion_usuarios (
     id INT NOT NULL AUTO_INCREMENT,
     usuario_id INT NOT NULL,
     proyecto_id INT NOT NULL,
@@ -52,4 +52,4 @@ CREATE TABLE proyectos (
     FOREIGN KEY (usuario_id) REFERENCES usuarios (id),
     FOREIGN KEY (proyecto_id) REFERENCES proyectos (id),
     FOREIGN KEY (contribucion_id) REFERENCES tipo_contribucion (id)
-    );
+);

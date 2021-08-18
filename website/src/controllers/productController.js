@@ -2,11 +2,13 @@
 
 const proyecto = require("../models/proyecto");
 const categorias = require("../models/categoria");
+const db = require("../database/models");
+
 
 // ************ Controller ************
 
 const product = {
-    index: (req,res) => {return res.render("products/detalleProyectos", {proyectos:proyecto.random(), proyecto:proyecto.oneProyect(req.params.id), recomendados:proyecto.recomendados2()});},
+    index: (req,res) => {return res.render("products/detalleProyectos", {proyectos:proyecto.random(db.Proyect.findAll()), proyecto:proyecto.oneProyect(req.params.id), recomendados:proyecto.recomendados2()});},
     create: (req,res) => {return res.render("products/crearProyectos", {categorias:categorias.allCategoria()});}, 
     save: (req,res) => {
         let result = proyecto.newProyect(req.body,req.files,req.session.user);

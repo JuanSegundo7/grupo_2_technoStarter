@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "contribution_type"
+    let alias = "Contribution_type"
     let cols = {
         id: {
             type: dataTypes.BOOLEAN,
@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
             notNull: true,
         },
         monto: {
-            type: dataTypes.NUMBER(15),
+            type: dataTypes.FLOAT,
             notNull: true,
             unsigned: true
         }
@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "tipo_contribucion"
     }
 
-    const contribution_type = sequelize.define(alias,cols,config)
+    const Contribution_type = sequelize.define(alias,cols,config)
 
-    return contribution_type
+    return Contribution_type
 }

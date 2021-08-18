@@ -57,18 +57,18 @@ module.exports = {
         // fs.writeFileSync(this.dir, JSON.stringify(proyectos,null,2));
         return true;
     },
-    random: function () {
-        const proyectos = this.allProyect();
+    random: function (proyectos) {
+        // const proyectos = proyecto.findAll(); // proyecto.findAll
         let idRandom = Math.floor(Math.random() * proyectos.length + 1 )
         let resultado = proyectos.find(proyecto => proyecto.id == idRandom);
         return resultado;
     },
-    recomendados: function (){
-        let recomendados = [this.random(),this.random(),this.random()]
+    recomendados: function (proyectos){
+        let recomendados = [this.random(proyectos),this.random(proyectos),this.random(proyectos)]
         return recomendados
     },
-    recomendados2: function (){
-        let recomendados = [this.random(),this.random(),this.random(),this.random()]
+    recomendados2: function (proyectos){
+        let recomendados = [this.random(proyectos),this.random(proyectos),this.random(proyectos),this.random(proyectos)]
         return recomendados
     },
     editProyect: function(data,file,id){

@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "category"
+    let alias = "Category"
     let cols = {
         id: {
             type: dataTypes.BOOLEAN,
@@ -16,7 +16,14 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "categorias"
     }
 
-    const category = sequelize.define(alias,cols,config)
+    const Category = sequelize.define(alias,cols,config)
 
-    return category
+    Category.associate = function(models){
+        Category.hasMany(models.Proyect, {
+            as: "category",
+            foreignKey: "category_id"
+        })
+    }
+
+    return Category
 }
