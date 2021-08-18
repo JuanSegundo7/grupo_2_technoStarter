@@ -42,8 +42,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             notNull: true,
         },
-        imagenes: {
-            type: dataTypes.TEXT,
+        imagenes_id: {
+            type: dataTypes.INTEGER,
             notNull: true,
         }
     }
@@ -54,12 +54,12 @@ module.exports = (sequelize, dataTypes) => {
 
     const Proyect = sequelize.define(alias,cols,config)
 
-    // // Proyect.associate = function(models){
-    //     Proyect.belongsTo(models.Category, {
-    //         as: "category",
-    //         foreignKey: "category_id",
-    //     })
-    // }
+    Proyect.associate = function(models){
+        Proyect.belongsTo(models.Category, {
+            as: "category",
+            foreignKey: "category_id",
+        })
+    }
 
     return Proyect
 }
