@@ -2,6 +2,7 @@
 
 const { validationResult } = require('express-validator');
 const usuariosModel = require("../models/usuario");
+const db = require("../database/models");
 
 // ************ Controller ************
 

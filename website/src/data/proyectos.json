@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Violín 3D-Varius - Primer violín Argentino impreso en 3D",
     "contribucionActual": 0,
-    "contribucionFinal": 10000,
+    "contribucionFinal": 1600000,
     "fecha": "2023-11-21",
     "patrocinadores": 20,
     "ubicacion": "Ciudad de Santa Fe, Santa Fe",
@@ -19,7 +19,7 @@
     "id": 2,
     "nombre": "ACASIS USB4.0",
     "contribucionActual": 0,
-    "contribucionFinal": 10000,
+    "contribucionFinal": 1700000,
     "fecha": "2025-08-10",
     "patrocinadores": 20,
     "ubicacion": "Rawson, Chubut",
@@ -51,20 +51,6 @@
     ]
   },
   {
-    "id": 4,
-    "nombre": "Prueba",
-    "contribucionActual": 0,
-    "contribucionFinal": "200",
-    "texto": "prueba",
-    "fecha": "2021-07-20",
-    "patrocinadores": 20,
-    "ubicacion": "prueba",
-    "categoria": 2,
-    "images": [
-      "Prueba/fotosProyecto-1627521532728.png"
-    ]
-  },
-  {
     "id": 5,
     "nombre": "Zetox - Mochila Inteligente",
     "contribucionActual": 0,
@@ -87,27 +73,6 @@
       "Zetox-MochilaInteligente/fotosProyecto-1628640750247.gif",
       "Zetox-MochilaInteligente/fotosProyecto-1628640750862.gif",
       "Zetox-MochilaInteligente/fotosProyecto-1628640751010.gif"
-    ]
-  },
-  {
-    "id": 6,
-    "nombre": "Nicolete",
-    "contribucionActual": 0,
-    "contribucionFinal": "1000",
-    "texto": "Nicolete es un robot",
-    "fecha": "2025-06-10",
-    "patrocinadores": 20,
-    "ubicacion": "La Plata",
-    "autor": 2,
-    "contribucionBronce": "Nicolete bronce",
-    "precioBronce": "100",
-    "contribucionPlata": "Nicolete Plata",
-    "precioPlata": "200",
-    "contribucionOro": "Nicolete",
-    "precioOro": "300",
-    "categoria": 2,
-    "images": [
-      "Nicolete/fotosProyecto-1628739351973.jpg"
     ]
   }
 ]
