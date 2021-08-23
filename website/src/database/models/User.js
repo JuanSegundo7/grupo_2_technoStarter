@@ -33,10 +33,21 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config = {
-        tableName: "usuarios"
+        tableName: "usuarios",
+        timestamps: false
     }
 
     const User = sequelize.define(alias,cols,config)
 
+    User.associate = function(models){
+        User.hasMany(models.Proyect, {
+            as: "proyect",
+            foreignKey: "proyect_id",
+        })
+        User.hasMany(models.User_Contribution, {
+            as: "user_contribution",
+            foreignKey: "user_contribution_id",
+        })
+    }
     return User
 }

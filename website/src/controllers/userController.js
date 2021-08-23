@@ -10,11 +10,54 @@ module.exports = {
     login: (req,res) => {
         return res.render("users/login",{title:"Acceso"});
     },
-    register: (req,res) => {
-        return res.render("users/register", {title:"Ingresar"});
+    register: async (req,res) => {
+        try  {
+            const userDB = db.User.findOne({
+                where: {
+                    email: req.body.email,
+                }
+            });
+
+            if(userDB){
+                return res.render("users/register", 
+                {
+                    errors: {
+                        email: {
+                            msg: "Este email ya está registrado"
+                        }
+                    }
+                })
+            }
+
+            const userCreate = {
+                nombre: req.body.nombreUsuario,
+                apellido: req.body.apellidoUsuario,
+                correo: req.body.direccionDeCorreoElectronico,
+                ubicacion: req.body.ubicacionUser,
+                admin: req.body.direccionDeCorreoElectronico.includes(admines) ? true : false,
+                clave: bcrypt.hashSync(req.body.clave,10),
+                confirmarClave: bcrypt.hashSync(req.body.confirmarClave,10),
+                avatar: req.file.fotoAvatar,
+            }
+            
+            let usuarioCreado = await db.User.create(userCreate)
+
+            return res.render("users/register", {title:"Ingresar"}, usuarioCreado);
+        }
+        catch (error) {
+            console.log(error)
+            res.send(error);
+        }
     },
-    index: (req,res) => {
-        return res.render("users/userList", {usuarios:usuariosModel.allUser()});
+    index: async (req,res) => {
+        try {
+            let usuarioCreado = await db.User.findAll()
+            return res.render("users/userList", {usuarios:usuariosModel.allUser(usuarioCreado)});
+        }
+        catch (error) {
+            console.log(error)
+            res.send(error);
+        }
     },
     save: (req,res) => {
         // return res.send({data:req.body,errors:null,file:req.file})
@@ -40,10 +83,17 @@ module.exports = {
             req.session.user = usuario;
             return res.redirect("/usuario/perfil")
         }
-
     },
     perfil: (req,res) => res.render("users/perfil", {title:"Perfil"}),
-    edit: (req,res) => {res.render("products/editarUsers", {usuarios:usuariosModel.oneUser(req.params.id)});
+    edit: async (req,res) => {
+        try {
+            let usuarios = db.User.findByPk()
+            res.render("products/editarUsers", {usuarios:usuariosModel.oneUser(usuarios)});
+        }
+        catch(error){
+            console.log(error)
+            res.send(error);
+        }
     },
     delete: (req,res) => {
         let result = usuariosModel.deleteUser(req.params.id);

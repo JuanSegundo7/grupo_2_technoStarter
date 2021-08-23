@@ -18,10 +18,18 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config = {
-        tableName: "tipo_contribucion"
+        tableName: "tipo_contribucion",
+        timestamps: false
     }
 
     const Contribution_type = sequelize.define(alias,cols,config)
+
+    Contribution_type.associate = function(models){
+        Contribution_type.hasMany(models.User_Contribution, {
+            as: "user_contribution",
+            foreignKey: "user_contribution_id",
+        })
+    }
 
     return Contribution_type
 }

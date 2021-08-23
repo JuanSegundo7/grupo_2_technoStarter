@@ -17,10 +17,17 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config = {
-        tableName: "imagenes"
+        tableName: "imagenes",
+        timestamps: false
     }
 
     const Image = sequelize.define(alias,cols,config)
 
+    Image.associate = function(models){
+        Image.belongsToMany(models.Proyect, {
+            as: "proyect",
+            foreignKey: "proyect_id",
+        })
+    }
     return Image
 }

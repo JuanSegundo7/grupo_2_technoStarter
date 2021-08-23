@@ -59,7 +59,18 @@ module.exports = (sequelize, dataTypes) => {
             as: "category",
             foreignKey: "category_id",
         })
+        Proyect.belongsTo(models.User, {
+            as: "user",
+            foreignKey: "user_id",
+        })
+        Proyect.hasMany(models.Image, {
+            as: "image",
+            foreignKey: "image_id",
+        })
+        Proyect.belongsToMany(models.User_Contribution, {
+            as: "user_contribution",
+            foreignKey: "user_contribution_id",
+        })
     }
-
     return Proyect
 }
