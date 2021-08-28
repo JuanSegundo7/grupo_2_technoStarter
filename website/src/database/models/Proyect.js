@@ -42,10 +42,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             notNull: true,
         },
-        imagenes_id: {
-            type: dataTypes.INTEGER,
-            notNull: true,
-        }
     }
     let config = {
         tableName: "proyectos",
@@ -56,20 +52,25 @@ module.exports = (sequelize, dataTypes) => {
 
     Proyect.associate = function(models){
         Proyect.belongsTo(models.Category, {
-            as: "category",
-            foreignKey: "category_id",
+            as: "categoria",
+            foreignKey: "categoria_id",
         })
         Proyect.belongsTo(models.User, {
-            as: "user",
-            foreignKey: "user_id",
+            as: "autor",
+            foreignKey: "usuario_id",
         })
         Proyect.hasMany(models.Image, {
-            as: "image",
-            foreignKey: "image_id",
+            as: "imagenes",
+            foreignKey: "proyecto_id",
         })
         Proyect.belongsToMany(models.User_Contribution, {
-            as: "user_contribution",
-            foreignKey: "user_contribution_id",
+            through: "User_Contribution",
+            as: "contribucion_usuarios",
+            foreignKey: "proyecto_id",
+        })
+        Proyect.hasMany(models.Contribution_type, {
+            as: "contribuciones",
+            foreignKey: "proyect_id",
         })
     }
     return Proyect

@@ -41,12 +41,13 @@ module.exports = (sequelize, dataTypes) => {
 
     User.associate = function(models){
         User.hasMany(models.Proyect, {
-            as: "proyect",
-            foreignKey: "proyect_id",
+            as: "proyecto",
+            foreignKey: "usuario_id",
         })
-        User.hasMany(models.User_Contribution, {
-            as: "user_contribution",
-            foreignKey: "user_contribution_id",
+        User.belongsToMany(models.User_Contribution, {
+            through: "User_Contribution",
+            as: "contribucion_usuarios",
+            foreignKey: "usuario_id",
         })
     }
     return User

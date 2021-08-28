@@ -28,17 +28,20 @@ module.exports = (sequelize, dataTypes) => {
     const User_Contribution = sequelize.define(alias,cols,config)
 
     User_Contribution.associate = function(models){
-        User_Contribution.belongsTo(models.User, {
-            as: "user",
-            foreignKey: "user_id",
+        User_Contribution.belongsToMany(models.User, {
+            through: "User_Contribution",
+            as: "usuario",
+            foreignKey: "usuario_id",
         })
-        User_Contribution.belongsTo(models.Proyect, {
-            as: "proyect",
-            foreignKey: "proyect_id",
+        User_Contribution.belongsToMany(models.Proyect, {
+            through: "User_Contribution",
+            as: "proyecto",
+            foreignKey: "proyecto_id",
         })
-        User_Contribution.belongsTo(models.Contribution_type, {
-            as: "contribution_type",
-            foreignKey: "contribution_type_id",
+        User_Contribution.belongsToMany(models.Contribution_type, {
+            through: "User_Contribution",
+            as: "tipo_contribucion",
+            foreignKey: "contribucion_id",
         })
     }
 

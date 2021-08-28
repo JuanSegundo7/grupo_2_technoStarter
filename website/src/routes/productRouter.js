@@ -41,7 +41,7 @@ router.post("/contribuir/:id", [isLogged], productController.contribucion);
 
 router.put("/actualizar/:id",[upload.any()], productController.update);
 
-router.delete("/borrar",productController.delete);
+router.delete("/borrar/:id",productController.delete);
 
 
 

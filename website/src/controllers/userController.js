@@ -12,37 +12,19 @@ module.exports = {
     },
     register: async (req,res) => {
         try  {
-            const userDB = db.User.findOne({
-                where: {
-                    email: req.body.email,
-                }
-            });
-
-            if(userDB){
-                return res.render("users/register", 
-                {
-                    errors: {
-                        email: {
-                            msg: "Este email ya está registrado"
-                        }
-                    }
-                })
-            }
-
             const userCreate = {
                 nombre: req.body.nombreUsuario,
                 apellido: req.body.apellidoUsuario,
                 correo: req.body.direccionDeCorreoElectronico,
-                ubicacion: req.body.ubicacionUser,
                 admin: req.body.direccionDeCorreoElectronico.includes(admines) ? true : false,
                 clave: bcrypt.hashSync(req.body.clave,10),
-                confirmarClave: bcrypt.hashSync(req.body.confirmarClave,10),
-                avatar: req.file.fotoAvatar,
+                ubicacion: req.body.ubicacionUser,
+                avatar: req.file.filename,
             }
             
             let usuarioCreado = await db.User.create(userCreate)
 
-            return res.render("users/register", {title:"Ingresar"}, usuarioCreado);
+            return res.redirect("/");
         }
         catch (error) {
             console.log(error)

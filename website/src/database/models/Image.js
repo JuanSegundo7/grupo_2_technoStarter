@@ -24,9 +24,9 @@ module.exports = (sequelize, dataTypes) => {
     const Image = sequelize.define(alias,cols,config)
 
     Image.associate = function(models){
-        Image.belongsToMany(models.Proyect, {
-            as: "proyect",
-            foreignKey: "proyect_id",
+        Image.belongsTo(models.Proyect, {
+            as: "proyecto",
+            foreignKey: "proyecto_id",
         })
     }
     return Image

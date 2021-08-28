@@ -21,8 +21,8 @@ module.exports = (sequelize, dataTypes) => {
 
     Category.associate = function(models){
         Category.hasMany(models.Proyect, {
-            as: "category",
-            foreignKey: "category_id"
+            as: "proyecto",
+            foreignKey: "categoria_id"
         })
     }
 

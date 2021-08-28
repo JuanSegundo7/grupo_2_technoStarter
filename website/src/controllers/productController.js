@@ -43,9 +43,8 @@ const product = {
                 categoria: parseInt(req.body.categoria),
                 images: file.map( image =>  String(req.file.nombreProducto).trim().replace(/\s+/g, '') + "/" + image.filename),
             }
-
             let proyectos = await db.Proyect.create(proyecto);
-            return res.render("products/crearProyectos", {categorias:categorias.allCategoria(categorias)}, proyectos);
+            return res.redirect("products/crearProyectos/" + proyectos.id, categorias /*preguntar como agregar las categorias */);
         }
         catch (error) {
             console.log(error)
@@ -68,27 +67,40 @@ const product = {
         let result = proyecto.contribuir(req.body, req.params.id);
         return result ? res.redirect("/proyectos/productos/" + req.params.id) : res.send("Error al cargar la informacion");
     },
-    edit: async (req,res) => {
+    edit: (req,res) => {
         try { 
-            let one = await db.Proyect.edit({id: req.params.id})
-            res.render("products/editarProyectos", {proyecto:proyecto.oneProyect(one)});
+            let one = await db.Proyect.update({where: {id: req.params.id}})
+            res.render("products/editarProyectos" + one);
         } 
         catch (error) {
             console.log(error)
             res.send(error);
         }
     },
-    update: async (req,res) => {
+    update: (req,res) => {
         let result = proyecto.edit(req.body,req.file,req.params.id);
         return result == true ? res.redirect("/") : res.send("Error al cargar la informacion");
+    },
+    updateSQL: (req,res) => { /*preguntar porque esta confuso, ya que este update seria el de POST */
+        try {
+            let result = await db.Proyect.update({
+                body: req.body,
+                file: req.file
+            })
+            ({where:{id: req.params.id}});
+            res.redirect(result)
+        }
+        catch (error) {
+            console.log(error)
+            res.send(error);
+        }
     },
     delete: async (req,res) => {
         try {
             let one = await db.Proyect.destroy({
                 where: {id: req.params.id}
             });
-            let result = proyecto.delete(one);
-            return result == true ? res.render("/") : res.send("Error al cargar la informacion");
+            return result == true ? res.render("/" + one) : res.send("Error al cargar la informacion");
         }
         catch (error) {
             console.log(error)
