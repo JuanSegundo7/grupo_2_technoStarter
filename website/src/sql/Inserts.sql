@@ -6,7 +6,10 @@ INSERT INTO proyectos VALUES(1,"Sancho - El Robot Asistente",0,2500000,"Sancho e
 (4, "Zetox - Mochila Inteligente",0, 400000, "Zetox es una mochila inteligente que viene a revolucionar el mundo!\r\n\r\nEntre sus características se encuentran:\r\n\r\nCapacidad de 34,5 a 55 litros\r\nHidrófugo\r\nCremalleras de la más alta calidad del mercado\r\nSoporte para botella de agua integrado\r\nSoporte para teléfono móvil de fácil acceso\r\n3 compartimentos secretos (caben en un iPad / portátil)\r\nBolsillo H2O", "2021-8-18", "2024-06-04",2, 3);
 INSERT INTO tipo_contribucion VALUES(1, "Bronce", 100, 1),(2, "Plata", 200, 1),(3, "Oro", 300, 1);
 INSERT INTO contribucion_usuarios VALUES (1,2,1,3)
-INSERT INTO imagenes VALUES (1,"/public/uploads/products/Sancho-ElRobotAsistente/fotosProyecto-1627172891517.png",1)
+INSERT INTO imagenes VALUES (1,"/public/uploads/products/Sancho-ElRobotAsistente/fotosProyecto-1627172891517.png",1),(2,"/public/uploads/products/Sancho-ElRobotAsistente/fotosProyecto-1627172894857.png",1),(3,"/public/uploads/products/Sancho-ElRobotAsistente/fotosProyecto-1627172894852.jpg",1),
+(4,"/public/uploads/products/Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035851.jpg",2),(5,"/public/uploads/products/Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035845.jpg",2),(6,"/public/uploads/products/Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035849.jpg",2),
+(7,"/public/uploads/products/ACASISUSB4.0/fotosProyecto-1626915281682.jpg",3),(8,"/public/uploads/products/ACASISUSB4.0/fotosProyecto-1626915281688.jpg",3),(9,"/public/uploads/products/ACASISUSB4.0/fotosProyecto-1626915281687.jpg",3),
+(10,"/public/uploads/products/Zetox-MochilaInteligente/fotosProyecto-1628640749425.jpg",4);
 
 
  

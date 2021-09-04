@@ -2,8 +2,8 @@
 
 const express = require("express");
 const path = require("path");
-const method = require("method-override");
 const app = express();
+const method = require("method-override");
 const session = require("express-session");
 
 // ************ Require's Routes ************

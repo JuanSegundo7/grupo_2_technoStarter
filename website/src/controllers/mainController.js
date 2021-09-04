@@ -8,7 +8,9 @@ const db = require("../database/models");
 const main = {
     index: async (req,res) => {
         try {
-            let proyectos = await db.Proyect.findAll()
+            let imagenes = await db.Image.findAll()
+            let proyectos = await db.Proyect.findAll({includes: [{ association: ["categoria","autor","imagenes","contribucion_usuarios"]}]})
+                // return res.send(proyectos)
                 return res.render("home", {destacado:proyecto.random(proyectos), recomendados:proyecto.recomendados(proyectos)});
         }
         catch (error) {

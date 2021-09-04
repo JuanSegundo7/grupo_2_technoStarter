@@ -10,10 +10,11 @@ const db = require("../database/models");
 const product = {
     index: async (req,res) => {
         try {
-            çonst 
             let proyectos = await db.Proyect.findAll()
-            let one = await db.Proyect.findByPk(req.params.id)
-            return res.render("products/detalleProyectos", {proyectos:proyecto.random(proyectos), proyecto:proyecto.oneProyect(one), recomendados:proyecto.recomendados2(proyectos)});
+            let one = await db.Proyect.findByPk(req.params.id, {includes:[{association: "imagenes"}]})
+            // res.send(one)
+            // return
+            return res.render("products/detalleProyectos",{proyecto:one});
         } 
         catch (error) {
             console.log(error)
@@ -22,16 +23,17 @@ const product = {
     },
     create: async (req,res) => {
         try {
-            let categorias = await db.Category.findAll();
-            
+            let categoria = await db.Category.findAll();
+            let user = await db.User.findOne()
+            let file = await db.Image.findAll()
             let proyecto = {
-                nombre: String(req.body.nombreProducto),
+                nombre: String(req.body.nombre),
                 contribucionActual: 0,
-                contribucionFinal: req.body.precioProyecto,
-                texto: String(req.body.textoProyecto),
+                contribucionFinal: req.body.contribucion_final,
+                texto: String(req.body.texto),
                 fecha_actual: String(Date.now()),
-                fecha: String(req.body.fechaProyecto),
-                patrocinadores: 20,
+                fecha_final: String(req.body.fecha_final),
+                patrocinadores: 0,
                 ubicacion: String(req.body.ubicacion),
                 autor: user != undefined ? user.id : null,
                 contribucionBronce: String(req.body.bronce),
@@ -41,10 +43,11 @@ const product = {
                 contribucionOro: String(req.body.oro),
                 precioOro: req.body.precioOro,
                 categoria: parseInt(req.body.categoria),
-                images: file.map( image =>  String(req.file.nombreProducto).trim().replace(/\s+/g, '') + "/" + image.filename),
+                images: file.map( image =>  String(req.file.nombre).trim().replace(/\s+/g, '') + "/" + image.filename),
             }
             let proyectos = await db.Proyect.create(proyecto);
-            return res.redirect("products/crearProyectos/" + proyectos.id, categorias /*preguntar como agregar las categorias */);
+            res.send(proyecto)
+            return res.redirect("products/crearProyectos/" + proyectos.id /*preguntar como agregar las categorias */);
         }
         catch (error) {
             console.log(error)
@@ -67,7 +70,7 @@ const product = {
         let result = proyecto.contribuir(req.body, req.params.id);
         return result ? res.redirect("/proyectos/productos/" + req.params.id) : res.send("Error al cargar la informacion");
     },
-    edit: (req,res) => {
+    edit: async (req,res) => {
         try { 
             let one = await db.Proyect.update({where: {id: req.params.id}})
             res.render("products/editarProyectos" + one);
@@ -77,11 +80,11 @@ const product = {
             res.send(error);
         }
     },
-    update: (req,res) => {
+    update:(req,res) => {
         let result = proyecto.edit(req.body,req.file,req.params.id);
         return result == true ? res.redirect("/") : res.send("Error al cargar la informacion");
     },
-    updateSQL: (req,res) => { /*preguntar porque esta confuso, ya que este update seria el de POST */
+    updateSQL: async (req,res) => { /*preguntar porque esta confuso, ya que este update seria el de POST */
         try {
             let result = await db.Proyect.update({
                 body: req.body,
