@@ -16,15 +16,15 @@
             <section class="campañaDestacada-1">           
                 <section class="flex-camapañaDestacada">
                     <figure>
-                        <a href="/proyecto/producto/<%= destacado.id %>"><img src="/uploads/products/<%= destacado.images %> " alt="tiBeast"></a>
+                        <a href="/proyecto/producto/<%= random.id %>"><img src="<%= random.imagenes[0].url_imagen %> " alt="tiBeast"></a>
                     </figure>
                     <article>
-                        <h2 class="titulo-reco"><%= destacado.nombre %></h2>
-                        <h2 class="precio">$<%= destacado.contribucionActual %></h2>
-                        <p class="meta">contribuido de meta $<%= destacado.contribucionFinal %></p>
-                        <p class="patrocinadores"><%= destacado.patrocinadores %> patrocinadores</p>
-                        <p class="patrocinadores"><%= destacado.fecha %></p>
-                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= destacado.ubicacion %></p>
+                        <h2 class="titulo-reco"><%= random.nombre %></h2>
+                        <h2 class="precio">$<%= random.contribucionActual %></h2>
+                        <p class="meta">contribuido de meta $<%= random.contribucionFinal %></p>
+                        <p class="patrocinadores"><%= random.patrocinadores %> patrocinadores</p>
+                        <p class="patrocinadores"><%= random.fecha %></p>
+                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= random.ubicacion %></p>
                     </article>
                 </section>
                 <section class="flex-thumbs">
@@ -38,19 +38,19 @@
                 <section>
                     <h2 class="titulo-h2">Recomendaciones</h2>
                 </section>
-                <% recomendados.forEach(recomendado => { %>
+                <% recomendados.forEach(random => { %>
                     <section class="recomendaciones-1">
                         <section class="flex-recomendaciones">
                             <figure>
-                                <a href="/proyecto/producto/<%= recomendado.id %>"><img src="/uploads/products/<%= recomendado.images %> " alt="imagen"></a>
+                                <a href="/proyecto/producto/<%= random.id %>"><img src="<%= random.imagenes[0].url_imagen %>"  alt="imagen"></a>
                             </figure>
                             <article>
-                                <h2 class="titulo-reco"><%= recomendado.nombre %></h2>
-                                <h2 class="precio">$<%= recomendado.contribucionActual %></h2>
-                                <p class="meta">contribuido de meta $<%= recomendado.contribucionFinal %></p>
-                                <p class="patrocinadores"><%= recomendado.patrocinadores %> patrocinadores</p>
-                                <p class="patrocinadores"><%= recomendado.fecha %></p>
-                                <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= recomendado.ubicacion %></p>
+                                <h2 class="titulo-reco"><%= random.nombre %></h2>
+                                <h2 class="precio">$<%= random.contribucionActual %></h2>
+                                <p class="meta">contribuido de meta $<%= random.contribucionFinal %></p>
+                                <p class="patrocinadores"><%= random.patrocinadores %> patrocinadores</p>
+                                <p class="patrocinadores"><%= random.fecha %></p>
+                                <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= random.ubicacion %></p>
                             </article>
                         </section>
                         <section class="flex-thumbs">

@@ -9,9 +9,12 @@ const main = {
     index: async (req,res) => {
         try {
             let imagenes = await db.Image.findAll()
-            let proyectos = await db.Proyect.findAll({includes: [{ association: ["categoria","autor","imagenes","contribucion_usuarios"]}]})
-                // return res.send(proyectos)
-                return res.render("home", {destacado:proyecto.random(proyectos), recomendados:proyecto.recomendados(proyectos)});
+            let proyectos = await db.Proyect.findAll({include: [{ association: "imagenes"},{ association: "autor"}]})
+            let random = proyecto.random(proyectos)
+            // return res.send(random)
+            let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
+            // return res.send(recomendados)
+            return res.render("home", {random, recomendados});
         }
         catch (error) {
             console.log(error)

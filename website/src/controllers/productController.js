@@ -11,10 +11,11 @@ const product = {
     index: async (req,res) => {
         try {
             let proyectos = await db.Proyect.findAll()
-            let one = await db.Proyect.findByPk(req.params.id, {includes:[{association: "imagenes"}]})
-            // res.send(one)
+            let one = await db.Proyect.findByPk(req.params.id, {include:{association: "imagenes"}})
+            let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
+            return res.send(one)
             // return
-            return res.render("products/detalleProyectos",{proyecto:one});
+            return res.render("products/detalleProyectos",{recomendados:recomendados, proyecto:one});
         } 
         catch (error) {
             console.log(error)
