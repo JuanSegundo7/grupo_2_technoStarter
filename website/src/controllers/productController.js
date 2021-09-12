@@ -24,44 +24,45 @@ const product = {
     },
     create: async (req,res) => {
         try {
-            let categoria = await db.Category.findAll();
-            let user = await db.User.findOne()
-            let file = await db.Image.findAll()
-            let proyecto = {
-                nombre: String(req.body.nombre),
-                contribucionActual: 0,
-                contribucionFinal: req.body.contribucion_final,
-                texto: String(req.body.texto),
-                fecha_actual: String(Date.now()),
-                fecha_final: String(req.body.fecha_final),
-                patrocinadores: 0,
-                ubicacion: String(req.body.ubicacion),
-                autor: user != undefined ? user.id : null,
-                contribucionBronce: String(req.body.bronce),
-                precioBronce: req.body.precioBronce,
-                contribucionPlata: String(req.body.plata),
-                precioPlata: req.body.precioPlata,
-                contribucionOro: String(req.body.oro),
-                precioOro: req.body.precioOro,
-                categoria: parseInt(req.body.categoria),
-                images: file.map( image =>  String(req.file.nombre).trim().replace(/\s+/g, '') + "/" + image.filename),
+                let data = req.body;
+                let user = await db.User.findOne();
+                let file = await db.Image.findAll();
+                return res.redirect("products/crearProyectos/" + proyectos.id /*preguntar como agregar las categorias */);
             }
-            let proyectos = await db.Proyect.create(proyecto);
-            res.send(proyecto)
-            return res.redirect("products/crearProyectos/" + proyectos.id /*preguntar como agregar las categorias */);
-        }
-        catch (error) {
-            console.log(error)
-            res.send(error);
-        }
-    },
-    save: async (req,res) => {
-        try{
-            let result = db.Proyect.save({
-                body: req.body,
-                files: req.files,
-                user: req.session.user});
-            return result ? res.redirect("/") : res.send("Error al cargar la informacion"); 
+            catch (error) {
+                console.log(error)
+                res.send(error);
+            }
+        },
+        save: async (req,res) => {
+            try{
+                let result = db.Proyect.save({
+                    body: req.body,
+                    files: req.files,
+                    // user: req.session.user 
+                });
+                    return result ? res.redirect("/") : res.send("Error al cargar la informacion"); 
+                    // let proyecto = {
+                    //         nombre: String(data.nombre),
+                    //         contribucionActual: 0,
+                    //         contribucionFinal: req.body.contribucion_final,
+                    //         texto: String(req.body.texto),
+                    //         fecha_actual: String(Date.now()),
+                    //         fecha_final: String(req.body.fecha_final),
+                    //         patrocinadores: 0,
+                    //         ubicacion: String(req.body.ubicacion),
+                    //         autor: user != undefined ? user.id : null,
+                    //         contribucionBronce: String(req.body.bronce),
+                    //         precioBronce: req.body.precioBronce,
+                    //         contribucionPlata: String(req.body.plata),
+                    //         precioPlata: req.body.precioPlata,
+                    //         contribucionOro: String(req.body.oro),
+                    //         precioOro: req.body.precioOro,
+                    //         categoria: parseInt(req.body.categoria),
+                    //         images: file.map( image =>  String(req.file.nombre).trim().replace(/\s+/g, '') + "/" + image.filename),
+                    //     }
+                    //     let proyectos = await db.Proyect.create(proyecto);
+                    //     return res.send(data)
         } catch (error) {
             console.log(error)
             res.send(error);
