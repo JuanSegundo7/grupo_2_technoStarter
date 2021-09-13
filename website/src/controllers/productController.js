@@ -13,7 +13,7 @@ const product = {
             let proyectos = await db.Proyect.findAll()
             let one = await db.Proyect.findByPk(req.params.id, {include:{association: "imagenes"}})
             let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
-            return res.send(one)
+            return res.send(proyectos)
             // return
             return res.render("products/detalleProyectos",{recomendados:recomendados, proyecto:one});
         } 
@@ -22,52 +22,73 @@ const product = {
             res.send(error);
         }
     },
-    create: async (req,res) => {
+create: async (req,res) => {
         try {
-                let data = req.body;
-                let user = await db.User.findOne();
-                let file = await db.Image.findAll();
-                return res.redirect("products/crearProyectos/" + proyectos.id /*preguntar como agregar las categorias */);
-            }
-            catch (error) {
-                console.log(error)
-                res.send(error);
-            }
-        },
-        save: async (req,res) => {
-            try{
-                let result = db.Proyect.save({
-                    body: req.body,
-                    files: req.files,
-                    // user: req.session.user 
-                });
-                    return result ? res.redirect("/") : res.send("Error al cargar la informacion"); 
-                    // let proyecto = {
-                    //         nombre: String(data.nombre),
-                    //         contribucionActual: 0,
-                    //         contribucionFinal: req.body.contribucion_final,
-                    //         texto: String(req.body.texto),
-                    //         fecha_actual: String(Date.now()),
-                    //         fecha_final: String(req.body.fecha_final),
-                    //         patrocinadores: 0,
-                    //         ubicacion: String(req.body.ubicacion),
-                    //         autor: user != undefined ? user.id : null,
-                    //         contribucionBronce: String(req.body.bronce),
-                    //         precioBronce: req.body.precioBronce,
-                    //         contribucionPlata: String(req.body.plata),
-                    //         precioPlata: req.body.precioPlata,
-                    //         contribucionOro: String(req.body.oro),
-                    //         precioOro: req.body.precioOro,
-                    //         categoria: parseInt(req.body.categoria),
-                    //         images: file.map( image =>  String(req.file.nombre).trim().replace(/\s+/g, '') + "/" + image.filename),
-                    //     }
-                    //     let proyectos = await db.Proyect.create(proyecto);
-                    //     return res.send(data)
-        } catch (error) {
+            let categoria = await db.Category.findAll();
+            // return res.send(categoria)
+            return res.render("products/crearProyectos", {categorias:categoria});
+        }
+        catch (error) {
             console.log(error)
             res.send(error);
         }
     },
+save: async (req,res) => {
+    try{
+    let data = req.body;
+    let file = req.files;
+
+    // console.log("data",data);
+    // console.log("req", req);
+    // console.log("file", req.files);
+
+    let usuarioAutor = await db.User.findByPk(req.params.id)
+    console.log("ENCONTRAR ID!!!", req.session.user)
+    console.log("ENCONTRAR!!!!!",usuarioAutor)
+    console.log("cookie", req.cookie)
+
+    let projectToCreate = {
+        nombre: String(data.nombre),
+        contribucionActual: 0,
+        contribucionFinal: data.contribucion_final,
+        texto: String(data.texto),
+        fecha_actual: String(Date.now()),
+        fecha_final: String(data.fecha_final),
+        categoria_id:(data.categoria)
+        // ubicacion: String(data.ubicacion),
+    }
+    let projectCreated = await db.Proyect.create({projectToCreate});
+
+    let informationUser = {
+        autor: user != undefined ? user.id : null,
+    }
+    
+    let informationuser = await db.User.findAll();
+    
+    
+    
+    
+    
+
+    // let categoria = await db.Category.findAll();
+    // contribucionBronce: String(data.bronce),
+    // precioBronce: data.precioBronce,
+    // contribucionPlata: String(data.plata),
+    // precioPlata: data.precioPlata,
+    // contribucionOro: String(data.oro),
+    // precioOro: data.precioOro,
+    // categoria: parseInt(data.categoria),
+    // images: file.map( image =>  String(req.files.filename).trim().replace(/\s+/g, '') + "/" + image.filename),
+    // }
+    // console.log(proyecto)
+    return res.send(proyectos);
+    return result ? res.redirect("/") : res.send("Error al cargar la informacion"); 
+    } 
+    catch (error) {
+        console.log(error)
+        res.send(error);
+    }
+},
     contribucion: (req,res) => {
         let result = proyecto.contribuir(req.body, req.params.id);
         return result ? res.redirect("/proyectos/productos/" + req.params.id) : res.send("Error al cargar la informacion");
@@ -82,10 +103,10 @@ const product = {
             res.send(error);
         }
     },
-    update:(req,res) => {
-        let result = proyecto.edit(req.body,req.file,req.params.id);
-        return result == true ? res.redirect("/") : res.send("Error al cargar la informacion");
-    },
+    // update:(req,res) => {
+    //     let result = proyecto.edit(req.body,req.file,req.params.id);
+    //     return result == true ? res.redirect("/") : res.send("Error al cargar la informacion");
+    // },
     updateSQL: async (req,res) => { /*preguntar porque esta confuso, ya que este update seria el de POST */
         try {
             let result = await db.Proyect.update({
@@ -112,7 +133,7 @@ const product = {
             res.send(error);
         }   
     },
-    borrar: (req,res) => {res.render("products/borrarProyectos", {proyecto:proyecto.oneProyect(req.params.id)});}
+    // borrar: (req,res) => {res.render("products/borrarProyectos", {proyecto:proyecto.oneProyect(req.params.id)});}
 };
 
 module.exports = product;

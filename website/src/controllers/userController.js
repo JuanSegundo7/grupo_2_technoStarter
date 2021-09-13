@@ -51,19 +51,24 @@ module.exports = {
             return res.redirect("/usuario/ingresar");
         }
     },
-    Acceso: (req,res) => {
-        const errors = validationResult(req);
-        // return res.send(errors)
-        if (!errors.isEmpty()){
-            return res.render("users/login", { errors: errors.mapped(),title:"Acceso", old:req.body });
-        }else{
-            let usuario = usuariosModel.findByEmail(req.body.correo);
-            // return res.send(usuario)
-            if(req.body.remember){
-                res.cookie("email",req.body.correo,{maxAge:300000})
+    Acceso: async (req,res) => {
+        try{
+            const errors = validationResult(req);
+            // return res.send(errors)
+            if (!errors.isEmpty()){
+                return res.render("users/login", { errors: errors.mapped(),title:"Acceso", old:req.body });
+            }else{
+                let usuario = await db.User.findOne({where: {email: req.body.correo}});
+                req.session.user = usuario;
+                // return res.send(usuario)
+                if(req.body.remember){
+                    res.cookie("email",req.body.correo,{maxAge:300000})
+                }
+                // res.locals.userId = usuario.id;
+                return res.redirect("/usuario/perfil")
             }
-            req.session.user = usuario;
-            return res.redirect("/usuario/perfil")
+        }catch(error){
+            res.send(error)
         }
     },
     perfil: (req,res) => res.render("users/perfil", {title:"Perfil"}),

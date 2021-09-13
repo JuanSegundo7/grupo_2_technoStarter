@@ -33,13 +33,13 @@ router.get("/producto/:id", productController.index);
 
 router.get("/crear", productController.create);
 
-router.get("/editar/:id",[isLogged], productController.edit);
-
 router.post("/guardar",[upload.any()], productController.save);
+
+router.get("/editar/:id",[isLogged], productController.edit);
 
 router.post("/contribuir/:id", [isLogged], productController.contribucion);
 
-router.put("/actualizar/:id",[upload.any()], productController.update);
+router.put("/actualizar/:id",[upload.any()], productController.updateSQL);
 
 router.delete("/borrar/:id",productController.delete);
 
