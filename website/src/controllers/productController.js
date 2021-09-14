@@ -1,4 +1,4 @@
-// ************ Require's ************
+// **** Require's ****
 const session = require("express-session");
 const proyecto = require("../models/proyecto");
 const categorias = require("../models/categoria");
@@ -7,7 +7,7 @@ var app = session()
 
 
 
-// ************ Controller ************
+// **** Controller ****
 
 const product = {
     index: async (req,res) => {
