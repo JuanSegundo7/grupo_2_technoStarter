@@ -11,8 +11,13 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(6),
             notNull: true,
         },
-        monto: {
+        precio: {
             type: dataTypes.FLOAT,
+            notNull: true,
+            unsigned: true
+        },
+        contribucion: {
+            type: dataTypes.TEXT,
             notNull: true,
             unsigned: true
         }

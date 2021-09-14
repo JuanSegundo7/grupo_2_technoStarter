@@ -33,7 +33,7 @@ router.get("/producto/:id", productController.index);
 
 router.get("/crear", productController.create);
 
-router.post("/guardar",[upload.any()], productController.save);
+router.post("/guardar",[upload.any(),isLogged], productController.save);
 
 router.get("/editar/:id",[isLogged], productController.edit);
 

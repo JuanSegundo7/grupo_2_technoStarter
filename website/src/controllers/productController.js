@@ -1,8 +1,10 @@
 // ************ Require's ************
-
+const session = require("express-session");
 const proyecto = require("../models/proyecto");
 const categorias = require("../models/categoria");
 const db = require("../database/models");
+var app = session()
+
 
 
 // ************ Controller ************
@@ -42,7 +44,9 @@ save: async (req,res) => {
     // console.log("req", req);
     // console.log("file", req.files);
 
-    let usuarioAutor = await db.User.findByPk(req.params.id)
+    let usuarioAutor = await db.User.findByPk()
+    let usuarioAutor1 = await db.User.findByPk(req.params.id);
+    console.log("ENCONTRAR ID!!!", usuarioAutor1)
     console.log("ENCONTRAR ID!!!", req.session.user)
     console.log("ENCONTRAR!!!!!",usuarioAutor)
     console.log("cookie", req.cookie)
@@ -59,29 +63,34 @@ save: async (req,res) => {
     }
     let projectCreated = await db.Proyect.create({projectToCreate});
 
-    let informationUser = {
+    let autorToCreate = {
         autor: user != undefined ? user.id : null,
     }
+    let autorCreated = await db.User.create(autorToCreate);
     
-    let informationuser = await db.User.findAll();
+    let categoriaToCreate = {
+        categoria: parseInt(data.categoria)
+        } 
+    let categoriaCreated = await db.Category.create(categoriaToCreate);
+    
+    contriibucionesToCreate = { 
+        contribucionBronce: String(data.bronce),
+        Bronce: data.precioBronce,
+        contribucionPlata: String(data.plata),
+        Plata: data.precioPlata,
+        contribucionOro: String(data.oro),
+        Oro: data.precioOro,
+    }
     
     
-    
-    
-    
+    let images = {
+        image: file.map( image =>  String(req.files.filename).trim().replace(/\s+/g, '') + "/" + image.filename),
+    } 
+    let imagenesCreated = db.Image.create(images)
 
-    // let categoria = await db.Category.findAll();
-    // contribucionBronce: String(data.bronce),
-    // precioBronce: data.precioBronce,
-    // contribucionPlata: String(data.plata),
-    // precioPlata: data.precioPlata,
-    // contribucionOro: String(data.oro),
-    // precioOro: data.precioOro,
-    // categoria: parseInt(data.categoria),
-    // images: file.map( image =>  String(req.files.filename).trim().replace(/\s+/g, '') + "/" + image.filename),
-    // }
+    
     // console.log(proyecto)
-    return res.send(proyectos);
+    return res.send(projectCreated);
     return result ? res.redirect("/") : res.send("Error al cargar la informacion"); 
     } 
     catch (error) {
