@@ -11,7 +11,7 @@ const main = {
             let imagenes = await db.Image.findAll()
             let proyectos = await db.Proyect.findAll({include: [{ association: "imagenes"},{ association: "autor"}]})
             let random = proyecto.random(proyectos)
-            return res.send(random)
+            // return res.send(random)
             let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
             // return res.send(recomendados)
             return res.render("home", {random, recomendados});
