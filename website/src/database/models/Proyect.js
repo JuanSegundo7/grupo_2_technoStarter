@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
             notNull: true,
         },
         categoria_id: {
-            type: dataTypes.BOOLEAN,
+            type: dataTypes.INTEGER,
             notNull: true,
         },
         usuario_id: {
