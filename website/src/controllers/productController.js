@@ -15,7 +15,7 @@ const product = {
             let proyectos = await db.Proyect.findAll()
             let one = await db.Proyect.findByPk(req.params.id, {include:{association: "imagenes"}})
             let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
-            return res.send(proyectos)
+            // return res.send(proyectos)
             // return
             return res.render("products/detalleProyectos",{recomendados:recomendados, proyecto:one});
         } 
@@ -70,10 +70,10 @@ save: async (req,res) => {
     
     let categoriaToCreate = {
         categoria: parseInt(data.categoria)
-        } 
+    } 
     let categoriaCreated = await db.Category.create(categoriaToCreate);
     
-    contriibucionesToCreate = { 
+    contribucionesToCreate = { 
         contribucionBronce: String(data.bronce),
         Bronce: data.precioBronce,
         contribucionPlata: String(data.plata),
@@ -82,6 +82,7 @@ save: async (req,res) => {
         Oro: data.precioOro,
     }
     
+    contribucionCreated
     
     let images = {
         image: file.map( image =>  String(req.files.filename).trim().replace(/\s+/g, '') + "/" + image.filename),

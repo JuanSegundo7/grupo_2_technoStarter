@@ -42,7 +42,7 @@
                     <section class="recomendaciones-1">
                         <section class="flex-recomendaciones">
                             <figure>
-                                <a href="/proyecto/producto/<%= random.id %>"><img src="<%= random.imagenes[0].url_imagen %>"  alt="imagen"></a>
+                                <a href="/proyecto/producto/<%= random.id %>"><img src="<%=(random.imagenes != undefined) ? random.imagenes[0].url_imagen%>"  alt="imagen"></a>
                             </figure>
                             <article>
                                 <h2 class="titulo-reco"><%= random.nombre %></h2>
