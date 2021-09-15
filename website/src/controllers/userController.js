@@ -3,6 +3,7 @@
 const { validationResult } = require('express-validator');
 const usuariosModel = require("../models/usuario");
 const db = require("../database/models");
+const bcrypt = require('bcryptjs');
 
 // ************ Controller ************
 
@@ -10,26 +11,8 @@ module.exports = {
     login: (req,res) => {
         return res.render("users/login",{title:"Acceso"});
     },
-    register: async (req,res) => {
-        try  {
-            const userCreate = {
-                nombre: req.body.nombreUsuario,
-                apellido: req.body.apellidoUsuario,
-                correo: req.body.direccionDeCorreoElectronico,
-                admin: req.body.direccionDeCorreoElectronico.includes(admines) ? true : false,
-                clave: bcrypt.hashSync(req.body.clave,10),
-                ubicacion: req.body.ubicacionUser,
-                avatar: req.file.filename,
-            }
-            
-            let usuarioCreado = await db.User.create(userCreate)
-
-            return res.redirect("/");
-        }
-        catch (error) {
-            console.log(error)
-            res.send(error);
-        }
+    register: (req,res) => {
+        return res.render("users/register");
     },
     index: async (req,res) => {
         try {
@@ -41,15 +24,38 @@ module.exports = {
             res.send(error);
         }
     },
-    save: (req,res) => {
+    save: async (req,res) => {
         // return res.send({data:req.body,errors:null,file:req.file})
-        const errors = validationResult(req);
+        try  {
+            let data = req.body;
+            let file = req.file;
+            
+            let userToCreate = {
+                nombre: data.nombreUsuario,
+                apellido: data.apellidoUsuario,
+                email: data.direccionDeCorreoElectronico,
+                admin: 0, //data.direccionDeCorreoElectronico.includes(admines) ? true : false,
+                clave: bcrypt.hashSync(data.clave,10),
+                ubicacion: data.ubicacionUser,
+                avatar: file.filename,
+            }
+    
+            let usuarioCreado = await db.User.create(userToCreate);
+            
+            return res.redirect("/");
+        }
+        catch (error) {
+            console.log(error)
+            res.send(error);
+        }
+
+        /*const errors = validationResult(req);
         if(!errors.isEmpty()){
             return res.render("users/register",{errors: errors.mapped(),title:"Ingresar",old:req.body}); 
         }else{
             usuariosModel.newUser(req.body,req.file);
             return res.redirect("/usuario/ingresar");
-        }
+        }*/
     },
     Acceso: async (req,res) => {
         try{

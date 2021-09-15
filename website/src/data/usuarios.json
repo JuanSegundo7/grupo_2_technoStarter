@@ -58,5 +58,45 @@
     "admin": true,
     "clave": "$2a$10$yYUUSg6ehYGW6dAC9kWOXuTsjuLKYmvkLcYCZzU.XHLgvAxNpbtH.",
     "avatar": "fotoAvatar-1628117661185.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Manuel",
+    "apellido": "Ramirez",
+    "correo": "manuelramirez@gmail.com",
+    "ubicacion": "Capital Federal",
+    "admin": false,
+    "clave": "$2a$10$kx/vLQ0SzRbfgy/OY2D49.1dLk/gmPr6UMzxBwKBcbfUh4KwHQh3C",
+    "avatar": "fotoAvatar-1631662891277.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Manuel",
+    "apellido": "Ramirez",
+    "correo": "manuelramirez@gmail.com",
+    "ubicacion": "Capital Federal",
+    "admin": false,
+    "clave": "$2a$10$lGWW2r8QAFM04DYCxoU5gORmupASXcET3OGMOioVh/AbXdbOa5NqG",
+    "avatar": "fotoAvatar-1631664805790.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Manuel",
+    "apellido": "Ramirez",
+    "correo": "manuelramirez@gmail.com",
+    "ubicacion": "Capital Federal",
+    "admin": false,
+    "clave": "$2a$10$Q45XCJqDgRcfeChOHbimTO72AnpRGoBfa3FN9w6lkts54.9/aDVWO",
+    "avatar": "fotoAvatar-1631664930809.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Manuel",
+    "apellido": "Ramirez",
+    "correo": "manuelramirez@gmail.com",
+    "ubicacion": "Capital Federal",
+    "admin": false,
+    "clave": "$2a$10$sqZ39Y2rNA5ZtdXA7jaHseG42I0hXoS65SbxC4HAyZ6G3Dyz9tVei",
+    "avatar": "fotoAvatar-1631667597232.jpg"
   }
 ]
