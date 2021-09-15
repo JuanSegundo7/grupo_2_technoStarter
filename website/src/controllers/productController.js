@@ -12,12 +12,15 @@ var app = session()
 const product = {
     index: async (req, res) => {
         try {
-            let proyectos = await db.Proyect.findAll()
+            let user = await db.User.findOne()
+            let proyectos = await db.Proyect.findAll({ include: { association: "imagenes" } })
             let one = await db.Proyect.findByPk(req.params.id, { include: { association: "imagenes" } })
             let recomendados = [proyecto.random(proyectos), proyecto.random(proyectos), proyecto.random(proyectos)]
-            // return res.send(proyectos)
+            // console.log("usuario", user.id);
+            // console.log("req.params", req.params.id)
+            // return res.send(proyecto)
             // return
-            return res.render("products/detalleProyectos", { recomendados: recomendados, proyecto: one });
+            return res.render("products/detalleProyectos", { recomendados: recomendados, proyecto: one, user: user });
         }
         catch (error) {
             console.log(error)
@@ -41,15 +44,13 @@ const product = {
             //console.log("data", data);
             let file = req.files;
             //console.log("file", file);
-
-            //console.log("Usuario en session", req.session.user)
-
             let user = req.session.user;
+            //console.log("Usuario en session", req.session.user)
 
             let projectToCreate = { 
                 nombre: String(data.nombre),
                 contribucionActual: 0,
-                contribucionFinal: parseInt(data.contribucion_final),
+                contribucionFinal: data.contribucion_final,
                 texto: String(data.texto),
                 fecha_inicial: String(new Date().toISOString().slice(0, 10)),
                 fecha_limite: data.fechaProyecto,
@@ -57,61 +58,83 @@ const product = {
                 categoria_id: parseInt(data.categoria)
             }
 
-            //console.log("info proyecto",projectToCreate);
-
             let projectCreated = await db.Proyect.create(projectToCreate);
-
-            //console.log("projectCreated", projectCreated);
+            
+            //console.log("info proyecto",projectToCreate);
             //console.log("projectCreated", projectCreated.id);
-
-// imagenes create
-
+            //console.log("projectCreated", projectCreated);
+            
+            // imagenes create
+            
             let imagenes = [];
-
+            
             Array.from(file).forEach(img => {
                 imagenes.push(img.filename);
             })
-
             //console.log("imagenes", imagenes);
-
             let imagenesCreated = await imagenes.forEach(img => {  
                 db.Image.create({
                     url_imagen: img,
                     proyecto_id: projectCreated.id
             })
+            /**image: file.map(image => String(req.files.filename).trim().replace(/\s+/g, '') + "/" + image.filename),*/
+
         });
-
-            return res.send(file)
-
-                /**image: file.map(image => String(req.files.filename).trim().replace(/\s+/g, '') + "/" + image.filename),*/
-            
-            
-
-
-
-            contribucionesToCreate = {
-                contribucionBronce: String(data.bronce),
-                Bronce: data.precioBronce,
-                contribucionPlata: String(data.plata),
-                Plata: data.precioPlata,
-                contribucionOro: String(data.oro),
-                Oro: data.precioOro,
-            }
-
-            contribucionCreated
-
-            
-
-
-            // console.log(proyecto)
-            return res.send(projectCreated);
-            return result ? res.redirect("/") : res.send("Error al cargar la informacion");
+        
+                
+        return res.redirect("/proyecto/contribucion") 
         }
         catch (error) {
             console.log(error)
             res.send(error);
         }
     },
+    createContribucion: (req, res) => {
+        try {
+            return res.render("products/crearContribucion");
+        }
+        catch (error) {
+            console.log(error)
+            res.send(error);
+        }
+    },
+    saveContributionType: async (req,res) => {
+        try{
+            let data = req.body;
+            allContri = [
+                {
+                    nombre: "Bronce",
+                    precio: data.precioBronce,
+                    contribucion: String(data.bronce),
+                },
+                {
+                    nombre: "Plata",
+                    precio: data.precioPlata,
+                    contribucion: String(data.plata),
+                },
+                {
+                    nombre: "Oro",
+                    precio: data.precioOro,
+                    contribucion: String(data.oro),
+                }
+            ]
+            let contriCreated =  allContri.map(async (contri) => {
+                return _contri = await db.Contribution_type.create({
+                    nombre: contri.nombre,
+                    precio: contri.precio,
+                    contribucion: contri.contribucion,
+                    proyecto_id: 1
+                })
+            })
+
+            return res.redirect("/") 
+
+        }catch(error){
+            console.log(error)
+            res.send(error);
+        }
+        
+        },
     contribucion: (req, res) => {
         let result = proyecto.contribuir(req.body, req.params.id);
         return result ? res.redirect("/proyectos/productos/" + req.params.id) : res.send("Error al cargar la informacion");
@@ -119,7 +142,9 @@ const product = {
     edit: async (req, res) => {
         try {
             let one = await db.Proyect.update({ where: { id: req.params.id } })
-            res.render("products/editarProyectos" + one);
+            console.log("one",one);
+            return res.send(one)
+            return res.render("products/editarProyectos" + one);
         }
         catch (error) {
             console.log(error)
@@ -140,6 +165,17 @@ const product = {
             res.redirect(result)
         }
         catch (error) {
+            console.log(error)
+            res.send(error);
+        }
+    },
+    borrar: async (req, res) => {
+        try{
+            let proyecto = await db.Proyect.findOne({where: { id: req.params.id}})
+            // console.log(proyecto)
+            // res.send(proyecto)
+            return res.render("products/borrarProyectos", {proyecto: proyecto})
+        }catch (error) {
             console.log(error)
             res.send(error);
         }

@@ -13,7 +13,7 @@ const multer = require('multer');
 
 const dest = multer.diskStorage({
     destination: function (req, file, cb) {
-        let dir = path.resolve(__dirname,"../../public/uploads","products", String(req.body.nombreProducto).trim().replace(/\s+/g, ''))
+        let dir = path.resolve(__dirname,"../../public/uploads","products", String(req.body.nombre).trim().replace(/\s+/g, ''))
         if (!fs.existsSync(dir)){
             fs.mkdirSync(dir);
         }
@@ -33,7 +33,13 @@ router.get("/producto/:id", productController.index);
 
 router.get("/crear", productController.create);
 
+router.get("/borrar/:id", productController.borrar);
+
+router.get("/contribucion", productController.createContribucion);
+
 router.post("/guardar",[upload.any(),isLogged], productController.save);
+
+router.post("/guardarContribucion",[isLogged], productController.saveContributionType);
 
 router.get("/editar/:id",[isLogged], productController.edit);
 
@@ -41,7 +47,7 @@ router.post("/contribuir/:id", [isLogged], productController.contribucion);
 
 router.put("/actualizar/:id",[upload.any()], productController.updateSQL);
 
-router.delete("/borrar/:id",productController.delete);
+router.delete("/delete",[isLogged],productController.delete);
 
 
 

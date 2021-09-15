@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("../partials/head",{"css":["header", "formularioCrear", "footer"]})%>
+
+<body>
+    <%-include("../partials/header")%> 
+    <main>
+        <section class="formulario"> <!--crear logica guardadofinal-->
+        <form action="/proyecto/guardarContribucion" method="POST" id="crearProductos" enctype="multipart/form-data">
+            <fieldset id="flex-contribuciones">
+                <h3>Contribuciones</h3>
+                <p>Establece las recompensas que tendrá cada contribución</p>
+                <fieldset>
+                    <label for="bronce" id="bronce-label">Contribución Bronce</label>
+                    <textarea rows="10" cols="10" placeholder="Contribución bronce" name="bronce" id="bronce" required></textarea>
+                    <p>Establece el precio</p>
+                    <input type="number" name="precioBronce" id="precioBronce" placeholder="EJ: $100" required>
+                </fieldset>
+                <fieldset>
+                    <label for="plata" id="plata-label">Contribución Plata</label>
+                    <textarea rows="10" cols="10" placeholder="Contribución plata" name="plata" id="plata" required></textarea>
+                    <p>Establece el precio</p>
+                    <input type="number" name="precioPlata" id="precioPlata" placeholder="EJ: $200" required> 
+                </fieldset>
+                <fieldset>
+                    <label for="oro" id="oro-label">Contribución Oro</label>
+                    <textarea rows="10" cols="10" placeholder="Contribución oro" name="oro" id="oro" required></textarea>
+                    <p>Establece el precio</p>
+                    <input type="number" name="precioOro" id="precioOro" placeholder="EJ: $300" required>
+                </fieldset>
+                <fieldset class="flex-botones">
+                    <button type="submit"> Enviar</button>
+                    <button type="reset"> Reiniciar</button>
+                </fieldset>
+            </fieldset>
+        </form>
+        </selection>
+    </main>
+<%-include("../partials/footer")%> 
+</body>
+</html>
