@@ -26,7 +26,7 @@ module.exports = {
             res.send(error);
         }
     },
-    save: async (req,res) => {
+    create: async (req,res) => {
         // return res.send({data:req.body,errors:null,file:req.file})
         try  {
             let data = req.body;
@@ -95,6 +95,24 @@ module.exports = {
             res.render("products/editarUsers", {usuarios:usuariosModel.oneUser(usuarios)});
         }
         catch(error){
+            console.log(error)
+            res.send(error);
+        }
+    },
+    updateSQL: async (req,res) => {
+        try {
+            let data = req.body;
+            let file = req.file;
+            await db.User.update({
+                nombre: data.nombreUsuario,
+                apellido: data.apellidoUsuario,
+                email: data.direccionDeCorreoElectronico,
+                clave: bcrypt.hashSync(data.clave,10),
+                ubicacion: data.ubicacionUser,
+                avatar: file.filename
+            },{ where: { id: req.params.id }})
+        }
+        catch (error) {
             console.log(error)
             res.send(error);
         }

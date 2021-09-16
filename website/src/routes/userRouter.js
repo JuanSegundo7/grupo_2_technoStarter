@@ -36,7 +36,7 @@ router.get("/cerrarSesion", [validRegister], userController.logout);
 
 router.get("/editarUsuario/:id", userController.edit);
 
-router.post("/guardarUsuario",[upload.single("fotoAvatar")], userController.save);
+router.post("/guardarUsuario",[upload.single("fotoAvatar")], userController.create);
 
 router.post("/ingresarUsuario",[validLogin], userController.Acceso);
 
