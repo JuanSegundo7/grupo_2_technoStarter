@@ -15,19 +15,19 @@
             <section class="campañaDestacada-1">           
                 <section class="flex-camapañaDestacada">
                     <figure>
-                        <a href="/proyecto/producto/<%= random.id %>"><img src="/uploads/products/<%= (random.imagenes[0] != undefined) ? random.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%> " alt="tiBeast"></a>
+                    <a href="/proyecto/producto/<%=// random.id %>"><img src="/uploads/products/<%= //(random.imagenes[0] != undefined) ? random.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%> " alt="tiBeast"></a>
                     </figure>
 
 <!----- (random.imagenes != []) ? random.imagenes[0].url_imagen : "producto/defaultImagen.jpg     : -->
 
-                    <article>
-                        <h2 class="titulo-reco"><%= random.nombre %></h2>
-                        <h2 class="precio">$<%= random.contribucionActual %></h2>
-                        <p class="meta">contribuido de meta $<%= random.contribucionFinal %></p>
-                        <p class="patrocinadores"><%= random.patrocinadores %> patrocinadores</p>
-                        <p class="patrocinadores"><%= random.fecha %></p>
-                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= random.ubicacion %></p>
-                    </article>
+                    <!-- <article>
+                        <h2 class="titulo-reco"><%= //random.nombre %></h2>
+                        <h2 class="precio">$<%= //random.contribucionActual %></h2>
+                        <p class="meta">contribuido de meta $<%= //random.contribucionFinal %></p>
+                        <p class="patrocinadores"><%= //random.patrocinadores %> patrocinadores</p>
+                        <p class="patrocinadores"><%=// random.fecha %></p>
+                        <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%=// random.ubicacion %></p>
+                    </article> -->
                 </section>
                 <section class="flex-thumbs">
                     <a href=""><i class="far fa-bookmark"></i></a>
@@ -44,7 +44,7 @@
                     <section class="recomendaciones-1">
                         <section class="flex-recomendaciones">
                             <figure>
-                                <a href="/proyecto/producto/<%= random.id %>"><img src="/uploads/products/<%= (random.imagenes[0] != undefined) ? random.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>"  alt="imagen"></a>
+                                <a href="/proyecto/producto/<%= random.id %>"><img src="/uploads/products/<%= (random.imagenes[0] != undefined || random.imagenes[0] != null)  ? random.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>"  alt="imagen"></a>
                             </figure>
                             <article>
                                 <h2 class="titulo-reco"><%= random.nombre %></h2>
@@ -52,7 +52,7 @@
                                 <p class="meta">contribuido de meta $<%= random.contribucionFinal %></p>
                                 <p class="patrocinadores"><%= random.patrocinadores %> patrocinadores</p>
                                 <p class="patrocinadores"><%= random.fecha %></p>
-                                <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%= random.ubicacion %></p>
+                                <p class="ubicacion"><i class="fas fa-map-marker-alt"></i> <%=// random.ubicacion %></p>
                             </article>
                         </section>
                         <section class="flex-thumbs">

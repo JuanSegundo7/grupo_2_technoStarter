@@ -7,7 +7,7 @@
     <%-include("../partials/header")%> 
     <main>
         <section class="formulario"> <!--crear logica guardadofinal-->
-        <form action="/proyecto/guardarContribucion" method="POST" id="crearProductos" enctype="multipart/form-data">
+        <form action="/proyecto/guardarContribucion/<%= proyecto %>" method="POST" id="crearProductos">
             <fieldset id="flex-contribuciones">
                 <h3>Contribuciones</h3>
                 <p>Establece las recompensas que tendrá cada contribución</p>

@@ -31,21 +31,21 @@ const upload = multer({storage:dest});
 
 router.get("/producto/:id", productController.index);
 
-router.get("/crear", productController.create);
+router.get("/crear",[isLogged], productController.create);
 
-router.get("/borrar/:id", productController.borrar);
+router.get("/borrar/:id",[isLogged], productController.borrar);
 
-router.get("/contribucion", productController.createContribucion);
+router.get("/contribucion/:id",[isLogged], productController.createContribucion);
 
 router.get("/editar/:id",[upload.any()],productController.edit);
 
-router.post("/guardarContribucion",[isLogged], productController.saveContributionType);
+router.post("/guardarContribucion/:id",[isLogged], productController.saveContributionType);//isLogged
 
-router.post("/guardar",[upload.any(),isLogged], productController.save);
+router.post("/guardar",[upload.any()],[isLogged], productController.save); //isLogged
 
-router.post("/contribuir/:id", [isLogged], productController.contribucion);
+router.post("/contribuir/:id",[isLogged], productController.contribucion);//isLogged
 
-router.put("/actualizar/:id",[upload.any()], productController.updateSQL);
+router.put("/actualizar/:id",[upload.any()],[isLogged], productController.updateSQL);
 
 router.delete("/delete/:id",productController.delete);
 

@@ -69,8 +69,8 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "proyecto_id",
         })
         Proyect.hasMany(models.Contribution_type, {
-            as: "contribuciones",
-            foreignKey: "proyect_id",
+            as: "contributions",
+            foreignKey: "proyecto_id",
         })
     }
     return Proyect

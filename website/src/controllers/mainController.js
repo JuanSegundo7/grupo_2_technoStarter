@@ -14,6 +14,7 @@ const main = {
             //console.log("este", random.imagenes);
             //return res.send(random.imagenes[0] != undefined);
             // return res.send(user)
+            // return res.send(proyectos)
             let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
             // return res.send(recomendados)
             return res.render("home", {random, recomendados, user});

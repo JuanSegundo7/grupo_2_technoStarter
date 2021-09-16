@@ -22,14 +22,14 @@
                     <i class="fas fa-search"></i>
                 </a>
             </li>
-            <% if(user.nombre = "Juanse Admin") {%>
+            <% if(locals.user.nombre = "Juanse Admin") {%>
                 <li class="desktop-visible">
                     <a href="/usuario/usuarios">
                         <i class="fas fa-users"></i>
                     </a>
-                </li>
-                <%}%>      
-                <% if(user) {%>
+                </li> 
+                <% } %>      
+                <% if(locals.user) {%>
                     <li>
                         <a href="/proyecto/crear">
                             <i class="fas fa-hammer"></i>

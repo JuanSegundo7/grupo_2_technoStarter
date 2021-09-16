@@ -37,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
         })
         Contribution_type.belongsTo(models.Proyect, {
             as: "proyecto",
-            foreignKey: "proyect_id",
+            foreignKey: "proyecto_id",
         })
     }
 
