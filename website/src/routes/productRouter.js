@@ -37,17 +37,17 @@ router.get("/borrar/:id", productController.borrar);
 
 router.get("/contribucion", productController.createContribucion);
 
-router.post("/guardar",[upload.any(),isLogged], productController.save);
+router.get("/editar/:id", productController.edit);
 
 router.post("/guardarContribucion",[isLogged], productController.saveContributionType);
 
-router.get("/editar/:id",[isLogged], productController.edit);
+router.post("/guardar",[upload.any(),isLogged], productController.save);
 
 router.post("/contribuir/:id", [isLogged], productController.contribucion);
 
 router.put("/actualizar/:id",[upload.any()], productController.updateSQL);
 
-router.delete("/delete",[isLogged],productController.delete);
+router.delete("/delete/:id",[isLogged],productController.delete);
 
 
 

@@ -1,11 +1,7 @@
 // **** Require's ****
-const session = require("express-session");
+
 const proyecto = require("../models/proyecto");
-const categorias = require("../models/categoria");
 const db = require("../database/models");
-var app = session()
-
-
 
 // **** Controller ****
 
@@ -14,13 +10,13 @@ const product = {
         try {
             let user = await db.User.findOne()
             let proyectos = await db.Proyect.findAll({ include: { association: "imagenes" } })
-            let one = await db.Proyect.findByPk(req.params.id, { include: { association: "imagenes" } })
+            let proyectoDB = await db.Proyect.findByPk(req.params.id, { include: { association: "imagenes" } })
             let recomendados = [proyecto.random(proyectos), proyecto.random(proyectos), proyecto.random(proyectos)]
             // console.log("usuario", user.id);
             // console.log("req.params", req.params.id)
-            // return res.send(proyecto)
+            // return res.send(proyectoDB)
             // return
-            return res.render("products/detalleProyectos", { recomendados: recomendados, proyecto: one, user: user });
+            return res.render("products/detalleProyectos", { recomendados: recomendados, proyectoDB, user: user });
         }
         catch (error) {
             console.log(error)
@@ -28,10 +24,11 @@ const product = {
         }
     },
     create: async (req, res) => {
+        let user = await db.User.findOne()
         try {
             let categoria = await db.Category.findAll();
             //return res.send(categoria)
-            return res.render("products/crearProyectos", { categorias: categoria });
+            return res.render("products/crearProyectos", { categorias: categoria, user });
         }
         catch (error) {
             console.log(error)
@@ -141,10 +138,36 @@ const product = {
     },
     edit: async (req, res) => {
         try {
-            let one = await db.Proyect.update({ where: { id: req.params.id } })
-            console.log("one",one);
-            return res.send(one)
-            return res.render("products/editarProyectos" + one);
+            let user = await db.User.findOne();
+            let proyecto = await db.Proyect.findByPk(req.params.id);
+            let categoria = await db.Category.findAll();
+            // console.log(categoria);
+            return res.render("products/editarProyectos",{user, proyecto, categorias: categoria});
+            return res.send(categoria)
+        }
+        catch (error) {
+            console.log(error)
+            res.send(error);
+        }
+    },
+    updateSQL: async (req, res) => { /*preguntar porque esta confuso, ya que este update seria el de POST */
+        try {
+            data = req.body;
+            let one = await db.Proyect.update({
+                nombre: data.nombreProducto,
+                contribucionFinal: data.precioProyecto,
+                texto: String(data.textoProyecto),
+                fecha_limite: data.fechaProyecto,
+                categoria_id: parseInt(data.categoria)
+            },{ where: { id: req.params.id }})
+            let two = await db.Image.update({
+                url_imagen: data.fotoProyecto,
+                proyecto_id: data.id
+            },{ where: { id: req.params.id }})
+            console.log(data)
+            console.log(one,two)
+            return res.send(one,two)
+            return res.redirect("/",{one})
         }
         catch (error) {
             console.log(error)
@@ -155,26 +178,13 @@ const product = {
     //     let result = proyecto.edit(req.body,req.file,req.params.id);
     //     return result == true ? res.redirect("/") : res.send("Error al cargar la informacion");
     // },
-    updateSQL: async (req, res) => { /*preguntar porque esta confuso, ya que este update seria el de POST */
-        try {
-            let result = await db.Proyect.update({
-                body: req.body,
-                file: req.file
-            })
-                ({ where: { id: req.params.id } });
-            res.redirect(result)
-        }
-        catch (error) {
-            console.log(error)
-            res.send(error);
-        }
-    },
     borrar: async (req, res) => {
         try{
+            let user = await db.User.findOne()
             let proyecto = await db.Proyect.findOne({where: { id: req.params.id}})
             // console.log(proyecto)
             // res.send(proyecto)
-            return res.render("products/borrarProyectos", {proyecto: proyecto})
+            return res.render("products/borrarProyectos", {proyecto: proyecto, user})
         }catch (error) {
             console.log(error)
             res.send(error);

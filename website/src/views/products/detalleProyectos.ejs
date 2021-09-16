@@ -9,39 +9,39 @@
     
 <main>
     <section id= "contenedor">
-            <h1><%= proyecto.nombre %></h1>
+            <h1><%= proyectoDB.nombre %></h1>
     </section>
     <section id= "contPrincipal">
         <article id="contPrincipal1">
-            <img src="<%= (proyecto.imagenes[0] != undefined) ? proyecto.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>" alt="imagen">
+            <img src="<%= (proyectoDB.imagenes[0] != undefined) ? proyectoDB.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>" alt="imagen">
             <p><i class="fas fa-map-marker-alt"></i> SA Miguel, TUC</p>
         </article>
         <article id="contPrincipal2">
-                <h1><%= proyecto.nombre %></h1>
-                <h2>$<%= proyecto.contribucionActual %></h2>
-                <h1>contribuido de meta $<%= proyecto.contribucionFinal %></h1>
-                <p>Hasta el <%= proyecto.fecha %></p>
-                <button><a href="/carrito/<%= proyecto.id %>">Patrocina esta campaña</a></button>
+                <h1><%= proyectoDB.nombre %></h1>
+                <h2>$<%= proyectoDB.contribucionActual %></h2>
+                <h1>contribuido de meta $<%= proyectoDB.contribucionFinal %></h1>
+                <p>Hasta el <%= proyectoDB.fecha %></p>
+                <button><a href="/carrito/<%= proyectoDB.id %>">Patrocina esta campaña</a></button>
                 <% if(user || user.admin) {%>
-                <button><a href="/proyecto/editar/<%= proyecto.id %>">Editar campaña</a></button>
-                <button><a href="/proyecto/borrar/<%= proyecto.id %>">Borrar campaña</a></button>
+                <button><a href="/proyecto/editar/<%= proyectoDB.id %>">Editar campaña</a></button>
+                <button><a href="/proyecto/borrar/<%= proyectoDB.id %>">Borrar campaña</a></button>
                 <%}%>
         </article>
     </section>
     <section id="campaña">
             <h3>Campaña</h3>
-            <h3><a href="/carrito/<%= proyecto.id %>">Patrocina esta campaña</a></h3>
+            <h3><a href="/carrito/<%= proyectoDB.id %>">Patrocina esta campaña</a></h3>
             <h3><a href=""><i class="far fa-bookmark"></i> Recuerdame</a></h3>
     </section>
     <section id="descripcion">
         <h1>HISTORIA</h1>
         <h2>
-            <%= proyecto.nombre %>
+            <%= proyectoDB.nombre %>
         </h2>
         <p> 
-            <%= proyecto.texto %> 
+            <%= proyectoDB.texto %> 
         </p>
-    <img src="<%= (proyecto.imagenes[0] != undefined) ? proyecto.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>" alt="imagen">
+    <img src="<%= (proyectoDB.imagenes[0] != undefined) ? proyectoDB.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>" alt="imagen">
     </section>
     <section class="contribuciones">
         <section class="titulo-contribuciones">

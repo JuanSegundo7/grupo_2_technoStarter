@@ -493,14 +493,14 @@ header nav {
 @media (min-width: 1300px){
 
 	.logo img{	
-		width: 7em;
+		width: 5em;
 		margin-left: 1em;
 	}
 
 	#keyword {
 		width: 100%;
 		height: 2.1em;
-		font-size: 1.3em;
+		font-size: 1em;
 	}
 
 	#search-desktop {
@@ -512,21 +512,20 @@ header nav {
 	}
 
 	.searchButton {
-		height: 2.3em;
-		width: 2.5em;
+			width: 2.5em;
 	}
 
 	.navbar-bottom a {
-		font-size: 1.6em;
+		font-size: 1.4em;
 	}
 
 	.navbar-icons a {
-		font-size: 2.3em;
+		font-size: 1.5em;
 		height: initial;
 	}
 
 	.flex-ul-top a {
-		font-size: 1.7em;
+		font-size: 1.5em;
 		margin: 0 2vw 0 1vw;
 	}
 }

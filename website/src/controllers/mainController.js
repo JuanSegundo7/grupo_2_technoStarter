@@ -8,14 +8,15 @@ const db = require("../database/models");
 const main = {
     index: async (req,res) => {
         try {
-            let imagenes = await db.Image.findAll()
+            let user = await db.User.findOne(req.session.user)
             let proyectos = await db.Proyect.findAll({include: [{ association: "imagenes"},{ association: "autor"}]})
             let random = proyecto.random(proyectos);
             //console.log("este", random.imagenes);
             //return res.send(random.imagenes[0] != undefined);
+            // return res.send(user)
             let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
             // return res.send(recomendados)
-            return res.render("home", {random, recomendados});
+            return res.render("home", {random, recomendados, user});
         }
         catch (error) {
             console.log(error)

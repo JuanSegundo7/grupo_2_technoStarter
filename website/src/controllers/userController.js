@@ -16,8 +16,9 @@ module.exports = {
     },
     index: async (req,res) => {
         try {
+            let user = await db.User.findOne()
             let usuarioCreado = await db.User.findAll()
-            return res.render("users/userList", {usuarios:usuariosModel.allUser(usuarioCreado)});
+            return res.render("users/userList", {usuarios: usuarioCreado, user});
         }
         catch (error) {
             console.log(error)
@@ -77,7 +78,16 @@ module.exports = {
             res.send(error)
         }
     },
-    perfil: (req,res) => res.render("users/perfil", {title:"Perfil"}),
+    perfil: async (req,res) => {
+        try{
+            let user = await db.User.findOne(req.session.user)
+            // return res.send(user)
+            return res.render("users/perfil", {user: user})
+        }catch (error) {
+            console.log(error);
+            res.send(error);
+        }
+    },
     edit: async (req,res) => {
         try {
             let usuarios = db.User.findByPk()
