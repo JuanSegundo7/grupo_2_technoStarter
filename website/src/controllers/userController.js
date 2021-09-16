@@ -18,6 +18,7 @@ module.exports = {
         try {
             let user = await db.User.findOne()
             let usuarioCreado = await db.User.findAll()
+            // return res.send(user)
             return res.render("users/userList", {usuarios: usuarioCreado, user});
         }
         catch (error) {
@@ -103,8 +104,9 @@ module.exports = {
         return result == true ? res.render("/") : res.send("Error al cargar la informacion");
         ;
     },
-    logout: (req,res) => {
-        res.cookie("email",req.session.user.email,{maxAge:0})
+    logout: async(req,res) => {
+        let user = await db.User.findOne();
+        res.cookie("email",user.email,{maxAge:0})
         delete req.session.user;
         return res.redirect("/")
     }

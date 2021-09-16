@@ -37,7 +37,7 @@ router.get("/borrar/:id", productController.borrar);
 
 router.get("/contribucion", productController.createContribucion);
 
-router.get("/editar/:id", productController.edit);
+router.get("/editar/:id",[upload.any()],productController.edit);
 
 router.post("/guardarContribucion",[isLogged], productController.saveContributionType);
 
@@ -47,7 +47,7 @@ router.post("/contribuir/:id", [isLogged], productController.contribucion);
 
 router.put("/actualizar/:id",[upload.any()], productController.updateSQL);
 
-router.delete("/delete/:id",[isLogged],productController.delete);
+router.delete("/delete/:id",productController.delete);
 
 
 

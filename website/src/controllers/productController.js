@@ -155,7 +155,7 @@ const product = {
             data = req.body;
             let one = await db.Proyect.update({
                 nombre: data.nombreProducto,
-                contribucionFinal: data.precioProyecto,
+                contribucion_final: data.precioProyecto,
                 texto: String(data.textoProyecto),
                 fecha_limite: data.fechaProyecto,
                 categoria_id: parseInt(data.categoria)
@@ -164,10 +164,10 @@ const product = {
                 url_imagen: data.fotoProyecto,
                 proyecto_id: data.id
             },{ where: { id: req.params.id }})
-            console.log(data)
-            console.log(one,two)
-            return res.send(one,two)
-            return res.redirect("/",{one})
+            // console.log(data)
+            // console.log({one,two})
+            // return res.send(one)
+            return res.redirect("/", one)
         }
         catch (error) {
             console.log(error)
@@ -195,7 +195,10 @@ const product = {
             let one = await db.Proyect.destroy({
                 where: { id: req.params.id }
             });
-            return result == true ? res.render("/" + one) : res.send("Error al cargar la informacion");
+            let two = await db.Image.destroy({
+                where: { id: req.params.id }
+            })
+            return result == true ? res.render("/", {one, two}) : res.send("Error al cargar la informacion");
         }
         catch (error) {
             console.log(error)
