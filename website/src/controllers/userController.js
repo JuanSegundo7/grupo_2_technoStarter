@@ -8,11 +8,22 @@ const bcrypt = require('bcryptjs');
 // ************ Controller ************
 
 module.exports = {
-    login: (req,res) => {
-        return res.render("users/login",{title:"Acceso"});
+    login: async (req,res) => {
+        let user = await db.User.findOne()
+        let user1 = res.locals.user 
+        console.log("user1",user1)
+        return res.render("users/login",{title:"Acceso", user});
     },
-    register: (req,res) => {
-        return res.render("users/register");
+    register: async (req,res) => {
+        try{
+            let user = await db.User.findOne()
+            console.log(user)
+            // return res.send(user)
+            return res.render("users/register", user);
+        }catch(error){
+        console.log(error)
+        res.send(error)
+    }
     },
     index: async (req,res) => {
         try {

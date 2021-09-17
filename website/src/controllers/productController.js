@@ -14,6 +14,7 @@ const product = {
             let recomendados = [proyecto.random(proyectos), proyecto.random(proyectos), proyecto.random(proyectos)]
             // console.log("usuario", user.id);
             // console.log("req.params", req.params.id)
+            console.log("ESTOYY",recomendados)
             // return res.send(proyectoDB)
             // return
             return res.render("products/detalleProyectos", { recomendados: recomendados, proyectoDB, user: user });

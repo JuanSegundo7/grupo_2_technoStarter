@@ -19,6 +19,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(80),
             notNull: true,
         },
+        admin: {
+            type: dataTypes.BOOLEAN(),
+            notNull: true,
+        },
         clave: {
             type: dataTypes.STRING(200),
             notNull: true,

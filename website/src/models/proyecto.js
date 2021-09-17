@@ -3,6 +3,8 @@
 const path = require("path");
 const fs = require("fs");
 const categorias = require("./categoria");
+const db = require("../database/models");
+const { log } = require("console");
 
 // ************ Controller ************
 
@@ -57,10 +59,15 @@ module.exports = {
         // fs.writeFileSync(this.dir, JSON.stringify(proyectos,null,2));
         return true;
     },
-    random: function (proyectos) {
+    random: async (req,res) => { 
+        let proyectosDB = Array.from(await db.Proyect.findAll())
+        // return res.send("hola",proyectosDB)
         // const proyectos = proyecto.findAll(); // proyecto.findAll
-        let idRandom = Math.floor(Math.random() * proyectos.length + 1 )
-        let resultado = proyectos.find(proyecto => proyecto.id == idRandom);
+        // console.log("proyectoDB",proyectosDB)
+        let idRandom = Math.floor(Math.random() * proyectosDB.length - 1 )
+        console.log("idRandom", idRandom)
+        let resultado = proyectosDB.find(proyecto => proyecto.id == idRandom);
+        console.log("resultado", resultado)
         return resultado;
     },
     recomendados: function (proyectos){

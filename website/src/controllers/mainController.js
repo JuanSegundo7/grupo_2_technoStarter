@@ -13,11 +13,14 @@ const main = {
             let random = proyecto.random(proyectos);
             //console.log("este", random.imagenes);
             //return res.send(random.imagenes[0] != undefined);
-            // return res.send(user)
-            // return res.send(proyectos)
+            // return res.send(user)res.send(random)
             let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
+            console.log("RECOMENDADOS!", recomendados)
+            res.send(recomendados)
+            recomendados.map(item => item == null ? proyecto.random(proyectos) : item)
+            
             // return res.send(recomendados)
-            return res.render("home", {random, recomendados, user});
+            return res.render("home", {random: random == null ? proyecto.random(proyectos) : random, recomendados, user});
         }
         catch (error) {
             console.log(error)

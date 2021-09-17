@@ -22,7 +22,7 @@
                 <h1>contribuido de meta $<%= proyectoDB.contribucionFinal %></h1>
                 <p>Hasta el <%= proyectoDB.fecha %></p>
                 <button><a href="/carrito/<%= proyectoDB.id %>">Patrocina esta campaña</a></button>
-                <% if(user || user.admin) {%>
+                <% if(locals.user || locals.user.admin) {%>
                 <button><a href="/proyecto/editar/<%= proyectoDB.id %>">Editar campaña</a></button>
                 <button><a href="/proyecto/borrar/<%= proyectoDB.id %>">Borrar campaña</a></button>
                 <%}%>
