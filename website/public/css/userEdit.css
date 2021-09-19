@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Colores */
+/*  Azul Oscuro: #031927
+    Dorado: #FF9900
+    Color Crema: #FFF3DD
+    Blanco: #FFFFFF 
+*/
+
+/**************************************^^^BODY^^^********************************************/
+
+.margin-body {
+    margin: 10px;
+}
+
+/**************************************^^^FORM^^^********************************************/
+#formPrincipal fieldset{
+    border: none;
+}
+
+#formPrincipal{
+    border-radius: 25px;
+    padding: 30px;
+    border: 2px solid #FF9900;
+    background-color: #031927;
+    margin: 0 5vh 5vh 5vh;
+}
+
+#formPrincipal input{
+    width: 100%;
+    border-radius: 12px;
+    padding: 8px 10px;
+    margin: 10px 0 10px 0;
+    box-sizing: border-box;
+}
+
+#formPrincipal label{
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+/**************************************^^^BODY^^^********************************************/
+main {
+    margin-top: 20vh;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body{
+    text-align: left;
+    background-color: #FFF3DD;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto";
+    font-size: 18px;
+    min-height: 100vh;
+    width: 100vw; 
+    box-sizing: border-box;
+    color: #FF9900;
+}
+
+
+.categorias-body li{
+    height: 100%;
+    width: 33vw;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.aceptoLosTerminos label{
+    font-size: 13px;
+}
+
+.aceptoLosTerminos{
+    margin-top: 10px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 10px;
+}
+
+.aceptoLosTerminos input{
+    width: 50px;
+}
+
+/**************************************^^^RECORDARME^^^********************************************/
+
+
+#recordarme {
+    width: 30px !important;
+}
+
+/**************************************^^^BUTTON^^^********************************************/
+
+
+#flex-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+
+#flex-button button{
+    color: black;
+    background-color: #FF9900;
+    padding: 6px 7px;
+    width: 20%;
+    border-radius: 15px;
+    position: relative;
+    font-family: "Roboto";
+    font-weight: 400;
+}
+
+
+
+/********************************^^^Registracion^^^********************************************/
+
+
+
+#foto-avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vh 0 1vh 0;
+}
+
+#foto-avatar input{
+    width: 50%;
+    margin: 0;
+}
+
+#foto-avatar h3{
+    margin: 1vh 0 1vh 0;
+}
+
+#file-upload-button{
+    color: #FF9900;
+}
+
+.tener{
+    text-align: center;
+}
+
+.registrateAqui{
+    width: 100%
+}
+
+@media (min-width: 361px){
+    .registrateAqui h2{ 
+        margin: 3em 1em 1em 1em;
+        text-align: center;
+        color: black;
+        font-size: 2em;
+    }
+
+    #flex-button button {
+        width: 40%;
+    }
+    
+}
+
+@media (min-width: 769px){
+    .registrateAqui h2{ 
+    margin: 1em 1em 1em 1em;
+    text-align: center;
+    color: black;
+
+    }
+
+    #flex-button button {
+        width: 20%;
+    }
+}

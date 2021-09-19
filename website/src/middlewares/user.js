@@ -8,9 +8,9 @@ const db = require("../database/models");
 
 module.exports = (req,res,next) => {
     let user = null;
-    if(req.cookies && req.cookies.email){
+    if(req.cookies){
         console.log("req.cookies",req.cookies)
-        user = db.User.findOne(req.cookies.email);
+        user = db.User.findOne(req.params.email);
         console.log("user2",user)
     }else if(req.session && req.session.user){
         user = req.session.user;

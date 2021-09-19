@@ -8,18 +8,22 @@ const db = require("../database/models");
 const main = {
     index: async (req,res) => {
         try {
-            let user = await db.User.findOne(req.session.user)
+            let cookies = req.cookies;
+            let locals = res.locals;
+            let user = await db.User.findOne(req.session.user);
             let proyectos = await db.Proyect.findAll({include: [{ association: "imagenes"},{ association: "autor"}]})
             let random = proyecto.random(proyectos);
             //console.log("este", random.imagenes);
             //return res.send(random.imagenes[0] != undefined);
             // return res.send(user)res.send(random)
             let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
-            recomendados.map(item => item == null ? proyecto.random(proyectos) : item)
+            recomendados.map(item => item == null ? proyecto.random(proyectos) : item);
             // console.log("RECOMENDADOS!", recomendados)
-            return res.send(recomendados)
+            // return res.send(recomendados)
             
             // return res.send(recomendados)
+            // console.log("acaaaa",locals);
+            console.log("cookiess", cookies);
             return res.render("home", {random: random == null ? proyecto.random(proyectos) : random, recomendados, user});
         }
         catch (error) {

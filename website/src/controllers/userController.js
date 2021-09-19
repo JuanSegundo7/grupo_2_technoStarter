@@ -72,10 +72,11 @@ module.exports = {
     },
     Acceso: async (req,res) => {
         try{
+            let user = await db.User.findOne()
             const errors = validationResult(req);
             // return res.send(errors)
             if (!errors.isEmpty()){
-                return res.render("users/login", { errors: errors.mapped(),title:"Acceso", old:req.body });
+                return res.render("users/login", { errors: errors.mapped(),title:"Acceso", old:req.body, user });
             }else{
                 let usuario = await db.User.findOne({where: {email: req.body.correo}});
                 req.session.user = usuario;
@@ -102,8 +103,8 @@ module.exports = {
     },
     edit: async (req,res) => {
         try {
-            let usuarios = db.User.findByPk()
-            res.render("products/editarUsers", {usuarios:usuariosModel.oneUser(usuarios)});
+            let usuarios = db.User.findByPk({where: { id: req.params.id }})
+            res.render("users/editarUsers", {usuarios});
         }
         catch(error){
             console.log(error)

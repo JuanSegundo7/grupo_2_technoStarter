@@ -48,8 +48,8 @@ const product = {
 
             let projectToCreate = { 
                 nombre: String(data.nombre),
-                contribucionActual: 0,
-                contribucionFinal: data.contribucion_final,
+                contribucion_actual: 0,
+                contribucion_final: parseInt(data.precioFinal),
                 texto: String(data.texto),
                 fecha_inicial: String(new Date().toISOString().slice(0, 10)),
                 fecha_limite: data.fechaProyecto,
@@ -57,6 +57,7 @@ const product = {
                 categoria_id: parseInt(data.categoria)
             }
 
+            console.log("ACAAAA",data)
             let projectCreated = await db.Proyect.create(projectToCreate);
             
             //console.log("info proyecto",projectToCreate);
@@ -198,12 +199,17 @@ const product = {
     delete: async (req, res) => {
         try {
             await db.Image.destroy({
-                where: { id: req.params.id }
+                where: { proyecto_id: req.params.id }
             })
+
+            await db.Contribution_type.destroy({
+                where: { proyecto_id: req.params.id }
+            })
+
             await db.Proyect.destroy({
                 where: { id: req.params.id }
             });
-            return res.render("/");
+            return res.redirect("/");
         }
         catch (error) {
             console.log(error)

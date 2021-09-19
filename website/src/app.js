@@ -28,7 +28,7 @@ app.use(express.static(path.resolve(__dirname, "../public"))); // Necesario para
 
 app.use(express.urlencoded({ extended: false}));
 app.use(method("_method"));
-app.use(cookie())
+app.use(cookies())
 app.use(session({secret:"Argentina campeón"}));
 
 // ************ Template Engine ************
