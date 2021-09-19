@@ -14,7 +14,7 @@ const product = {
             let recomendados = [proyecto.random(proyectos), proyecto.random(proyectos), proyecto.random(proyectos)]
             // console.log("usuario", user.id);
             // console.log("req.params", req.params.id)
-            console.log("ESTOYY",recomendados)
+            // console.log("ESTOYY",recomendados)
             // return res.send(proyectoDB)
             // return
             return res.render("products/detalleProyectos", { recomendados: recomendados, proyectoDB, user: user });
@@ -28,8 +28,8 @@ const product = {
         let user = await db.User.findOne()
         try {
             let categoria = await db.Category.findAll();
-            console.log(categoria)
-            return res.send(categoria)
+            // console.log(categoria)
+            // return res.send(categoria)
             return res.render("products/crearProyectos", { categorias: categoria, user });
         }
         catch (error) {

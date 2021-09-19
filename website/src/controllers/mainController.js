@@ -15,9 +15,9 @@ const main = {
             //return res.send(random.imagenes[0] != undefined);
             // return res.send(user)res.send(random)
             let recomendados = [proyecto.random(proyectos),proyecto.random(proyectos),proyecto.random(proyectos)]
-            console.log("RECOMENDADOS!", recomendados)
-            res.send(recomendados)
             recomendados.map(item => item == null ? proyecto.random(proyectos) : item)
+            // console.log("RECOMENDADOS!", recomendados)
+            return res.send(recomendados)
             
             // return res.send(recomendados)
             return res.render("home", {random: random == null ? proyecto.random(proyectos) : random, recomendados, user});

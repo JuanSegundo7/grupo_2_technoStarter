@@ -28,8 +28,7 @@
                         <i class="fas fa-users"></i>
                     </a>
                 </li> 
-                <% } %>      
-                <% if(locals.user) {%>
+                <% //if(locals.user) {%>
                     <li>
                         <a href="/proyecto/crear">
                             <i class="fas fa-hammer"></i>
@@ -55,7 +54,8 @@
                         <i id="foto-usuarioHeader"><img src="/uploads/avatars/<%= user.avatar%>"><p>Hola! <%= user.nombre%></p></i>
                     </a>
                 </li>
-                <%}else{%> 
+                
+                <%}//else{%> 
                     <li class="desktop-visible">
                         <a href="/usuario/ingresar">
                             <i class="fas fa-sign-in-alt"></i>
@@ -66,7 +66,6 @@
                             <i class="fas fa-user"></i>
                         </a>
                     </li>
-                    <%}%>    
                     <li class="mobile-visible">
                         <a href="#menu">
                             <i class="fas fa-bars"></i>

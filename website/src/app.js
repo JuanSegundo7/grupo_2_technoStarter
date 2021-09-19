@@ -5,6 +5,7 @@ const path = require("path");
 const app = express();
 const method = require("method-override");
 const session = require("express-session");
+const cookies = require("cookie-parser")
 
 // ************ Require's Routes ************
 
@@ -27,6 +28,7 @@ app.use(express.static(path.resolve(__dirname, "../public"))); // Necesario para
 
 app.use(express.urlencoded({ extended: false}));
 app.use(method("_method"));
+app.use(cookie())
 app.use(session({secret:"Argentina campeón"}));
 
 // ************ Template Engine ************

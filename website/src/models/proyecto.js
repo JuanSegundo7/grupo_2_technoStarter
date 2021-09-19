@@ -4,7 +4,6 @@ const path = require("path");
 const fs = require("fs");
 const categorias = require("./categoria");
 const db = require("../database/models");
-const { log } = require("console");
 
 // ************ Controller ************
 
@@ -60,15 +59,21 @@ module.exports = {
         return true;
     },
     random: async (req,res) => { 
-        let proyectosDB = Array.from(await db.Proyect.findAll())
-        // return res.send("hola",proyectosDB)
-        // const proyectos = proyecto.findAll(); // proyecto.findAll
-        // console.log("proyectoDB",proyectosDB)
-        let idRandom = Math.floor(Math.random() * proyectosDB.length - 1 )
-        console.log("idRandom", idRandom)
-        let resultado = proyectosDB.find(proyecto => proyecto.id == idRandom);
-        console.log("resultado", resultado)
-        return resultado;
+        try{
+            let proyectosDB = (await db.Proyect.findAll())
+            // return res.send("hola",proyectosDB)
+            // const proyectos = proyecto.findAll(); // proyecto.findAll
+            // console.log("idRandom", idRandom)
+            // console.log("proyectoDB",proyectosDB)
+            let idRandom = Math.floor(Math.random() * proyectosDB.length - 1 )
+            // console.log("IDDD!!",proyecto.dataValues.id )
+            let resultado = (proyectosDB.find(proyecto => proyecto.id == idRandom));
+            // console.log("resultado", resultado)
+            return resultado;
+        }catch(error){
+            console.log(error);
+            res.send(error);
+        }
     },
     recomendados: function (proyectos){
         let recomendados = [this.random(proyectos),this.random(proyectos),this.random(proyectos)]

@@ -10,10 +10,10 @@
             <h2>Edición de Proyectos</h2>
         </section>
         <section class="formulario">
-            <form action="/proyecto/actualizar/<%= proyecto.id %>?_method=PUT" method="POST" id="crearProductos" enctype="multipart/form-data">
+            <form action="/proyecto/actualizar/<%= proyecto.id %>?_method=PUT" method="POST" id="editarProyectos" enctype="multipart/form-data">
                 <fieldset id="nombre-proyecto">
                     <label for="nombreProducto">Nombre de tu proyecto: </label>
-                    <input type="text" placeholder="Nombrá tu proyecto" name="nombreProducto" id="nombreProducto" required>
+                    <input type="text" placeholder="Nombrá tu proyecto" name="nombreProducto" id="nombre-proyecto" required>
                 </fieldset>
                 <fieldset id="ubicacion-proyecto">
                     <label id="ubicacion-proyecto">Contanos de donde sos:</label>
