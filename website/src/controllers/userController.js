@@ -9,17 +9,12 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
     login: async (req,res) => {
-        let user = await db.User.findOne()
-        let user1 = res.locals.user 
-        console.log("user1",user1)
-        return res.render("users/login",{title:"Acceso", user});
+        return res.render("users/login",{title:"Acceso"});
     },
     register: async (req,res) => {
         try{
-            let user = await db.User.findOne()
-            console.log(user)
             // return res.send(user)
-            return res.render("users/register", user);
+            return res.render("users/register");
         }catch(error){
         console.log(error)
         res.send(error)
@@ -72,11 +67,10 @@ module.exports = {
     },
     Acceso: async (req,res) => {
         try{
-            let user = await db.User.findOne()
             const errors = validationResult(req);
             // return res.send(errors)
             if (!errors.isEmpty()){
-                return res.render("users/login", { errors: errors.mapped(),title:"Acceso", old:req.body, user });
+                return res.render("users/login", { errors: errors.mapped(),title:"Acceso", old:req.body });
             }else{
                 let usuario = await db.User.findOne({where: {email: req.body.correo}});
                 req.session.user = usuario;
@@ -154,11 +148,20 @@ module.exports = {
             res.send(error);
         }
     },
-    logout: async(req,res) => {
-        let user = await db.User.findOne();
-        res.cookie("email",user.email,{maxAge:0})
-        delete req.session.user;
-        return res.redirect("/")
+    logout: async (req,res) => {
+        try{
+            let user = await db.User.findOne()
+            res.cookie("email",user.email,{maxAge:0})
+            console.log("EMAIL!!", user.email)
+            console.log("LLEGUE USER!!", user)
+            console.log("NO ME BORRE",req.session.user)
+            delete req.session.user;
+            console.log("ME BORRE",req.session.user)
+            return res.redirect("/")
+        }catch (error) {
+            console.log(error);
+            res.send(error);
+        }
     }
 }
 

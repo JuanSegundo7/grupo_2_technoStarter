@@ -35,17 +35,17 @@ router.get("/crear", productController.create);
 
 router.get("/borrar/:id", productController.borrar);
 
-router.get("/contribucion/:id", productController.createContribucion);//isLogged
+router.get("/contribucion/:id",[isLogged], productController.createContribucion);//isLogged
 
-router.get("/editar/:id",[upload.any()],productController.edit);//isLogged
+router.get("/editar/:id",[upload.any(), isLogged],productController.edit);//isLogged
 
-router.post("/guardarContribucion/:id", productController.saveContributionType);//isLogged
+router.post("/guardarContribucion/:id",[isLogged], productController.saveContributionType);//isLogged
 
-router.post("/guardar",[upload.any()], productController.save); //isLogged
+router.post("/guardar",[upload.any(), isLogged], productController.save); //isLogged
 
-router.post("/contribuir/:id", productController.contribucion);//isLogged
+router.post("/contribuir/:id",[isLogged], productController.contribucion);//isLogged
 
-router.put("/actualizar/:id",[upload.any()], productController.updateSQL);//isLogged
+router.put("/actualizar/:id",[upload.any(), isLogged], productController.updateSQL);//isLogged
 
 router.delete("/delete/:id",productController.delete);
 
