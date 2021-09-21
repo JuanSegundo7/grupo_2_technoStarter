@@ -46,7 +46,6 @@ h2{
     margin: 13vh 0 2vh 0;
 }
 
-
 /**************************************^^^FORMULARIO^^^********************************************/
 
 .formulario{
@@ -60,6 +59,10 @@ h2{
     border-radius: 15px;
     border: 2px solid #FF9900;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+h4{
+    color: #FF9900;
 }
 
 .formulario fieldset{

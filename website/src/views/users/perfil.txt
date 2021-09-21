@@ -1,0 +1,72 @@
+<html lang="en">
+    <%-include("../partials/head",{"css":["header", "perfil", "footer"]})%>
+    <body>
+        <%-include("../partials/header")%> 
+        <main>
+            <section>
+                <h2>Perfil - Acá podes actualizar tus datos</h2>
+            </section>
+            <section class="formulario">
+                <form action="/user/avatar?method=PUT" method="post" enctype="multipart/form-data">
+                    <% if(user.avatar) {%>
+                        <section id="flex-avatar">
+                            <figure id="avatarPreview">
+                                <img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>">     
+                            </figure>
+                            <article>
+                                <%= user.nombre%>
+                            </article>
+                        </section>
+                        <fieldset class="fotoAvatar">
+                            <label for="avatar">Cambie su foto de perfil</label>
+                            <input type="file" name="avatar" id="avatar">
+                        </fieldset>
+                        <% } else {%>
+                            <fieldset>
+                                <label for="avatar">Cambie su foto de perfil <i class="fas fa-user"></i></label>
+                                <input type="file" name="avatar" id="avatar">
+                            </fieldset>
+                            <% }%>
+                        </form>
+                        <fieldset>
+                            <button type="submit">Actualizar<i class="fas fa-sync"></i></button>
+                        </fieldset>
+                    </form>
+            </section>
+            <section class="formulario">
+                <form action="/usuario/guardarUsuario?method=PUT" method="post">
+                    <fieldset>
+                        <label for="name">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" value="<%= user.nombre%>">
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email</label>
+                        <input type="email" name="direccionCorreoElectronico" id="direccionCorreoElectronico" value="<%= user.correo%>">
+                    </fieldset>
+                    <fieldset>
+                        <label for="ultimaclave">Ultima contraseña</label>
+                        <input type="password" name="ultimaclave" id="ultimaclave" value="">
+                    </fieldset>
+                    <fieldset>
+                        <label for="clave">Contraseña nueva</label>
+                        <input type="password" name="clave" id="clave" value="">
+                    </fieldset>
+                    <nav id="navbarflexBotones">
+                        <a href="/">Volver <i class="fas fa-home"></i></a>
+                        <fieldset id="submit-button">
+                            <button type="submit">Actualizar<i class="fas fa-sync"></i></button>
+                        </fieldset>  
+                        <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
+                    </nav>
+                </form>
+            </section> 
+            <section>
+                <h2>Proyectos Guardados</h2>
+                <section id="proyectosGuardados">
+                    
+                </section>
+            </section>
+        </main>
+        <%- include("../partials/footer")  %> 
+    </body>
+    </html>
