@@ -32,7 +32,7 @@ router.get("/usuarios", userController.index);
 
 router.get("/perfil",[isLogged], userController.perfil);
 
-router.get("/cerrarSesion", [validRegister], userController.logout);
+router.get("/cerrarSesion", userController.logout);
 
 router.get("/editarUsuario/:id", userController.edit);
 

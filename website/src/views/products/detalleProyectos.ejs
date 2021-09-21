@@ -13,7 +13,7 @@
     </section>
     <section id= "contPrincipal">
         <article id="contPrincipal1">
-            <img src="<%= //(proyectoDB.imagenes[0] != undefined) ? proyectoDB.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>" alt="imagen">
+            <img src="<%= (proyectoDB.imagenes[0] != undefined) ? proyectoDB.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>" alt="imagen">
             <p><i class="fas fa-map-marker-alt"></i> SA Miguel, TUC</p>
         </article>
         <article id="contPrincipal2">
@@ -41,7 +41,7 @@
         <p> 
             <%= proyectoDB.texto %> 
         </p>
-    <img src="<%= (proyectoDB.imagenes[0] != undefined) ? proyectoDB.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>" alt="imagen">
+    <img src="/uploads/products/<%= (proyectoDB[0].imagenes != undefined) ? proyectoDB.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="imagen">
     </section>
     <section class="contribuciones">
         <section class="titulo-contribuciones">
@@ -87,7 +87,7 @@
         <h1>También recomendamos</h1>
         <% recomendados.forEach(recomendado => { %>
         <article class="recomendacion">
-            <a href="/proyecto/producto/<%= recomendado.id %>"><img src="<%=// (recomendado.imagenes[0] != undefined) ? recomendado.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>" alt="imagen de recomendacion"></a>
+            <a href="/proyecto/producto/<%= recomendado.id %>"><img src="/uploads/products/<%= (recomendado.imagenes[0] != undefined)  ? recomendado.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="imagen de recomendacion"></a>
             <p><%= recomendado.nombre %></p>
             <p><i class="fas fa-map-marker-alt"></i> <%= recomendado.ubicacion %></p>
         </article>

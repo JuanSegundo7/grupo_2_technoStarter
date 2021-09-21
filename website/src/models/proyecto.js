@@ -60,13 +60,13 @@ module.exports = {
     },
     random: async (req,res) => { 
         try{
-            let proyectosDB = (await db.Proyect.findAll())
+            let proyectosDB = await db.Proyect.findAll({include: ['imagenes']})
             // return res.send("hola",proyectosDB)
             // const proyectos = proyecto.findAll(); // proyecto.findAll
             // console.log("idRandom", idRandom)
             // console.log("proyectoDB",proyectosDB)
-            let idRandom = Math.floor(Math.random() * proyectosDB.length - 1 )
-            // console.log("IDDD!!",proyecto.dataValues.id )
+            let idRandom = Math.floor(Math.random() * (proyectosDB.length) + 1 )
+            // console.log("IDDD!!", idRandom )
             let resultado = (proyectosDB.find(proyecto => proyecto.id == idRandom));
             // console.log("resultado", resultado)
             return resultado;

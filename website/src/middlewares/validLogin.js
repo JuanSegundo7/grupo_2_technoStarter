@@ -7,17 +7,17 @@ const db = require("../database/models");
 // ************ Middleware ************
 
 module.exports = [
-    body("correo").isEmail().custom(value => {
-        let registered = db.User.FindOne(value);
-        console.log(registered);
+    body("correo").isEmail().custom(async(value)=> {
+        let registered = await db.User.findOne({where: {email: value}});
         if (!registered) {
             return Promise.reject("El email no es valido, pruebe otra vez");
         }
         return true
     }),
-    body("clave").isLength({min: 4}).custom((value, { req })=> {
-        let registered = db.User.FindOne(value);
-        console.log("usuario", registered)
+    body("clave").isLength({min: 4}).custom(async(value, {req})=> {
+        // console.log("REQ!!", req)
+        let registered = await db.User.findOne({where: {email: req.body.correo}});
+        // console.log("usuario", registered)
         let clave = registered.clave;
         if (bcrypt.compareSync(value, clave)){
             return true;

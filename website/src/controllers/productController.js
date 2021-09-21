@@ -9,13 +9,12 @@ const product = {
     index: async (req, res) => {
         try {
             let user = await db.User.findOne()
-            let proyectos = await db.Proyect.findAll({ include: { association: "imagenes" } })
             let proyectoDB = await db.Proyect.findByPk(req.params.id, { include: { association: "imagenes" } })
-            let recomendados = [proyecto.random(proyectos), proyecto.random(proyectos), proyecto.random(proyectos)]
+            let recomendados = [await proyecto.random(), await proyecto.random(), await proyecto.random()]
             // console.log("usuario", user.id);
             // console.log("req.params", req.params.id)
-            // console.log("ESTOYY",recomendados)
-            // return res.send(proyectoDB)
+            return res.send(proyectoDB)
+            // return res.send(recomendados)
             // return
             return res.render("products/detalleProyectos", { recomendados: recomendados, proyectoDB, user: user });
         }
