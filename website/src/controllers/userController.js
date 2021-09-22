@@ -97,8 +97,9 @@ module.exports = {
     },
     edit: async (req,res) => {
         try {
+            let user = await db.User.findOne()
             let usuarios = db.User.findByPk({where: { id: req.params.id }})
-            res.render("users/editarUsers", {usuarios});
+            res.render("users/editarUsers", {usuarios, user});
         }
         catch(error){
             console.log(error)
