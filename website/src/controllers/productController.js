@@ -201,13 +201,14 @@ const product = {
                 where: { proyecto_id: req.params.id }
             })
 
-            await db.Contribution_type.destroy({
+            .then(await db.Contribution_type.destroy({
                 where: { proyecto_id: req.params.id }
-            })
+            }))
 
-            await db.Proyect.destroy({
+            .then(await db.Proyect.destroy({
                 where: { id: req.params.id }
-            });
+            }))
+
             return res.redirect("/");
         }
         catch (error) {

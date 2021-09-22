@@ -124,10 +124,30 @@ module.exports = {
             res.send(error);
         }
     },
-    delete: (req,res) => {
-        let result = usuariosModel.deleteUser(req.params.id);
-        return result == true ? res.render("/") : res.send("Error al cargar la informacion");
-        ;
+    delete: async (req, res) => {
+        try {
+            await db.Image.destroy({
+                where: { proyecto_id: req.params.id }
+            })
+
+            .then(await db.Contribution_type.destroy({
+                where: { proyecto_id: req.params.id }
+            }))
+
+            .then(await db.Proyect.destroy({
+                where: { usuario_id: req.params.id }
+            }))
+
+            .then(await db.User.destroy({
+                where: { id: req.params.id }
+            }))
+
+            return res.redirect("/");
+        }
+        catch (error) {
+            console.log(error)
+            res.send(error);
+        }
     },
     logout: async (req,res) => {
         try{
