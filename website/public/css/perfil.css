@@ -139,6 +139,8 @@ nav a{
 
 
 #proyectosGuardados{
+    display: flex;
+    flex-direction: column;
     background-color: #031927;
     color: white;
     padding: 2.5vw;
@@ -149,6 +151,11 @@ nav a{
     border-radius: 15px;
     border: 2px solid #FF9900;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+#misProyectos{
+    display: flex;
+    flex-direction: row;
 }
 
 /**************************************^^^MEDIA-QUERYS^^^********************************************/

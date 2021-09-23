@@ -30,7 +30,7 @@ router.get("/registrarse", userController.register);
 
 router.get("/usuarios", userController.index);
 
-router.get("/perfil/:id",[isLogged], userController.perfil);
+router.get("/perfil/",[isLogged], userController.perfil);
 
 router.get("/cerrarSesion", userController.logout);
 
@@ -40,7 +40,7 @@ router.post("/guardarUsuario",[upload.single("fotoAvatar")], userController.crea
 
 router.post("/ingresarUsuario",[validLogin], userController.Acceso);
 
-router.put("/actualizarUsuario/:id",[upload.single("fotoAvatar")], userController.Acceso);
+router.put("/actualizarUsuario/:id",[upload.single("fotoAvatar")], userController.updateSQL);
 
 router.delete("/borrar", userController.delete);
 
