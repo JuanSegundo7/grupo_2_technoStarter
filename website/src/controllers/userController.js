@@ -75,11 +75,11 @@ module.exports = {
                 let usuario = await db.User.findOne({where: {email: req.body.correo}});
                 req.session.user = usuario;
                 // return res.send(usuario)
-                if(req.body.remember){
+                if(req.body.recordarme){
                     res.cookie("email",req.body.correo,{maxAge:300000})
                 }
                 // res.locals.userId = usuario.id;
-                return res.redirect("/usuario/perfil")
+                return res.redirect("/usuario/perfil/:id")
             }
         }catch(error){
             res.send(error)
@@ -149,15 +149,12 @@ module.exports = {
             res.send(error);
         }
     },
+
     logout: async (req,res) => {
         try{
-            let user = await db.User.findOne()
-            res.cookie("email",user.email,{maxAge:0})
-            console.log("EMAIL!!", user.email)
-            console.log("LLEGUE USER!!", user)
-            console.log("NO ME BORRE",req.session.user)
-            delete req.session.user;
-            console.log("ME BORRE",req.session.user)
+            let user = await db.User.findOne({where: {id: req.session.user.id }})
+            res.clearCookie("email",user.email,{maxAge:0})
+            delete req.session.user
             return res.redirect("/")
         }catch (error) {
             console.log(error);

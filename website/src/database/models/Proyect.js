@@ -11,6 +11,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             notNull: true,
         },
+        ubicacion: {
+            type: dataTypes.STRING(100),
+            notNull: true,
+        },
         contribucion_actual: {
             type: dataTypes.FLOAT,
             unsigned: true,

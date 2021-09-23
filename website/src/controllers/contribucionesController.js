@@ -1,8 +1,7 @@
 // ************ Require's ************
 
 const contribucion = require("../models/contribucion");
-const proyecto  = require("../models/proyecto");
-
+const db = require("../database/models");
 
 // ************ Controller ************
 

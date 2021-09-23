@@ -12,51 +12,23 @@
         <h2>Recompensa > </h2>
         <h2>Categorias</h2>
         <section id= "contenedorOp">
+            <% contribucion.forEach(contribucion => { %>
             <article>
-                <form action="/contribuir" method="post">
+                <form action="/carrito/contribuir/<%= proyecto.id %>?_method=PUT" method="POST">
                     <label class= "opcionesContr">
                         <label class="flex-titulo">
-                            <input type="radio" name= "medio" value="Bronce"><input type="hidden" name="proyecto" value="<%= proyecto.id %>">
-                            <p class= "titulosContr">Contribución Bronce</p>
+                            <input type="radio" name= "medio" value="<%= contribucion.precio %>"><input type="hidden" name="proyecto" value="<%= proyecto.id %>">
+                            <p class= "titulosContr"><%= contribucion.nombre %></p>
                         </label>
-                            <p class="textoContr"><%= proyecto.contribucionBronce %></p>
+                            <p class="textoContr"><%= contribucion.contribucion %></p>
                         <label class="flex-precio">
-                            <p class="precio"><%= proyecto.precioBronce %></p>
+                            <p class="precio"><%= contribucion.precio %></p>
                             <button class="continuar" type="submit">Continuar</button>
                         </label>
                     </label>
                 </form>
             </article>
-            <article>
-                <form action="/contribuir" method="post">
-                    <label class= "opcionesContr">
-                        <label class="flex-titulo">
-                            <input type="radio" name= "medio" value="Plata"><input type="hidden" name="proyecto" value="<%= proyecto.id %>">
-                            <p class= "titulosContr">Contribución Plata</p>
-                        </label>
-                            <p class="textoContr"><%= proyecto.contribucionPlata %></p>
-                        <label class="flex-precio">
-                            <p class="precio"><%= proyecto.precioPlata %></p>
-                            <button class="continuar" type="submit">Continuar</button>
-                        </label>
-                    </label>
-                </form>
-            </article>
-            <article>
-                <form action="/contribuir" method="post">
-                    <label class= "opcionesContr">
-                        <label class="flex-titulo">
-                            <input type="radio" name= "medio" value="Oro"><input type="hidden" name="proyecto" value="<%= proyecto.id %>">
-                            <p class= "titulosContr">Contribución Oro</p>
-                        </label>
-                            <p class="textoContr"><%= proyecto.contribucionOro %></p>
-                        <label class="flex-precio">
-                            <p class="precio"><%= proyecto.precioOro %></p>
-                            <button class="continuar" type="submit">Continuar</button>
-                        </label>
-                    </label>
-                </form>
-            </article>
+            <% }) %>
         </section>
         <section>
             <article id= "textoPatrocinar">

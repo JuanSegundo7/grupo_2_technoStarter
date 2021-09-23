@@ -2,6 +2,7 @@
 
 const categoria = require("../models/categoria");
 const proyecto = require("../models/proyecto");
+const db = require("../database/models");
 
 // ************ Controller ************
 

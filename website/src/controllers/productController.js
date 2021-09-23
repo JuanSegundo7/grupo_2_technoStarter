@@ -13,10 +13,10 @@ const product = {
             let recomendados = [await proyecto.random(), await proyecto.random(), await proyecto.random()]
             // console.log("usuario", user.id);
             // console.log("req.params", req.params.id)
-            return res.send(proyectoDB)
+            // return res.send(proyectoDB)
             // return res.send(recomendados)
             // return
-            return res.render("products/detalleProyectos", { recomendados: recomendados, proyectoDB, user: user });
+            return res.render("products/detalleProyectos", { recomendados, proyectoDB, user});
         }
         catch (error) {
             console.log(error)

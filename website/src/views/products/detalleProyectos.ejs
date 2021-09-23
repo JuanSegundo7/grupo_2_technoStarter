@@ -13,16 +13,17 @@
     </section>
     <section id= "contPrincipal">
         <article id="contPrincipal1">
-            <img src="<%= (proyectoDB.imagenes[0] != undefined) ? proyectoDB.imagenes[0].url_imagen : "/uploads/products/defaultImagen.jpg"%>" alt="imagen">
-            <p><i class="fas fa-map-marker-alt"></i> SA Miguel, TUC</p>
+            <img src="/uploads/products/<%= (proyectoDB.imagenes[0] != undefined) ? proyectoDB.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="imagen">
+            <p><i class="fas fa-map-marker-alt"></i> <%= proyectoDB.ubicacion %></p>
         </article>
         <article id="contPrincipal2">
                 <h1><%= proyectoDB.nombre %></h1>
-                <h2>$<%= proyectoDB.contribucionActual %></h2>
-                <h1>contribuido de meta $<%= proyectoDB.contribucionFinal %></h1>
-                <p>Hasta el <%= proyectoDB.fecha %></p>
+                <h2>$<%= proyectoDB.contribucion_actual %></h2>
+                <h1>contribuido de meta $<%= proyectoDB.contribucion_final %></h1>
+                <p>Desde <%= proyectoDB.fecha_inicial %></p>
+                <p>Hasta <%= proyectoDB.fecha_limite %></p>
                 <button><a href="/carrito/<%= proyectoDB.id %>">Patrocina esta campaña</a></button>
-                <% if(locals.user || locals.user.admin) {%>
+                <% if(user || user.admin) {%>
                 <button><a href="/proyecto/editar/<%= proyectoDB.id %>">Editar campaña</a></button>
                 <button><a href="/proyecto/borrar/<%= proyectoDB.id %>">Borrar campaña</a></button>
                 <%}%>
@@ -41,7 +42,7 @@
         <p> 
             <%= proyectoDB.texto %> 
         </p>
-    <img src="/uploads/products/<%= (proyectoDB[0].imagenes != undefined) ? proyectoDB.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="imagen">
+    <img src="/uploads/products/<%= (proyectoDB.imagenes[0] != undefined) ? proyectoDB.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="imagen">
     </section>
     <section class="contribuciones">
         <section class="titulo-contribuciones">
@@ -89,6 +90,7 @@
         <article class="recomendacion">
             <a href="/proyecto/producto/<%= recomendado.id %>"><img src="/uploads/products/<%= (recomendado.imagenes[0] != undefined)  ? recomendado.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="imagen de recomendacion"></a>
             <p><%= recomendado.nombre %></p>
+            <p>Hasta <%= recomendado.fecha_limite %></p>
             <p><i class="fas fa-map-marker-alt"></i> <%= recomendado.ubicacion %></p>
         </article>
         <% }) %>

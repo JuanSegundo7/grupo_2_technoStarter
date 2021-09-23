@@ -22,14 +22,14 @@
                     <i class="fas fa-search"></i>
                 </a>
             </li>
-            <% if(user.admin == 1) {%>
+            <% if(user != null && user.admin == 1) {%>
                 <li class="desktop-visible">
                     <a href="/usuario/usuarios">
                         <i class="fas fa-users"></i>
                     </a>
                 </li> 
             <% } %> 
-            <% if(user) {%>
+            <% if(user != null) {%>
                     <li>
                         <a href="/proyecto/crear">
                             <i class="fas fa-hammer"></i>

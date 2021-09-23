@@ -20,6 +20,7 @@ CREATE TABLE usuarios (
 CREATE TABLE proyectos (
   id INT NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(100) NOT NULL,
+  ubicacion VARCHAR(100) NOT NULL,
   contribucion_actual FLOAT unsigned NOT NULL DEFAULT 0,
   contribucion_final FLOAT unsigned NOT NULL,
   texto TEXT NOT NULL,
