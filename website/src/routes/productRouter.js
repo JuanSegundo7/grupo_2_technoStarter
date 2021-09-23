@@ -32,9 +32,9 @@ const upload = multer({storage:dest});
 
 router.get("/producto/:id", productController.index);
 
-router.get("/crear", productController.create);
+router.get("/crear",[isLogged], productController.create);
 
-router.get("/borrar/:id", productController.borrar);
+router.get("/borrar/:id",[isLogged], productController.borrar);
 
 router.get("/contribucion/:id",[isLogged], productController.createContribucion);//isLogged
 

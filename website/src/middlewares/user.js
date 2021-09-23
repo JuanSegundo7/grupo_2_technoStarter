@@ -9,12 +9,14 @@ const db = require("../database/models");
 module.exports = async (req,res,next) => {
     let user = null;
     if(req.cookies.email && !req.session.user){
-        user = await db.User.findOne({where: {email: req.body.correo}});
+        user = await db.User.findOne({where: {email: req.cookie.email}});
         req.session.user = user
-    }else if(req.session.user){
+    }
+    if(req.session.user){
         user = req.session.user;
     }
     res.locals.user = user;
+    console.log(res.locals.user)
     next();
 }
 

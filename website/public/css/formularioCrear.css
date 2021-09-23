@@ -247,3 +247,9 @@ label{
     width: 25%;
     border-radius: 12px;
 }
+
+.errores{
+    color: red;
+    font-size: 20px;
+    list-style-type: none;
+}

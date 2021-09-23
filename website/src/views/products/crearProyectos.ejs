@@ -13,16 +13,11 @@
             <form action="/proyecto/guardar" method="POST" id="crearProductos" enctype="multipart/form-data">
                 <fieldset id="nombre-proyecto">
                     <label for="nombreProducto">Nombre de tu proyecto: </label>
-                    <input type="text" placeholder="Nombrá tu proyecto" name="nombre" id="nombreProducto" required>
-                    <section class="errores">
-                        <ul>
-                            
-                        </ul>
-                    </section>
+                    <input type="text" placeholder="Nombrá tu proyecto" name="nombre" id="nombreProducto"  >
                 </fieldset>
                 <fieldset id="ubicacion-proyecto">
                     <label id="ubicacion-proyecto">Contanos de donde sos:</label>
-                    <input type="text" placeholder="Yo soy de.." name="ubicacion" id="ubicacion" required>
+                    <input type="text" placeholder="Yo soy de.." name="ubicacion" id="ubicacion"  >
                 </fieldset>
                 <h3>¡Elige la categoria de tu proyecto!</h3>
                 <fieldset id="categorias-proyecto">
@@ -34,7 +29,7 @@
                 <fieldset id="descripcion-proyecto">
                     <h3>¡Contanos de que se trata tu proyecto!</h3>
                     <p>(Quedate tranquilo que mas adelante podes editar la información)</p>
-                    <textarea rows="15" cols="30" placeholder="Escribí la historia de tu proyecto..." id="textoProyecto" name="texto" required></textarea>
+                    <textarea rows="15" cols="30" placeholder="Escribí la historia de tu proyecto..." id="textoProyecto" name="texto"  ></textarea>
                 </fieldset>
                 <fieldset id="fecha-proyecto">
                     <label for="fecha">Establece la fecha limite de tu proyecto</label>
@@ -42,17 +37,22 @@
                 </fieldset>
                 <fieldset id="fotos-proyecto">
                     <label for="fotosProyecto">Subí una o varias fotos</label>
-                    <input type="file" name="fotosProyecto" id="fotosProyecto" required multiple>
+                    <input type="file" name="fotosProyecto" id="fotosProyecto"   multiple>
                 </fieldset>
                 <fieldset id="precio-proyecto">
                     <h3>¡Establece una meta para tu proyecto!</h3>
                     <label for="precioProyecto"></label>
-                    <input type="number" name="precioFinal" id="precioProyecto" placeholder="EJ: 10.000" required>
+                    <input type="number" name="precioFinal" id="precioProyecto" placeholder="EJ: 10.000"  >
                 </fieldset>
                 <fieldset class="flex-botones">
                     <button type="submit"> Enviar</button>
                     <button type="reset"> Reiniciar</button>
                 </fieldset>
+                <section class="errores">
+                    <ul>
+                        
+                    </ul>
+                </section>
             </form>
             </section>
     </main>

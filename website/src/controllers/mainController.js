@@ -14,7 +14,7 @@ const main = {
             let recomendados = [await proyecto.random(), await proyecto.random(), await proyecto.random()]
             recomendados.map(item => item == null ? proyecto.random() : item);
             // return res.send(random)
-            return res.render("home", {random, recomendados, user});
+            return res.render("home", {random, recomendados});
         }
         catch (error) {
             console.log(error)

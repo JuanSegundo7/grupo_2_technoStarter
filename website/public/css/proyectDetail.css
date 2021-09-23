@@ -425,8 +425,8 @@ h1, h2, h4, p{
         border: 2px solid #ff9900;
     }
 
-    .recomendacion p{
-        width: 250px;
+    .recomendacion p {
+        width: 100%;
     }
 
     #campaña h3 a{
