@@ -79,7 +79,7 @@ module.exports = {
                     res.cookie("email",req.body.correo,{maxAge:300000})
                 }
                 // res.locals.userId = usuario.id;
-                return res.redirect("/usuario/perfil/:id")
+                return res.redirect("/usuario/perfil/" + usuario.id)
             }
         }catch(error){
             res.send(error)
@@ -87,8 +87,9 @@ module.exports = {
     },
     perfil: async (req,res) => {
         try{
-            let user = await db.User.findOne(req.session.user)
-            // return res.send(user)
+            let user = await db.User.findByPk(req.session.user.id)
+            //console.log("USUARIO", req.session.user);
+            //return res.send(user)
             return res.render("users/perfil", {user: user})
         }catch (error) {
             console.log(error);
@@ -97,9 +98,9 @@ module.exports = {
     },
     edit: async (req,res) => {
         try {
-            let user = await db.User.findOne()
-            let usuarios = db.User.findByPk({where: { id: req.params.id }})
-            res.render("users/editarUsers", {usuarios, user});
+            let usuarios = await db.User.findByPk(req.params.id)
+            //return res.send(usuarios);
+            return res.render("users/editarUsers", {usuarios});
         }
         catch(error){
             console.log(error)
@@ -118,29 +119,43 @@ module.exports = {
                 ubicacion: data.ubicacionUser,
                 avatar: file.filename
             },{ where: { id: req.params.id }})
+            return res.redirect("/");
         }
         catch (error) {
+            console.log(error)
+            res.send(error);
+            res.send(error);
+        }
+    },
+    borrar: async (req,res) => {
+        try {
+            let usuarios = await db.User.findByPk(req.params.id)
+            //return res.send(usuarios);
+            return res.render("users/borrarUsuario", {usuarios});
+        }
+        catch(error){
             console.log(error)
             res.send(error);
         }
     },
     delete: async (req, res) => {
         try {
-            await db.Image.destroy({
+            console.log("PARAMS",req.params.id);
+            /*await db.Image.destroy({
                 where: { proyecto_id: req.params.id }
             })
 
-            .then(await db.Contribution_type.destroy({
+            await db.Contribution_type.destroy({
                 where: { proyecto_id: req.params.id }
-            }))
+            })
 
-            .then(await db.Proyect.destroy({
+            await db.Proyect.destroy({
                 where: { usuario_id: req.params.id }
-            }))
+            })*/
 
-            .then(await db.User.destroy({
+            await db.User.destroy({
                 where: { id: req.params.id }
-            }))
+            })
 
             return res.redirect("/");
         }

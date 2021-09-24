@@ -4,49 +4,52 @@
         <%-include("../partials/header")%> 
         <main>
             <section>
-                <h2>Tu perfil</h2>
-            </section>
-            <section class="formulario">
-                <form>
-                        <section id="flex-avatar">
-                            <figure id="avatarPreview">
-                                <img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>">     
-                            </figure>
-                            <article>
-                                <h4>Nombre:</h4>
-                                <%= user.nombre%>
+                <section class="formulario">
+                    <form>
+                        <h2>Tu perfil</h2>
+                            <section id="flex-avatar">
+                                <figure id="avatarPreview">
+                                    <img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>">     
+                                </figure>
+                                <article>
+                                    <h4>Nombre:</h4>
+                                    <%= user.nombre%>
+                                </article>
+                                <article>
+                                    <h4>Apellido:</h4>
+                                    <%= user.apellido%>
+                                </article>
+                                <article>
+                                    <h4>Email:</h4>
+                                    <%= user.email%>
+                                </article>
+                                <article>
+                                    <h4>Ubicacion:</h4>
+                                    <%= user.ubicacion%>
+                                </article>
+                            </section>
+                        </form>
+                        <button><a href="/usuario/editarUsuario/<%= user.id %>">Editar usuario</a></button>
+                        <button><a href="/usuario/borrar/<%= user.id %>">Borrar usuario</a></button>
+                        <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
+                        
+                </section> 
+                <section>
+                    <h2>Mis Proyectos</h2>  
+                    <article id="proyectosGuardados">
+                        <!-- agregar if que muestre proyectos, si es que el usuario tiene -->
+                        <article id= "misProyectos">
+                            <article class= "contenedorProyecto">
+                                nombre del proyecto
+                                patrocinadores
+                                fecha limite
+                                <a class="button" href="/proyecto/producto/:id">Ver detalle</a>
                             </article>
-                            <article>
-                                <h4>Apellido:</h4>
-                                <%= user.apellido%>
-                            </article>
-                            <article>
-                                <h4>Email:</h4>
-                                <%= user.email%>
-                            </article>
-                            <article>
-                                <h4>Ubicacion:</h4>
-                                <%= user.ubicacion%>
-                            </article>
-                        </section>
-                    </form>
-                    <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
-            </section> 
-            <section>
-                <h2>Proyectos Guardados</h2>  
-                <article id="proyectosGuardados">
-                    <!-- agregar if que muestre proyectos, si es que el usuario tiene -->
-                    <article id= "misProyectos">
-                        <article class= "contenedorProyecto">
-                            nombre del proyecto
-                            patrocinadores
-                            fecha limite
-                            <a class="button" href="/proyecto/producto/:id">Ver detalle</a>
                         </article>
+                        <h3>No tienes proyectos aún</h3>
+                        <button><a href="/proyecto/crear">Crear Proyecto</a></button>
                     </article>
-                    <h3>No tienes proyectos aún</h3>
-                </article>
-                <button href="/proyecto/crear">Crear Proyecto</button>
+                </section>
             </section>
         </main>
         <%- include("../partials/footer")  %> 

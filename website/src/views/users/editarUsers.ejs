@@ -8,10 +8,10 @@
     <main>
         <section class="registrateAqui">
         <h2>
-                Edición de Usuario      
+                Editá tu perfil     
         </h2>
         </section>
-        <form action="/product/update/<%= usuarios.id %>?_method=PUT" method="POST" id="formPrincipal" enctype="multipart/form-data">
+        <form action="/usuario/actualizarUsuario/<%= usuarios.id %>?_method=PUT" method="POST" id="formPrincipal" enctype="multipart/form-data">
             <fieldset>
                 <% if (locals.errors) {
                     errors.forEach(error => { %>
@@ -47,7 +47,7 @@
                 <input type="file" name="fotoAvatar" id="fotoAvatar" required>
             </fieldset>
             <fieldset id="flex-button">
-                <button type="submit">Editar usuario</button>
+                <button type="submit">Editar</button>
                 <button type="reset">Resetear</button>
             </fieldset>
         </form>

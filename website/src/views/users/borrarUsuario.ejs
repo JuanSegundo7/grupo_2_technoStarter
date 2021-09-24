@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include("../partials/head",{"css":["header", "borrarProyecto", "footer"]})%>
+
+<body>
+    <%-include("../partials/header")%> 
+    <main>
+        <section class="titulo">
+            <h2>Borrar <%= user.nombre%></h2>
+        </section>
+        <form action="/proyecto/delete/<%= user.id %>?_method=DELETE" method="POST" id="borrarProyectos">
+            <fieldset id="nombre-proyecto">
+                    <p>Hasta luego <%= user.nombre%>!</p>
+            </fieldset>
+            <button id="button" type="submit">Borrar usuario</button>
+        </form>
+    </main>
+    <%-include("../partials/footer")%> 
+</body>
+</html>

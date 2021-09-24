@@ -30,11 +30,13 @@ router.get("/registrarse", userController.register);
 
 router.get("/usuarios", userController.index);
 
-router.get("/perfil/",[isLogged], userController.perfil);
+router.get("/perfil/:id",[isLogged], userController.perfil);
 
 router.get("/cerrarSesion", userController.logout);
 
 router.get("/editarUsuario/:id", userController.edit);
+
+router.get("/borrar/:id", userController.borrar)
 
 router.post("/guardarUsuario",[upload.single("fotoAvatar")], userController.create);
 
