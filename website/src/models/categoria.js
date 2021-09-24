@@ -8,13 +8,19 @@ const model = {
         const convert = JSON.parse(file);
         return convert
     },
-    oneCategoria: function (id){
-        const productos = this.allCategoria();
-        let resultado = productos.find(element => element.id == id);
-        return resultado;
+    oneCategoria: async (id) => {
+        try{
+            const productos = await db.Category.findAll()
+            let resultado = productos.find(element => element.id == id);
+            return resultado;
+        }catch(error){
+            console.log(error);
+            res.send(error)
+        }
     },
     oneCategoriaPorAlias: async () =>{
-        const productos = await db.Category.findAll();
+        const productos = await db.Category.findOne();
+        console.log("ACAAA",productos)
         let resultado = productos.find(element => element.nombre == nombre);
         return resultado;
     },

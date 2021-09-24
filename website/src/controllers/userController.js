@@ -99,6 +99,7 @@ module.exports = {
         try {
             let user = await db.User.findOne()
             let usuarios = db.User.findByPk({where: { id: req.params.id }})
+            return res.send(usuarios)
             res.render("users/editarUsers", {usuarios, user});
         }
         catch(error){

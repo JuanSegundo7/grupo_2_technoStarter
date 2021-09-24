@@ -116,17 +116,28 @@ module.exports = {
         fs.writeFileSync(directory,JSON.stringify(proyectos,null,2));
         return true;
     },
-    proyectsByCategory: function(alias){
-        const proyectos = this.allWithExtra();
-        let resultado = proyectos.filter(proyecto => proyecto.categoria.alias == alias);
-        return resultado;
+    proyectsByCategory: async (alias) =>{
+        try{
+            const proyectos = await this.allWithExtra();
+            console.log("ACAA", proyectos)
+            let resultado = proyectos.filter(proyecto => proyecto.categoria.alias == alias);
+            return resultado;
+        }catch(error){
+        console.log(error);
+        res.send(error)
+        }
     },
-    allWithExtra: function () {
-        let proyectos = this.allProyect();
-        proyectos.map(proyecto => {
-            proyecto.categoria = categorias.oneCategoria(proyecto.categoria)
-            return proyecto
-        });
-        return proyectos;
+    allWithExtra: async () => {
+        try{
+            let proyectos = await db.Proyect.findAll();
+            proyectos.map(proyecto => {
+                proyecto.categoria = categorias.oneCategoria(proyecto.categoria)
+                return proyecto
+            });
+            return proyectos;
+        }catch(error){
+            console.log(error)
+            res.send(error)
+        }
     },
 }

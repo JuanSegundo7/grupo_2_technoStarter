@@ -20,15 +20,15 @@
                 } 
                 %> 
                 <label for="nombreCompleto">Nombre</label>
-                <input type="text" placeholder="Nombre" id="nombreUsuario" name="nombreUsuario">
+                <input type="text" placeholder="Nombre" id="nombreUsuario" name="nombreUsuario" value="<%= usuarios.nombre %>">
             </fieldset>
             <fieldset>
                 <label for="nombreCompleto">Apellido</label>
-                <input type="text" placeholder="Apellido" id="apellidoUsuario" name="apellidoUsuario">
+                <input type="text" placeholder="Apellido" id="apellidoUsuario" name="apellidoUsuario" value="<%= usuarios.apellido %>">
             </fieldset>
             <fieldset>
                 <label for="direccionDeCorreoElectronico">Direccion de correo electronico</label>
-                <input type="text" placeholder="Direccion de correo electronico" id="direccionCorreoElectronico" name="direccionDeCorreoElectronico">
+                <input type="text" placeholder="Direccion de correo electronico" id="direccionCorreoElectronico" name="direccionDeCorreoElectronico" value="<%= usuarios.email %>">
             </fieldset>
             <fieldset>
                 <label for="contraseña">Contraseña</label>
@@ -41,7 +41,7 @@
             <fieldset id="foto-avatar">
                 <h3>Agrega tu Avatar!</h3>
                 <label for="fotoAvatar">Subí tu foto</label>
-                <input type="file" name="fotoAvatar" id="fotoAvatar" required>
+                <input type="file" class="fotoAvatar" name="fotoAvatar" id="fotoAvatar" required>
             </fieldset>
             <fieldset id="flex-button">
                 <button type="submit">Crear usuario</button>

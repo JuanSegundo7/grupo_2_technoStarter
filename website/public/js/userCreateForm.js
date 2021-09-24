@@ -16,7 +16,7 @@ window.addEventListener('load', function() {
     // console.log(ubicacion)
 
     let foto = document.querySelector(".fotoAvatar")
-    console.log(foto)
+    // console.log(foto)
 
     let botones = document.getElementById("flex-button")
     // console.log(botones)

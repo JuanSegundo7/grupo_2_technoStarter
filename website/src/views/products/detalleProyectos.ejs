@@ -22,11 +22,13 @@
                 <h1>contribuido de meta $<%= proyectoDB.contribucion_final %></h1>
                 <p>Desde <%= proyectoDB.fecha_inicial %></p>
                 <p>Hasta <%= proyectoDB.fecha_limite %></p>
-                <button><a href="/carrito/<%= proyectoDB.id %>">Patrocina esta campaña</a></button>
-                <% if(user || user.admin) {%>
-                <button><a href="/proyecto/editar/<%= proyectoDB.id %>">Editar campaña</a></button>
-                <button><a href="/proyecto/borrar/<%= proyectoDB.id %>">Borrar campaña</a></button>
-                <%}%>
+                <article id="botones">
+                    <button><a href="/carrito/<%= proyectoDB.id %>">Patrocinar</a></button>
+                    <% if(user || user.admin) {%>
+                    <button><a href="/proyecto/editar/<%= proyectoDB.id %>">Editar campaña</a></button>
+                    <button><a href="/proyecto/borrar/<%= proyectoDB.id %>">Borrar campaña</a></button>
+                    <%}%>
+                </article>
         </article>
     </section>
     <section id="campaña">
@@ -46,7 +48,7 @@
     </section>
     <section class="contribuciones">
         <section class="titulo-contribuciones">
-            <article><h2>Como funciona las contribuciones</h2></article>
+            <article><h2>¿Como funcionan las contribuciones?</h2></article>
         </section>
         <section class="flex-comoFunciona">
             <article>
@@ -56,8 +58,8 @@
                     </figure>
                 </section>
                 <section>
-                    <h2>Iniciar una campaña</h2>
-                    <p>Crea tu proyecto en TechnoStarter en pocos minutos a través de un procedimiento fácil y rápido.</p>
+                    <h2>Ayuda de los Usuarios</h2>
+                    <p>Los usuarios iran contribuyendo para conseguir recompensas a cambio de ayudar al proyecto!</p>
                 </section>
             </article>
             <article>
@@ -67,8 +69,8 @@
                     </figure>
                 </section>
                 <section>
-                    <h2>Comparte tu historia</h2>
-                    <p>Comparte tu proyecto para obtener apoyo. Cuanta mas gente se interese en tu proyecto mas rapido llegaras a tu objetivo de donaciones.</p>
+                    <h2>Contribuciones</h2>
+                    <p>Existen 3 tipos de contribuciones. Bronce, Plata y Oro. Dependiendo del nivel que elijas mejores serán las recompensas</p>
                 </section>
             </article>
             <article>
@@ -78,8 +80,8 @@
                     </figure>
                 </section>
                 <section>
-                    <h2>Gestiona tu campaña</h2>
-                    <p>Recibe notificaciones sobre los nuevos donativos, mantén informados a tus donantes, envía agradecimientos, gestiona tus retiros de fondos y finaliza tu tan soñado proyecto!.</p>
+                    <h2>Recta Final</h2>
+                    <p>Si el proyecto consigue llegar al limite propuesto antes de la fecha de caducidad, cada usuario recibira su recompensa, caso contrario se rembolsará su inversión!</p>
                 </section>
             </article>
         </section>
@@ -90,7 +92,7 @@
         <article class="recomendacion">
             <a href="/proyecto/producto/<%= recomendado.id %>"><img src="/uploads/products/<%= (recomendado.imagenes[0] != undefined)  ? recomendado.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="imagen de recomendacion"></a>
             <p><%= recomendado.nombre %></p>
-            <p>Hasta <%= recomendado.fecha_limite %></p>
+            <p>Hasta el <%= recomendado.fecha_limite %></p>
             <p><i class="fas fa-map-marker-alt"></i> <%= recomendado.ubicacion %></p>
         </article>
         <% }) %>

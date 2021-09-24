@@ -83,6 +83,7 @@ header nav {
 	padding: 5px 5px 5px 15px;
 	height: 36px;
 	border-radius: 5px 0 0 5px;
+	outline: none;
 }
 
 .searchButton {
