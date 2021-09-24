@@ -45,18 +45,20 @@ module.exports = {
         this.write(proyectos);
         return nuevo
     },
-    contribuir: function(contribucion, proyectoId){
-        const proyectos = this.allProyect();
-        proyectos = proyectos.map(proyecto => {
-            if(proyecto.id == proyectoId){
-            proyecto.contribucionActual = proyecto.contribucionActual + contribucion;
-            return proyecto
-            }
-            return proyecto
-        })
-        this.write(proyectos);
-        // fs.writeFileSync(this.dir, JSON.stringify(proyectos,null,2));
-        return true;
+    contribuir:  async (contribucion, proyectoId) => {
+        try{
+            const proyectos = await db.Proyect.findAll()
+            proyectos = proyectos.map(proyecto => {
+                if(proyecto.id == proyectoId){
+                proyecto.contribucionActual = proyecto.contribucionActual + contribucion;
+                return proyecto
+                }
+                return proyecto
+            })
+        }catch(error){
+            console.log(error);
+            res.send(error);
+        }
     },
     random: async (req,res) => { 
         try{
@@ -114,17 +116,28 @@ module.exports = {
         fs.writeFileSync(directory,JSON.stringify(proyectos,null,2));
         return true;
     },
-    proyectsByCategory: function(alias){
-        const proyectos = this.allWithExtra();
-        let resultado = proyectos.filter(proyecto => proyecto.categoria.alias == alias);
-        return resultado;
+    proyectsByCategory: async (alias) =>{
+        try{
+            const proyectos = await this.allWithExtra();
+            console.log("ACAA", proyectos)
+            let resultado = proyectos.filter(proyecto => proyecto.categoria.alias == alias);
+            return resultado;
+        }catch(error){
+        console.log(error);
+        res.send(error)
+        }
     },
-    allWithExtra: function () {
-        let proyectos = this.allProyect();
-        proyectos.map(proyecto => {
-            proyecto.categoria = categorias.oneCategoria(proyecto.categoria)
-            return proyecto
-        });
-        return proyectos;
+    allWithExtra: async () => {
+        try{
+            let proyectos = await db.Proyect.findAll();
+            proyectos.map(proyecto => {
+                proyecto.categoria = categorias.oneCategoria(proyecto.categoria)
+                return proyecto
+            });
+            return proyectos;
+        }catch(error){
+            console.log(error)
+            res.send(error)
+        }
     },
 }

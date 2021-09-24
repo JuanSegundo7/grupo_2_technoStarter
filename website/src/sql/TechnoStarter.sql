@@ -58,3 +58,4 @@ CREATE TABLE contribucion_usuarios (
   FOREIGN KEY (proyecto_id) REFERENCES proyectos (id),
   FOREIGN KEY (contribucion_id) REFERENCES tipo_contribucion (id)
 );
+

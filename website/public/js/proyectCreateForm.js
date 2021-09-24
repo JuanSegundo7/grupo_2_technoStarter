@@ -36,8 +36,8 @@ window.addEventListener('load', function() {
         let ulErrores = document.querySelector(".errores")
         let errors = []
         if(nombre.value < 5){
-            console.log("El nombre tiene que ser mayor a 3 caracteres")
-            errors.push("El nombre tiene que ser mayor a 3 caracteres")
+            console.log("El nombre tiene que ser mayor a 5 caracteres")
+            errors.push("El nombre tiene que ser mayor a 5 caracteres")
             console.log(errors)
         }
         if(texto.value < 20){
@@ -51,7 +51,6 @@ window.addEventListener('load', function() {
         }else if(!extensiones.exec(fotos.value)){
             console.log("El formato de alguna foto no es valido")
             errors.push("El formato de alguna foto no es valido")
-            errors= []
         }
         if(fecha.value < new Date().toISOString().slice(0, 10) ){
             console.log("La fecha no puede ser anterior al dia de hoy")

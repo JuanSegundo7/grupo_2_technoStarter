@@ -47,6 +47,7 @@ const product = {
 
             let projectToCreate = { 
                 nombre: String(data.nombre),
+                ubicacion: String(data.ubicacion),
                 contribucion_actual: 0,
                 contribucion_final: parseInt(data.precioFinal),
                 texto: String(data.texto),
@@ -137,9 +138,15 @@ const product = {
         }
         
         },
-    contribucion: (req, res) => {
-        let result = proyecto.contribuir(req.body, req.params.id);
-        return result ? res.redirect("/proyectos/productos/" + req.params.id) : res.send("Error al cargar la informacion");
+    contribucion: async (req, res) => {
+        try{
+            let result = await proyecto.contribuir(req.body, req.params.id);
+            return result ? res.redirect("/proyectos/productos/" + req.params.id) : res.send("Error al cargar la informacion");
+        }
+        catch(error){
+            console.log(error)
+            res.send(error)
+        }
     },
     edit: async (req, res) => {
         try {
@@ -161,6 +168,7 @@ const product = {
             let one = await db.Proyect.update({
                 nombre: data.nombreProducto,
                 contribucion_final: data.precioProyecto,
+                ubicacion: data.ubicacion,
                 texto: String(data.textoProyecto),
                 fecha_limite: data.fechaProyecto,
                 categoria_id: parseInt(data.categoria)

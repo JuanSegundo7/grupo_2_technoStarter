@@ -4,7 +4,7 @@
 <%-include("../partials/head",{"css":["header", "register", "footer"]})%>
 
 <body>
-    <%-//include("../partials/header")%> 
+    <%-include("../partials/header")%> 
     <main>
         <section class="registrateAqui">
         <h2>
@@ -20,40 +20,45 @@
                 } 
                 %> 
                 <label for="nombreCompleto">Nombre</label>
-                <input type="text" placeholder="Nombre" id="nombreUsuario" name="nombreUsuario" required>
+                <input type="text" placeholder="Nombre" id="nombreUsuario" name="nombreUsuario">
             </fieldset>
             <fieldset>
                 <label for="nombreCompleto">Apellido</label>
-                <input type="text" placeholder="Apellido" id="apellidoUsuario" name="apellidoUsuario" required>
+                <input type="text" placeholder="Apellido" id="apellidoUsuario" name="apellidoUsuario">
             </fieldset>
             <fieldset>
                 <label for="direccionDeCorreoElectronico">Direccion de correo electronico</label>
-                <input type="text" placeholder="Direccion de correo electronico" id="direccionCorreoElectronico" name="direccionDeCorreoElectronico" required>
+                <input type="text" placeholder="Direccion de correo electronico" id="direccionCorreoElectronico" name="direccionDeCorreoElectronico">
             </fieldset>
             <fieldset>
                 <label for="ubicacion">¿De que parte de Argentina sos?</label>
-                <input type="text" placeholder="¿De que parte sos?" id="ubicacionUser" name="ubicacionUser" required>
+                <input type="text" placeholder="¿De que parte sos?" id="ubicacionUser" name="ubicacionUser">
             </fieldset>
             <fieldset>
                 <label for="contraseña">Contraseña</label>
-                <input type="password" placeholder="Contraseña" id="clave" name="clave" required>
+                <input type="password" placeholder="Contraseña" id="clave" name="clave">
             </fieldset>
             <fieldset>
                 <label for="confirmarContraseña">Confirmar Contraseña</label>
-                <input type="password" placeholder="Confirmar contraseña" id="confirmarClave" name="confirmarClave" required>
+                <input type="password" placeholder="Confirmar contraseña" id="confirmarClave" name="confirmarClave">
             </fieldset>
             <fieldset id="foto-avatar">
                 <h3>Agrega tu Avatar!</h3>
                 <label for="fotoAvatar">Subí tu foto</label>
-                <input type="file" name="fotoAvatar" id="fotoAvatar" required>
+                <input type="file" class="fotoAvatar" id="fotoAvatar" name="fotoAvatar" id="fotoAvatar">
             </fieldset>
             <fieldset id="flex-button">
                 <button type="submit">Crear usuario</button>
                 <button type="reset">Resetear</button>
             </fieldset>
+            <section class="errores">
+                    <ul>
+                        
+                    </ul>
+                </section>
             <fieldset class="aceptoLosTerminos">
                 <label for="aceptoLosTerminos">Acepto los Términos y Condiciones y autorizo el uso de mis datos de acuerdo a la Declaración de Privacidad.</label>
-                <input type="radio" name="recordarme" id="recordarme" required>
+                <input type="radio" name="recordarme" id="recordarme">
             </fieldset>
             <fieldset class='tener'>
                 <p>¿Tenes una cuenta? <a href="/usuario/ingresar">Iniciar</a></p>

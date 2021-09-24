@@ -15,6 +15,11 @@ const productRouter = require("./routes/productRouter");
 const userRouter = require("./routes/userRouter");
 const categoriasRouter = require("./routes/categoriasRouter");
 
+// ************ API's ************
+
+const apiUsuarios = require("./routes/apiUserRouter");
+const apiProductos = require("./routes/apiProductRouter");
+
 // ************ Servidor ************
 
 app.set("port", process.env.PORT || 3000);

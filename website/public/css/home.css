@@ -115,6 +115,11 @@ box-sizing: border-box;
     border: 1px solid #FF9900;  
 }
 
+.campañaDestacada img:hover{
+    transform: scale(1.1);
+    transition: all 0.7s;
+}
+
 /********************************^^^RECOMENDACIONES^^^********************************************/
 
 .recomendaciones-1{
@@ -188,11 +193,16 @@ box-sizing: border-box;
     border-radius: 25px;
 }
 
+.recomendaciones img:hover{
+    transform: scale(1.1);
+    transition: all 0.7s;
+}
+
 .flex-thumbs{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 2vh 0 2vh 0;
+    margin: 0.7em 0 0.7em 0;
 }
 
 .flex-thumbs i{
@@ -299,7 +309,7 @@ box-sizing: border-box;
 
     .recomendaciones img{
         width: 100%;
-        height: 65vh;
+        height: 52vw;
     }
 
     .recomendaciones p{
@@ -312,8 +322,8 @@ box-sizing: border-box;
     }
 
     .campañaDestacada img {
-        height: 65vh;
         object-fit:cover;
+        height: 52vw;
     }
 
 }
@@ -362,6 +372,7 @@ box-sizing: border-box;
     .campañaDestacada img{
         width: 100%;
         padding: 0px;
+        height: 30vw;
     }
 
 
@@ -369,7 +380,7 @@ box-sizing: border-box;
     .flex-recomendaciones{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
 
     .flex-recomendaciones article{
@@ -389,6 +400,7 @@ box-sizing: border-box;
     
     .recomendaciones article{
         margin: 10px;
+        width: 38%;
     }
     .recomendaciones p{
         font-size: 1.3em;
@@ -400,15 +412,15 @@ box-sizing: border-box;
     }
     
     .recomendaciones img{
-        width: 45vw;
         padding: 0px;
-        height: 46vh;
+        height: 50vh;
         object-fit:cover;
         border: 2px solid #FF9900;
     }
+
     
     .recomendaciones figure{
-        width: 65%;
+        width: 80%;
         
     }
 
