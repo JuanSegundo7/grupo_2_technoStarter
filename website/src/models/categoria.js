@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const db = require("../database/models");
 const model = {
     allCategoria: function(){
         const directory = path.resolve(__dirname, "../data", "categorias.json");
@@ -12,9 +13,9 @@ const model = {
         let resultado = productos.find(element => element.id == id);
         return resultado;
     },
-    oneCategoriaPorAlias: function (alias){
-        const productos = this.allCategoria();
-        let resultado = productos.find(element => element.alias == alias);
+    oneCategoriaPorAlias: async () =>{
+        const productos = await db.Category.findAll();
+        let resultado = productos.find(element => element.nombre == nombre);
         return resultado;
     },
 }

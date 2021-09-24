@@ -27,6 +27,12 @@ h2 {
 .flex-titulo{
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.flex-titulo p{
+    font-size: 1.5em;
+    margin: 0 0 0 1em;
 }
 
 @media (min-width: 769px) {

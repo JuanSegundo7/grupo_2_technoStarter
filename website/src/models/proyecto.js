@@ -45,18 +45,20 @@ module.exports = {
         this.write(proyectos);
         return nuevo
     },
-    contribuir: function(contribucion, proyectoId){
-        const proyectos = this.allProyect();
-        proyectos = proyectos.map(proyecto => {
-            if(proyecto.id == proyectoId){
-            proyecto.contribucionActual = proyecto.contribucionActual + contribucion;
-            return proyecto
-            }
-            return proyecto
-        })
-        this.write(proyectos);
-        // fs.writeFileSync(this.dir, JSON.stringify(proyectos,null,2));
-        return true;
+    contribuir:  async (contribucion, proyectoId) => {
+        try{
+            const proyectos = await db.Proyect.findAll()
+            proyectos = proyectos.map(proyecto => {
+                if(proyecto.id == proyectoId){
+                proyecto.contribucionActual = proyecto.contribucionActual + contribucion;
+                return proyecto
+                }
+                return proyecto
+            })
+        }catch(error){
+            console.log(error);
+            res.send(error);
+        }
     },
     random: async (req,res) => { 
         try{
