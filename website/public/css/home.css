@@ -83,6 +83,8 @@ box-sizing: border-box;
 
 /********************************^^^CAMPAÑA-DESTACADA^^^********************************************/
 
+
+
 .flex-camapañaDestacada{
     border-radius: 15px;
 }
@@ -92,10 +94,10 @@ box-sizing: border-box;
 }
 
 .campañaDestacada-1{
-    margin-top: 10px;
     color: #FF9900;
     border-radius: 25px;
-    padding: 10px;
+    padding: 2em;
+    margin: 2em;
     background-color: #031927;
     border: solid 2px #FF9900;
 }
@@ -111,8 +113,7 @@ box-sizing: border-box;
 
 .campañaDestacada img{
     width: 100%;
-    border-radius: 25px;
-    border: 1px solid #FF9900;  
+
 }
 
 .campañaDestacada img:hover{
@@ -122,9 +123,13 @@ box-sizing: border-box;
 
 /********************************^^^RECOMENDACIONES^^^********************************************/
 
+.recomendaciones a{
+    display: block;
+}
+
 .recomendaciones-1{
-    margin-top: 10px;
-    padding: 10px;
+    padding: 2em;
+    margin: 2em;
     border: 2px solid #FF9900;
     border-radius: 25px;
     background-color: #031927;
@@ -185,12 +190,16 @@ box-sizing: border-box;
 }
 
 .recomendaciones img{
-    width: 77vw;
+    width: 89vw;
     padding: 0px;
     height: 31vh;
     object-fit:cover;
+}
+
+.recuadro-imagen{
+    overflow: hidden;
+    border-radius: 20px;
     border: 2px solid #FF9900;
-    border-radius: 25px;
 }
 
 .recomendaciones img:hover{
@@ -288,13 +297,6 @@ box-sizing: border-box;
         font-size: 5em;
     }
 
-    .campañaDestacada figure{
-        padding: 1.5em 1.5em 0 1.5em;
-    }
-
-    .recomendaciones figure{
-        padding: 1.5em 1.5em 0 1.5em;
-    }
 
     .flex-thumbs{
         font-size: 1.5em;
@@ -303,6 +305,15 @@ box-sizing: border-box;
 }
 
 @media (min-width: 480px){
+
+    .flex-recomendaciones figure{
+        height: 50vh;
+    }
+
+    .flex-camapañaDestacada figure{
+        height: 50vh;
+    }
+
     .titulo-h2 {
     font-size: 2.5em;
     }
@@ -323,7 +334,7 @@ box-sizing: border-box;
 
     .campañaDestacada img {
         object-fit:cover;
-        height: 52vw;
+        height: 100%;
     }
 
 }
@@ -372,7 +383,6 @@ box-sizing: border-box;
     .campañaDestacada img{
         width: 100%;
         padding: 0px;
-        height: 30vw;
     }
 
 
@@ -413,14 +423,15 @@ box-sizing: border-box;
     
     .recomendaciones img{
         padding: 0px;
-        height: 50vh;
+        height: 53vh;
         object-fit:cover;
-        border: 2px solid #FF9900;
     }
 
     
+
+    
     .recomendaciones figure{
-        width: 80%;
+        width: 70%;
         
     }
 
