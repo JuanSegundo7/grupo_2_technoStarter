@@ -8,7 +8,6 @@ const db = require("../database/models");
 const main = {
     index: async (req,res) => {
         try {
-            let user = await db.User.findOne(req.session.user);
             let random = await proyecto.random();
             //return res.send(random.imagenes[0] != undefined);
             let recomendados = [await proyecto.random(), await proyecto.random(), await proyecto.random()]

@@ -8,7 +8,6 @@ const db = require("../database/models");
 const product = {
     index: async (req, res) => {
         try {
-            let user = await db.User.findOne()
             let proyectoDB = await db.Proyect.findByPk(req.params.id, { include: { association: "imagenes" } })
             let recomendados = [await proyecto.random(), await proyecto.random(), await proyecto.random()]
             // console.log("usuario", user.id);
@@ -16,7 +15,7 @@ const product = {
             // return res.send(proyectoDB)
             // return res.send(recomendados)
             // return
-            return res.render("products/detalleProyectos", { recomendados, proyectoDB, user});
+            return res.render("products/detalleProyectos", { recomendados, proyectoDB});
         }
         catch (error) {
             console.log(error)
@@ -57,7 +56,7 @@ const product = {
                 categoria_id: parseInt(data.categoria)
             }
 
-            console.log("ACAAAA",data)
+            // console.log("ACAAAA",data)
             let projectCreated = await db.Proyect.create(projectToCreate);
             
             //console.log("info proyecto",projectToCreate);
@@ -90,10 +89,10 @@ const product = {
         }
     },
     createContribucion: async (req, res) => {
-        let user = await db.User.findOne()
+        // let user = await db.User.findOne()
         let proyecto = req.params.id
         try {
-            return res.render("products/crearContribucion", {user,proyecto});
+            return res.render("products/crearContribucion", {proyecto});
         }
         catch (error) {
             console.log(error)
@@ -129,15 +128,13 @@ const product = {
                     proyecto_id: req.params.id
                 })
             })
-
             return res.redirect("/") 
-
-        }catch(error){
+        }
+        catch(error){
             console.log(error)
             res.send(error);
         }
-        
-        },
+    },
     contribucion: async (req, res) => {
         try{
             let result = await proyecto.contribuir(req.body, req.params.id);

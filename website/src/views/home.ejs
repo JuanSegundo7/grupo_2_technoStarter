@@ -14,7 +14,7 @@
             </section>
             <section class="campañaDestacada-1">           
                 <section class="flex-camapañaDestacada">
-                    <figure>
+                    <figure class="recuadro-imagen">
                     <a href="/proyecto/producto/<%= random.id %>"><img src="/uploads/products/<%= (random.imagenes[0] != undefined)  ? random.imagenes[0].url_imagen : "defaultImagen.jpg"%>"  alt="imagen"></a>
                     </figure>
 
@@ -43,7 +43,7 @@
                 <% recomendados.forEach(random => { %>
                     <section class="recomendaciones-1">
                         <section class="flex-recomendaciones">
-                            <figure>
+                            <figure class="recuadro-imagen">
                                 <a href="/proyecto/producto/<%= random.id %>"><img src="/uploads/products/<%= (random.imagenes[0] != undefined)  ? random.imagenes[0].url_imagen : "defaultImagen.jpg"%>"  alt="imagen"></a>
                             </figure>
                             <article>

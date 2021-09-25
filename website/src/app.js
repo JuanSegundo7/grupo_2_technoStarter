@@ -54,6 +54,10 @@ app.use("/proyecto", productRouter);
 app.use("/usuario", userRouter);
 app.use("/categoria", categoriasRouter);
 
+// ************ API's use ************
+
+// app.use(apiUsuarios)
+
 // ************ Error 404 ************
 
 // app.use((req, res, next) => {
