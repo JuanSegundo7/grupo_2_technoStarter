@@ -44,6 +44,8 @@ app.set("view engine", "ejs");
 // ************ Middleware Customs ************
 
 app.use(require("./middlewares/user"));
+app.use(require("./middlewares/isAdmin"));
+
 
 
 // ************ Routes ************
@@ -56,7 +58,7 @@ app.use("/categoria", categoriasRouter);
 
 // ************ API's use ************
 
-// app.use(apiUsuarios)
+app.use(apiUsuarios)
 
 // ************ Error 404 ************
 

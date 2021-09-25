@@ -7,13 +7,12 @@ const db = require("../database/models");
 // ************ Middleware ************
 
 module.exports = async (req,res,next) => {
-    let user
-    if(req.cookies.email && !req.session.user){
-        user = await db.User.findOne({where: {email: req.body.correo}});
-        req.session.user = user
-    }else if(req.session.user){
-        user = req.session.user;
+    let admin
+    console.log("REQ.BODY", req.body)
+    if(req.cookies.email){
+        admin = await db.User.findOne({where: {email: req.body.correo}});
+        req.session.user = admin
     }
-    res.locals.user = user;
+    res.locals.user.admin = user;
     next();
 }
