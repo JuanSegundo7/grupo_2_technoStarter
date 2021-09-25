@@ -158,15 +158,22 @@ nav a{
     flex-direction: row;
 }
 
-button{
-    color: black;
+#flex-botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+#flex-botones button{
+    padding: 1vw;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
     background-color: #FF9900;
-    padding: 6px 7px;
-    width: 20%;
-    border-radius: 15px;
-    position: relative;
-    font-family: "Roboto";
-    font-weight: 400;
+    border: 1px solid;
+    width: 25%;
+    border-radius: 12px;
 }
 
 a{
