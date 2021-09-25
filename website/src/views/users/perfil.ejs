@@ -2,55 +2,54 @@
     <%-include("../partials/head",{"css":["header", "perfil", "footer"]})%>
     <body>
         <%-include("../partials/header")%> 
-        <main>
-            <section>
-                <section class="formulario">
-                    <form>
-                        <h2>Tu perfil</h2>
-                            <section id="flex-avatar">
-                                <figure id="avatarPreview">
-                                    <img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>">     
-                                </figure>
-                                <article>
-                                    <h4>Nombre:</h4>
-                                    <%= user.nombre%>
-                                </article>
-                                <article>
-                                    <h4>Apellido:</h4>
-                                    <%= user.apellido%>
-                                </article>
-                                <article>
-                                    <h4>Email:</h4>
-                                    <%= user.email%>
-                                </article>
-                                <article>
-                                    <h4>Ubicacion:</h4>
-                                    <%= user.ubicacion%>
-                                </article>
-                            </section>
-                        </form>
+        <main id="contenedorPrincipal">
+            <section class="formulario">
+                <form>
+                    <h2>Tu perfil</h2>
+                        <section id="flex-avatar">
+                            <figure id="avatarPreview">
+                                <img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>">     
+                            </figure>
+                            <article>
+                                <h4>Nombre:</h4>
+                                <%= user.nombre%>
+                            </article>
+                            <article>
+                                <h4>Apellido:</h4>
+                                <%= user.apellido%>
+                            </article>
+                            <article>
+                                <h4>Email:</h4>
+                                <%= user.email%>
+                            </article>
+                            <article>
+                                <h4>Ubicacion:</h4>
+                                <%= user.ubicacion%>
+                            </article>
+                        </section>
+                    </form>
+                    <article id="flex-botones">
                         <button><a href="/usuario/editarUsuario/<%= user.id %>">Editar usuario</a></button>
                         <button><a href="/usuario/borrar/<%= user.id %>">Borrar usuario</a></button>
-                        <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
-                        
-                </section> 
-                <section>
-                    <h2>Mis Proyectos</h2>  
-                    <article id="proyectosGuardados">
-                        <!-- agregar if que muestre proyectos, si es que el usuario tiene -->
-                        <article id= "misProyectos">
-                            <article class= "contenedorProyecto">
-                                nombre del proyecto
-                                patrocinadores
-                                fecha limite
-                                <a class="button" href="/proyecto/producto/:id">Ver detalle</a>
-                            </article>
-                        </article>
-                        <h3>No tienes proyectos aún</h3>
-                        <button><a href="/proyecto/crear">Crear Proyecto</a></button>
                     </article>
-                </section>
+                    <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
             </section>
+            <section>
+                <h2>Mis Proyectos</h2>  
+                <article id="proyectosGuardados">
+                    <!-- agregar if que muestre proyectos, si es que el usuario tiene -->
+                    <article id= "misProyectos">
+                        <article class= "contenedorProyecto">
+                            nombre del proyecto
+                            patrocinadores
+                            fecha limite
+                            <a class="button" href="/proyecto/producto/:id">Ver detalle</a>
+                        </article>
+                    </article>
+                    <h3>No tienes proyectos aún</h3>
+                    <button><a href="/proyecto/crear">Crear Proyecto</a></button>
+                </article>
+            </section> 
         </main>
         <%- include("../partials/footer")  %> 
     </body>
