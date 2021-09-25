@@ -57,7 +57,7 @@ const product = {
                 categoria_id: parseInt(data.categoria)
             }
 
-            console.log("ACAAAA",data)
+            // console.log("ACAAAA",data)
             let projectCreated = await db.Proyect.create(projectToCreate);
             
             //console.log("info proyecto",projectToCreate);
@@ -90,10 +90,10 @@ const product = {
         }
     },
     createContribucion: async (req, res) => {
-        let user = await db.User.findOne()
+        // let user = await db.User.findOne()
         let proyecto = req.params.id
         try {
-            return res.render("products/crearContribucion", {user,proyecto});
+            return res.render("products/crearContribucion", {proyecto});
         }
         catch (error) {
             console.log(error)
@@ -129,15 +129,13 @@ const product = {
                     proyecto_id: req.params.id
                 })
             })
-
             return res.redirect("/") 
-
-        }catch(error){
+        }
+        catch(error){
             console.log(error)
             res.send(error);
         }
-        
-        },
+    },
     contribucion: async (req, res) => {
         try{
             let result = await proyecto.contribuir(req.body, req.params.id);
