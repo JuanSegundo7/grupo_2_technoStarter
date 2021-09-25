@@ -24,7 +24,7 @@
                 <p>Hasta <%= proyectoDB.fecha_limite %></p>
                 <article id="botones">
                     <button><a href="/carrito/<%= proyectoDB.id %>">Patrocinar</a></button>
-                    <% if(user.admin) {%>
+                    <% if(user && user.admin) {%>
                     <button><a href="/proyecto/editar/<%= proyectoDB.id %>">Editar campaña</a></button>
                     <button><a href="/proyecto/borrar/<%= proyectoDB.id %>">Borrar campaña</a></button>
                     <%}%>
