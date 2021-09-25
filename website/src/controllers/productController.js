@@ -8,7 +8,6 @@ const db = require("../database/models");
 const product = {
     index: async (req, res) => {
         try {
-            let user = await db.User.findOne()
             let proyectoDB = await db.Proyect.findByPk(req.params.id, { include: { association: "imagenes" } })
             let recomendados = [await proyecto.random(), await proyecto.random(), await proyecto.random()]
             // console.log("usuario", user.id);
@@ -16,7 +15,7 @@ const product = {
             // return res.send(proyectoDB)
             // return res.send(recomendados)
             // return
-            return res.render("products/detalleProyectos", { recomendados, proyectoDB, user});
+            return res.render("products/detalleProyectos", { recomendados, proyectoDB});
         }
         catch (error) {
             console.log(error)
