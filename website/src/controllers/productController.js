@@ -23,12 +23,12 @@ const product = {
         }
     },
     create: async (req, res) => {
-        let user = await db.User.findOne()
+        //*let user = await db.User.findOne()*//
         try {
             let categoria = await db.Category.findAll();
             // console.log(categoria)
             // return res.send(categoria)
-            return res.render("products/crearProyectos", { categorias: categoria, user });
+            return res.render("products/crearProyectos", { categorias: categoria});
         }
         catch (error) {
             console.log(error)
