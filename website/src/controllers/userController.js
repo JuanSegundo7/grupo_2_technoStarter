@@ -87,10 +87,11 @@ module.exports = {
     },
     perfil: async (req,res) => {
         try{
-            let user = await db.User.findByPk(req.params.id)
-            //console.log("USUARIO", req.session.user);
-            // return res.send(user)
-            return res.render("users/perfil", {user: user})
+            let user = await db.User.findByPk(req.session.user.id)
+            let misProyectos = await db.Proyect.findAll({where: {usuario_id: req.session.user.id}}, { include: { association: "imagenes" } })
+            //let proyectoDB = await db.Proyect.findByPk(req.params.id, { include: { association: "imagenes" } })
+            //res.send(proyectoDB)
+            return res.render("users/perfil", {user, misProyectos})
         }catch (error) {
             console.log(error);
             res.send(error);
@@ -140,18 +141,9 @@ module.exports = {
     },
     delete: async (req, res) => {
         try {
-            console.log("PARAMS",req.params.id);
-            /*await db.Image.destroy({
-                where: { proyecto_id: req.params.id }
-            })
-
-            await db.Contribution_type.destroy({
-                where: { proyecto_id: req.params.id }
-            })
-
             await db.Proyect.destroy({
-                where: { usuario_id: req.params.id }
-            })*/
+                where: { usuario_id: req.params.id } 
+            })
 
             await db.User.destroy({
                 where: { id: req.params.id }

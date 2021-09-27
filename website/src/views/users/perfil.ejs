@@ -3,9 +3,9 @@
     <body>
         <%-include("../partials/header")%> 
         <main id="contenedorPrincipal">
-            <section class="formulario">
+            <section id="formulario">
                 <form>
-                    <h2>Tu perfil</h2>
+                    <h2>Mi perfil</h2>
                         <section id="flex-avatar">
                             <figure id="avatarPreview">
                                 <img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>">     
@@ -34,22 +34,28 @@
                     </article>
                     <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
             </section>
-            <section>
-                <h2>Mis Proyectos</h2>  
-                <article id="proyectosGuardados">
-                    <!-- agregar if que muestre proyectos, si es que el usuario tiene -->
-                    <article id= "misProyectos">
-                        <article class= "contenedorProyecto">
-                            nombre del proyecto
-                            patrocinadores
-                            fecha limite
-                            <a class="button" href="/proyecto/producto/:id">Ver detalle</a>
+            <section id="misProyectos">
+                <h2>Mis Proyectos</h2>
+                <% if(misProyectos.length > 0) { %>
+                    <% misProyectos.forEach(element => { %>
+                        <article>
+                            <figure>
+                                <a href="/proyecto/producto/<%= element.id %>"></a><img src="/uploads/products/defaultImagen.jpg" alt="<%= element.nombre %>">
+                            </figure>
+                            <%= element.nombre %>
+                            <%= element.contribucion_final %> 
+                            <%= element.fecha_limite %>
+                            <button><a href="/proyecto/editar/<%= element.id %>">Editar campaña</a></button>
+                            <button><a href="/proyecto/borrar/<%= element.id %>">Borrar campaña</a></button> 
                         </article>
-                    </article>
-                    <h3>No tienes proyectos aún</h3>
-                    <button><a href="/proyecto/crear">Crear Proyecto</a></button>
-                </article>
-            </section> 
+                    <% }) %>
+                <% }else{ %>
+                    <h3>No tienes proyectos aún</h3>    
+                <% } %>
+                    
+                
+                <button><a href="/proyecto/crear">Crear Proyecto</a></button>
+            </section>
         </main>
         <%- include("../partials/footer")  %> 
     </body>
