@@ -64,9 +64,14 @@ h2{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
+
 .formulario fieldset{
     border: none;
     margin: 2vw;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 /**************************************^^^INPUTS-Y-CATEGORIAS^^^********************************************/

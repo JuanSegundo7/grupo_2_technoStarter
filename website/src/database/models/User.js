@@ -53,6 +53,11 @@ module.exports = (sequelize, dataTypes) => {
             as: "contribucion_usuarios",
             foreignKey: "usuario_id",
         })
+        User.belongsToMany(models.Recordarme, {
+            through: "Recordarme",
+            as: "usuario",
+            foreignKey: "usuario_id",
+        })
     }
     return User
 }

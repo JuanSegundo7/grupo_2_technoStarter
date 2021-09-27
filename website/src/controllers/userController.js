@@ -87,9 +87,9 @@ module.exports = {
     },
     perfil: async (req,res) => {
         try{
-            let user = await db.User.findByPk(req.session.user.id)
+            let user = await db.User.findByPk(req.params.id)
             //console.log("USUARIO", req.session.user);
-            //return res.send(user)
+            // return res.send(user)
             return res.render("users/perfil", {user: user})
         }catch (error) {
             console.log(error);

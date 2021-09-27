@@ -13,13 +13,16 @@
             <form action="/proyecto/actualizar/<%= proyecto.id %>?_method=PUT" method="POST" id="editarProyectos" enctype="multipart/form-data">
                 <fieldset id="nombre-proyecto">
                     <label for="nombreProducto">Nombre de tu proyecto: </label>
-                    <input type="text" placeholder="Nombrá tu proyecto" name="nombreProducto" id="nombre-proyecto" required>
+                    <input type="text" placeholder="<%= proyecto.nombre %>" name="nombreProducto" id="nombre-proyecto" value="<%= proyecto.nombre %>">
                 </fieldset>
                 <fieldset id="ubicacion-proyecto">
                     <label id="ubicacion-proyecto">Contanos de donde sos:</label>
-                    <input type="text" placeholder="Yo soy de.." name="ubicacion" id="ubicacion" required>
+                    <input type="text" placeholder="<%= proyecto.ubicacion %>" name="ubicacion" id="ubicacion" value="<%= proyecto.ubicacion %>" >
                 </fieldset>
                 <h3>¡Elige la categoria de tu proyecto!</h3>
+                <fieldset><p>Tu categoria actual es <%if(proyecto.categoria_id === categorias.id){categorias.nombre}
+                    %></p>
+                </fieldset>
                 <fieldset id="categorias-proyecto">
                     <% categorias.forEach(categoria => { %>
                         <label for="<%= categoria.id %>"><%= categoria.nombre%></label>
@@ -29,21 +32,24 @@
                 <fieldset id="descripcion-proyecto">
                     <h3>¡Contanos de que se trata tu proyecto!</h3>
                     <p>(Quedate tranquilo que mas adelante podes editar la información)</p>
-                    <textarea name="textoProyecto" rows="15" cols="30" placeholder="Escribí la historia de tu proyecto..." id="textoProyecto" required></textarea>
+                    <textarea name="textoProyecto" rows="15" cols="30" placeholder="<%= proyecto.texto %>" id="textoProyecto" value="<%= proyecto.texto %>" ></textarea>
                 </fieldset>
                 <fieldset id="fecha-proyecto">
                     <label for="fecha">Establece la fecha limite de tu proyecto</label>
-                    <input type="date" id="fechaProyecto" min="2021-01-01" max="2099-12-31" name="fechaProyecto">
+                    <input type="date" id="fechaProyecto" min="2021-01-01" max="2099-12-31" name="fechaProyecto" value="<%=proyecto.fecha_limite%>" >
                 </fieldset>
                 <fieldset id="fotos-proyecto">
+                    <!-- <%// proyecto.imagenes.forEach(proyecto => { %>
+                    <img src="/uploads/products/<%= //proyecto.imagenes[0]%>">
+                    <%// }) %> -->
                     <label for="fotosProyecto">Subí una o varias fotos</label>
-                    <input type="file" name="fotosProyecto" id="fotosProyecto" required>
+                    <input type="file" name="fotosProyecto" id="fotosProyecto" >
                 </fieldset>
                 </fieldset>
                 <fieldset id="precio-proyecto">
                     <h3>¡Establece una meta para tu proyecto!</h3>
                     <label for="precioProyecto"></label>
-                    <input type="number" name="precioProyecto" id="precioProyecto" placeholder="EJ: 10.000" required>
+                    <input type="number" name="precioProyecto" id="precioProyecto" placeholder="<%= proyecto.contribucion_final %>" value="<%= proyecto.contribucion_final %>" >
                 </fieldset>
                 <fieldset class="flex-botones">
                     <button type="submit"> Enviar</button>

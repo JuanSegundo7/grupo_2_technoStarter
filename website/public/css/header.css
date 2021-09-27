@@ -132,6 +132,7 @@ header nav {
 	height: 1.8em;
 	border-radius: 50%;
 	border: 2px solid #FF9900;
+	background-color: white;
 }
 
 #foto-usuarioHeader p{
