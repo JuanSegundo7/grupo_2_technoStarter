@@ -44,7 +44,7 @@ router.post("/ingresarUsuario",[validLogin], userController.Acceso);
 
 router.put("/actualizarUsuario/:id",[upload.single("fotoAvatar")], userController.updateSQL);
 
-router.delete("/borrar", userController.delete);
+router.delete("/delete/:id", userController.delete);
 
 
 

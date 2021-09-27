@@ -36,19 +36,27 @@
             </section>
             <section>
                 <h2>Mis Proyectos</h2>  
-                <article id="proyectosGuardados">
-                    <!-- agregar if que muestre proyectos, si es que el usuario tiene -->
-                    <article id= "misProyectos">
-                        <article class= "contenedorProyecto">
-                            nombre del proyecto
-                            patrocinadores
-                            fecha limite
-                            <a class="button" href="/proyecto/producto/:id">Ver detalle</a>
-                        </article>
-                    </article>
-                    <h3>No tienes proyectos aún</h3>
+                <section id="misProyectos">
+                    <% if(misProyectos.length > 0) { %>
+                        <% misProyectos.forEach(element => { %>
+                            <article>
+                                <figure>
+                                    <a href="/proyecto/producto/<%= element.id %>"></a><img src="/uploads/products/defaultImagen.jpg" alt="<%= element.nombre %>">
+                                </figure>
+                                <%= element.nombre %>
+                                <%= element.contribucion_final %> 
+                                <%= element.fecha_limite %>
+                                <button><a href="/proyecto/editar/<%= element.id %>">Editar campaña</a></button>
+                                <button><a href="/proyecto/borrar/<%= element.id %>">Borrar campaña</a></button> 
+                            </article>
+                        <% }) %>
+                    <% }else{ %>
+                        <h3>No tienes proyectos aún</h3>    
+                    <% } %>
+                        
+                    
                     <button><a href="/proyecto/crear">Crear Proyecto</a></button>
-                </article>
+                </section>
             </section> 
         </main>
         <%- include("../partials/footer")  %> 

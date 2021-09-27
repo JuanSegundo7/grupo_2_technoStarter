@@ -138,7 +138,7 @@ nav a{
 /**************************************^^^PROYECTOS^^^********************************************/
 
 
-#proyectosGuardados{
+#misProyectos{
     display: flex;
     flex-direction: column;
     background-color: #031927;
@@ -153,7 +153,7 @@ nav a{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-#misProyectos{
+#proyectos{
     display: flex;
     flex-direction: row;
 }
