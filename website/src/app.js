@@ -17,8 +17,8 @@ const categoriasRouter = require("./routes/categoriasRouter");
 
 // ************ API's ************
 
-const apiUsuarios = require("./routes/apiUserRouter");
-const apiProductos = require("./routes/apiProductRouter");
+const apiUsuarios = require("./routes/apiUsersRouter");
+const apiProyectos = require("./routes/apiProyectsRouter");
 
 // ************ Servidor ************
 
@@ -44,6 +44,8 @@ app.set("view engine", "ejs");
 // ************ Middleware Customs ************
 
 app.use(require("./middlewares/user"));
+// app.use(require("./middlewares/isAdmin"));
+
 
 
 // ************ Routes ************
@@ -56,7 +58,8 @@ app.use("/categoria", categoriasRouter);
 
 // ************ API's use ************
 
-// app.use(apiUsuarios)
+app.use(apiUsuarios)
+app.use(apiProyectos)
 
 // ************ Error 404 ************
 

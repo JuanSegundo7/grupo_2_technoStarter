@@ -40,13 +40,17 @@ router.get("/borrar/:id",[isLogged], productController.borrar);
 
 router.get("/contribucion/:id",[isLogged], productController.createContribucion);//isLogged
 
-router.get("/editar/:id",[upload.any(), isLogged],productController.edit);//isLogged
+router.get("/editar/:id",[upload.any(), isLogged], productController.edit);//isLogged
+
+router.get("/editar/contribucion/:id", productController.editarContribucion);//isLogged
 
 router.post("/guardarContribucion/:id",[isLogged], productController.saveContributionType);//isLogged
 
 router.post("/guardar",[upload.any(), isLogged], productController.save); //isLogged
 
 router.post("/contribuir/:id",[isLogged], productController.contribucion);//isLogged
+
+router.put("/actualizar/contribucion/:id", productController.editarContribucionPut);//isLogged
 
 router.put("/actualizar/:id",[upload.any(), isLogged], productController.updateSQL);//isLogged
 

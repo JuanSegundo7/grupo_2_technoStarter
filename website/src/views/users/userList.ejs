@@ -23,7 +23,7 @@
                             <h3><%= usuario.nombre %> <%= usuario.apellido %></h3>
                             <p>Email: <a href="<%= usuario.email %>" target="_blank"><%= usuario.email %></a></p>
                             <article>
-                                <a class="button" href="/usuario/perfil">Ver detalle</a>
+                                <a class="button" href="/usuario/perfil/<%= usuario.id %>" >Ver detalle</a>
                             </article>
                         </article>   
                 </section>

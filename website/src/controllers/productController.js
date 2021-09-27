@@ -147,12 +147,10 @@ const product = {
     },
     edit: async (req, res) => {
         try {
-            let user = await db.User.findOne();
-            let proyecto = await db.Proyect.findByPk(req.params.id);
-            let categoria = await db.Category.findAll();
-            // console.log(categoria);
-            return res.render("products/editarProyectos",{user, proyecto, categorias: categoria});
-            return res.send(categoria)
+            let proyecto = await db.Proyect.findByPk(req.params.id, {include: "imagenes"});
+            let categorias = await db.Category.findAll();
+            // return res.send(categorias)
+            return res.render("products/editarProyectos",{proyecto, categorias});
         }
         catch (error) {
             console.log(error)
@@ -177,11 +175,34 @@ const product = {
             // console.log(data)
             // console.log({one,two})
             // return res.send(one)
-            return res.redirect("/", one)
+            return res.redirect("/proyecto/editar/contribucion/" + req.params.id)
         }
         catch (error) {
             console.log(error)
             res.send(error);
+        }
+    },
+    editarContribucion: async (req, res) => {
+        try{
+            let proyecto = db.Proyect.findByPk(req.params.id)
+            return res.render("products/crearContribucion" + req.params.id , {proyecto})
+        }catch (error) {
+            console.log(error)
+            res.send(error);
+        }
+    },
+    editarContribucionPut: async(req,res) => {
+        try{
+            let data = req.body;
+            console.log("DATA", data)
+            return res.send(data)
+            let proyecto = data.Proyect.update({
+
+            })
+            return res.redirect("/")
+        }catch(error){
+            console.log(error)
+            res.send(error)
         }
     },
     // update:(req,res) => {

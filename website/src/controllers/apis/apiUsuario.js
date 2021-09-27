@@ -13,6 +13,10 @@ const apiUsuarios = {
                     detail: "http://localhost:3000/api/users/" + usuarin.id
                 }
             })
+            return res.status(200).json({
+                count: userNew.length,
+                users: userNew
+            })
         }catch(error){
             console.log(error)
             res.send(error)
@@ -20,8 +24,12 @@ const apiUsuarios = {
     },
     detail: async (req,res) => {
         try{
-            let usuario = await db.User.findByPk(req.params.id)
-
+            let usuario = await (db.User.findByPk(req.params.id, {attributes: { 
+                exclude: ['clave', 'admin']
+            }}
+            ))
+            return res.send(usuario)
+        
         }catch(error){
             console.log(error)
             res.send(error)

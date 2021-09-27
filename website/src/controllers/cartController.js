@@ -9,12 +9,11 @@ const db = require("../database/models");
 const cart = {
     cart: async (req, res) => {
         try{
-            let user = await db.User.findOne()
             let proyecto = await db.Proyect.findByPk(req.params.id, {include: {association:"imagenes"}})
             let contribucion = await db.Proyect.findByPk(req.params.id,{include: {association:"contributions"}})
             contribucion = contribucion.contributions
             // return res.send(contribucion)
-            return res.render("checkout/cart", {proyecto, user, contribucion})
+            return res.render("checkout/cart", {proyecto, contribucion})
         }catch(error){
             console.log(error)
             res.send(error)

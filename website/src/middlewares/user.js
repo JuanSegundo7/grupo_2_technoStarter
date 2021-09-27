@@ -16,7 +16,7 @@ module.exports = async (req,res,next) => {
         user = req.session.user;
     }
     res.locals.user = user;
-    console.log(res.locals.user)
+    // console.log(res.locals.user)
     next();
 }
 

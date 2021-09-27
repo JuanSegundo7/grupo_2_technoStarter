@@ -2,10 +2,10 @@
 
 const express = require("express");
 const router = express.Router();
-const api = require("../controllers/apis/apiUsuario")
+const api = require("../controllers/apis/apiProyectos.js")
 
 // ************ Rutas ************
 
-router.get("/users", api.list)
+router.get("/proyectos", api.proyects)
 
-// router.get("/users/:id", api)
+module.exports = router

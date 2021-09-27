@@ -58,7 +58,7 @@ h1, h2, h4, p{
 #contPrincipal{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
     width: 100vw;
@@ -82,12 +82,13 @@ h1, h2, h4, p{
     margin-left: 0.5em;
     border-radius: 25px;
     border: solid 2px;
+    object-fit: cover;
 }
 
 
 #contPrincipal1 p{
     font-weight: 300;
-    font-size: 0.8em;
+    font-size: 1.1em;
     text-align: center;
     margin: 1em 0 1em 0;
 }
@@ -95,7 +96,8 @@ h1, h2, h4, p{
 #contPrincipal2{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -310,6 +312,7 @@ h1, h2, h4, p{
     }
     #botones{
         flex-direction: column;
+        display: flex;
     }
 }
 
@@ -318,7 +321,7 @@ h1, h2, h4, p{
     #contPrincipal {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         width: auto;
         justify-content: space-around;
     }
@@ -340,16 +343,20 @@ h1, h2, h4, p{
     }
     
     #botones{
-        flex-direction: row;
         margin: 1em 0 1em 0;
-        width: 10em !important;
+    }
+
+    #contPrincipal1 p{
+        font-weight: 300;
+        font-size: 1.2em;
+        text-align: center;
+        margin: 1em 0 1em 0;
     }
 }
 
 @media (min-width: 550px){
     #botones{
         flex-direction: row;
-        width: 100% !important;
     }
 }
 
@@ -395,7 +402,6 @@ h1, h2, h4, p{
         width: 90%;
         object-fit: cover;
         margin-left: 2vw;
-        margin: 0 0 0 7vw;
     }
 
     #contPrincipal2 h1 {
@@ -405,6 +411,13 @@ h1, h2, h4, p{
 
     #contPrincipal2 p{
         font-size: 22px;
+    }
+
+    #contPrincipal1 p{
+        font-weight: 300;
+        font-size: 1.3em;
+        text-align: center;
+        margin: 1em 0 1em 0;
     }
     
 
@@ -490,7 +503,10 @@ h1, h2, h4, p{
     #contPrincipal2 h1 {
         font-size: 26px;
     }
-    #contPrincipal1 img {
-        height: 27vw;
+    #contPrincipal1 p{
+        font-weight: 300;
+        font-size: 1.4em;
+        text-align: center;
+        margin: 1em 0 1em 0;
     }
 }

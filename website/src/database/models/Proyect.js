@@ -76,6 +76,11 @@ module.exports = (sequelize, dataTypes) => {
             as: "contributions",
             foreignKey: "proyecto_id",
         })
+        Proyect.belongsToMany(models.Recordarme, {
+            through: "Recordarme",
+            as: "proyecto",
+            foreignKey: "proyecto_id",
+        })
     }
     return Proyect
 }
