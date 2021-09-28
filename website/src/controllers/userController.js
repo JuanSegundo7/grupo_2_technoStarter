@@ -37,7 +37,7 @@ module.exports = {
         try  {
             let data = req.body;
             let file = req.file;
-    
+            
             await db.User.create({
                 nombre: data.nombreUsuario,
                 apellido: data.apellidoUsuario,
@@ -47,10 +47,11 @@ module.exports = {
                 ubicacion: data.ubicacionUser,
                 avatar: file.filename,
             });
-
-            //let usuarios = await db.User.findAll()
-            //let usuarioReciente = usuarios.length
-            //return res.send(usuarioReciente)
+            
+            //let usuarios = await db.User.findAll();
+            //let usuarioReciente = usuarios[usuarios.length - 1];
+            //return res.send(usuarioReciente) 
+            //let usuario = await db.User.findByPk({where: {id: usuarioReciente.id}})
             
             return res.redirect("/");
         }
