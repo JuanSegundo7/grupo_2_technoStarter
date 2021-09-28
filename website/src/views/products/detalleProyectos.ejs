@@ -90,7 +90,7 @@
         <h1>También recomendamos</h1>
         <% recomendados.forEach(recomendado => { %>
         <article class="recomendacion">
-            <a href="/proyecto/producto/<%= recomendado.id %>"><img src="/uploads/products/<%= (recomendado.imagenes[0] != undefined)  ? recomendado.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="imagen de recomendacion"></a>
+            <a href="/proyecto/producto/<%= recomendado.id %>"><figure><img src="/uploads/products/<%= (recomendado.imagenes[0] != undefined)  ? recomendado.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="imagen de recomendacion"></figure></a>
             <p><%= recomendado.nombre %></p>
             <p>Hasta el <%= recomendado.fecha_limite %></p>
             <p><i class="fas fa-map-marker-alt"></i> <%= recomendado.ubicacion %></p>

@@ -89,8 +89,8 @@ module.exports = {
     },
     perfil: async (req,res) => {
         try{
-            let user = await db.User.findByPk(req.session.user.id)
-            let misProyectos = await db.Proyect.findAll({where: {usuario_id: req.session.user.id},  include: { association: "imagenes" } })
+            let user = await db.User.findByPk(req.params.id)
+            let misProyectos = await db.Proyect.findAll({where: {usuario_id: req.params.id},  include: { association: "imagenes" } })
             //return res.send(misProyectos)
             return res.render("users/perfil", {user, misProyectos})
         }catch (error) {

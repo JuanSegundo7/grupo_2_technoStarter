@@ -7,13 +7,10 @@ const db = require("../database/models");
 const categorias = {
     show: async (req,res) => {
         try {
-            let categoriaTitulo = await db.Category.findOne({category: req.params.category})
-            let categoriaBuscar = await db.Category.findAll()
-            let proyectos = await db.Proyect.findAll()
-            let valor =  proyectos.filter(element => element.categoria_id == categoriaBuscar.id);
-            console.log("VALOR", valor)
-            return res.send(valor)
-            return res.render("categorias/robotica",{proyectos, categorias})
+            let categoriaTitulo = await db.Category.findOne({where:{nombre: req.params.category}})
+            let proyectos = await db.Proyect.findAll({where:{categoria_id: categoriaTitulo.id}, include:{association: "imagenes"}},)
+            // return res.send(proyectos)
+            return res.render("categorias/robotica",{proyectos, categorias: categoriaTitulo})
         }catch (error){
             console.log(error)
             res.send(error)

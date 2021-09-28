@@ -5,7 +5,7 @@ class ApiProyecto extends Component{
   constructor(props) {
         super(props);
         this.state = {
-            proyects: []
+            proyectos: []
         }
     };
 
@@ -30,26 +30,23 @@ class ApiProyecto extends Component{
     
     render(){
       return(
-          <React.Fragment>             
-                {
-                // this.state.proyectos === [] && <p>Cargando...</p>
-                                }
-                                {
-                                  this.state.proyectos.map((proyect, i) => {
-
-                                        return <Proyect
+            <main>
+              <h2 id="h2Proyecto">Proyectos</h2>
+                <article className="flex-proyectos-react">      
+                {this.state.proyectos === [] && <p>Cargando...</p>}{
+                  this.state.proyectos.map((proyect, i) => {
+                                            return <Proyect
                                             key={proyect + i}
                                             id={proyect.id}
-                                            name={proyect.name}
-                                            fecha={proyect.fecha_final}
+                                            imagenes={proyect.imagenes[0].url_imagen}
+                                            nombre={proyect.nombre}
+                                            fecha_final={proyect.fecha_final}
                                             descripcion={proyect.descripcion}
-                                            detail={proyect.detail}
-
-                                        />
-
-                                  })
-                                }
-          </React.Fragment>
+                                            />
+                  })
+                }
+                </article>      
+            </main>
       ) 
     }
 }

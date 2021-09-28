@@ -231,3 +231,10 @@ label{
     width: 25%;
     border-radius: 12px;
 }
+
+.errores li{
+    color: red;
+    font-size: 20px;
+    list-style-type: none;
+    text-align: center
+}   

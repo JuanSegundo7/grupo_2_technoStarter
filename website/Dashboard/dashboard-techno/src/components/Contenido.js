@@ -1,10 +1,12 @@
 import React from "react";
-import ApiUsuario from "./ApiUsuario"
+import ApiUsuarioLength from "./ApiUsuarioLength"
+import ApiProyectoLength from "./ApiProyectoLength"
 import Logo from "../assets/img/TechnoStarter1.png"
 import {Link,Route,Switch} from "react-router-dom";
 
 
 function Contenido(){
+    
     return(
         <body>
             <main>
@@ -14,15 +16,16 @@ function Contenido(){
                         <h1>DASHBOARD</h1>
                     </article>
                         <h3 id="bienvenida">Bienvenidos al Dashboard de TechnoStarter</h3>
-                    <article>
                     <article id="flex-links">
                         <Link to="/users">Usuarios</Link>
                         <Link to="/proyectos">Proyectos</Link>
                         <Link to="/categorias">categorias</Link>
                     </article>
+                    <article className="flex-proyectos-react">
+                    <ApiUsuarioLength />
                     </article>
-                    <article className="flex-articles">
-                        <ApiUsuario />
+                    <article className="flex-proyectos-react">
+                    <ApiProyectoLength />
                     </article>
                     <article>
                     </article>

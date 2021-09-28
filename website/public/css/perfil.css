@@ -162,7 +162,7 @@ nav a{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    align-items: center;
 }
 
 .flex-botones button{
@@ -181,7 +181,19 @@ a{
     color: black;
 }
 
+.dashboard{
+    padding: 1vw;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #FF9900;
+    border: 1px solid;
+    width: 25%;
+    border-radius: 12px;
+}
+
 /**************************************^^^MEDIA-QUERYS^^^********************************************/
+
 
 @media (min-width: 480px){
     h2{

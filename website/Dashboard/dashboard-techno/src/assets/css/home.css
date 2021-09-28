@@ -620,3 +620,74 @@ box-sizing: border-box;
     color: #ff9900;
     font-size: 1.5em;
 }
+
+/********************************^^^PROYECTOS-REACT^^^********************************************/
+
+#h2Proyecto{
+    text-align: center;
+    font-size: 2em;
+    margin: 1em 1em 0 1em;
+}
+
+tr{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-tr{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5em;
+    justify-content: center;
+    margin: 1em;
+}
+
+.textoProyect{
+    margin: 1em;
+    font-size: 1.5em;
+    text-align: center
+}
+
+.textoProyect td{
+    text-align: left;
+    font-size: 0.7em;
+    margin: 1em;
+}
+
+.fechaProyect{
+    text-align: center;
+}
+
+#idProyect{
+    margin: 0 0.5em 0 0  
+}
+
+table{
+    padding: 2em;
+    margin: 2em;
+    border: 2px solid #FF9900;
+    border-radius: 25px;
+    background-color: #031927;
+    color: #FF9900;
+}
+
+.cantidad{
+    padding: 2em;
+    border: 2px solid #FF9900;
+    border-radius: 25px;
+    background-color: #031927;
+    color: #FF9900;
+    text-align: center;
+    margin: 1em;
+}
+.cantidad h3{
+    margin: 1em;
+}
+
+.flex-proyectos-react{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 5em 1em 5em;
+}

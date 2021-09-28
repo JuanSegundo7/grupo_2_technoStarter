@@ -17,7 +17,7 @@
                 <form action="/carrito/contribuir/<%= proyecto.id %>?_method=PUT" method="POST">
                     <label class= "opcionesContr">
                         <label class="flex-titulo">
-                            <input type="radio" name= "medio" value="<%= contribucion.precio %>"><input type="hidden" name="proyecto" value="<%= proyecto.id %>">
+                            <input type="radio" name= "medio" class="radio" value="<%= contribucion.precio %>"><input type="hidden" name="proyecto" value="<%= proyecto.id %>">
                             <h2 class= "titulosContr"><%= contribucion.nombre %></h2>
                         </label>
                             <p class="textoContr"><%= contribucion.contribucion %></p>
@@ -49,6 +49,7 @@
             </article>
         </section>
     </main>
+    <script src="/js/contribuciones.js"></script>
     <%- include("../partials/footer")  %> 
 </body>
 </html>

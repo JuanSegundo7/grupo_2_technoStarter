@@ -4,7 +4,7 @@ window.addEventListener('load', function() {
     // console.log(form)
 
     let nombre = document.getElementById("nombreUsuario")
-    // console.log(nombre)
+    console.log(nombre)
 
     let apellido = document.getElementById("apellidoUsuario")
     // console.log(apellido)
@@ -26,7 +26,12 @@ window.addEventListener('load', function() {
         let errors = [];
         let ulErrores = document.querySelector(".errores");
 
-        if(nombre.value >= 2){
+        if(!nombre.value){
+            console.log("El apartado nombre esta vacio")
+            errors.push("El apartado nombre esta vacio")
+
+        }
+        if(nombre.value <= 2){
             console.log("El nombre tiene que ser mayor o igual a 2 caracteres")
             errors.push("El nombre tiene que ser mayor o igual a 2 caracteres")
         }
@@ -50,7 +55,8 @@ window.addEventListener('load', function() {
         }
 
         let extensiones = /(.jpg|.jpeg|.png|.gif)$/i;
-
+        
+        console.log(foto.value)
         if(!foto.value){
             console.log("Debes subir una imagen")
             errors.push("Debes subir una imagen")

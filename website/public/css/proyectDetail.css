@@ -210,9 +210,6 @@ h1, h2, h4, p{
     width: 70vw;
     height: 40vh;
     object-fit: cover;
-    margin: 5px;
-    border: solid 2px #ff9900;
-    border-radius: 30px;
     align-self: center;
 }
 
@@ -465,7 +462,18 @@ h1, h2, h4, p{
         width: 40vw;
         height: 40vh;
         object-fit: cover;
+    }
+
+    .recomendacion figure{
+        overflow: hidden;
         border: 2px solid #ff9900;
+        border-radius: 30px;
+        height: 40vh;
+    }
+
+    .recomendacion img:hover {
+        transform: scale(1.1);
+        transition: all 0.7s;
     }
 
     .recomendacion p {

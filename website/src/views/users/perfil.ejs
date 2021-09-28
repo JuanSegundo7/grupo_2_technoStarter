@@ -5,6 +5,7 @@
         <main id="contenedorPrincipal">
             <section id="formulario">
                 <form>
+                    <button class="dashboard"><a href="http://localhost:3000">Dashboard</a></button>
                     <h2>Mi perfil</h2>
                         <section id="flex-avatar">
                             <figure id="avatarPreview">
@@ -30,9 +31,9 @@
                     </form>
                     <article class="flex-botones">
                         <button><a href="/usuario/editarUsuario/<%= user.id %>">Editar usuario</a></button>
+                        <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
                         <button><a href="/usuario/borrar/<%= user.id %>">Borrar usuario</a></button>
                     </article>
-                    <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
             </section>
             <section id="misProyectos">
                     <h2>Mis Proyectos</h2>
