@@ -48,7 +48,7 @@ h2{
 
 /**************************************^^^FORMULARIO^^^********************************************/
 
-.formulario{
+#formulario{
     background-color: #031927;
     color: white;
     padding: 2.5vw;
@@ -65,12 +65,12 @@ h4{
     color: #FF9900;
 }
 
-.formulario fieldset{
+#formulario fieldset{
     border: none;
     margin: 2vw;
 }
 
-.formulario input{
+#formulario input{
     margin: 2vh 0 2vh 0;
     padding: 1vw;
     border-radius: 12px;
@@ -138,7 +138,7 @@ nav a{
 /**************************************^^^PROYECTOS^^^********************************************/
 
 
-#proyectosGuardados{
+#misProyectos{
     display: flex;
     flex-direction: column;
     background-color: #031927;
@@ -153,19 +153,19 @@ nav a{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-#misProyectos{
+#contenedorProyectos{
     display: flex;
     flex-direction: row;
 }
 
-#flex-botones{
+.flex-botones{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 
 }
 
-#flex-botones button{
+.flex-botones button{
     padding: 1vw;
     color: white;
     font-weight: 500;
@@ -190,21 +190,14 @@ a{
         padding: 0vw 3vw;
     }
     
-    .formulario{
+    #formulario{
         margin-top: 5vh;
-    }
-    
-    .formulario input{
-        font-size: 16px;
     }
 }
 
 @media (min-width: 769px){
-    .formulario{
+    #formulario{
         margin-top: 5vh;
-    }
-    .formulario input{
-        font-size: 18px;
     }
     h2{
         font-size: 2.2em;

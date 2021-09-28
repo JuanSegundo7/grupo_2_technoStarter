@@ -3,9 +3,9 @@
     <body>
         <%-include("../partials/header")%> 
         <main id="contenedorPrincipal">
-            <section class="formulario">
+            <section id="formulario">
                 <form>
-                    <h2>Tu perfil</h2>
+                    <h2>Mi perfil</h2>
                         <section id="flex-avatar">
                             <figure id="avatarPreview">
                                 <img src="/uploads/avatars/<%= user.avatar%>" alt="<%= user.nombre%>">     
@@ -28,28 +28,38 @@
                             </article>
                         </section>
                     </form>
-                    <article id="flex-botones">
+                    <article class="flex-botones">
                         <button><a href="/usuario/editarUsuario/<%= user.id %>">Editar usuario</a></button>
                         <button><a href="/usuario/borrar/<%= user.id %>">Borrar usuario</a></button>
                     </article>
                     <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
             </section>
-            <section>
-                <h2>Mis Proyectos</h2>  
-                <article id="proyectosGuardados">
-                    <!-- agregar if que muestre proyectos, si es que el usuario tiene -->
-                    <article id= "misProyectos">
-                        <article class= "contenedorProyecto">
-                            nombre del proyecto
-                            patrocinadores
-                            fecha limite
-                            <a class="button" href="/proyecto/producto/:id">Ver detalle</a>
-                        </article>
-                    </article>
-                    <h3>No tienes proyectos aún</h3>
+            <section id="misProyectos">
+                    <h2>Mis Proyectos</h2>
+                    <% if(misProyectos.length > 0) { %>
+                        <% misProyectos.forEach(element => { %>
+                            <section class= "contenedorProyecto">
+                                <article class="imgProyecto">
+                                    <figure>
+                                        <a href="/proyecto/producto/<%= element.id %>"><img src="/uploads/products/<%= (element.imagenes[0] != undefined)  ? element.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="<%= element.nombre %>"></a>
+                                    </figure>
+                                </article>
+                                <article class="infoProyecto">
+                                    <p><%= element.nombre %></p>
+                                    <p><%= element.contribucion_final %></p> 
+                                    <p><%= element.fecha_limite %></p>
+                                <div class="flex-botones">
+                                    <button><a href="/proyecto/editar/<%= element.id %>">Editar campaña</a></button>
+                                    <button><a href="/proyecto/borrar/<%= element.id %>">Borrar campaña</a></button>
+                                </div>
+                                </article> 
+                            </section>
+                        <% }) %>
+                    <% }else{ %>
+                        <h3>No tienes proyectos aún</h3>    
+                    <% } %>
                     <button><a href="/proyecto/crear">Crear Proyecto</a></button>
-                </article>
-            </section> 
+                </section>
         </main>
         <%- include("../partials/footer")  %> 
     </body>
