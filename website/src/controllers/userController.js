@@ -37,8 +37,8 @@ module.exports = {
         try  {
             let data = req.body;
             let file = req.file;
-            
-            let userToCreate = {
+    
+            await db.User.create({
                 nombre: data.nombreUsuario,
                 apellido: data.apellidoUsuario,
                 email: data.direccionDeCorreoElectronico,
@@ -46,9 +46,11 @@ module.exports = {
                 clave: bcrypt.hashSync(data.clave,10),
                 ubicacion: data.ubicacionUser,
                 avatar: file.filename,
-            }
-    
-            let usuarioCreado = await db.User.create(userToCreate);
+            });
+
+            //let usuarios = await db.User.findAll()
+            //let usuarioReciente = usuarios.length
+            //return res.send(usuarioReciente)
             
             return res.redirect("/");
         }
@@ -88,9 +90,8 @@ module.exports = {
     perfil: async (req,res) => {
         try{
             let user = await db.User.findByPk(req.session.user.id)
-            let misProyectos = await db.Proyect.findAll({where: {usuario_id: req.session.user.id}}, { include: { association: "imagenes" } })
-            //let proyectoDB = await db.Proyect.findByPk(req.params.id, { include: { association: "imagenes" } })
-            //res.send(proyectoDB)
+            let misProyectos = await db.Proyect.findAll({where: {usuario_id: req.session.user.id},  include: { association: "imagenes" } })
+            //return res.send(misProyectos)
             return res.render("users/perfil", {user, misProyectos})
         }catch (error) {
             console.log(error);
@@ -140,7 +141,22 @@ module.exports = {
         }
     },
     delete: async (req, res) => {
+        let user = await db.User.findByPk(req.session.user.id)
+        let proyectos = await db.Proyect.findAll({where:{usuario_id: user.id}})
+        //return res.send(proyectos)
         try {
+            await proyectos.forEach(element => {
+                db.Image.destroy({
+                    where: { proyecto_id: element.id } 
+                })
+            });
+
+            await proyectos.forEach(element => {
+                db.Contribution_type.destroy({
+                    where: { proyecto_id: element.id}
+                })
+            });
+
             await db.Proyect.destroy({
                 where: { usuario_id: req.params.id } 
             })

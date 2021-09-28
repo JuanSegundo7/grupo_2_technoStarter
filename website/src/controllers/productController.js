@@ -23,12 +23,11 @@ const product = {
         }
     },
     create: async (req, res) => {
-        //*let user = await db.User.findOne()*//
         try {
             let categoria = await db.Category.findAll();
             // console.log(categoria)
             // return res.send(categoria)
-            return res.render("products/crearProyectos", { categorias: categoria});
+            return res.render("products/crearProyectos", { categorias: categoria });
         }
         catch (error) {
             console.log(error)
@@ -43,6 +42,7 @@ const product = {
             //console.log("file", file);
             // let user = req.session.user;
             //console.log("Usuario en session", req.session.user)
+            let user = await db.User.findByPk(req.session.user.id)
 
             let projectToCreate = { 
                 nombre: String(data.nombre),
@@ -52,7 +52,7 @@ const product = {
                 texto: String(data.texto),
                 fecha_inicial: String(new Date().toISOString().slice(0, 10)),
                 fecha_limite: data.fechaProyecto,
-                usuario_id: 1,
+                usuario_id: user.id,
                 categoria_id: parseInt(data.categoria)
             }
 
@@ -80,6 +80,7 @@ const product = {
 
         });
         
+        //return res.send(projectCreated);
                 
         return res.redirect("/proyecto/contribucion/" + projectCreated.id) 
         }
@@ -100,6 +101,7 @@ const product = {
         }
     },
     saveContributionType: async (req,res) => {
+        let user = await db.User.findByPk(req.session.user.id)
         try{
             let data = req.body;
             allContri = [
@@ -128,7 +130,7 @@ const product = {
                     proyecto_id: req.params.id
                 })
             })
-            return res.redirect("/") 
+            return res.redirect("/usuario/perfil/" + user.id)
         }
         catch(error){
             console.log(error)
@@ -197,7 +199,7 @@ const product = {
             console.log("DATA", data)
             return res.send(data)
             let proyecto = data.Proyect.update({
-
+                
             })
             return res.redirect("/")
         }catch(error){

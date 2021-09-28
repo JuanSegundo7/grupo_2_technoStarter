@@ -11,8 +11,8 @@ INSERT INTO tipo_contribucion VALUES(1, "Bronce", 1000, "Con la contribucion Bro
 (4, "Bronce", 2000, "Con la contribucion Bronce, te podes llevar: Un Violin 3D Varius", 2),(5, "Plata", 4000, "Con la contribucion Plata, te podes llevar: 2 Violines 3D Varius y un libro de aprendizaje.", 2),(6, "Oro", 8000, "Con la contribucion Oro, te podes llevar: 3 Violines 3D Varius y una entrada al concierto La Filarmónica de Viena.", 2),
 (7, "Bronce", 3000, "Con la contribucion Bronce, te podes llevar: Un ACASIS USB 4.0", 3),(8, "Plata", 6000, "Con la contribucion Plata, te podes llevar: 2 ACASIS USB 4.0 y una revista de tecnologia.", 3),(9, "Oro", 10000, "Con la contribucion Oro, te podes llevar: 4 ACASIS USB 4.0 y un monitor de 24 pulgadas de Noga.", 3),
 (10, "Bronce", 1000, "Con la contribucion Bronce, te podes llevar: Una mochila Zetox", 4),(11, "Plata", 3000, "Con la contribucion Plata, te podes llevar: 2 mochilas Zetox y una riñonera de regalo.", 4),(12, "Oro", 6000, "Con la contribucion Oro, te podes llevar: 3 mochilas Zetox y una carpa para 2 personas.", 4)
-INSERT INTO contribucion_usuarios VALUES (1,2,1,3)
+INSERT INTO contribucion_usuarios VALUES (1,2,1,3);
 INSERT INTO imagenes VALUES (1,"/Sancho-ElRobotAsistente/fotosProyecto-1627172891517.png",1),(2,"/Sancho-ElRobotAsistente/fotosProyecto-1627172894857.png",1),(3,"/Sancho-ElRobotAsistente/fotosProyecto-1627172894852.jpg",1),
 (4,"/Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035851.jpg",2),(5,"/Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035845.jpg",2),(6,"/Violín3D-Varius-PrimerviolínArgentinoimpresoen3D/fotosProyecto-1626736035849.jpg",2),
 (7,"/ACASISUSB4.0/fotosProyecto-1626915281682.jpg",3),(8,"/ACASISUSB4.0/fotosProyecto-1626915281688.jpg",3),(9,"/ACASISUSB4.0/fotosProyecto-1626915281687.jpg",3),
-(10,"/Zetox-MochilaInteligente/fotosProyecto-1628640749425.jpg",4)
+(10,"/Zetox-MochilaInteligente/fotosProyecto-1628640749425.jpg",4);
