@@ -12,7 +12,7 @@ const main = {
             //return res.send(random.imagenes[0] != undefined);
             let recomendados = [await proyecto.random(), await proyecto.random(), await proyecto.random()]
             recomendados.map(item => item == null ? proyecto.random() : item);
-            // return res.send(random)
+            //return res.send(recomendados)
             return res.render("home", {random, recomendados});
         }
         catch (error) {
