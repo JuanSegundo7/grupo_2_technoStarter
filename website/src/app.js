@@ -7,6 +7,11 @@ const method = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser")
 
+const cors = require('cors');
+
+//CORS
+app.use(cors());
+
 // ************ Require's Routes ************
 
 const mainRouter = require("./routes/mainRouter");
@@ -22,7 +27,7 @@ const apiProyectos = require("./routes/apiProyectsRouter");
 
 // ************ Servidor ************
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 5000);
 app.listen(app.get("port"), () => console.log("Server start in http://localhost:"+app.get("port")));
 
 // ************ Acceso Publico ************

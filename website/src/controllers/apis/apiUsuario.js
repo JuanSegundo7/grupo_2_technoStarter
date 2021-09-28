@@ -10,7 +10,7 @@ const apiUsuarios = {
                     id: usuarin.id,
                     name: usuarin.nombre,
                     email: usuarin.email,
-                    detail: "http://localhost:3000/api/users/" + usuarin.id
+                    detail: "http://localhost:5000/users/" + usuarin.id
                 }
             })
             return res.status(200).json({

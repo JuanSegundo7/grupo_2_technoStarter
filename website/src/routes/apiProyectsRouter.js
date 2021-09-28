@@ -8,4 +8,6 @@ const api = require("../controllers/apis/apiProyectos.js")
 
 router.get("/proyectos", api.proyects)
 
+router.get("/proyectos/:id", api.detail)
+
 module.exports = router
