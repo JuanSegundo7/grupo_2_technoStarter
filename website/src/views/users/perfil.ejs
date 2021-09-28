@@ -2,8 +2,8 @@
     <%-include("../partials/head",{"css":["header", "perfil", "footer"]})%>
     <body>
         <%-include("../partials/header")%> 
-        <main id="contenedorPrincipal">
-            <section id="formulario">
+        <main>
+            <section id="perfil">
                 <form>
                     <h2>Mi perfil</h2>
                         <section id="flex-avatar">
@@ -32,7 +32,7 @@
                         <button><a href="/usuario/editarUsuario/<%= user.id %>">Editar usuario</a></button>
                         <button><a href="/usuario/borrar/<%= user.id %>">Borrar usuario</a></button>
                     </article>
-                    <a href="/usuario/cerrarSesion">Salir <i class="fas fa-power-off"></i></a>
+                    <a href="/usuario/cerrarSesion" id="salir">Salir <i class="fas fa-power-off"></i></a>
             </section>
             <section id="misProyectos">
                     <h2>Mis Proyectos</h2>
@@ -40,7 +40,7 @@
                         <% misProyectos.forEach(element => { %>
                             <section class= "contenedorProyecto">
                                 <article class="imgProyecto">
-                                    <figure>
+                                    <figure class="recuadro-imagen">
                                         <a href="/proyecto/producto/<%= element.id %>"><img src="/uploads/products/<%= (element.imagenes[0] != undefined)  ? element.imagenes[0].url_imagen : "defaultImagen.jpg"%>" alt="<%= element.nombre %>"></a>
                                     </figure>
                                 </article>
@@ -49,8 +49,8 @@
                                     <p><%= element.contribucion_final %></p> 
                                     <p><%= element.fecha_limite %></p>
                                 <div class="flex-botones">
-                                    <button><a href="/proyecto/editar/<%= element.id %>">Editar campaña</a></button>
-                                    <button><a href="/proyecto/borrar/<%= element.id %>">Borrar campaña</a></button>
+                                    <button><a href="/proyecto/editar/<%= element.id %>">Editar proyecto</a></button>
+                                    <button><a href="/proyecto/borrar/<%= element.id %>">Borrar proyecto</a></button>
                                 </div>
                                 </article> 
                             </section>
